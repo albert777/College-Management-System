@@ -24,6 +24,7 @@ Partial Class Login
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.loginAreaPanel = New System.Windows.Forms.Panel()
+        Me.loginLbl = New System.Windows.Forms.Label()
         Me.passwordTb = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.usernameTb = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.signInBtn = New System.Windows.Forms.Button()
@@ -31,13 +32,13 @@ Partial Class Login
         Me.forgetPasswordLbl = New System.Windows.Forms.Label()
         Me.passwordIcon = New System.Windows.Forms.PictureBox()
         Me.usernameIcon = New System.Windows.Forms.PictureBox()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.transparentPanel = New System.Windows.Forms.Panel()
         Me.mainLogo = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.loginErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.loginLbl = New System.Windows.Forms.Label()
+        Me.BunifuFormFadeTransition1 = New Bunifu.Framework.UI.BunifuFormFadeTransition(Me.components)
         Me.loginAreaPanel.SuspendLayout()
         CType(Me.crossPb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.passwordIcon, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +67,17 @@ Partial Class Login
         Me.loginAreaPanel.Size = New System.Drawing.Size(428, 477)
         Me.loginAreaPanel.TabIndex = 3
         Me.loginAreaPanel.TabStop = True
+        '
+        'loginLbl
+        '
+        Me.loginLbl.AutoSize = True
+        Me.loginLbl.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.loginLbl.ForeColor = System.Drawing.Color.White
+        Me.loginLbl.Location = New System.Drawing.Point(48, 67)
+        Me.loginLbl.Name = "loginLbl"
+        Me.loginLbl.Size = New System.Drawing.Size(91, 36)
+        Me.loginLbl.TabIndex = 7
+        Me.loginLbl.Text = "LOGIN"
         '
         'passwordTb
         '
@@ -160,6 +172,29 @@ Partial Class Login
         Me.usernameIcon.TabIndex = 2
         Me.usernameIcon.TabStop = False
         '
+        'ShapeContainer1
+        '
+        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer1.Name = "ShapeContainer1"
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(428, 477)
+        Me.ShapeContainer1.TabIndex = 6
+        Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BackColor = System.Drawing.Color.White
+        Me.RectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.Transparent
+        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.White
+        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Vertical
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(-1, 2)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(11, 475)
+        '
         'transparentPanel
         '
         Me.transparentPanel.BackColor = System.Drawing.Color.Transparent
@@ -203,45 +238,15 @@ Partial Class Login
         '
         Me.loginErrorProvider.ContainerControl = Me
         '
-        'ShapeContainer1
+        'BunifuFormFadeTransition1
         '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(428, 477)
-        Me.ShapeContainer1.TabIndex = 6
-        Me.ShapeContainer1.TabStop = False
-        '
-        'RectangleShape1
-        '
-        Me.RectangleShape1.BackColor = System.Drawing.Color.White
-        Me.RectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.White
-        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Vertical
-        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(-1, 2)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(11, 475)
-        '
-        'loginLbl
-        '
-        Me.loginLbl.AutoSize = True
-        Me.loginLbl.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.loginLbl.ForeColor = System.Drawing.Color.White
-        Me.loginLbl.Location = New System.Drawing.Point(48, 67)
-        Me.loginLbl.Name = "loginLbl"
-        Me.loginLbl.Size = New System.Drawing.Size(91, 36)
-        Me.loginLbl.TabIndex = 7
-        Me.loginLbl.Text = "LOGIN"
+        Me.BunifuFormFadeTransition1.Delay = 200
         '
         'Login
         '
+        Me.AcceptButton = Me.signInBtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(802, 477)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -280,4 +285,5 @@ Partial Class Login
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
     Friend WithEvents loginLbl As Label
+    Friend WithEvents BunifuFormFadeTransition1 As Bunifu.Framework.UI.BunifuFormFadeTransition
 End Class

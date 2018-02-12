@@ -12,12 +12,14 @@ Public Class Dashboard
     End Sub
 
     Private Sub settingPb_Click(sender As Object, e As EventArgs) Handles settingPb.Click
-
-
         settingTableLayout.Visible = True
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         settingTableLayout.Visible = False
+    End Sub
+
+    Private Sub crossPb_Click(sender As Object, e As EventArgs) Handles crossPb.Click
+        Application.Exit()
     End Sub
 End Class
