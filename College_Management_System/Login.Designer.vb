@@ -28,25 +28,25 @@ Partial Class Login
         Me.passwordTb = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.usernameTb = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.signInBtn = New System.Windows.Forms.Button()
+        Me.crossPb = New System.Windows.Forms.PictureBox()
         Me.forgetPasswordLbl = New System.Windows.Forms.Label()
+        Me.passwordIcon = New System.Windows.Forms.PictureBox()
+        Me.usernameIcon = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.transparentPanel = New System.Windows.Forms.Panel()
+        Me.mainLogo = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.loginErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.mainLogo = New System.Windows.Forms.PictureBox()
-        Me.crossPb = New System.Windows.Forms.PictureBox()
-        Me.passwordIcon = New System.Windows.Forms.PictureBox()
-        Me.usernameIcon = New System.Windows.Forms.PictureBox()
         Me.loginAreaPanel.SuspendLayout()
-        Me.transparentPanel.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.loginErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.mainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.crossPb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.passwordIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.usernameIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.transparentPanel.SuspendLayout()
+        CType(Me.mainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.loginErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'loginAreaPanel
@@ -130,6 +130,16 @@ Partial Class Login
         Me.signInBtn.Text = "SIGN IN"
         Me.signInBtn.UseVisualStyleBackColor = False
         '
+        'crossPb
+        '
+        Me.crossPb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.crossPb.Image = Global.College_Management_System.My.Resources.Resources.Delete_32px2
+        Me.crossPb.Location = New System.Drawing.Point(386, 15)
+        Me.crossPb.Name = "crossPb"
+        Me.crossPb.Size = New System.Drawing.Size(31, 32)
+        Me.crossPb.TabIndex = 4
+        Me.crossPb.TabStop = False
+        '
         'forgetPasswordLbl
         '
         Me.forgetPasswordLbl.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -140,6 +150,27 @@ Partial Class Login
         Me.forgetPasswordLbl.TabIndex = 2
         Me.forgetPasswordLbl.Text = " Forgot password"
         Me.forgetPasswordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'passwordIcon
+        '
+        Me.passwordIcon.BackColor = System.Drawing.Color.Transparent
+        Me.passwordIcon.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Password
+        Me.passwordIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.passwordIcon.Location = New System.Drawing.Point(54, 202)
+        Me.passwordIcon.Name = "passwordIcon"
+        Me.passwordIcon.Size = New System.Drawing.Size(43, 42)
+        Me.passwordIcon.TabIndex = 2
+        Me.passwordIcon.TabStop = False
+        '
+        'usernameIcon
+        '
+        Me.usernameIcon.BackgroundImage = Global.College_Management_System.My.Resources.Resources.User
+        Me.usernameIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.usernameIcon.Location = New System.Drawing.Point(54, 139)
+        Me.usernameIcon.Name = "usernameIcon"
+        Me.usernameIcon.Size = New System.Drawing.Size(41, 42)
+        Me.usernameIcon.TabIndex = 2
+        Me.usernameIcon.TabStop = False
         '
         'ShapeContainer1
         '
@@ -176,6 +207,17 @@ Partial Class Login
         Me.transparentPanel.Size = New System.Drawing.Size(374, 477)
         Me.transparentPanel.TabIndex = 2
         '
+        'mainLogo
+        '
+        Me.mainLogo.BackColor = System.Drawing.Color.Transparent
+        Me.mainLogo.BackgroundImage = Global.College_Management_System.My.Resources.Resources.CMS
+        Me.mainLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.mainLogo.Location = New System.Drawing.Point(12, 97)
+        Me.mainLogo.Name = "mainLogo"
+        Me.mainLogo.Size = New System.Drawing.Size(327, 201)
+        Me.mainLogo.TabIndex = 0
+        Me.mainLogo.TabStop = False
+        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
@@ -203,53 +245,12 @@ Partial Class Login
         Me.BunifuDragControl1.TargetControl = Me.loginAreaPanel
         Me.BunifuDragControl1.Vertical = True
         '
-        'mainLogo
-        '
-        Me.mainLogo.BackColor = System.Drawing.Color.Transparent
-        Me.mainLogo.BackgroundImage = Global.College_Management_System.My.Resources.Resources.CMS
-        Me.mainLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.mainLogo.Location = New System.Drawing.Point(12, 97)
-        Me.mainLogo.Name = "mainLogo"
-        Me.mainLogo.Size = New System.Drawing.Size(327, 201)
-        Me.mainLogo.TabIndex = 0
-        Me.mainLogo.TabStop = False
-        '
-        'crossPb
-        '
-        Me.crossPb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.crossPb.Image = Global.College_Management_System.My.Resources.Resources.Delete_32px2
-        Me.crossPb.Location = New System.Drawing.Point(386, 15)
-        Me.crossPb.Name = "crossPb"
-        Me.crossPb.Size = New System.Drawing.Size(31, 32)
-        Me.crossPb.TabIndex = 4
-        Me.crossPb.TabStop = False
-        '
-        'passwordIcon
-        '
-        Me.passwordIcon.BackColor = System.Drawing.Color.Transparent
-        Me.passwordIcon.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Password
-        Me.passwordIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.passwordIcon.Location = New System.Drawing.Point(54, 202)
-        Me.passwordIcon.Name = "passwordIcon"
-        Me.passwordIcon.Size = New System.Drawing.Size(43, 42)
-        Me.passwordIcon.TabIndex = 2
-        Me.passwordIcon.TabStop = False
-        '
-        'usernameIcon
-        '
-        Me.usernameIcon.BackgroundImage = Global.College_Management_System.My.Resources.Resources.User
-        Me.usernameIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.usernameIcon.Location = New System.Drawing.Point(54, 139)
-        Me.usernameIcon.Name = "usernameIcon"
-        Me.usernameIcon.Size = New System.Drawing.Size(41, 42)
-        Me.usernameIcon.TabIndex = 2
-        Me.usernameIcon.TabStop = False
-        '
         'Login
         '
         Me.AcceptButton = Me.signInBtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.College_Management_System.My.Resources.Resources.student_education
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(802, 477)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -262,13 +263,13 @@ Partial Class Login
         Me.Text = "Login"
         Me.loginAreaPanel.ResumeLayout(False)
         Me.loginAreaPanel.PerformLayout()
-        Me.transparentPanel.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        CType(Me.loginErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.mainLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.crossPb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.passwordIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.usernameIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.transparentPanel.ResumeLayout(False)
+        CType(Me.mainLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        CType(Me.loginErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

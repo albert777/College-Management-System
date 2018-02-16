@@ -35,6 +35,14 @@ College_Management_System
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:College_Management_System.My.Resources.Resources.List_20px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:College_Management_System.My.Resources.Resources.List_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:College_Management_System.My.Resources.Resources.Login">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -64,6 +72,14 @@ College_Management_System
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:College_Management_System.My.Resources.Resources.Splash_image">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:College_Management_System.My.Resources.Resources.student_education">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:College_Management_System.My.Resources.Resources.Upload_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
