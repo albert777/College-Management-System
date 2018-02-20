@@ -6,6 +6,7 @@ Imports System.Security.Cryptography
 Imports MaterialSkin.Controls
 Imports MetroFramework.Controls
 Imports System.Net.Mail
+Imports BunifuAnimatorNS
 
 Public Class Dashboard
     Private Sub hamburgerPb_Click_1(sender As Object, e As EventArgs) Handles hamburgerPb.Click
@@ -17,24 +18,22 @@ Public Class Dashboard
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        BunifuTransition1.ShowSync(dashboardMainPnl, False, Nothing)
         dashboardTablePnl.Visible = True
         dashboardTablePnl.Enabled = True
-        BunifuTransition1.ShowSync(dashboardTablePnl)
-
     End Sub
     Sub imageChooser(ByVal a As String)
-        Dim openDialogImg As OpenFileDialog = New OpenFileDialog
-        openDialogImg.Filter = "Picture Files(*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
-        openDialogImg.FilterIndex = 2
-        openDialogImg.RestoreDirectory = True
-        If openDialogImg.ShowDialog() = DialogResult.OK Then
-            If File.Exists(openDialogImg.FileName) = False Then
+        ImageOpenDialog.Filter = "Picture Files(*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+        ImageOpenDialog.FilterIndex = 2
+        ImageOpenDialog.RestoreDirectory = True
+        If ImageOpenDialog.ShowDialog() = DialogResult.OK Then
+            If File.Exists(ImageOpenDialog.FileName) = False Then
                 MessageBox.Show("Sorry, The File You Specified Does Not Exist.")
             Else
                 If (a = "UserUploadBtn") Then
-                    UserImage.ImageLocation = openDialogImg.FileName
+                    UserImage.ImageLocation = ImageOpenDialog.FileName
                 ElseIf (a = "StudentUploadBtn") Then
-                    StudentImage.ImageLocation = openDialogImg.FileName
+                    StudentImage.ImageLocation = ImageOpenDialog.FileName
                 End If
 
             End If
@@ -87,12 +86,17 @@ Public Class Dashboard
         End If
         clearAll()
         PasswordTextBox.Text = GeneratePassword()
+        loadUsers()
     End Sub
 
     Public Sub insertUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal username As String, ByVal password As String)
         Dim con As SqlConnection = dbConnect()
+        Dim img As Image = Image.FromFile(ImageOpenDialog.FileName)
+        Dim ms As New MemoryStream()
+        img.Save(ms, img.RawFormat)
+        Dim imageBuffer As Byte() = ms.GetBuffer
         Try
-            Dim cmd As New SqlCommand("INSERT INTO userTbl values(@firstname,@middlename,@lastname,@gender,@contact,@addressone,@addresstwo,@usertype,@dob,@email,@maritialstatus,@username,@password)", con)
+            Dim cmd As New SqlCommand("INSERT INTO userTbl values(@firstname,@middlename,@lastname,@gender,@contact,@addressone,@addresstwo,@usertype,@dob,@email,@maritialstatus,@username,@password,@loadimage)", con)
             Dim tableName As String = fn & "_user_" & userType & "_" & contactNo
 
             cmd.Parameters.AddWithValue("@firstname", fn)
@@ -108,6 +112,7 @@ Public Class Dashboard
             cmd.Parameters.AddWithValue("@maritialstatus", maritialStatus)
             cmd.Parameters.AddWithValue("@username", username)
             cmd.Parameters.AddWithValue("@password", password)
+            cmd.Parameters.AddWithValue("@loadimage", imageBuffer)
             con.Open()
             cmd.ExecuteNonQuery()
             If (userType = "Cashier") Then
@@ -142,6 +147,7 @@ Public Class Dashboard
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PasswordTextBox.Text = GeneratePassword()
+        loadUsers()
     End Sub
     Private Sub sendEmail()
         Try
@@ -163,4 +169,19 @@ Public Class Dashboard
             MsgBox(ex.ToString)
         End Try
     End Sub
+    Public Sub loadUsers()
+        Dim con As SqlConnection = dbConnect()
+        Dim cmd As New SqlCommand("Select * FROM userTbl", con)
+        Dim da As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
+        DataGridView1.RowTemplate.Height = 100
+        DataGridView1.AllowUserToResizeColumns = True
+        Dim imgc As DataGridViewColumn
+        DataGridView1.DataSource = dt
+        imgc = DataGridView1.Columns(14)
+    End Sub
+
 End Class

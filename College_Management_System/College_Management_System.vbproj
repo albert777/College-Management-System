@@ -250,6 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\user_male2-512.png" />
     <None Include="Resources\List_20px.png" />
     <None Include="Resources\List_32px.png" />
     <None Include="Resources\Upload_32px.png" />
