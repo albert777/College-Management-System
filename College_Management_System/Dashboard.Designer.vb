@@ -34,7 +34,7 @@ Partial Class Dashboard
         Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
         Me.editTablePanelAdmin = New System.Windows.Forms.TableLayoutPanel()
         Me.a = New MaterialSkin.Controls.MaterialTabControl()
-        Me.addUserTb = New System.Windows.Forms.TabPage()
+        Me.AddUserTab = New System.Windows.Forms.TabPage()
         Me.FinsihBtn = New MetroFramework.Controls.MetroButton()
         Me.UserIdTextBox = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
         Me.MaritialStatusComboBox = New MetroFramework.Controls.MetroComboBox()
@@ -56,13 +56,18 @@ Partial Class Dashboard
         Me.LastNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.FirstNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.UserImage = New System.Windows.Forms.PictureBox()
-        Me.addStudentTb = New System.Windows.Forms.TabPage()
-        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.allUsersTb = New System.Windows.Forms.TabPage()
+        Me.AddStudentTab = New System.Windows.Forms.TabPage()
+        Me.AllUsersTab = New System.Windows.Forms.TabPage()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.UserNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
+        Me.PasswordTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.StudentImage = New System.Windows.Forms.PictureBox()
+        Me.StudentUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.AllStudentsTab = New System.Windows.Forms.TabPage()
+        Me.SendEmailCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
         Me.hamburgerPnl.SuspendLayout()
         CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,12 +76,12 @@ Partial Class Dashboard
         Me.dashboardTablePnl.SuspendLayout()
         Me.editTablePanelAdmin.SuspendLayout()
         Me.a.SuspendLayout()
-        Me.addUserTb.SuspendLayout()
+        Me.AddUserTab.SuspendLayout()
         CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserImage, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.addStudentTb.SuspendLayout()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AddStudentTab.SuspendLayout()
+        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuTransition1
@@ -196,9 +201,10 @@ Partial Class Dashboard
         '
         'a
         '
-        Me.a.Controls.Add(Me.addUserTb)
-        Me.a.Controls.Add(Me.addStudentTb)
-        Me.a.Controls.Add(Me.allUsersTb)
+        Me.a.Controls.Add(Me.AddUserTab)
+        Me.a.Controls.Add(Me.AddStudentTab)
+        Me.a.Controls.Add(Me.AllUsersTab)
+        Me.a.Controls.Add(Me.AllStudentsTab)
         Me.BunifuTransition1.SetDecoration(Me.a, BunifuAnimatorNS.DecorationType.None)
         Me.a.Depth = 0
         Me.a.Dock = System.Windows.Forms.DockStyle.Fill
@@ -210,42 +216,46 @@ Partial Class Dashboard
         Me.a.Size = New System.Drawing.Size(1311, 712)
         Me.a.TabIndex = 0
         '
-        'addUserTb
+        'AddUserTab
         '
-        Me.addUserTb.BackColor = System.Drawing.Color.White
-        Me.addUserTb.Controls.Add(Me.FinsihBtn)
-        Me.addUserTb.Controls.Add(Me.UserIdTextBox)
-        Me.addUserTb.Controls.Add(Me.MaritialStatusComboBox)
-        Me.addUserTb.Controls.Add(Me.EmailTextBox)
-        Me.addUserTb.Controls.Add(Me.DobDateTimePicker)
-        Me.addUserTb.Controls.Add(Me.UserUploadBtn)
-        Me.addUserTb.Controls.Add(Me.UserTypeLabel)
-        Me.addUserTb.Controls.Add(Me.MaritialStatusLabel)
-        Me.addUserTb.Controls.Add(Me.DobLabel)
-        Me.addUserTb.Controls.Add(Me.GenderLabel)
-        Me.addUserTb.Controls.Add(Me.UserIdLabel)
-        Me.addUserTb.Controls.Add(Me.FemaleRadioBtn)
-        Me.addUserTb.Controls.Add(Me.MaleRadioBtn)
-        Me.addUserTb.Controls.Add(Me.UserTypeComboBox)
-        Me.addUserTb.Controls.Add(Me.Address2TextBox)
-        Me.addUserTb.Controls.Add(Me.Address1TextBox)
-        Me.addUserTb.Controls.Add(Me.ContactNoTextBox)
-        Me.addUserTb.Controls.Add(Me.MiddleNameTextBox)
-        Me.addUserTb.Controls.Add(Me.LastNameTextBox)
-        Me.addUserTb.Controls.Add(Me.FirstNameTextBox)
-        Me.addUserTb.Controls.Add(Me.UserImage)
-        Me.BunifuTransition1.SetDecoration(Me.addUserTb, BunifuAnimatorNS.DecorationType.None)
-        Me.addUserTb.Location = New System.Drawing.Point(4, 24)
-        Me.addUserTb.Margin = New System.Windows.Forms.Padding(0)
-        Me.addUserTb.Name = "addUserTb"
-        Me.addUserTb.Size = New System.Drawing.Size(1303, 684)
-        Me.addUserTb.TabIndex = 0
-        Me.addUserTb.Text = "Add User"
+        Me.AddUserTab.BackColor = System.Drawing.Color.White
+        Me.AddUserTab.Controls.Add(Me.SendEmailCheckBox)
+        Me.AddUserTab.Controls.Add(Me.PasswordTextBox)
+        Me.AddUserTab.Controls.Add(Me.MaterialLabel1)
+        Me.AddUserTab.Controls.Add(Me.UserNameTextBox)
+        Me.AddUserTab.Controls.Add(Me.FinsihBtn)
+        Me.AddUserTab.Controls.Add(Me.UserIdTextBox)
+        Me.AddUserTab.Controls.Add(Me.MaritialStatusComboBox)
+        Me.AddUserTab.Controls.Add(Me.EmailTextBox)
+        Me.AddUserTab.Controls.Add(Me.DobDateTimePicker)
+        Me.AddUserTab.Controls.Add(Me.UserUploadBtn)
+        Me.AddUserTab.Controls.Add(Me.UserTypeLabel)
+        Me.AddUserTab.Controls.Add(Me.MaritialStatusLabel)
+        Me.AddUserTab.Controls.Add(Me.DobLabel)
+        Me.AddUserTab.Controls.Add(Me.GenderLabel)
+        Me.AddUserTab.Controls.Add(Me.UserIdLabel)
+        Me.AddUserTab.Controls.Add(Me.FemaleRadioBtn)
+        Me.AddUserTab.Controls.Add(Me.MaleRadioBtn)
+        Me.AddUserTab.Controls.Add(Me.UserTypeComboBox)
+        Me.AddUserTab.Controls.Add(Me.Address2TextBox)
+        Me.AddUserTab.Controls.Add(Me.Address1TextBox)
+        Me.AddUserTab.Controls.Add(Me.ContactNoTextBox)
+        Me.AddUserTab.Controls.Add(Me.MiddleNameTextBox)
+        Me.AddUserTab.Controls.Add(Me.LastNameTextBox)
+        Me.AddUserTab.Controls.Add(Me.FirstNameTextBox)
+        Me.AddUserTab.Controls.Add(Me.UserImage)
+        Me.BunifuTransition1.SetDecoration(Me.AddUserTab, BunifuAnimatorNS.DecorationType.None)
+        Me.AddUserTab.Location = New System.Drawing.Point(4, 24)
+        Me.AddUserTab.Margin = New System.Windows.Forms.Padding(0)
+        Me.AddUserTab.Name = "AddUserTab"
+        Me.AddUserTab.Size = New System.Drawing.Size(1303, 684)
+        Me.AddUserTab.TabIndex = 0
+        Me.AddUserTab.Text = "Add User"
         '
         'FinsihBtn
         '
         Me.BunifuTransition1.SetDecoration(Me.FinsihBtn, BunifuAnimatorNS.DecorationType.Custom)
-        Me.FinsihBtn.Location = New System.Drawing.Point(348, 428)
+        Me.FinsihBtn.Location = New System.Drawing.Point(348, 455)
         Me.FinsihBtn.Name = "FinsihBtn"
         Me.FinsihBtn.Size = New System.Drawing.Size(142, 34)
         Me.FinsihBtn.TabIndex = 21
@@ -275,7 +285,7 @@ Partial Class Dashboard
         Me.MaritialStatusComboBox.FormattingEnabled = True
         Me.MaritialStatusComboBox.ItemHeight = 23
         Me.MaritialStatusComboBox.Items.AddRange(New Object() {"Single", "Married"})
-        Me.MaritialStatusComboBox.Location = New System.Drawing.Point(908, 347)
+        Me.MaritialStatusComboBox.Location = New System.Drawing.Point(981, 347)
         Me.MaritialStatusComboBox.Name = "MaritialStatusComboBox"
         Me.MaritialStatusComboBox.PromptText = "Current relation"
         Me.MaritialStatusComboBox.Size = New System.Drawing.Size(218, 29)
@@ -294,14 +304,14 @@ Partial Class Dashboard
         Me.EmailTextBox.SelectedText = ""
         Me.EmailTextBox.SelectionLength = 0
         Me.EmailTextBox.SelectionStart = 0
-        Me.EmailTextBox.Size = New System.Drawing.Size(346, 23)
+        Me.EmailTextBox.Size = New System.Drawing.Size(395, 23)
         Me.EmailTextBox.TabIndex = 10
         Me.EmailTextBox.UseSystemPasswordChar = False
         '
         'DobDateTimePicker
         '
         Me.BunifuTransition1.SetDecoration(Me.DobDateTimePicker, BunifuAnimatorNS.DecorationType.None)
-        Me.DobDateTimePicker.Location = New System.Drawing.Point(861, 290)
+        Me.DobDateTimePicker.Location = New System.Drawing.Point(934, 290)
         Me.DobDateTimePicker.MinimumSize = New System.Drawing.Size(0, 29)
         Me.DobDateTimePicker.Name = "DobDateTimePicker"
         Me.DobDateTimePicker.Size = New System.Drawing.Size(265, 29)
@@ -343,7 +353,7 @@ Partial Class Dashboard
         Me.MaritialStatusLabel.Depth = 0
         Me.MaritialStatusLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaritialStatusLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaritialStatusLabel.Location = New System.Drawing.Point(784, 353)
+        Me.MaritialStatusLabel.Location = New System.Drawing.Point(857, 353)
         Me.MaritialStatusLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaritialStatusLabel.Name = "MaritialStatusLabel"
         Me.MaritialStatusLabel.Size = New System.Drawing.Size(107, 19)
@@ -357,7 +367,7 @@ Partial Class Dashboard
         Me.DobLabel.Depth = 0
         Me.DobLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.DobLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.DobLabel.Location = New System.Drawing.Point(785, 296)
+        Me.DobLabel.Location = New System.Drawing.Point(858, 296)
         Me.DobLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.DobLabel.Name = "DobLabel"
         Me.DobLabel.Size = New System.Drawing.Size(38, 19)
@@ -434,7 +444,7 @@ Partial Class Dashboard
         Me.UserTypeComboBox.FormattingEnabled = True
         Me.UserTypeComboBox.ItemHeight = 23
         Me.UserTypeComboBox.Items.AddRange(New Object() {"Receptionist", "Cashier", "Lecturer"})
-        Me.UserTypeComboBox.Location = New System.Drawing.Point(427, 290)
+        Me.UserTypeComboBox.Location = New System.Drawing.Point(477, 290)
         Me.UserTypeComboBox.Name = "UserTypeComboBox"
         Me.UserTypeComboBox.PromptText = "Select Usertype"
         Me.UserTypeComboBox.Size = New System.Drawing.Size(267, 29)
@@ -446,7 +456,7 @@ Partial Class Dashboard
         Me.BunifuTransition1.SetDecoration(Me.Address2TextBox, BunifuAnimatorNS.DecorationType.None)
         Me.Address2TextBox.Depth = 0
         Me.Address2TextBox.Hint = "Address 2"
-        Me.Address2TextBox.Location = New System.Drawing.Point(788, 242)
+        Me.Address2TextBox.Location = New System.Drawing.Point(861, 242)
         Me.Address2TextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.Address2TextBox.Name = "Address2TextBox"
         Me.Address2TextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -469,7 +479,7 @@ Partial Class Dashboard
         Me.Address1TextBox.SelectedText = ""
         Me.Address1TextBox.SelectionLength = 0
         Me.Address1TextBox.SelectionStart = 0
-        Me.Address1TextBox.Size = New System.Drawing.Size(345, 23)
+        Me.Address1TextBox.Size = New System.Drawing.Size(395, 23)
         Me.Address1TextBox.TabIndex = 6
         Me.Address1TextBox.UseSystemPasswordChar = False
         '
@@ -526,7 +536,7 @@ Partial Class Dashboard
         Me.BunifuTransition1.SetDecoration(Me.FirstNameTextBox, BunifuAnimatorNS.DecorationType.None)
         Me.FirstNameTextBox.Depth = 0
         Me.FirstNameTextBox.Hint = "Firstname"
-        Me.FirstNameTextBox.Location = New System.Drawing.Point(349, 115)
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(348, 115)
         Me.FirstNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
         Me.FirstNameTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -550,57 +560,30 @@ Partial Class Dashboard
         Me.UserImage.TabIndex = 0
         Me.UserImage.TabStop = False
         '
-        'addStudentTb
+        'AddStudentTab
         '
-        Me.addStudentTb.BackColor = System.Drawing.Color.White
-        Me.addStudentTb.Controls.Add(Me.BunifuImageButton2)
-        Me.addStudentTb.Controls.Add(Me.PictureBox4)
-        Me.BunifuTransition1.SetDecoration(Me.addStudentTb, BunifuAnimatorNS.DecorationType.None)
-        Me.addStudentTb.Location = New System.Drawing.Point(4, 24)
-        Me.addStudentTb.Margin = New System.Windows.Forms.Padding(0)
-        Me.addStudentTb.Name = "addStudentTb"
-        Me.addStudentTb.Padding = New System.Windows.Forms.Padding(3)
-        Me.addStudentTb.Size = New System.Drawing.Size(1303, 684)
-        Me.addStudentTb.TabIndex = 1
-        Me.addStudentTb.Text = "Add Student"
+        Me.AddStudentTab.BackColor = System.Drawing.Color.White
+        Me.AddStudentTab.Controls.Add(Me.StudentUploadBtn)
+        Me.AddStudentTab.Controls.Add(Me.StudentImage)
+        Me.BunifuTransition1.SetDecoration(Me.AddStudentTab, BunifuAnimatorNS.DecorationType.None)
+        Me.AddStudentTab.Location = New System.Drawing.Point(4, 24)
+        Me.AddStudentTab.Margin = New System.Windows.Forms.Padding(0)
+        Me.AddStudentTab.Name = "AddStudentTab"
+        Me.AddStudentTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.AddStudentTab.Size = New System.Drawing.Size(1303, 684)
+        Me.AddStudentTab.TabIndex = 1
+        Me.AddStudentTab.Text = "Add Student"
         '
-        'BunifuImageButton2
+        'AllUsersTab
         '
-        Me.BunifuImageButton2.BackColor = System.Drawing.Color.SeaGreen
-        Me.BunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.BunifuTransition1.SetDecoration(Me.BunifuImageButton2, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuImageButton2.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
-        Me.BunifuImageButton2.ImageActive = Nothing
-        Me.BunifuImageButton2.Location = New System.Drawing.Point(57, 296)
-        Me.BunifuImageButton2.Name = "BunifuImageButton2"
-        Me.BunifuImageButton2.Size = New System.Drawing.Size(198, 23)
-        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton2.TabIndex = 17
-        Me.BunifuImageButton2.TabStop = False
-        Me.BunifuImageButton2.Zoom = 10
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Splash_image
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox4, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox4.Location = New System.Drawing.Point(57, 65)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(198, 225)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 2
-        Me.PictureBox4.TabStop = False
-        '
-        'allUsersTb
-        '
-        Me.BunifuTransition1.SetDecoration(Me.allUsersTb, BunifuAnimatorNS.DecorationType.None)
-        Me.allUsersTb.Location = New System.Drawing.Point(4, 24)
-        Me.allUsersTb.Name = "allUsersTb"
-        Me.allUsersTb.Padding = New System.Windows.Forms.Padding(3)
-        Me.allUsersTb.Size = New System.Drawing.Size(1303, 684)
-        Me.allUsersTb.TabIndex = 2
-        Me.allUsersTb.Text = "All Users"
-        Me.allUsersTb.UseVisualStyleBackColor = True
+        Me.BunifuTransition1.SetDecoration(Me.AllUsersTab, BunifuAnimatorNS.DecorationType.None)
+        Me.AllUsersTab.Location = New System.Drawing.Point(4, 24)
+        Me.AllUsersTab.Name = "AllUsersTab"
+        Me.AllUsersTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.AllUsersTab.Size = New System.Drawing.Size(1303, 684)
+        Me.AllUsersTab.TabIndex = 2
+        Me.AllUsersTab.Text = "All Users"
+        Me.AllUsersTab.UseVisualStyleBackColor = True
         '
         'MaterialTabSelector1
         '
@@ -627,6 +610,107 @@ Partial Class Dashboard
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'UserNameTextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.UserNameTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.UserNameTextBox.Depth = 0
+        Me.UserNameTextBox.Hint = "Username"
+        Me.UserNameTextBox.Location = New System.Drawing.Point(59, 415)
+        Me.UserNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.UserNameTextBox.Name = "UserNameTextBox"
+        Me.UserNameTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.UserNameTextBox.SelectedText = ""
+        Me.UserNameTextBox.SelectionLength = 0
+        Me.UserNameTextBox.SelectionStart = 0
+        Me.UserNameTextBox.Size = New System.Drawing.Size(198, 23)
+        Me.UserNameTextBox.TabIndex = 23
+        Me.UserNameTextBox.UseSystemPasswordChar = False
+        '
+        'MaterialLabel1
+        '
+        Me.MaterialLabel1.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.MaterialLabel1, BunifuAnimatorNS.DecorationType.None)
+        Me.MaterialLabel1.Depth = 0
+        Me.MaterialLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel1.Location = New System.Drawing.Point(76, 356)
+        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel1.Name = "MaterialLabel1"
+        Me.MaterialLabel1.Size = New System.Drawing.Size(150, 20)
+        Me.MaterialLabel1.TabIndex = 24
+        Me.MaterialLabel1.Text = "Login Information"
+        '
+        'PasswordTextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.PasswordTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.PasswordTextBox.Depth = 0
+        Me.PasswordTextBox.Hint = "Password"
+        Me.PasswordTextBox.Location = New System.Drawing.Point(59, 466)
+        Me.PasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.PasswordTextBox.Name = "PasswordTextBox"
+        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.PasswordTextBox.SelectedText = ""
+        Me.PasswordTextBox.SelectionLength = 0
+        Me.PasswordTextBox.SelectionStart = 0
+        Me.PasswordTextBox.Size = New System.Drawing.Size(198, 23)
+        Me.PasswordTextBox.TabIndex = 25
+        Me.PasswordTextBox.UseSystemPasswordChar = False
+        '
+        'StudentImage
+        '
+        Me.StudentImage.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Splash_image
+        Me.StudentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.StudentImage, BunifuAnimatorNS.DecorationType.None)
+        Me.StudentImage.Location = New System.Drawing.Point(57, 65)
+        Me.StudentImage.Name = "StudentImage"
+        Me.StudentImage.Size = New System.Drawing.Size(198, 225)
+        Me.StudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.StudentImage.TabIndex = 2
+        Me.StudentImage.TabStop = False
+        '
+        'StudentUploadBtn
+        '
+        Me.StudentUploadBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.StudentUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuTransition1.SetDecoration(Me.StudentUploadBtn, BunifuAnimatorNS.DecorationType.None)
+        Me.StudentUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
+        Me.StudentUploadBtn.ImageActive = Nothing
+        Me.StudentUploadBtn.Location = New System.Drawing.Point(57, 296)
+        Me.StudentUploadBtn.Name = "StudentUploadBtn"
+        Me.StudentUploadBtn.Size = New System.Drawing.Size(198, 23)
+        Me.StudentUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.StudentUploadBtn.TabIndex = 17
+        Me.StudentUploadBtn.TabStop = False
+        Me.StudentUploadBtn.Zoom = 10
+        '
+        'AllStudentsTab
+        '
+        Me.BunifuTransition1.SetDecoration(Me.AllStudentsTab, BunifuAnimatorNS.DecorationType.None)
+        Me.AllStudentsTab.Location = New System.Drawing.Point(4, 24)
+        Me.AllStudentsTab.Name = "AllStudentsTab"
+        Me.AllStudentsTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.AllStudentsTab.Size = New System.Drawing.Size(1303, 684)
+        Me.AllStudentsTab.TabIndex = 3
+        Me.AllStudentsTab.Text = "All Students"
+        Me.AllStudentsTab.UseVisualStyleBackColor = True
+        '
+        'SendEmailCheckBox
+        '
+        Me.SendEmailCheckBox.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.SendEmailCheckBox, BunifuAnimatorNS.DecorationType.None)
+        Me.SendEmailCheckBox.Depth = 0
+        Me.SendEmailCheckBox.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.SendEmailCheckBox.Location = New System.Drawing.Point(348, 399)
+        Me.SendEmailCheckBox.Margin = New System.Windows.Forms.Padding(0)
+        Me.SendEmailCheckBox.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.SendEmailCheckBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.SendEmailCheckBox.Name = "SendEmailCheckBox"
+        Me.SendEmailCheckBox.Ripple = True
+        Me.SendEmailCheckBox.Size = New System.Drawing.Size(328, 30)
+        Me.SendEmailCheckBox.TabIndex = 26
+        Me.SendEmailCheckBox.Text = "Send username and password to the given email"
+        Me.SendEmailCheckBox.UseVisualStyleBackColor = True
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -646,13 +730,13 @@ Partial Class Dashboard
         Me.dashboardTablePnl.ResumeLayout(False)
         Me.editTablePanelAdmin.ResumeLayout(False)
         Me.a.ResumeLayout(False)
-        Me.addUserTb.ResumeLayout(False)
-        Me.addUserTb.PerformLayout()
+        Me.AddUserTab.ResumeLayout(False)
+        Me.AddUserTab.PerformLayout()
         CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserImage, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.addStudentTb.ResumeLayout(False)
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AddStudentTab.ResumeLayout(False)
+        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -666,12 +750,11 @@ Partial Class Dashboard
     Friend WithEvents dashboardTablePnl As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents editTablePanelAdmin As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents a As MaterialSkin.Controls.MaterialTabControl
-    Friend WithEvents addUserTb As System.Windows.Forms.TabPage
-    Friend WithEvents addStudentTb As System.Windows.Forms.TabPage
+    Friend WithEvents AddUserTab As System.Windows.Forms.TabPage
+    Friend WithEvents AddStudentTab As System.Windows.Forms.TabPage
     Friend WithEvents MaterialTabSelector1 As MaterialSkin.Controls.MaterialTabSelector
     Friend WithEvents UserImage As System.Windows.Forms.PictureBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents UserTypeComboBox As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Address2TextBox As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents Address1TextBox As MaterialSkin.Controls.MaterialSingleLineTextField
@@ -683,7 +766,6 @@ Partial Class Dashboard
     Friend WithEvents MaleRadioBtn As MaterialSkin.Controls.MaterialRadioButton
     Friend WithEvents UserIdLabel As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents UserUploadBtn As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents DobLabel As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents UserIdTextBox As WindowsFormsControlLibrary1.BunifuCustomTextbox
     Friend WithEvents MaritialStatusComboBox As MetroFramework.Controls.MetroComboBox
@@ -692,6 +774,13 @@ Partial Class Dashboard
     Friend WithEvents UserTypeLabel As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaritialStatusLabel As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents GenderLabel As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents allUsersTb As System.Windows.Forms.TabPage
+    Friend WithEvents AllUsersTab As System.Windows.Forms.TabPage
     Friend WithEvents FinsihBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents PasswordTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents UserNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents StudentUploadBtn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents StudentImage As System.Windows.Forms.PictureBox
+    Friend WithEvents AllStudentsTab As System.Windows.Forms.TabPage
+    Friend WithEvents SendEmailCheckBox As MaterialSkin.Controls.MaterialCheckBox
 End Class

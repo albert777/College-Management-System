@@ -2,10 +2,12 @@
 Imports System.IO
 Imports System.Data.SqlClient
 Imports System.Text
+Imports System.Security.Cryptography
+Imports MaterialSkin.Controls
+Imports MetroFramework.Controls
+Imports System.Net.Mail
 
 Public Class Dashboard
-
-
     Private Sub hamburgerPb_Click_1(sender As Object, e As EventArgs) Handles hamburgerPb.Click
         If (hamburgerPnl.Width < 250) Then
             Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(150))
@@ -29,10 +31,10 @@ Public Class Dashboard
             If File.Exists(openDialogImg.FileName) = False Then
                 MessageBox.Show("Sorry, The File You Specified Does Not Exist.")
             Else
-                If (a = "adminImageSelectUsers") Then
+                If (a = "UserUploadBtn") Then
                     UserImage.ImageLocation = openDialogImg.FileName
-                ElseIf (a = "adminImageSelectStudents") Then
-                    PictureBox4.ImageLocation = openDialogImg.FileName
+                ElseIf (a = "StudentUploadBtn") Then
+                    StudentImage.ImageLocation = openDialogImg.FileName
                 End If
 
             End If
@@ -40,24 +42,38 @@ Public Class Dashboard
         End If
     End Sub
 
-    Private Sub addUserTb_Click(sender As Object, e As EventArgs) Handles addUserTb.Click
+    Private Sub addUserTb_Click(sender As Object, e As EventArgs) Handles AddUserTab.Click
         Transition.run(hamburgerPnl, "Width", 55, New TransitionType_EaseInEaseOut(150))
     End Sub
 
 
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles UserUploadBtn.Click
-        imageChooser("adminImageSelectUsers")
+        imageChooser("UserUploadBtn")
     End Sub
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
-        imageChooser("adminImageSelectStudents")
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles StudentUploadBtn.Click
+        imageChooser("StudentUploadBtn")
     End Sub
 
     Function dbConnect()
         Dim db As New SqlConnection("Data Source=(LocalDB)\v11.0;Integrated Security=true;Database=CMS")
         Return db
     End Function
-
+    Sub clearAll()
+        Dim textboxArray() As MaterialSingleLineTextField = New MaterialSingleLineTextField() {FirstNameTextBox, LastNameTextBox, MiddleNameTextBox, ContactNoTextBox, EmailTextBox, Address1TextBox, Address2TextBox, UserNameTextBox, PasswordTextBox}
+        For Each values As MaterialSingleLineTextField In textboxArray
+            values.Text = ""
+        Next
+        Dim radiobuttonArray() As MaterialRadioButton = New MaterialRadioButton() {MaleRadioBtn, FemaleRadioBtn}
+        For Each values As MaterialRadioButton In radiobuttonArray
+            values.Checked = False
+        Next
+        Dim comboboxArray() As MetroComboBox = New MetroComboBox() {UserTypeComboBox, MaritialStatusComboBox}
+        For Each values As MetroComboBox In comboboxArray
+            values.SelectedIndex = -1
+        Next
+        DobDateTimePicker.Value = DateTime.Today.ToString
+    End Sub
     Private Sub finishBtn_Click(sender As Object, e As EventArgs) Handles FinsihBtn.Click
         Dim gender As String
         If (MaleRadioBtn.Checked) Then
@@ -65,47 +81,86 @@ Public Class Dashboard
         Else
             gender = "Female"
         End If
-        Dim pass As String = GeneratePassword()
-        insertUsers(FirstNameTextBox.Text, MiddleNameTextBox.Text, LastNameTextBox.Text, gender, ContactNoTextBox.Text, Address1TextBox.Text, Address2TextBox.Text, UserTypeComboBox.Text, DobDateTimePicker.Text, EmailTextBox.Text, MaritialStatusComboBox.Text, pass)
+        insertUsers(FirstNameTextBox.Text, MiddleNameTextBox.Text, LastNameTextBox.Text, gender, ContactNoTextBox.Text, Address1TextBox.Text, Address2TextBox.Text, UserTypeComboBox.Text, DobDateTimePicker.Text, EmailTextBox.Text, MaritialStatusComboBox.Text, UserNameTextBox.Text, PasswordTextBox.Text)
+        If (SendEmailCheckBox.Checked) Then
+            sendEmail()
+        End If
+        clearAll()
+        PasswordTextBox.Text = GeneratePassword()
     End Sub
 
-    Public Sub insertUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal password As String)
+    Public Sub insertUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal username As String, ByVal password As String)
         Dim con As SqlConnection = dbConnect()
         Try
-            Dim cmd As New SqlCommand("INSERT INTO userTbl values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l)", con)
-            Dim tableName As String = fn & "_user_" & userType & "_" & addressOne
-            Dim cmd2 As New SqlCommand("CREATE TABLE " & tableName & "(id INT NOT NULL PRIMARY KEY IDENTITY,date NVARCHAR(50) NULL)", con)
-            cmd.Parameters.AddWithValue("@a", fn)
-            cmd.Parameters.AddWithValue("@b", mn)
-            cmd.Parameters.AddWithValue("@c", ln)
-            cmd.Parameters.AddWithValue("@d", gender)
-            cmd.Parameters.AddWithValue("@e", contactNo)
-            cmd.Parameters.AddWithValue("@f", addressOne)
-            cmd.Parameters.AddWithValue("@g", addressTwo)
-            cmd.Parameters.AddWithValue("@h", userType)
-            cmd.Parameters.AddWithValue("@i", dob)
-            cmd.Parameters.AddWithValue("@j", email)
-            cmd.Parameters.AddWithValue("@k", maritialStatus)
-            cmd.Parameters.AddWithValue("@l", password)
+            Dim cmd As New SqlCommand("INSERT INTO userTbl values(@firstname,@middlename,@lastname,@gender,@contact,@addressone,@addresstwo,@usertype,@dob,@email,@maritialstatus,@username,@password)", con)
+            Dim tableName As String = fn & "_user_" & userType & "_" & contactNo
+
+            cmd.Parameters.AddWithValue("@firstname", fn)
+            cmd.Parameters.AddWithValue("@middlename", mn)
+            cmd.Parameters.AddWithValue("@lastname", ln)
+            cmd.Parameters.AddWithValue("@gender", gender)
+            cmd.Parameters.AddWithValue("@contact", contactNo)
+            cmd.Parameters.AddWithValue("@addressone", addressOne)
+            cmd.Parameters.AddWithValue("@addresstwo", addressTwo)
+            cmd.Parameters.AddWithValue("@usertype", userType)
+            cmd.Parameters.AddWithValue("@dob", dob)
+            cmd.Parameters.AddWithValue("@email", email)
+            cmd.Parameters.AddWithValue("@maritialstatus", maritialStatus)
+            cmd.Parameters.AddWithValue("@username", username)
+            cmd.Parameters.AddWithValue("@password", password)
             con.Open()
             cmd.ExecuteNonQuery()
-            cmd2.ExecuteNonQuery()
+            If (userType = "Cashier") Then
+                Dim cmd2 As New SqlCommand("CREATE TABLE " & tableName & "(id INT NOT NULL PRIMARY KEY IDENTITY,date NVARCHAR(50) NULL)", con)
+                cmd2.ExecuteNonQuery()
+            End If
             con.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+
     End Sub
     Function GeneratePassword()
-        Dim s As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        Dim Bytes() As Byte
+        Dim s As String = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0!1@2#3$4%5^6&7*89"
         Dim r As New Random
         Dim sb As New StringBuilder
         For i As Integer = 1 To 8
-            Dim idx As Integer = r.Next(0, 35)
+            Dim idx As Integer = r.Next(0, 70)
             sb.Append(s.Substring(idx, 1))
+        Next
+        Bytes = Encoding.Default.GetBytes(sb.ToString)
+        Bytes = MD5.Create().ComputeHash(Bytes)
+        For x As Integer = 0 To Bytes.Length - 1
+            sb.Append(Bytes(x).ToString("x2"))
         Next
         Return sb.ToString()
     End Function
     Protected Overrides Sub Finalize()
         MyBase.Finalize()
+    End Sub
+
+    Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PasswordTextBox.Text = GeneratePassword()
+    End Sub
+    Private Sub sendEmail()
+        Try
+            Dim SmtpServer As New SmtpClient()
+            Dim mail As New MailMessage()
+            SmtpServer.UseDefaultCredentials = False
+            SmtpServer.Credentials = New Net.NetworkCredential("", "")
+            SmtpServer.Port = 587
+            SmtpServer.EnableSsl = True
+            SmtpServer.Host = "smtp.gmail.com"
+            mail = New MailMessage()
+            mail.From = New MailAddress("")
+            mail.To.Add(EmailTextBox.Text)
+            mail.Subject = "Account Created"
+            mail.Body = "Your account have been created" & UserTypeComboBox.Text & "" & vbNewLine & "Username: " & UserNameTextBox.Text & "" & vbNewLine & "Password: " & PasswordTextBox.Text
+            SmtpServer.Send(mail)
+            MsgBox("Mail has been successfully send to " & EmailTextBox.Text)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
     End Sub
 End Class
