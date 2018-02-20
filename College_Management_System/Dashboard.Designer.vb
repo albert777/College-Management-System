@@ -23,59 +23,58 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.hamburgerPnl = New System.Windows.Forms.Panel()
+        Me.hamburgerPb = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dashboardMainPnl = New System.Windows.Forms.Panel()
         Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
         Me.editTablePanelAdmin = New System.Windows.Forms.TableLayoutPanel()
         Me.a = New MaterialSkin.Controls.MaterialTabControl()
         Me.addUserTb = New System.Windows.Forms.TabPage()
-        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialRadioButton2 = New MaterialSkin.Controls.MaterialRadioButton()
-        Me.MaterialRadioButton1 = New MaterialSkin.Controls.MaterialRadioButton()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.MaterialSingleLineTextField6 = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.MaterialSingleLineTextField5 = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.MaterialSingleLineTextField3 = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.MaterialSingleLineTextField7 = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.MaterialSingleLineTextField2 = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.MaterialSingleLineTextField1 = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.FinsihBtn = New MetroFramework.Controls.MetroButton()
+        Me.UserIdTextBox = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
+        Me.MaritialStatusComboBox = New MetroFramework.Controls.MetroComboBox()
+        Me.EmailTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.DobDateTimePicker = New MetroFramework.Controls.MetroDateTime()
+        Me.UserUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.UserTypeLabel = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaritialStatusLabel = New MaterialSkin.Controls.MaterialLabel()
+        Me.DobLabel = New MaterialSkin.Controls.MaterialLabel()
+        Me.GenderLabel = New MaterialSkin.Controls.MaterialLabel()
+        Me.UserIdLabel = New MaterialSkin.Controls.MaterialLabel()
+        Me.FemaleRadioBtn = New MaterialSkin.Controls.MaterialRadioButton()
+        Me.MaleRadioBtn = New MaterialSkin.Controls.MaterialRadioButton()
+        Me.UserTypeComboBox = New MetroFramework.Controls.MetroComboBox()
+        Me.Address2TextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.Address1TextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.ContactNoTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MiddleNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.LastNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.FirstNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.UserImage = New System.Windows.Forms.PictureBox()
         Me.addStudentTb = New System.Windows.Forms.TabPage()
-        Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MetroDateTime1 = New MetroFramework.Controls.MetroDateTime()
-        Me.MaterialSingleLineTextField4 = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.MetroComboBox2 = New MetroFramework.Controls.MetroComboBox()
-        Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
-        Me.BunifuCustomTextbox1 = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
-        Me.MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
-        Me.hamburgerPb = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BunifuFlatButton2 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.allUsersTb = New System.Windows.Forms.TabPage()
+        Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.hamburgerPnl.SuspendLayout()
+        CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dashboardMainPnl.SuspendLayout()
         Me.dashboardTablePnl.SuspendLayout()
         Me.editTablePanelAdmin.SuspendLayout()
         Me.a.SuspendLayout()
         Me.addUserTb.SuspendLayout()
+        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.addStudentTb.SuspendLayout()
-        CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -84,22 +83,22 @@ Partial Class Dashboard
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide
         Me.BunifuTransition1.Cursor = Nothing
-        Animation3.AnimateOnlyDifferences = True
-        Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
-        Animation3.LeafCoeff = 0.0!
-        Animation3.MaxTime = 1.0!
-        Animation3.MinTime = 0.0!
-        Animation3.MosaicCoeff = CType(resources.GetObject("Animation3.MosaicCoeff"), System.Drawing.PointF)
-        Animation3.MosaicShift = CType(resources.GetObject("Animation3.MosaicShift"), System.Drawing.PointF)
-        Animation3.MosaicSize = 0
-        Animation3.Padding = New System.Windows.Forms.Padding(0)
-        Animation3.RotateCoeff = 0.0!
-        Animation3.RotateLimit = 0.0!
-        Animation3.ScaleCoeff = CType(resources.GetObject("Animation3.ScaleCoeff"), System.Drawing.PointF)
-        Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
-        Animation3.TimeCoeff = 0.0!
-        Animation3.TransparencyCoeff = 0.0!
-        Me.BunifuTransition1.DefaultAnimation = Animation3
+        Animation2.AnimateOnlyDifferences = True
+        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
+        Animation2.LeafCoeff = 0.0!
+        Animation2.MaxTime = 1.0!
+        Animation2.MinTime = 0.0!
+        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
+        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
+        Animation2.MosaicSize = 0
+        Animation2.Padding = New System.Windows.Forms.Padding(0)
+        Animation2.RotateCoeff = 0.0!
+        Animation2.RotateLimit = 0.0!
+        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
+        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
+        Animation2.TimeCoeff = 0.0!
+        Animation2.TransparencyCoeff = 0.0!
+        Me.BunifuTransition1.DefaultAnimation = Animation2
         Me.BunifuTransition1.Interval = 26
         '
         'hamburgerPnl
@@ -115,6 +114,38 @@ Partial Class Dashboard
         Me.hamburgerPnl.Name = "hamburgerPnl"
         Me.hamburgerPnl.Size = New System.Drawing.Size(55, 749)
         Me.hamburgerPnl.TabIndex = 1
+        '
+        'hamburgerPb
+        '
+        Me.hamburgerPb.BackColor = System.Drawing.Color.Transparent
+        Me.hamburgerPb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.hamburgerPb, BunifuAnimatorNS.DecorationType.None)
+        Me.hamburgerPb.Image = Global.College_Management_System.My.Resources.Resources.Menu_32px
+        Me.hamburgerPb.Location = New System.Drawing.Point(12, 12)
+        Me.hamburgerPb.Name = "hamburgerPb"
+        Me.hamburgerPb.Size = New System.Drawing.Size(31, 26)
+        Me.hamburgerPb.TabIndex = 1
+        Me.hamburgerPb.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox2.Image = Global.College_Management_System.My.Resources.Resources.Registration_32px
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 68)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(34, 33)
+        Me.PictureBox2.TabIndex = 1
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox1, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox1.Image = Global.College_Management_System.My.Resources.Resources.Admin_Settings_Male_32px
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 126)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 38)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
         '
         'dashboardMainPnl
         '
@@ -182,28 +213,27 @@ Partial Class Dashboard
         'addUserTb
         '
         Me.addUserTb.BackColor = System.Drawing.Color.White
-        Me.addUserTb.Controls.Add(Me.BunifuFlatButton2)
-        Me.addUserTb.Controls.Add(Me.BunifuFlatButton1)
-        Me.addUserTb.Controls.Add(Me.BunifuCustomTextbox1)
-        Me.addUserTb.Controls.Add(Me.MetroComboBox2)
-        Me.addUserTb.Controls.Add(Me.MaterialSingleLineTextField4)
-        Me.addUserTb.Controls.Add(Me.MetroDateTime1)
-        Me.addUserTb.Controls.Add(Me.BunifuImageButton1)
-        Me.addUserTb.Controls.Add(Me.MaterialLabel4)
-        Me.addUserTb.Controls.Add(Me.MaterialLabel3)
-        Me.addUserTb.Controls.Add(Me.MaterialLabel2)
-        Me.addUserTb.Controls.Add(Me.MaterialLabel5)
-        Me.addUserTb.Controls.Add(Me.MaterialLabel1)
-        Me.addUserTb.Controls.Add(Me.MaterialRadioButton2)
-        Me.addUserTb.Controls.Add(Me.MaterialRadioButton1)
-        Me.addUserTb.Controls.Add(Me.MetroComboBox1)
-        Me.addUserTb.Controls.Add(Me.MaterialSingleLineTextField6)
-        Me.addUserTb.Controls.Add(Me.MaterialSingleLineTextField5)
-        Me.addUserTb.Controls.Add(Me.MaterialSingleLineTextField3)
-        Me.addUserTb.Controls.Add(Me.MaterialSingleLineTextField7)
-        Me.addUserTb.Controls.Add(Me.MaterialSingleLineTextField2)
-        Me.addUserTb.Controls.Add(Me.MaterialSingleLineTextField1)
-        Me.addUserTb.Controls.Add(Me.PictureBox3)
+        Me.addUserTb.Controls.Add(Me.FinsihBtn)
+        Me.addUserTb.Controls.Add(Me.UserIdTextBox)
+        Me.addUserTb.Controls.Add(Me.MaritialStatusComboBox)
+        Me.addUserTb.Controls.Add(Me.EmailTextBox)
+        Me.addUserTb.Controls.Add(Me.DobDateTimePicker)
+        Me.addUserTb.Controls.Add(Me.UserUploadBtn)
+        Me.addUserTb.Controls.Add(Me.UserTypeLabel)
+        Me.addUserTb.Controls.Add(Me.MaritialStatusLabel)
+        Me.addUserTb.Controls.Add(Me.DobLabel)
+        Me.addUserTb.Controls.Add(Me.GenderLabel)
+        Me.addUserTb.Controls.Add(Me.UserIdLabel)
+        Me.addUserTb.Controls.Add(Me.FemaleRadioBtn)
+        Me.addUserTb.Controls.Add(Me.MaleRadioBtn)
+        Me.addUserTb.Controls.Add(Me.UserTypeComboBox)
+        Me.addUserTb.Controls.Add(Me.Address2TextBox)
+        Me.addUserTb.Controls.Add(Me.Address1TextBox)
+        Me.addUserTb.Controls.Add(Me.ContactNoTextBox)
+        Me.addUserTb.Controls.Add(Me.MiddleNameTextBox)
+        Me.addUserTb.Controls.Add(Me.LastNameTextBox)
+        Me.addUserTb.Controls.Add(Me.FirstNameTextBox)
+        Me.addUserTb.Controls.Add(Me.UserImage)
         Me.BunifuTransition1.SetDecoration(Me.addUserTb, BunifuAnimatorNS.DecorationType.None)
         Me.addUserTb.Location = New System.Drawing.Point(4, 24)
         Me.addUserTb.Margin = New System.Windows.Forms.Padding(0)
@@ -212,164 +242,313 @@ Partial Class Dashboard
         Me.addUserTb.TabIndex = 0
         Me.addUserTb.Text = "Add User"
         '
-        'MaterialLabel1
+        'FinsihBtn
         '
-        Me.MaterialLabel1.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.MaterialLabel1, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialLabel1.Depth = 0
-        Me.MaterialLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel1.Location = New System.Drawing.Point(346, 72)
-        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel1.Name = "MaterialLabel1"
-        Me.MaterialLabel1.Size = New System.Drawing.Size(51, 18)
-        Me.MaterialLabel1.TabIndex = 15
-        Me.MaterialLabel1.Text = "UserId"
+        Me.BunifuTransition1.SetDecoration(Me.FinsihBtn, BunifuAnimatorNS.DecorationType.Custom)
+        Me.FinsihBtn.Location = New System.Drawing.Point(348, 428)
+        Me.FinsihBtn.Name = "FinsihBtn"
+        Me.FinsihBtn.Size = New System.Drawing.Size(142, 34)
+        Me.FinsihBtn.TabIndex = 21
+        Me.FinsihBtn.Text = "Finish"
+        Me.FinsihBtn.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.FinsihBtn.UseCustomBackColor = True
+        Me.FinsihBtn.UseCustomForeColor = True
+        Me.FinsihBtn.UseSelectable = True
+        Me.FinsihBtn.UseStyleColors = True
         '
-        'MaterialRadioButton2
+        'UserIdTextBox
         '
-        Me.MaterialRadioButton2.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.MaterialRadioButton2, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialRadioButton2.Depth = 0
-        Me.MaterialRadioButton2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.MaterialRadioButton2.Location = New System.Drawing.Point(607, 175)
-        Me.MaterialRadioButton2.Margin = New System.Windows.Forms.Padding(0)
-        Me.MaterialRadioButton2.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.MaterialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialRadioButton2.Name = "MaterialRadioButton2"
-        Me.MaterialRadioButton2.Ripple = True
-        Me.MaterialRadioButton2.Size = New System.Drawing.Size(74, 30)
-        Me.MaterialRadioButton2.TabIndex = 4
-        Me.MaterialRadioButton2.TabStop = True
-        Me.MaterialRadioButton2.Text = "Female"
-        Me.MaterialRadioButton2.UseVisualStyleBackColor = True
+        Me.UserIdTextBox.BorderColor = System.Drawing.Color.SeaGreen
+        Me.UserIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.UserIdTextBox.Cursor = System.Windows.Forms.Cursors.No
+        Me.BunifuTransition1.SetDecoration(Me.UserIdTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.UserIdTextBox.Location = New System.Drawing.Point(414, 67)
+        Me.UserIdTextBox.Multiline = True
+        Me.UserIdTextBox.Name = "UserIdTextBox"
+        Me.UserIdTextBox.ReadOnly = True
+        Me.UserIdTextBox.Size = New System.Drawing.Size(85, 29)
+        Me.UserIdTextBox.TabIndex = 20
         '
-        'MaterialRadioButton1
+        'MaritialStatusComboBox
         '
-        Me.MaterialRadioButton1.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.MaterialRadioButton1, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialRadioButton1.Depth = 0
-        Me.MaterialRadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.MaterialRadioButton1.Location = New System.Drawing.Point(477, 175)
-        Me.MaterialRadioButton1.Margin = New System.Windows.Forms.Padding(0)
-        Me.MaterialRadioButton1.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.MaterialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialRadioButton1.Name = "MaterialRadioButton1"
-        Me.MaterialRadioButton1.Ripple = True
-        Me.MaterialRadioButton1.Size = New System.Drawing.Size(59, 30)
-        Me.MaterialRadioButton1.TabIndex = 3
-        Me.MaterialRadioButton1.TabStop = True
-        Me.MaterialRadioButton1.Text = "Male"
-        Me.MaterialRadioButton1.UseVisualStyleBackColor = True
+        Me.BunifuTransition1.SetDecoration(Me.MaritialStatusComboBox, BunifuAnimatorNS.DecorationType.None)
+        Me.MaritialStatusComboBox.FormattingEnabled = True
+        Me.MaritialStatusComboBox.ItemHeight = 23
+        Me.MaritialStatusComboBox.Items.AddRange(New Object() {"Single", "Married"})
+        Me.MaritialStatusComboBox.Location = New System.Drawing.Point(908, 347)
+        Me.MaritialStatusComboBox.Name = "MaritialStatusComboBox"
+        Me.MaritialStatusComboBox.PromptText = "Current relation"
+        Me.MaritialStatusComboBox.Size = New System.Drawing.Size(218, 29)
+        Me.MaritialStatusComboBox.TabIndex = 11
+        Me.MaritialStatusComboBox.UseSelectable = True
         '
-        'MetroComboBox1
+        'EmailTextBox
         '
-        Me.BunifuTransition1.SetDecoration(Me.MetroComboBox1, BunifuAnimatorNS.DecorationType.None)
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Items.AddRange(New Object() {"Receptionist", "Cashier", "Lecturer"})
-        Me.MetroComboBox1.Location = New System.Drawing.Point(427, 290)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.PromptText = "Select Usertype"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(267, 29)
-        Me.MetroComboBox1.TabIndex = 8
-        Me.MetroComboBox1.UseSelectable = True
+        Me.BunifuTransition1.SetDecoration(Me.EmailTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.EmailTextBox.Depth = 0
+        Me.EmailTextBox.Hint = "Email"
+        Me.EmailTextBox.Location = New System.Drawing.Point(349, 353)
+        Me.EmailTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.EmailTextBox.Name = "EmailTextBox"
+        Me.EmailTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.EmailTextBox.SelectedText = ""
+        Me.EmailTextBox.SelectionLength = 0
+        Me.EmailTextBox.SelectionStart = 0
+        Me.EmailTextBox.Size = New System.Drawing.Size(346, 23)
+        Me.EmailTextBox.TabIndex = 10
+        Me.EmailTextBox.UseSystemPasswordChar = False
         '
-        'MaterialSingleLineTextField6
+        'DobDateTimePicker
         '
-        Me.BunifuTransition1.SetDecoration(Me.MaterialSingleLineTextField6, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialSingleLineTextField6.Depth = 0
-        Me.MaterialSingleLineTextField6.Hint = "Address 2"
-        Me.MaterialSingleLineTextField6.Location = New System.Drawing.Point(788, 242)
-        Me.MaterialSingleLineTextField6.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField6.Name = "MaterialSingleLineTextField6"
-        Me.MaterialSingleLineTextField6.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField6.SelectedText = ""
-        Me.MaterialSingleLineTextField6.SelectionLength = 0
-        Me.MaterialSingleLineTextField6.SelectionStart = 0
-        Me.MaterialSingleLineTextField6.Size = New System.Drawing.Size(338, 23)
-        Me.MaterialSingleLineTextField6.TabIndex = 7
-        Me.MaterialSingleLineTextField6.UseSystemPasswordChar = False
+        Me.BunifuTransition1.SetDecoration(Me.DobDateTimePicker, BunifuAnimatorNS.DecorationType.None)
+        Me.DobDateTimePicker.Location = New System.Drawing.Point(861, 290)
+        Me.DobDateTimePicker.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.DobDateTimePicker.Name = "DobDateTimePicker"
+        Me.DobDateTimePicker.Size = New System.Drawing.Size(265, 29)
+        Me.DobDateTimePicker.TabIndex = 9
         '
-        'MaterialSingleLineTextField5
+        'UserUploadBtn
         '
-        Me.BunifuTransition1.SetDecoration(Me.MaterialSingleLineTextField5, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialSingleLineTextField5.Depth = 0
-        Me.MaterialSingleLineTextField5.Hint = "Address 1"
-        Me.MaterialSingleLineTextField5.Location = New System.Drawing.Point(349, 242)
-        Me.MaterialSingleLineTextField5.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField5.Name = "MaterialSingleLineTextField5"
-        Me.MaterialSingleLineTextField5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField5.SelectedText = ""
-        Me.MaterialSingleLineTextField5.SelectionLength = 0
-        Me.MaterialSingleLineTextField5.SelectionStart = 0
-        Me.MaterialSingleLineTextField5.Size = New System.Drawing.Size(345, 23)
-        Me.MaterialSingleLineTextField5.TabIndex = 6
-        Me.MaterialSingleLineTextField5.UseSystemPasswordChar = False
+        Me.UserUploadBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.UserUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuTransition1.SetDecoration(Me.UserUploadBtn, BunifuAnimatorNS.DecorationType.None)
+        Me.UserUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
+        Me.UserUploadBtn.ImageActive = Nothing
+        Me.UserUploadBtn.Location = New System.Drawing.Point(59, 303)
+        Me.UserUploadBtn.Name = "UserUploadBtn"
+        Me.UserUploadBtn.Size = New System.Drawing.Size(198, 23)
+        Me.UserUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.UserUploadBtn.TabIndex = 16
+        Me.UserUploadBtn.TabStop = False
+        Me.UserUploadBtn.Zoom = 10
         '
-        'MaterialSingleLineTextField3
+        'UserTypeLabel
         '
-        Me.BunifuTransition1.SetDecoration(Me.MaterialSingleLineTextField3, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialSingleLineTextField3.Depth = 0
-        Me.MaterialSingleLineTextField3.Hint = "Contact No"
-        Me.MaterialSingleLineTextField3.Location = New System.Drawing.Point(861, 180)
-        Me.MaterialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField3.Name = "MaterialSingleLineTextField3"
-        Me.MaterialSingleLineTextField3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField3.SelectedText = ""
-        Me.MaterialSingleLineTextField3.SelectionLength = 0
-        Me.MaterialSingleLineTextField3.SelectionStart = 0
-        Me.MaterialSingleLineTextField3.Size = New System.Drawing.Size(265, 23)
-        Me.MaterialSingleLineTextField3.TabIndex = 5
-        Me.MaterialSingleLineTextField3.UseSystemPasswordChar = False
+        Me.UserTypeLabel.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.UserTypeLabel, BunifuAnimatorNS.DecorationType.None)
+        Me.UserTypeLabel.Depth = 0
+        Me.UserTypeLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.UserTypeLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.UserTypeLabel.Location = New System.Drawing.Point(344, 296)
+        Me.UserTypeLabel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.UserTypeLabel.Name = "UserTypeLabel"
+        Me.UserTypeLabel.Size = New System.Drawing.Size(68, 19)
+        Me.UserTypeLabel.TabIndex = 15
+        Me.UserTypeLabel.Text = "Usertype"
         '
-        'MaterialSingleLineTextField7
+        'MaritialStatusLabel
         '
-        Me.BunifuTransition1.SetDecoration(Me.MaterialSingleLineTextField7, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialSingleLineTextField7.Depth = 0
-        Me.MaterialSingleLineTextField7.Hint = "Middlename"
-        Me.MaterialSingleLineTextField7.Location = New System.Drawing.Point(662, 115)
-        Me.MaterialSingleLineTextField7.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField7.Name = "MaterialSingleLineTextField7"
-        Me.MaterialSingleLineTextField7.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField7.SelectedText = ""
-        Me.MaterialSingleLineTextField7.SelectionLength = 0
-        Me.MaterialSingleLineTextField7.SelectionStart = 0
-        Me.MaterialSingleLineTextField7.Size = New System.Drawing.Size(151, 23)
-        Me.MaterialSingleLineTextField7.TabIndex = 1
-        Me.MaterialSingleLineTextField7.UseSystemPasswordChar = False
+        Me.MaritialStatusLabel.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.MaritialStatusLabel, BunifuAnimatorNS.DecorationType.None)
+        Me.MaritialStatusLabel.Depth = 0
+        Me.MaritialStatusLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaritialStatusLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaritialStatusLabel.Location = New System.Drawing.Point(784, 353)
+        Me.MaritialStatusLabel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaritialStatusLabel.Name = "MaritialStatusLabel"
+        Me.MaritialStatusLabel.Size = New System.Drawing.Size(107, 19)
+        Me.MaritialStatusLabel.TabIndex = 15
+        Me.MaritialStatusLabel.Text = "Maritial Status"
         '
-        'MaterialSingleLineTextField2
+        'DobLabel
         '
-        Me.BunifuTransition1.SetDecoration(Me.MaterialSingleLineTextField2, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialSingleLineTextField2.Depth = 0
-        Me.MaterialSingleLineTextField2.Hint = "Lastname"
-        Me.MaterialSingleLineTextField2.Location = New System.Drawing.Point(861, 115)
-        Me.MaterialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField2.Name = "MaterialSingleLineTextField2"
-        Me.MaterialSingleLineTextField2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField2.SelectedText = ""
-        Me.MaterialSingleLineTextField2.SelectionLength = 0
-        Me.MaterialSingleLineTextField2.SelectionStart = 0
-        Me.MaterialSingleLineTextField2.Size = New System.Drawing.Size(265, 23)
-        Me.MaterialSingleLineTextField2.TabIndex = 2
-        Me.MaterialSingleLineTextField2.UseSystemPasswordChar = False
+        Me.DobLabel.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.DobLabel, BunifuAnimatorNS.DecorationType.None)
+        Me.DobLabel.Depth = 0
+        Me.DobLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.DobLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.DobLabel.Location = New System.Drawing.Point(785, 296)
+        Me.DobLabel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.DobLabel.Name = "DobLabel"
+        Me.DobLabel.Size = New System.Drawing.Size(38, 19)
+        Me.DobLabel.TabIndex = 15
+        Me.DobLabel.Text = "DOB"
         '
-        'MaterialSingleLineTextField1
+        'GenderLabel
         '
-        Me.BunifuTransition1.SetDecoration(Me.MaterialSingleLineTextField1, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialSingleLineTextField1.Depth = 0
-        Me.MaterialSingleLineTextField1.Hint = "Firstname"
-        Me.MaterialSingleLineTextField1.Location = New System.Drawing.Point(349, 115)
-        Me.MaterialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField1.Name = "MaterialSingleLineTextField1"
-        Me.MaterialSingleLineTextField1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField1.SelectedText = ""
-        Me.MaterialSingleLineTextField1.SelectionLength = 0
-        Me.MaterialSingleLineTextField1.SelectionStart = 0
-        Me.MaterialSingleLineTextField1.Size = New System.Drawing.Size(265, 23)
-        Me.MaterialSingleLineTextField1.TabIndex = 0
-        Me.MaterialSingleLineTextField1.UseSystemPasswordChar = False
+        Me.GenderLabel.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.GenderLabel, BunifuAnimatorNS.DecorationType.None)
+        Me.GenderLabel.Depth = 0
+        Me.GenderLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.GenderLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.GenderLabel.Location = New System.Drawing.Point(346, 180)
+        Me.GenderLabel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.GenderLabel.Name = "GenderLabel"
+        Me.GenderLabel.Size = New System.Drawing.Size(56, 19)
+        Me.GenderLabel.TabIndex = 15
+        Me.GenderLabel.Text = "Gender"
+        '
+        'UserIdLabel
+        '
+        Me.UserIdLabel.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.UserIdLabel, BunifuAnimatorNS.DecorationType.None)
+        Me.UserIdLabel.Depth = 0
+        Me.UserIdLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.UserIdLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.UserIdLabel.Location = New System.Drawing.Point(346, 72)
+        Me.UserIdLabel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.UserIdLabel.Name = "UserIdLabel"
+        Me.UserIdLabel.Size = New System.Drawing.Size(52, 19)
+        Me.UserIdLabel.TabIndex = 15
+        Me.UserIdLabel.Text = "UserId"
+        '
+        'FemaleRadioBtn
+        '
+        Me.FemaleRadioBtn.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.FemaleRadioBtn, BunifuAnimatorNS.DecorationType.None)
+        Me.FemaleRadioBtn.Depth = 0
+        Me.FemaleRadioBtn.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.FemaleRadioBtn.Location = New System.Drawing.Point(607, 175)
+        Me.FemaleRadioBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.FemaleRadioBtn.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.FemaleRadioBtn.MouseState = MaterialSkin.MouseState.HOVER
+        Me.FemaleRadioBtn.Name = "FemaleRadioBtn"
+        Me.FemaleRadioBtn.Ripple = True
+        Me.FemaleRadioBtn.Size = New System.Drawing.Size(74, 30)
+        Me.FemaleRadioBtn.TabIndex = 4
+        Me.FemaleRadioBtn.TabStop = True
+        Me.FemaleRadioBtn.Text = "Female"
+        Me.FemaleRadioBtn.UseVisualStyleBackColor = True
+        '
+        'MaleRadioBtn
+        '
+        Me.MaleRadioBtn.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.MaleRadioBtn, BunifuAnimatorNS.DecorationType.None)
+        Me.MaleRadioBtn.Depth = 0
+        Me.MaleRadioBtn.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.MaleRadioBtn.Location = New System.Drawing.Point(477, 175)
+        Me.MaleRadioBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.MaleRadioBtn.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.MaleRadioBtn.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaleRadioBtn.Name = "MaleRadioBtn"
+        Me.MaleRadioBtn.Ripple = True
+        Me.MaleRadioBtn.Size = New System.Drawing.Size(59, 30)
+        Me.MaleRadioBtn.TabIndex = 3
+        Me.MaleRadioBtn.TabStop = True
+        Me.MaleRadioBtn.Text = "Male"
+        Me.MaleRadioBtn.UseVisualStyleBackColor = True
+        '
+        'UserTypeComboBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.UserTypeComboBox, BunifuAnimatorNS.DecorationType.None)
+        Me.UserTypeComboBox.FormattingEnabled = True
+        Me.UserTypeComboBox.ItemHeight = 23
+        Me.UserTypeComboBox.Items.AddRange(New Object() {"Receptionist", "Cashier", "Lecturer"})
+        Me.UserTypeComboBox.Location = New System.Drawing.Point(427, 290)
+        Me.UserTypeComboBox.Name = "UserTypeComboBox"
+        Me.UserTypeComboBox.PromptText = "Select Usertype"
+        Me.UserTypeComboBox.Size = New System.Drawing.Size(267, 29)
+        Me.UserTypeComboBox.TabIndex = 8
+        Me.UserTypeComboBox.UseSelectable = True
+        '
+        'Address2TextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.Address2TextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.Address2TextBox.Depth = 0
+        Me.Address2TextBox.Hint = "Address 2"
+        Me.Address2TextBox.Location = New System.Drawing.Point(788, 242)
+        Me.Address2TextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Address2TextBox.Name = "Address2TextBox"
+        Me.Address2TextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Address2TextBox.SelectedText = ""
+        Me.Address2TextBox.SelectionLength = 0
+        Me.Address2TextBox.SelectionStart = 0
+        Me.Address2TextBox.Size = New System.Drawing.Size(338, 23)
+        Me.Address2TextBox.TabIndex = 7
+        Me.Address2TextBox.UseSystemPasswordChar = False
+        '
+        'Address1TextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.Address1TextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.Address1TextBox.Depth = 0
+        Me.Address1TextBox.Hint = "Address 1"
+        Me.Address1TextBox.Location = New System.Drawing.Point(349, 242)
+        Me.Address1TextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Address1TextBox.Name = "Address1TextBox"
+        Me.Address1TextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Address1TextBox.SelectedText = ""
+        Me.Address1TextBox.SelectionLength = 0
+        Me.Address1TextBox.SelectionStart = 0
+        Me.Address1TextBox.Size = New System.Drawing.Size(345, 23)
+        Me.Address1TextBox.TabIndex = 6
+        Me.Address1TextBox.UseSystemPasswordChar = False
+        '
+        'ContactNoTextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.ContactNoTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.ContactNoTextBox.Depth = 0
+        Me.ContactNoTextBox.Hint = "Contact No"
+        Me.ContactNoTextBox.Location = New System.Drawing.Point(861, 180)
+        Me.ContactNoTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.ContactNoTextBox.Name = "ContactNoTextBox"
+        Me.ContactNoTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.ContactNoTextBox.SelectedText = ""
+        Me.ContactNoTextBox.SelectionLength = 0
+        Me.ContactNoTextBox.SelectionStart = 0
+        Me.ContactNoTextBox.Size = New System.Drawing.Size(265, 23)
+        Me.ContactNoTextBox.TabIndex = 5
+        Me.ContactNoTextBox.UseSystemPasswordChar = False
+        '
+        'MiddleNameTextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.MiddleNameTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.MiddleNameTextBox.Depth = 0
+        Me.MiddleNameTextBox.Hint = "Middlename"
+        Me.MiddleNameTextBox.Location = New System.Drawing.Point(662, 115)
+        Me.MiddleNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
+        Me.MiddleNameTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MiddleNameTextBox.SelectedText = ""
+        Me.MiddleNameTextBox.SelectionLength = 0
+        Me.MiddleNameTextBox.SelectionStart = 0
+        Me.MiddleNameTextBox.Size = New System.Drawing.Size(151, 23)
+        Me.MiddleNameTextBox.TabIndex = 1
+        Me.MiddleNameTextBox.UseSystemPasswordChar = False
+        '
+        'LastNameTextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.LastNameTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.LastNameTextBox.Depth = 0
+        Me.LastNameTextBox.Hint = "Lastname"
+        Me.LastNameTextBox.Location = New System.Drawing.Point(861, 115)
+        Me.LastNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.LastNameTextBox.Name = "LastNameTextBox"
+        Me.LastNameTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.LastNameTextBox.SelectedText = ""
+        Me.LastNameTextBox.SelectionLength = 0
+        Me.LastNameTextBox.SelectionStart = 0
+        Me.LastNameTextBox.Size = New System.Drawing.Size(265, 23)
+        Me.LastNameTextBox.TabIndex = 2
+        Me.LastNameTextBox.UseSystemPasswordChar = False
+        '
+        'FirstNameTextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.FirstNameTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.FirstNameTextBox.Depth = 0
+        Me.FirstNameTextBox.Hint = "Firstname"
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(349, 115)
+        Me.FirstNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.FirstNameTextBox.Name = "FirstNameTextBox"
+        Me.FirstNameTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.FirstNameTextBox.SelectedText = ""
+        Me.FirstNameTextBox.SelectionLength = 0
+        Me.FirstNameTextBox.SelectionStart = 0
+        Me.FirstNameTextBox.Size = New System.Drawing.Size(265, 23)
+        Me.FirstNameTextBox.TabIndex = 0
+        Me.FirstNameTextBox.UseSystemPasswordChar = False
+        '
+        'UserImage
+        '
+        Me.UserImage.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Splash_image
+        Me.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.UserImage, BunifuAnimatorNS.DecorationType.None)
+        Me.UserImage.Location = New System.Drawing.Point(59, 65)
+        Me.UserImage.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserImage.Name = "UserImage"
+        Me.UserImage.Size = New System.Drawing.Size(198, 225)
+        Me.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.UserImage.TabIndex = 0
+        Me.UserImage.TabStop = False
         '
         'addStudentTb
         '
@@ -384,268 +563,6 @@ Partial Class Dashboard
         Me.addStudentTb.Size = New System.Drawing.Size(1303, 684)
         Me.addStudentTb.TabIndex = 1
         Me.addStudentTb.Text = "Add Student"
-        '
-        'MaterialTabSelector1
-        '
-        Me.MaterialTabSelector1.BaseTabControl = Me.a
-        Me.BunifuTransition1.SetDecoration(Me.MaterialTabSelector1, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialTabSelector1.Depth = 0
-        Me.MaterialTabSelector1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MaterialTabSelector1.Location = New System.Drawing.Point(0, 0)
-        Me.MaterialTabSelector1.Margin = New System.Windows.Forms.Padding(0)
-        Me.MaterialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialTabSelector1.Name = "MaterialTabSelector1"
-        Me.MaterialTabSelector1.Size = New System.Drawing.Size(1311, 37)
-        Me.MaterialTabSelector1.TabIndex = 1
-        Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
-        '
-        'BunifuDragControl1
-        '
-        Me.BunifuDragControl1.Fixed = True
-        Me.BunifuDragControl1.Horizontal = True
-        Me.BunifuDragControl1.TargetControl = Me
-        Me.BunifuDragControl1.Vertical = True
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'MaterialLabel2
-        '
-        Me.MaterialLabel2.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.MaterialLabel2, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialLabel2.Depth = 0
-        Me.MaterialLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.MaterialLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel2.Location = New System.Drawing.Point(785, 296)
-        Me.MaterialLabel2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel2.Name = "MaterialLabel2"
-        Me.MaterialLabel2.Size = New System.Drawing.Size(41, 18)
-        Me.MaterialLabel2.TabIndex = 15
-        Me.MaterialLabel2.Text = "DOB"
-        '
-        'MetroDateTime1
-        '
-        Me.BunifuTransition1.SetDecoration(Me.MetroDateTime1, BunifuAnimatorNS.DecorationType.None)
-        Me.MetroDateTime1.Location = New System.Drawing.Point(861, 290)
-        Me.MetroDateTime1.MinimumSize = New System.Drawing.Size(0, 29)
-        Me.MetroDateTime1.Name = "MetroDateTime1"
-        Me.MetroDateTime1.Size = New System.Drawing.Size(265, 29)
-        Me.MetroDateTime1.TabIndex = 9
-        '
-        'MaterialSingleLineTextField4
-        '
-        Me.BunifuTransition1.SetDecoration(Me.MaterialSingleLineTextField4, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialSingleLineTextField4.Depth = 0
-        Me.MaterialSingleLineTextField4.Hint = "Email"
-        Me.MaterialSingleLineTextField4.Location = New System.Drawing.Point(349, 353)
-        Me.MaterialSingleLineTextField4.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField4.Name = "MaterialSingleLineTextField4"
-        Me.MaterialSingleLineTextField4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField4.SelectedText = ""
-        Me.MaterialSingleLineTextField4.SelectionLength = 0
-        Me.MaterialSingleLineTextField4.SelectionStart = 0
-        Me.MaterialSingleLineTextField4.Size = New System.Drawing.Size(346, 23)
-        Me.MaterialSingleLineTextField4.TabIndex = 10
-        Me.MaterialSingleLineTextField4.UseSystemPasswordChar = False
-        '
-        'MetroComboBox2
-        '
-        Me.BunifuTransition1.SetDecoration(Me.MetroComboBox2, BunifuAnimatorNS.DecorationType.None)
-        Me.MetroComboBox2.FormattingEnabled = True
-        Me.MetroComboBox2.ItemHeight = 23
-        Me.MetroComboBox2.Items.AddRange(New Object() {"Single", "Married"})
-        Me.MetroComboBox2.Location = New System.Drawing.Point(908, 347)
-        Me.MetroComboBox2.Name = "MetroComboBox2"
-        Me.MetroComboBox2.PromptText = "Current relation"
-        Me.MetroComboBox2.Size = New System.Drawing.Size(218, 29)
-        Me.MetroComboBox2.TabIndex = 11
-        Me.MetroComboBox2.UseSelectable = True
-        '
-        'MaterialLabel3
-        '
-        Me.MaterialLabel3.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.MaterialLabel3, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialLabel3.Depth = 0
-        Me.MaterialLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.MaterialLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel3.Location = New System.Drawing.Point(784, 353)
-        Me.MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel3.Name = "MaterialLabel3"
-        Me.MaterialLabel3.Size = New System.Drawing.Size(101, 18)
-        Me.MaterialLabel3.TabIndex = 15
-        Me.MaterialLabel3.Text = "Maritial Status"
-        '
-        'MaterialLabel4
-        '
-        Me.MaterialLabel4.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.MaterialLabel4, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialLabel4.Depth = 0
-        Me.MaterialLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.MaterialLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel4.Location = New System.Drawing.Point(344, 296)
-        Me.MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel4.Name = "MaterialLabel4"
-        Me.MaterialLabel4.Size = New System.Drawing.Size(67, 18)
-        Me.MaterialLabel4.TabIndex = 15
-        Me.MaterialLabel4.Text = "Usertype"
-        '
-        'BunifuCustomTextbox1
-        '
-        Me.BunifuCustomTextbox1.BorderColor = System.Drawing.Color.SeaGreen
-        Me.BunifuCustomTextbox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.BunifuCustomTextbox1.Cursor = System.Windows.Forms.Cursors.No
-        Me.BunifuTransition1.SetDecoration(Me.BunifuCustomTextbox1, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuCustomTextbox1.Location = New System.Drawing.Point(414, 67)
-        Me.BunifuCustomTextbox1.Multiline = True
-        Me.BunifuCustomTextbox1.Name = "BunifuCustomTextbox1"
-        Me.BunifuCustomTextbox1.ReadOnly = True
-        Me.BunifuCustomTextbox1.Size = New System.Drawing.Size(85, 29)
-        Me.BunifuCustomTextbox1.TabIndex = 20
-        '
-        'MaterialLabel5
-        '
-        Me.MaterialLabel5.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.MaterialLabel5, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialLabel5.Depth = 0
-        Me.MaterialLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.MaterialLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel5.Location = New System.Drawing.Point(346, 180)
-        Me.MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel5.Name = "MaterialLabel5"
-        Me.MaterialLabel5.Size = New System.Drawing.Size(57, 18)
-        Me.MaterialLabel5.TabIndex = 15
-        Me.MaterialLabel5.Text = "Gender"
-        '
-        'hamburgerPb
-        '
-        Me.hamburgerPb.BackColor = System.Drawing.Color.Transparent
-        Me.hamburgerPb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuTransition1.SetDecoration(Me.hamburgerPb, BunifuAnimatorNS.DecorationType.None)
-        Me.hamburgerPb.Image = Global.College_Management_System.My.Resources.Resources.Menu_32px
-        Me.hamburgerPb.Location = New System.Drawing.Point(12, 12)
-        Me.hamburgerPb.Name = "hamburgerPb"
-        Me.hamburgerPb.Size = New System.Drawing.Size(31, 26)
-        Me.hamburgerPb.TabIndex = 1
-        Me.hamburgerPb.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox2.Image = Global.College_Management_System.My.Resources.Resources.Registration_32px
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 68)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(34, 33)
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox1, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox1.Image = Global.College_Management_System.My.Resources.Resources.Admin_Settings_Male_32px
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 126)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(36, 38)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
-        'BunifuFlatButton2
-        '
-        Me.BunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton2.BorderRadius = 0
-        Me.BunifuFlatButton2.ButtonText = "Show UserList"
-        Me.BunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.BunifuFlatButton2, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.Iconimage = Global.College_Management_System.My.Resources.Resources.List_20px
-        Me.BunifuFlatButton2.Iconimage_right = Nothing
-        Me.BunifuFlatButton2.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton2.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton2.IconMarginLeft = 0
-        Me.BunifuFlatButton2.IconMarginRight = 0
-        Me.BunifuFlatButton2.IconRightVisible = True
-        Me.BunifuFlatButton2.IconRightZoom = 0.0R
-        Me.BunifuFlatButton2.IconVisible = True
-        Me.BunifuFlatButton2.IconZoom = 50.0R
-        Me.BunifuFlatButton2.IsTab = False
-        Me.BunifuFlatButton2.Location = New System.Drawing.Point(492, 432)
-        Me.BunifuFlatButton2.Name = "BunifuFlatButton2"
-        Me.BunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.BunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton2.selected = False
-        Me.BunifuFlatButton2.Size = New System.Drawing.Size(164, 48)
-        Me.BunifuFlatButton2.TabIndex = 21
-        Me.BunifuFlatButton2.Text = "Show UserList"
-        Me.BunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton2.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton2.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'BunifuFlatButton1
-        '
-        Me.BunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton1.BorderRadius = 0
-        Me.BunifuFlatButton1.ButtonText = "Finish"
-        Me.BunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.BunifuFlatButton1, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton1.Iconimage = CType(resources.GetObject("BunifuFlatButton1.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton1.Iconimage_right = Nothing
-        Me.BunifuFlatButton1.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton1.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton1.IconMarginLeft = 0
-        Me.BunifuFlatButton1.IconMarginRight = 0
-        Me.BunifuFlatButton1.IconRightVisible = True
-        Me.BunifuFlatButton1.IconRightZoom = 0.0R
-        Me.BunifuFlatButton1.IconVisible = True
-        Me.BunifuFlatButton1.IconZoom = 90.0R
-        Me.BunifuFlatButton1.IsTab = False
-        Me.BunifuFlatButton1.Location = New System.Drawing.Point(350, 432)
-        Me.BunifuFlatButton1.Name = "BunifuFlatButton1"
-        Me.BunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.BunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton1.selected = False
-        Me.BunifuFlatButton1.Size = New System.Drawing.Size(122, 48)
-        Me.BunifuFlatButton1.TabIndex = 21
-        Me.BunifuFlatButton1.Text = "Finish"
-        Me.BunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton1.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton1.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'BunifuImageButton1
-        '
-        Me.BunifuImageButton1.BackColor = System.Drawing.Color.SeaGreen
-        Me.BunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.BunifuTransition1.SetDecoration(Me.BunifuImageButton1, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuImageButton1.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
-        Me.BunifuImageButton1.ImageActive = Nothing
-        Me.BunifuImageButton1.Location = New System.Drawing.Point(59, 303)
-        Me.BunifuImageButton1.Name = "BunifuImageButton1"
-        Me.BunifuImageButton1.Size = New System.Drawing.Size(198, 23)
-        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton1.TabIndex = 16
-        Me.BunifuImageButton1.TabStop = False
-        Me.BunifuImageButton1.Zoom = 10
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Splash_image
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox3, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox3.Location = New System.Drawing.Point(59, 65)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(0)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(198, 225)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
         '
         'BunifuImageButton2
         '
@@ -685,6 +602,31 @@ Partial Class Dashboard
         Me.allUsersTb.Text = "All Users"
         Me.allUsersTb.UseVisualStyleBackColor = True
         '
+        'MaterialTabSelector1
+        '
+        Me.MaterialTabSelector1.BaseTabControl = Me.a
+        Me.BunifuTransition1.SetDecoration(Me.MaterialTabSelector1, BunifuAnimatorNS.DecorationType.None)
+        Me.MaterialTabSelector1.Depth = 0
+        Me.MaterialTabSelector1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MaterialTabSelector1.Location = New System.Drawing.Point(0, 0)
+        Me.MaterialTabSelector1.Margin = New System.Windows.Forms.Padding(0)
+        Me.MaterialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialTabSelector1.Name = "MaterialTabSelector1"
+        Me.MaterialTabSelector1.Size = New System.Drawing.Size(1311, 37)
+        Me.MaterialTabSelector1.TabIndex = 1
+        Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
+        '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me
+        Me.BunifuDragControl1.Vertical = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -697,18 +639,18 @@ Partial Class Dashboard
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"
         Me.hamburgerPnl.ResumeLayout(False)
+        CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dashboardMainPnl.ResumeLayout(False)
         Me.dashboardTablePnl.ResumeLayout(False)
         Me.editTablePanelAdmin.ResumeLayout(False)
         Me.a.ResumeLayout(False)
         Me.addUserTb.ResumeLayout(False)
         Me.addUserTb.PerformLayout()
+        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.addStudentTb.ResumeLayout(False)
-        CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -727,30 +669,29 @@ Partial Class Dashboard
     Friend WithEvents addUserTb As System.Windows.Forms.TabPage
     Friend WithEvents addStudentTb As System.Windows.Forms.TabPage
     Friend WithEvents MaterialTabSelector1 As MaterialSkin.Controls.MaterialTabSelector
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents UserImage As System.Windows.Forms.PictureBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MaterialSingleLineTextField6 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialSingleLineTextField5 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialSingleLineTextField3 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialSingleLineTextField7 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialSingleLineTextField2 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialSingleLineTextField1 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialRadioButton2 As MaterialSkin.Controls.MaterialRadioButton
-    Friend WithEvents MaterialRadioButton1 As MaterialSkin.Controls.MaterialRadioButton
-    Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents UserTypeComboBox As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents Address2TextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents Address1TextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents ContactNoTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents MiddleNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents LastNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents FirstNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents FemaleRadioBtn As MaterialSkin.Controls.MaterialRadioButton
+    Friend WithEvents MaleRadioBtn As MaterialSkin.Controls.MaterialRadioButton
+    Friend WithEvents UserIdLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents UserUploadBtn As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents MaterialLabel2 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents BunifuCustomTextbox1 As WindowsFormsControlLibrary1.BunifuCustomTextbox
-    Friend WithEvents MetroComboBox2 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MaterialSingleLineTextField4 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MetroDateTime1 As MetroFramework.Controls.MetroDateTime
-    Friend WithEvents MaterialLabel4 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialLabel3 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialLabel5 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents BunifuFlatButton1 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton2 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents DobLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents UserIdTextBox As WindowsFormsControlLibrary1.BunifuCustomTextbox
+    Friend WithEvents MaritialStatusComboBox As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents EmailTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents DobDateTimePicker As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents UserTypeLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents MaritialStatusLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents GenderLabel As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents allUsersTb As System.Windows.Forms.TabPage
+    Friend WithEvents FinsihBtn As MetroFramework.Controls.MetroButton
 End Class

@@ -1,12 +1,13 @@
 ﻿Imports Transitions
 Imports System.IO
+Imports System.Data.SqlClient
+Imports System.Text
 
 Public Class Dashboard
 
 
     Private Sub hamburgerPb_Click_1(sender As Object, e As EventArgs) Handles hamburgerPb.Click
         If (hamburgerPnl.Width < 250) Then
-
             Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(150))
         Else
             Transition.run(hamburgerPnl, "Width", 55, New TransitionType_EaseInEaseOut(150))
@@ -29,7 +30,7 @@ Public Class Dashboard
                 MessageBox.Show("Sorry, The File You Specified Does Not Exist.")
             Else
                 If (a = "adminImageSelectUsers") Then
-                    PictureBox3.ImageLocation = openDialogImg.FileName
+                    UserImage.ImageLocation = openDialogImg.FileName
                 ElseIf (a = "adminImageSelectStudents") Then
                     PictureBox4.ImageLocation = openDialogImg.FileName
                 End If
@@ -38,12 +39,13 @@ Public Class Dashboard
 
         End If
     End Sub
+
     Private Sub addUserTb_Click(sender As Object, e As EventArgs) Handles addUserTb.Click
         Transition.run(hamburgerPnl, "Width", 55, New TransitionType_EaseInEaseOut(150))
     End Sub
 
-  
-    Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
+
+    Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles UserUploadBtn.Click
         imageChooser("adminImageSelectUsers")
     End Sub
 
@@ -51,131 +53,59 @@ Public Class Dashboard
         imageChooser("adminImageSelectStudents")
     End Sub
 
-    Private Sub allUsersTb_Click(sender As Object, e As EventArgs) Handles allUsersTb.Click
+    Function dbConnect()
+        Dim db As New SqlConnection("Data Source=(LocalDB)\v11.0;Integrated Security=true;Database=CMS")
+        Return db
+    End Function
 
+    Private Sub finishBtn_Click(sender As Object, e As EventArgs) Handles FinsihBtn.Click
+        Dim gender As String
+        If (MaleRadioBtn.Checked) Then
+            gender = "Male"
+        Else
+            gender = "Female"
+        End If
+        Dim pass As String = GeneratePassword()
+        insertUsers(FirstNameTextBox.Text, MiddleNameTextBox.Text, LastNameTextBox.Text, gender, ContactNoTextBox.Text, Address1TextBox.Text, Address2TextBox.Text, UserTypeComboBox.Text, DobDateTimePicker.Text, EmailTextBox.Text, MaritialStatusComboBox.Text, pass)
     End Sub
 
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-
+    Public Sub insertUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal password As String)
+        Dim con As SqlConnection = dbConnect()
+        Try
+            Dim cmd As New SqlCommand("INSERT INTO userTbl values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l)", con)
+            Dim tableName As String = fn & "_user_" & userType & "_" & addressOne
+            Dim cmd2 As New SqlCommand("CREATE TABLE " & tableName & "(id INT NOT NULL PRIMARY KEY IDENTITY,date NVARCHAR(50) NULL)", con)
+            cmd.Parameters.AddWithValue("@a", fn)
+            cmd.Parameters.AddWithValue("@b", mn)
+            cmd.Parameters.AddWithValue("@c", ln)
+            cmd.Parameters.AddWithValue("@d", gender)
+            cmd.Parameters.AddWithValue("@e", contactNo)
+            cmd.Parameters.AddWithValue("@f", addressOne)
+            cmd.Parameters.AddWithValue("@g", addressTwo)
+            cmd.Parameters.AddWithValue("@h", userType)
+            cmd.Parameters.AddWithValue("@i", dob)
+            cmd.Parameters.AddWithValue("@j", email)
+            cmd.Parameters.AddWithValue("@k", maritialStatus)
+            cmd.Parameters.AddWithValue("@l", password)
+            con.Open()
+            cmd.ExecuteNonQuery()
+            cmd2.ExecuteNonQuery()
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-
-    End Sub
-
-    Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton1.Click
-
-    End Sub
-
-    Private Sub BunifuFlatButton2_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton2.Click
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-    Private Sub MaterialLabel5_Click(sender As Object, e As EventArgs) Handles MaterialLabel5.Click
-
-    End Sub
-
-    Private Sub BunifuCustomTextbox1_TextChanged(sender As Object, e As EventArgs) Handles BunifuCustomTextbox1.TextChanged
-
-    End Sub
-
-    Private Sub MaterialLabel4_Click(sender As Object, e As EventArgs) Handles MaterialLabel4.Click
-
-    End Sub
-
-    Private Sub MaterialLabel3_Click(sender As Object, e As EventArgs) Handles MaterialLabel3.Click
-
-    End Sub
-
-    Private Sub MetroComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroComboBox2.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub MaterialSingleLineTextField4_Click(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField4.Click
-
-    End Sub
-
-    Private Sub MetroDateTime1_ValueChanged(sender As Object, e As EventArgs) Handles MetroDateTime1.ValueChanged
-
-    End Sub
-
-    Private Sub MaterialLabel2_Click(sender As Object, e As EventArgs) Handles MaterialLabel2.Click
-
-    End Sub
-
-    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
-
-    End Sub
-
-    Private Sub MaterialTabSelector1_Click(sender As Object, e As EventArgs) Handles MaterialTabSelector1.Click
-
-    End Sub
-
-    Private Sub addStudentTb_Click(sender As Object, e As EventArgs) Handles addStudentTb.Click
-
-    End Sub
-
-    Private Sub MaterialSingleLineTextField1_Click(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField1.Click
-
-    End Sub
-
-    Private Sub MaterialSingleLineTextField2_Click(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField2.Click
-
-    End Sub
-
-    Private Sub MaterialSingleLineTextField7_Click(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField7.Click
-
-    End Sub
-
-    Private Sub MaterialSingleLineTextField3_Click(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField3.Click
-
-    End Sub
-
-    Private Sub MaterialSingleLineTextField5_Click(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField5.Click
-
-    End Sub
-
-    Private Sub MaterialSingleLineTextField6_Click(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField6.Click
-
-    End Sub
-
-    Private Sub MetroComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroComboBox1.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub MaterialRadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles MaterialRadioButton1.CheckedChanged
-
-    End Sub
-
-    Private Sub MaterialRadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles MaterialRadioButton2.CheckedChanged
-
-    End Sub
-
-    Private Sub MaterialLabel1_Click(sender As Object, e As EventArgs) Handles MaterialLabel1.Click
-
-    End Sub
-
-    Private Sub a_SelectedIndexChanged(sender As Object, e As EventArgs) Handles a.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub editTablePanelAdmin_Paint(sender As Object, e As PaintEventArgs) Handles editTablePanelAdmin.Paint
-
-    End Sub
-
-    Private Sub dashboardTablePnl_Paint(sender As Object, e As PaintEventArgs) Handles dashboardTablePnl.Paint
-
-    End Sub
-
-    Private Sub dashboardMainPnl_Paint(sender As Object, e As PaintEventArgs) Handles dashboardMainPnl.Paint
-
-    End Sub
-
-    Private Sub hamburgerPnl_Paint(sender As Object, e As PaintEventArgs) Handles hamburgerPnl.Paint
-
+    Function GeneratePassword()
+        Dim s As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        Dim r As New Random
+        Dim sb As New StringBuilder
+        For i As Integer = 1 To 8
+            Dim idx As Integer = r.Next(0, 35)
+            sb.Append(s.Substring(idx, 1))
+        Next
+        Return sb.ToString()
+    End Function
+    Protected Overrides Sub Finalize()
+        MyBase.Finalize()
     End Sub
 End Class
