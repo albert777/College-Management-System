@@ -10,6 +10,7 @@ Imports BunifuAnimatorNS
 
 Public Class Dashboard
     Dim userId As Integer
+    Dim state As Integer = 1
     Private Sub hamburgerPb_Click_1(sender As Object, e As EventArgs) Handles hamburgerPb.Click
         If (hamburgerPnl.Width < 250) Then
             Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(150))
@@ -77,6 +78,7 @@ Public Class Dashboard
     End Sub
     Private Sub finishBtn_Click(sender As Object, e As EventArgs) Handles FinsihBtn.Click
         Dim gender As String
+
         If (MaleRadioBtn.Checked) Then
             gender = "Male"
         Else
@@ -99,7 +101,7 @@ Public Class Dashboard
         img.Save(ms, img.RawFormat)
         Dim imageBuffer As Byte() = ms.GetBuffer
         Try
-            Dim cmd As New SqlCommand("INSERT INTO userTbl values(@firstname,@middlename,@lastname,@gender,@contact,@addressone,@addresstwo,@usertype,@dob,@email,@maritialstatus,@username,@password,@loadimage)", con)
+            Dim cmd As New SqlCommand("INSERT INTO userTbl values(@firstname,@middlename,@lastname,@gender,@contact,@addressone,@addresstwo,@usertype,@dob,@email,@maritialstatus,@username,@password,@loadimage,@state)", con)
             Dim tableName As String = fn & "_user_" & userType & "_" & contactNo
 
             cmd.Parameters.AddWithValue("@firstname", fn)
@@ -116,6 +118,7 @@ Public Class Dashboard
             cmd.Parameters.AddWithValue("@username", username)
             cmd.Parameters.AddWithValue("@password", password)
             cmd.Parameters.AddWithValue("@loadimage", imageBuffer)
+            cmd.Parameters.AddWithValue("@state", state)
             con.Open()
             cmd.ExecuteNonQuery()
             If (userType = "Cashier") Then
@@ -151,21 +154,22 @@ Public Class Dashboard
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PasswordTextBox.Text = GeneratePassword()
         loadUsers()
+        a.TabPages.Remove(NoticeTab)
     End Sub
     Private Sub sendEmail()
         Try
             Dim SmtpServer As New SmtpClient()
             Dim mail As New MailMessage()
             SmtpServer.UseDefaultCredentials = False
-            SmtpServer.Credentials = New Net.NetworkCredential("", "")
+            SmtpServer.Credentials = New Net.NetworkCredential("vbcoder977@gmail.com", "iimscollege")
             SmtpServer.Port = 587
             SmtpServer.EnableSsl = True
             SmtpServer.Host = "smtp.gmail.com"
             mail = New MailMessage()
-            mail.From = New MailAddress("")
+            mail.From = New MailAddress("vbcoder977@gmail.com")
             mail.To.Add(EmailTextBox.Text)
             mail.Subject = "Account Created"
-            mail.Body = "Your account have been created" & UserTypeComboBox.Text & "" & vbNewLine & "Username: " & UserNameTextBox.Text & "" & vbNewLine & "Password: " & PasswordTextBox.Text
+            mail.Body = "Your account have been created as a " & UserTypeComboBox.Text & "" & vbNewLine & "Username: " & UserNameTextBox.Text & "" & vbNewLine & "Password: " & PasswordTextBox.Text
             SmtpServer.Send(mail)
             MsgBox("Mail has been successfully send to " & EmailTextBox.Text)
         Catch ex As Exception
@@ -174,12 +178,13 @@ Public Class Dashboard
     End Sub
     Public Sub loadUsers()
         Dim con As SqlConnection = dbConnect()
-        Dim cmd As New SqlCommand("Select * FROM userTbl", con)
+        Dim cmd As New SqlCommand("Select * FROM userTbl WHERE state = 1", con)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
         da.Fill(dt)
         UserDataGridView.DataSource = dt
         UserDataGridView.Columns(14).Visible = False
+        UserDataGridView.Columns(15).Visible = False
     End Sub
 
 
@@ -189,10 +194,9 @@ Public Class Dashboard
         Dim ms As New MemoryStream(img)
         PictureBox3.Image = Image.FromStream(ms)
     End Sub
-
-    Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+    Private Sub searchData()
         Dim con As SqlConnection = dbConnect()
-        Dim cmd As New SqlCommand("Select * FROM userTbl WHERE username LIKE @a", con)
+        Dim cmd As New SqlCommand("Select * FROM userTbl WHERE username LIKE @a AND state = 1 ", con)
         cmd.Parameters.AddWithValue("@a", SearchTextBox.Text + "%")
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -207,14 +211,18 @@ Public Class Dashboard
             SearchDataGridView.Visible = True
         End If
         If (SearchTextBox.Text = "All" Or SearchTextBox.Text = "all") Then
-            Dim cmd2 As New SqlCommand("Select * FROM userTbl", con)
+            Dim cmd2 As New SqlCommand("Select * FROM userTbl WHERE state = 1", con)
             Dim da2 As New SqlDataAdapter(cmd2)
             Dim dt2 As New DataTable()
             da2.Fill(dt2)
             SearchDataGridView.DataSource = dt2
+            SearchDataGridView.Columns(14).Visible = False
+            SearchDataGridView.Columns(15).Visible = False
             SearchDataGridView.Visible = True
         End If
-
+    End Sub
+    Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+        searchData()
     End Sub
     Private Sub SearchDataGridView_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SearchDataGridView.RowHeaderMouseClick
         userId = SearchDataGridView.CurrentRow.Cells(0).Value.ToString()
@@ -244,7 +252,7 @@ Public Class Dashboard
         UserImage.Image = Image.FromStream(ms)
     End Sub
 
-
+    'update method caller
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
         Dim gender As String
         If (MaleRadioBtn.Checked) Then
@@ -260,7 +268,9 @@ Public Class Dashboard
         clearAll()
         PasswordTextBox.Text = GeneratePassword()
         loadUsers()
+        searchData()
     End Sub
+    'Method to update the existing users
     Public Sub updateUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal username As String, ByVal password As String)
         Dim con As SqlConnection = dbConnect()
         Dim img As Image = Image.FromFile(ImageOpenDialog.FileName)
@@ -268,7 +278,7 @@ Public Class Dashboard
         img.Save(ms, img.RawFormat)
         Dim imageBuffer As Byte() = ms.GetBuffer
         Try
-            Dim cmd As New SqlCommand("UPDATE userTbl SET firstname = @firstname,middlename = @middlename,lastname = @lastname,gender = @gender,contact_no = @contact,address_1 = @addressone,address_2 = @addresstwo,usertype = @usertype,dob = @dob,email = @email,marital_status = @maritialstatus,username = @username,password = @password,image = @loadimage WHERE Id=@userId", con)
+            Dim cmd As New SqlCommand("UPDATE userTbl SET firstname = @firstname,middlename = @middlename,lastname = @lastname,gender = @gender,contact_no = @contact,address_1 = @addressone,address_2 = @addresstwo,usertype = @usertype,dob = @dob,email = @email,marital_status = @maritialstatus,username = @username,password = @password,image = @loadimage, state=@state WHERE Id=@userId", con)
             Dim tableName As String = fn & "_user_" & userType & "_" & contactNo
 
             cmd.Parameters.AddWithValue("@firstname", fn)
@@ -285,12 +295,77 @@ Public Class Dashboard
             cmd.Parameters.AddWithValue("@username", username)
             cmd.Parameters.AddWithValue("@password", password)
             cmd.Parameters.AddWithValue("@loadimage", imageBuffer)
+            cmd.Parameters.AddWithValue("@state", state)
+            cmd.Parameters.AddWithValue("@userId", userId)
+            con.Open()
+            cmd.ExecuteNonQuery()
+
+            If (userType = "Cashier") Then
+                Dim cmd2 As New SqlCommand("CREATE TABLE " & tableName & "(id INT NOT NULL PRIMARY KEY IDENTITY,date NVARCHAR(50) NULL)", con)
+                cmd2.ExecuteNonQuery()
+            End If
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    'Sub deleteUsers()
+    '    Dim con As SqlConnection = dbConnect()
+    '    Try
+    '        Dim cmd As New SqlCommand("Delete FROM userTbl WHERE Id=@userId", con)
+    '        cmd.Parameters.AddWithValue("@userId", userId)
+    '        con.Open()
+    '        cmd.ExecuteNonQuery()
+    '        con.Close()
+    '        If (UserTypeComboBox.Text = "Cashier") Then
+    '            Dim fn As String = FirstNameTextBox.Text
+    '            Dim ut As String = UserTypeComboBox.Text
+    '            Dim cn As String = ContactNoTextBox.Text
+    '            Dim user_Data_Table As String
+    '            user_Data_Table = "DROP TABLE " & fn & "_user_" & ut & "_" & cn
+    '            MsgBox(user_Data_Table)
+    '            Dim cmd1 As New SqlCommand(user_Data_Table, con)
+    '            con.Open()
+    '            cmd1.ExecuteNonQuery()
+    '            con.Close()
+    '        End If
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.Message)
+    '    End Try
+    'End Sub
+
+    'Sub method to delete the selected user
+    Sub deleteUsers()
+        Try
+            Dim con As SqlConnection = dbConnect()
+            Dim cmd As New SqlCommand("UPDATE userTbl SET state = @state WHERE Id=@userId", con)
+            Dim passive As Integer = 0
+            cmd.Parameters.AddWithValue("@state", passive)
             cmd.Parameters.AddWithValue("@userId", userId)
             con.Open()
             cmd.ExecuteNonQuery()
             con.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MsgBox(ex.Message)
         End Try
+    End Sub
+    'Delete method caller
+    Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
+        deleteUsers()
+        UserImage.Image = My.Resources.user_male2_512
+        clearAll()
+        PasswordTextBox.Text = GeneratePassword()
+        searchData()
+        loadUsers()
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        Dim RecycleBin As New Recyclebin
+        RecycleBin.MdiParent = Me
+        RecycleBin.BringToFront()
+        RecycleBin.TopLevel = False
+        editTablePanelAdmin.Controls.Add(RecycleBin)
+        RecycleBin.Show()
     End Sub
 End Class

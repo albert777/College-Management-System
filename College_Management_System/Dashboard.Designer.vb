@@ -23,12 +23,12 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.hamburgerPnl = New System.Windows.Forms.Panel()
         Me.dashboardMainPnl = New System.Windows.Forms.Panel()
@@ -36,6 +36,7 @@ Partial Class Dashboard
         Me.editTablePanelAdmin = New System.Windows.Forms.TableLayoutPanel()
         Me.a = New MaterialSkin.Controls.MaterialTabControl()
         Me.AddUserTab = New System.Windows.Forms.TabPage()
+        Me.UpdateBtn = New MetroFramework.Controls.MetroButton()
         Me.SearchTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SearchDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.SendEmailCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
@@ -71,6 +72,8 @@ Partial Class Dashboard
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
+        Me.DeleteBtn = New MetroFramework.Controls.MetroButton()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.hamburgerPb = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -80,7 +83,6 @@ Partial Class Dashboard
         Me.StudentUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.StudentImage = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.UpdateBtn = New MetroFramework.Controls.MetroButton()
         Me.hamburgerPnl.SuspendLayout()
         Me.dashboardMainPnl.SuspendLayout()
         Me.dashboardTablePnl.SuspendLayout()
@@ -92,6 +94,7 @@ Partial Class Dashboard
         Me.AllUsersTab.SuspendLayout()
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NoticeTab.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +109,7 @@ Partial Class Dashboard
         'hamburgerPnl
         '
         Me.hamburgerPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.hamburgerPnl.Controls.Add(Me.PictureBox5)
         Me.hamburgerPnl.Controls.Add(Me.hamburgerPb)
         Me.hamburgerPnl.Controls.Add(Me.PictureBox2)
         Me.hamburgerPnl.Controls.Add(Me.PictureBox1)
@@ -159,8 +163,8 @@ Partial Class Dashboard
         Me.editTablePanelAdmin.Margin = New System.Windows.Forms.Padding(0)
         Me.editTablePanelAdmin.Name = "editTablePanelAdmin"
         Me.editTablePanelAdmin.RowCount = 2
-        Me.editTablePanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
-        Me.editTablePanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.0!))
+        Me.editTablePanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.349794!))
+        Me.editTablePanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.65021!))
         Me.editTablePanelAdmin.Size = New System.Drawing.Size(1295, 729)
         Me.editTablePanelAdmin.TabIndex = 0
         '
@@ -174,17 +178,18 @@ Partial Class Dashboard
         Me.BunifuTransition1.SetDecoration(Me.a, BunifuAnimatorNS.DecorationType.None)
         Me.a.Depth = 0
         Me.a.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.a.Location = New System.Drawing.Point(0, 36)
+        Me.a.Location = New System.Drawing.Point(0, 39)
         Me.a.Margin = New System.Windows.Forms.Padding(0)
         Me.a.MouseState = MaterialSkin.MouseState.HOVER
         Me.a.Name = "a"
         Me.a.SelectedIndex = 0
-        Me.a.Size = New System.Drawing.Size(1295, 693)
+        Me.a.Size = New System.Drawing.Size(1295, 690)
         Me.a.TabIndex = 0
         '
         'AddUserTab
         '
         Me.AddUserTab.BackColor = System.Drawing.Color.White
+        Me.AddUserTab.Controls.Add(Me.DeleteBtn)
         Me.AddUserTab.Controls.Add(Me.UpdateBtn)
         Me.AddUserTab.Controls.Add(Me.PictureBox4)
         Me.AddUserTab.Controls.Add(Me.SearchTextBox)
@@ -218,9 +223,21 @@ Partial Class Dashboard
         Me.AddUserTab.Location = New System.Drawing.Point(4, 24)
         Me.AddUserTab.Margin = New System.Windows.Forms.Padding(0)
         Me.AddUserTab.Name = "AddUserTab"
-        Me.AddUserTab.Size = New System.Drawing.Size(1287, 665)
+        Me.AddUserTab.Size = New System.Drawing.Size(1287, 662)
         Me.AddUserTab.TabIndex = 0
         Me.AddUserTab.Text = "Add User"
+        '
+        'UpdateBtn
+        '
+        Me.BunifuTransition1.SetDecoration(Me.UpdateBtn, BunifuAnimatorNS.DecorationType.None)
+        Me.UpdateBtn.Location = New System.Drawing.Point(497, 455)
+        Me.UpdateBtn.Name = "UpdateBtn"
+        Me.UpdateBtn.Size = New System.Drawing.Size(144, 34)
+        Me.UpdateBtn.TabIndex = 31
+        Me.UpdateBtn.Text = "Update"
+        Me.UpdateBtn.UseCustomBackColor = True
+        Me.UpdateBtn.UseCustomForeColor = True
+        Me.UpdateBtn.UseSelectable = True
         '
         'SearchTextBox
         '
@@ -235,28 +252,28 @@ Partial Class Dashboard
         Me.SearchTextBox.SelectedText = ""
         Me.SearchTextBox.SelectionLength = 0
         Me.SearchTextBox.SelectionStart = 0
-        Me.SearchTextBox.Size = New System.Drawing.Size(237, 23)
+        Me.SearchTextBox.Size = New System.Drawing.Size(311, 23)
         Me.SearchTextBox.TabIndex = 29
         Me.SearchTextBox.UseSystemPasswordChar = False
         '
         'SearchDataGridView
         '
         Me.SearchDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.SearchDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.SearchDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.SearchDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SearchDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.SearchDataGridView.BackgroundColor = System.Drawing.Color.White
         Me.SearchDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.SearchDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SearchDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SearchDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.SearchDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SearchDataGridView.ColumnHeadersVisible = False
         Me.BunifuTransition1.SetDecoration(Me.SearchDataGridView, BunifuAnimatorNS.DecorationType.None)
@@ -265,7 +282,7 @@ Partial Class Dashboard
         Me.SearchDataGridView.EnableHeadersVisualStyles = False
         Me.SearchDataGridView.HeaderBgColor = System.Drawing.Color.Black
         Me.SearchDataGridView.HeaderForeColor = System.Drawing.Color.White
-        Me.SearchDataGridView.Location = New System.Drawing.Point(0, 529)
+        Me.SearchDataGridView.Location = New System.Drawing.Point(0, 526)
         Me.SearchDataGridView.Name = "SearchDataGridView"
         Me.SearchDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.SearchDataGridView.Size = New System.Drawing.Size(1287, 136)
@@ -580,7 +597,7 @@ Partial Class Dashboard
         Me.ContactNoTextBox.SelectedText = ""
         Me.ContactNoTextBox.SelectionLength = 0
         Me.ContactNoTextBox.SelectionStart = 0
-        Me.ContactNoTextBox.Size = New System.Drawing.Size(265, 23)
+        Me.ContactNoTextBox.Size = New System.Drawing.Size(339, 23)
         Me.ContactNoTextBox.TabIndex = 5
         Me.ContactNoTextBox.UseSystemPasswordChar = False
         '
@@ -614,7 +631,7 @@ Partial Class Dashboard
         Me.LastNameTextBox.SelectedText = ""
         Me.LastNameTextBox.SelectionLength = 0
         Me.LastNameTextBox.SelectionStart = 0
-        Me.LastNameTextBox.Size = New System.Drawing.Size(265, 23)
+        Me.LastNameTextBox.Size = New System.Drawing.Size(339, 23)
         Me.LastNameTextBox.TabIndex = 2
         Me.LastNameTextBox.UseSystemPasswordChar = False
         '
@@ -666,8 +683,8 @@ Partial Class Dashboard
         'UserDataGridView
         '
         Me.UserDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.UserDataGridView.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UserDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -675,25 +692,25 @@ Partial Class Dashboard
         Me.UserDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.UserDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.UserDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.UserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BunifuTransition1.SetDecoration(Me.UserDataGridView, BunifuAnimatorNS.DecorationType.None)
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle5
         Me.UserDataGridView.DoubleBuffered = True
         Me.UserDataGridView.EnableHeadersVisualStyles = False
         Me.UserDataGridView.HeaderBgColor = System.Drawing.Color.Black
@@ -751,7 +768,7 @@ Partial Class Dashboard
         Me.MaterialTabSelector1.Margin = New System.Windows.Forms.Padding(0)
         Me.MaterialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialTabSelector1.Name = "MaterialTabSelector1"
-        Me.MaterialTabSelector1.Size = New System.Drawing.Size(1295, 36)
+        Me.MaterialTabSelector1.Size = New System.Drawing.Size(1295, 39)
         Me.MaterialTabSelector1.TabIndex = 1
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
@@ -770,22 +787,44 @@ Partial Class Dashboard
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide
         Me.BunifuTransition1.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0.0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0.0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0)
-        Animation2.RotateCoeff = 0.0!
-        Animation2.RotateLimit = 0.0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0.0!
-        Animation2.TransparencyCoeff = 0.0!
-        Me.BunifuTransition1.DefaultAnimation = Animation2
+        Animation1.AnimateOnlyDifferences = True
+        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
+        Animation1.LeafCoeff = 0.0!
+        Animation1.MaxTime = 1.0!
+        Animation1.MinTime = 0.0!
+        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
+        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
+        Animation1.MosaicSize = 0
+        Animation1.Padding = New System.Windows.Forms.Padding(0)
+        Animation1.RotateCoeff = 0.0!
+        Animation1.RotateLimit = 0.0!
+        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
+        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
+        Animation1.TimeCoeff = 0.0!
+        Animation1.TransparencyCoeff = 0.0!
+        Me.BunifuTransition1.DefaultAnimation = Animation1
+        '
+        'DeleteBtn
+        '
+        Me.BunifuTransition1.SetDecoration(Me.DeleteBtn, BunifuAnimatorNS.DecorationType.None)
+        Me.DeleteBtn.Location = New System.Drawing.Point(647, 455)
+        Me.DeleteBtn.Name = "DeleteBtn"
+        Me.DeleteBtn.Size = New System.Drawing.Size(143, 34)
+        Me.DeleteBtn.TabIndex = 32
+        Me.DeleteBtn.Text = "Delete"
+        Me.DeleteBtn.UseCustomBackColor = True
+        Me.DeleteBtn.UseCustomForeColor = True
+        Me.DeleteBtn.UseSelectable = True
+        '
+        'PictureBox5
+        '
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox5, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox5.Image = Global.College_Management_System.My.Resources.Resources.Trash_32px
+        Me.PictureBox5.Location = New System.Drawing.Point(8, 187)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(35, 35)
+        Me.PictureBox5.TabIndex = 3
+        Me.PictureBox5.TabStop = False
         '
         'hamburgerPb
         '
@@ -903,18 +942,6 @@ Partial Class Dashboard
         Me.PictureBox3.TabIndex = 1
         Me.PictureBox3.TabStop = False
         '
-        'UpdateBtn
-        '
-        Me.BunifuTransition1.SetDecoration(Me.UpdateBtn, BunifuAnimatorNS.DecorationType.None)
-        Me.UpdateBtn.Location = New System.Drawing.Point(497, 455)
-        Me.UpdateBtn.Name = "UpdateBtn"
-        Me.UpdateBtn.Size = New System.Drawing.Size(190, 34)
-        Me.UpdateBtn.TabIndex = 31
-        Me.UpdateBtn.Text = "Update"
-        Me.UpdateBtn.UseCustomBackColor = True
-        Me.UpdateBtn.UseCustomForeColor = True
-        Me.UpdateBtn.UseSelectable = True
-        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -924,6 +951,7 @@ Partial Class Dashboard
         Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MinimizeBox = False
         Me.Name = "Dashboard"
@@ -940,6 +968,7 @@ Partial Class Dashboard
         Me.AllUsersTab.ResumeLayout(False)
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NoticeTab.ResumeLayout(False)
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1003,4 +1032,6 @@ Partial Class Dashboard
     Friend WithEvents SearchTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents UpdateBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents DeleteBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
 End Class
