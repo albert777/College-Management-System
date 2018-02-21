@@ -9,6 +9,7 @@ Imports System.Net.Mail
 Imports BunifuAnimatorNS
 
 Public Class Dashboard
+    Dim userId As Integer
     Private Sub hamburgerPb_Click_1(sender As Object, e As EventArgs) Handles hamburgerPb.Click
         If (hamburgerPnl.Width < 250) Then
             Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(150))
@@ -63,6 +64,7 @@ Public Class Dashboard
         For Each values As MaterialSingleLineTextField In textboxArray
             values.Text = ""
         Next
+        UserIdTextBox.Text = ""
         Dim radiobuttonArray() As MaterialRadioButton = New MaterialRadioButton() {MaleRadioBtn, FemaleRadioBtn}
         For Each values As MaterialRadioButton In radiobuttonArray
             values.Checked = False
@@ -84,6 +86,7 @@ Public Class Dashboard
         If (SendEmailCheckBox.Checked) Then
             sendEmail()
         End If
+        UserImage.Image = My.Resources.user_male2_512
         clearAll()
         PasswordTextBox.Text = GeneratePassword()
         loadUsers()
@@ -175,13 +178,119 @@ Public Class Dashboard
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
         da.Fill(dt)
-
-        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.Fill
-        DataGridView1.RowTemplate.Height = 100
-        DataGridView1.AllowUserToResizeColumns = True
-        Dim imgc As DataGridViewColumn
-        DataGridView1.DataSource = dt
-        imgc = DataGridView1.Columns(14)
+        UserDataGridView.DataSource = dt
+        UserDataGridView.Columns(14).Visible = False
     End Sub
 
+
+    Private Sub UserDataGridView_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles UserDataGridView.RowHeaderMouseClick
+        Dim img() As Byte
+        img = UserDataGridView.CurrentRow.Cells(14).Value
+        Dim ms As New MemoryStream(img)
+        PictureBox3.Image = Image.FromStream(ms)
+    End Sub
+
+    Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+        Dim con As SqlConnection = dbConnect()
+        Dim cmd As New SqlCommand("Select * FROM userTbl WHERE username LIKE @a", con)
+        cmd.Parameters.AddWithValue("@a", SearchTextBox.Text + "%")
+        Dim da As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable()
+        da.Fill(dt)
+        SearchDataGridView.DataSource = dt
+        If (SearchTextBox.Text = "") Then
+            SearchDataGridView.Visible = False
+            UserImage.Image = My.Resources.user_male2_512
+            clearAll()
+            PasswordTextBox.Text = GeneratePassword()
+        Else
+            SearchDataGridView.Visible = True
+        End If
+        If (SearchTextBox.Text = "All" Or SearchTextBox.Text = "all") Then
+            Dim cmd2 As New SqlCommand("Select * FROM userTbl", con)
+            Dim da2 As New SqlDataAdapter(cmd2)
+            Dim dt2 As New DataTable()
+            da2.Fill(dt2)
+            SearchDataGridView.DataSource = dt2
+            SearchDataGridView.Visible = True
+        End If
+
+    End Sub
+    Private Sub SearchDataGridView_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SearchDataGridView.RowHeaderMouseClick
+        userId = SearchDataGridView.CurrentRow.Cells(0).Value.ToString()
+        UserIdTextBox.Text = SearchDataGridView.CurrentRow.Cells(0).Value.ToString()
+        FirstNameTextBox.Text = SearchDataGridView.CurrentRow.Cells(1).Value.ToString()
+        MiddleNameTextBox.Text = SearchDataGridView.CurrentRow.Cells(2).Value.ToString()
+        LastNameTextBox.Text = SearchDataGridView.CurrentRow.Cells(3).Value.ToString()
+        Dim gender As String = SearchDataGridView.CurrentRow.Cells(4).Value.ToString()
+        If (gender = "Male") Then
+            MaleRadioBtn.Checked = True
+        Else
+            FemaleRadioBtn.Checked = True
+        End If
+        ContactNoTextBox.Text = SearchDataGridView.CurrentRow.Cells(5).Value.ToString()
+        Address1TextBox.Text = SearchDataGridView.CurrentRow.Cells(6).Value.ToString()
+        Address2TextBox.Text = SearchDataGridView.CurrentRow.Cells(7).Value.ToString()
+        UserTypeComboBox.Text = SearchDataGridView.CurrentRow.Cells(8).Value.ToString()
+        DobDateTimePicker.Text = SearchDataGridView.CurrentRow.Cells(9).Value.ToString()
+        EmailTextBox.Text = SearchDataGridView.CurrentRow.Cells(10).Value.ToString()
+        MaritialStatusComboBox.Text = SearchDataGridView.CurrentRow.Cells(11).Value.ToString()
+        UserNameTextBox.Text = SearchDataGridView.CurrentRow.Cells(12).Value.ToString()
+        PasswordTextBox.Text = SearchDataGridView.CurrentRow.Cells(13).Value.ToString()
+
+        Dim img() As Byte
+        img = SearchDataGridView.CurrentRow.Cells(14).Value
+        Dim ms As New MemoryStream(img)
+        UserImage.Image = Image.FromStream(ms)
+    End Sub
+
+
+    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
+        Dim gender As String
+        If (MaleRadioBtn.Checked) Then
+            gender = "Male"
+        Else
+            gender = "Female"
+        End If
+        updateUsers(FirstNameTextBox.Text, MiddleNameTextBox.Text, LastNameTextBox.Text, gender, ContactNoTextBox.Text, Address1TextBox.Text, Address2TextBox.Text, UserTypeComboBox.Text, DobDateTimePicker.Text, EmailTextBox.Text, MaritialStatusComboBox.Text, UserNameTextBox.Text, PasswordTextBox.Text)
+        If (SendEmailCheckBox.Checked) Then
+            sendEmail()
+        End If
+        UserImage.Image = My.Resources.user_male2_512
+        clearAll()
+        PasswordTextBox.Text = GeneratePassword()
+        loadUsers()
+    End Sub
+    Public Sub updateUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal username As String, ByVal password As String)
+        Dim con As SqlConnection = dbConnect()
+        Dim img As Image = Image.FromFile(ImageOpenDialog.FileName)
+        Dim ms As New MemoryStream()
+        img.Save(ms, img.RawFormat)
+        Dim imageBuffer As Byte() = ms.GetBuffer
+        Try
+            Dim cmd As New SqlCommand("UPDATE userTbl SET firstname = @firstname,middlename = @middlename,lastname = @lastname,gender = @gender,contact_no = @contact,address_1 = @addressone,address_2 = @addresstwo,usertype = @usertype,dob = @dob,email = @email,marital_status = @maritialstatus,username = @username,password = @password,image = @loadimage WHERE Id=@userId", con)
+            Dim tableName As String = fn & "_user_" & userType & "_" & contactNo
+
+            cmd.Parameters.AddWithValue("@firstname", fn)
+            cmd.Parameters.AddWithValue("@middlename", mn)
+            cmd.Parameters.AddWithValue("@lastname", ln)
+            cmd.Parameters.AddWithValue("@gender", gender)
+            cmd.Parameters.AddWithValue("@contact", contactNo)
+            cmd.Parameters.AddWithValue("@addressone", addressOne)
+            cmd.Parameters.AddWithValue("@addresstwo", addressTwo)
+            cmd.Parameters.AddWithValue("@usertype", userType)
+            cmd.Parameters.AddWithValue("@dob", dob)
+            cmd.Parameters.AddWithValue("@email", email)
+            cmd.Parameters.AddWithValue("@maritialstatus", maritialStatus)
+            cmd.Parameters.AddWithValue("@username", username)
+            cmd.Parameters.AddWithValue("@password", password)
+            cmd.Parameters.AddWithValue("@loadimage", imageBuffer)
+            cmd.Parameters.AddWithValue("@userId", userId)
+            con.Open()
+            cmd.ExecuteNonQuery()
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class
