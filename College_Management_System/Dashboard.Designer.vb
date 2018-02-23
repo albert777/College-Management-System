@@ -23,31 +23,41 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim Animation5 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
-        Me.hamburgerPnl = New System.Windows.Forms.Panel()
-        Me.dashboardMainPnl = New System.Windows.Forms.Panel()
-        Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
-        Me.editTablePanelAdmin = New System.Windows.Forms.TableLayoutPanel()
-        Me.a = New MaterialSkin.Controls.MaterialTabControl()
-        Me.AddUserTab = New System.Windows.Forms.TabPage()
+        Me.DeleteBtn = New MetroFramework.Controls.MetroButton()
         Me.UpdateBtn = New MetroFramework.Controls.MetroButton()
-        Me.SearchTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.SearchDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
-        Me.SendEmailCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
-        Me.PasswordTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.UserNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.FinsihBtn = New MetroFramework.Controls.MetroButton()
         Me.UserIdTextBox = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
         Me.MaritialStatusComboBox = New MetroFramework.Controls.MetroComboBox()
         Me.EmailTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.AllStudentsTab = New System.Windows.Forms.TabPage()
+        Me.SearchTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.NoticeTab = New System.Windows.Forms.TabPage()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.SendEmailCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
+        Me.PasswordTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.DobDateTimePicker = New MetroFramework.Controls.MetroDateTime()
+        Me.UserUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.hamburgerPnl = New System.Windows.Forms.Panel()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.hamburgerPb = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.editTablePanelAdmin = New System.Windows.Forms.TableLayoutPanel()
+        Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
+        Me.a = New MaterialSkin.Controls.MaterialTabControl()
+        Me.AddUserTab = New System.Windows.Forms.TabPage()
         Me.UserTypeLabel = New MaterialSkin.Controls.MaterialLabel()
         Me.MaritialStatusLabel = New MaterialSkin.Controls.MaterialLabel()
         Me.DobLabel = New MaterialSkin.Controls.MaterialLabel()
@@ -62,170 +72,51 @@ Partial Class Dashboard
         Me.MiddleNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.LastNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.FirstNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.AddStudentTab = New System.Windows.Forms.TabPage()
-        Me.AllUsersTab = New System.Windows.Forms.TabPage()
-        Me.UserDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
-        Me.AllStudentsTab = New System.Windows.Forms.TabPage()
-        Me.NoticeTab = New System.Windows.Forms.TabPage()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
-        Me.DeleteBtn = New MetroFramework.Controls.MetroButton()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.hamburgerPb = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.UserUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.UserImage = New System.Windows.Forms.PictureBox()
+        Me.AddStudentTab = New System.Windows.Forms.TabPage()
         Me.StudentUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.StudentImage = New System.Windows.Forms.PictureBox()
+        Me.AllUsersTab = New System.Windows.Forms.TabPage()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.hamburgerPnl.SuspendLayout()
-        Me.dashboardMainPnl.SuspendLayout()
-        Me.dashboardTablePnl.SuspendLayout()
-        Me.editTablePanelAdmin.SuspendLayout()
-        Me.a.SuspendLayout()
-        Me.AddUserTab.SuspendLayout()
+        Me.UserDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
+        Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SearchDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.AddStudentTab.SuspendLayout()
-        Me.AllUsersTab.SuspendLayout()
-        CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NoticeTab.SuspendLayout()
+        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.hamburgerPnl.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MainPanel.SuspendLayout()
+        Me.editTablePanelAdmin.SuspendLayout()
+        Me.a.SuspendLayout()
+        Me.AddUserTab.SuspendLayout()
         CType(Me.UserImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AddStudentTab.SuspendLayout()
         CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AllUsersTab.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dashboardTablePnl.SuspendLayout()
         Me.SuspendLayout()
         '
-        'hamburgerPnl
+        'DeleteBtn
         '
-        Me.hamburgerPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
-        Me.hamburgerPnl.Controls.Add(Me.PictureBox5)
-        Me.hamburgerPnl.Controls.Add(Me.hamburgerPb)
-        Me.hamburgerPnl.Controls.Add(Me.PictureBox2)
-        Me.hamburgerPnl.Controls.Add(Me.PictureBox1)
-        Me.BunifuTransition1.SetDecoration(Me.hamburgerPnl, BunifuAnimatorNS.DecorationType.None)
-        Me.hamburgerPnl.Dock = System.Windows.Forms.DockStyle.Left
-        Me.hamburgerPnl.Location = New System.Drawing.Point(0, 0)
-        Me.hamburgerPnl.Margin = New System.Windows.Forms.Padding(0)
-        Me.hamburgerPnl.Name = "hamburgerPnl"
-        Me.hamburgerPnl.Size = New System.Drawing.Size(55, 729)
-        Me.hamburgerPnl.TabIndex = 1
-        '
-        'dashboardMainPnl
-        '
-        Me.dashboardMainPnl.Controls.Add(Me.hamburgerPnl)
-        Me.dashboardMainPnl.Controls.Add(Me.dashboardTablePnl)
-        Me.BunifuTransition1.SetDecoration(Me.dashboardMainPnl, BunifuAnimatorNS.DecorationType.None)
-        Me.dashboardMainPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dashboardMainPnl.Location = New System.Drawing.Point(0, 0)
-        Me.dashboardMainPnl.Margin = New System.Windows.Forms.Padding(0)
-        Me.dashboardMainPnl.Name = "dashboardMainPnl"
-        Me.dashboardMainPnl.Size = New System.Drawing.Size(1350, 729)
-        Me.dashboardMainPnl.TabIndex = 1
-        '
-        'dashboardTablePnl
-        '
-        Me.dashboardTablePnl.ColumnCount = 2
-        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55.0!))
-        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.dashboardTablePnl.Controls.Add(Me.editTablePanelAdmin, 1, 0)
-        Me.BunifuTransition1.SetDecoration(Me.dashboardTablePnl, BunifuAnimatorNS.DecorationType.None)
-        Me.dashboardTablePnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dashboardTablePnl.Enabled = False
-        Me.dashboardTablePnl.Location = New System.Drawing.Point(0, 0)
-        Me.dashboardTablePnl.Margin = New System.Windows.Forms.Padding(0)
-        Me.dashboardTablePnl.Name = "dashboardTablePnl"
-        Me.dashboardTablePnl.RowCount = 1
-        Me.dashboardTablePnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.dashboardTablePnl.Size = New System.Drawing.Size(1350, 729)
-        Me.dashboardTablePnl.TabIndex = 2
-        Me.dashboardTablePnl.Visible = False
-        '
-        'editTablePanelAdmin
-        '
-        Me.editTablePanelAdmin.ColumnCount = 1
-        Me.editTablePanelAdmin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.editTablePanelAdmin.Controls.Add(Me.a, 0, 1)
-        Me.editTablePanelAdmin.Controls.Add(Me.MaterialTabSelector1, 0, 0)
-        Me.BunifuTransition1.SetDecoration(Me.editTablePanelAdmin, BunifuAnimatorNS.DecorationType.None)
-        Me.editTablePanelAdmin.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.editTablePanelAdmin.Location = New System.Drawing.Point(55, 0)
-        Me.editTablePanelAdmin.Margin = New System.Windows.Forms.Padding(0)
-        Me.editTablePanelAdmin.Name = "editTablePanelAdmin"
-        Me.editTablePanelAdmin.RowCount = 2
-        Me.editTablePanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.349794!))
-        Me.editTablePanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.65021!))
-        Me.editTablePanelAdmin.Size = New System.Drawing.Size(1295, 729)
-        Me.editTablePanelAdmin.TabIndex = 0
-        '
-        'a
-        '
-        Me.a.Controls.Add(Me.AddUserTab)
-        Me.a.Controls.Add(Me.AddStudentTab)
-        Me.a.Controls.Add(Me.AllUsersTab)
-        Me.a.Controls.Add(Me.AllStudentsTab)
-        Me.a.Controls.Add(Me.NoticeTab)
-        Me.BunifuTransition1.SetDecoration(Me.a, BunifuAnimatorNS.DecorationType.None)
-        Me.a.Depth = 0
-        Me.a.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.a.Location = New System.Drawing.Point(0, 39)
-        Me.a.Margin = New System.Windows.Forms.Padding(0)
-        Me.a.MouseState = MaterialSkin.MouseState.HOVER
-        Me.a.Name = "a"
-        Me.a.SelectedIndex = 0
-        Me.a.Size = New System.Drawing.Size(1295, 690)
-        Me.a.TabIndex = 0
-        '
-        'AddUserTab
-        '
-        Me.AddUserTab.BackColor = System.Drawing.Color.White
-        Me.AddUserTab.Controls.Add(Me.DeleteBtn)
-        Me.AddUserTab.Controls.Add(Me.UpdateBtn)
-        Me.AddUserTab.Controls.Add(Me.PictureBox4)
-        Me.AddUserTab.Controls.Add(Me.SearchTextBox)
-        Me.AddUserTab.Controls.Add(Me.SearchDataGridView)
-        Me.AddUserTab.Controls.Add(Me.SendEmailCheckBox)
-        Me.AddUserTab.Controls.Add(Me.PasswordTextBox)
-        Me.AddUserTab.Controls.Add(Me.MaterialLabel1)
-        Me.AddUserTab.Controls.Add(Me.UserNameTextBox)
-        Me.AddUserTab.Controls.Add(Me.FinsihBtn)
-        Me.AddUserTab.Controls.Add(Me.UserIdTextBox)
-        Me.AddUserTab.Controls.Add(Me.MaritialStatusComboBox)
-        Me.AddUserTab.Controls.Add(Me.EmailTextBox)
-        Me.AddUserTab.Controls.Add(Me.DobDateTimePicker)
-        Me.AddUserTab.Controls.Add(Me.UserUploadBtn)
-        Me.AddUserTab.Controls.Add(Me.UserTypeLabel)
-        Me.AddUserTab.Controls.Add(Me.MaritialStatusLabel)
-        Me.AddUserTab.Controls.Add(Me.DobLabel)
-        Me.AddUserTab.Controls.Add(Me.GenderLabel)
-        Me.AddUserTab.Controls.Add(Me.UserIdLabel)
-        Me.AddUserTab.Controls.Add(Me.FemaleRadioBtn)
-        Me.AddUserTab.Controls.Add(Me.MaleRadioBtn)
-        Me.AddUserTab.Controls.Add(Me.UserTypeComboBox)
-        Me.AddUserTab.Controls.Add(Me.Address2TextBox)
-        Me.AddUserTab.Controls.Add(Me.Address1TextBox)
-        Me.AddUserTab.Controls.Add(Me.ContactNoTextBox)
-        Me.AddUserTab.Controls.Add(Me.MiddleNameTextBox)
-        Me.AddUserTab.Controls.Add(Me.LastNameTextBox)
-        Me.AddUserTab.Controls.Add(Me.FirstNameTextBox)
-        Me.AddUserTab.Controls.Add(Me.UserImage)
-        Me.BunifuTransition1.SetDecoration(Me.AddUserTab, BunifuAnimatorNS.DecorationType.None)
-        Me.AddUserTab.Location = New System.Drawing.Point(4, 24)
-        Me.AddUserTab.Margin = New System.Windows.Forms.Padding(0)
-        Me.AddUserTab.Name = "AddUserTab"
-        Me.AddUserTab.Size = New System.Drawing.Size(1287, 662)
-        Me.AddUserTab.TabIndex = 0
-        Me.AddUserTab.Text = "Add User"
+        Me.BunifuTransition1.SetDecoration(Me.DeleteBtn, BunifuAnimatorNS.DecorationType.None)
+        Me.DeleteBtn.Location = New System.Drawing.Point(647, 455)
+        Me.DeleteBtn.Name = "DeleteBtn"
+        Me.DeleteBtn.Size = New System.Drawing.Size(143, 34)
+        Me.DeleteBtn.TabIndex = 32
+        Me.DeleteBtn.Text = "Delete"
+        Me.DeleteBtn.UseCustomBackColor = True
+        Me.DeleteBtn.UseCustomForeColor = True
+        Me.DeleteBtn.UseSelectable = True
         '
         'UpdateBtn
         '
@@ -239,41 +130,34 @@ Partial Class Dashboard
         Me.UpdateBtn.UseCustomForeColor = True
         Me.UpdateBtn.UseSelectable = True
         '
-        'SearchTextBox
+        'PictureBox4
         '
-        Me.BunifuTransition1.SetDecoration(Me.SearchTextBox, BunifuAnimatorNS.DecorationType.None)
-        Me.SearchTextBox.Depth = 0
-        Me.SearchTextBox.Hint = "Search for user"
-        Me.SearchTextBox.Location = New System.Drawing.Point(889, 18)
-        Me.SearchTextBox.MouseState = MaterialSkin.MouseState.HOVER
-        Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.SearchTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.SearchTextBox.SelectedText = ""
-        Me.SearchTextBox.SelectionLength = 0
-        Me.SearchTextBox.SelectionStart = 0
-        Me.SearchTextBox.Size = New System.Drawing.Size(311, 23)
-        Me.SearchTextBox.TabIndex = 29
-        Me.SearchTextBox.UseSystemPasswordChar = False
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox4, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox4.Image = Global.College_Management_System.My.Resources.Resources.Search_25px
+        Me.PictureBox4.Location = New System.Drawing.Point(854, 15)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(25, 23)
+        Me.PictureBox4.TabIndex = 30
+        Me.PictureBox4.TabStop = False
         '
         'SearchDataGridView
         '
         Me.SearchDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.SearchDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.SearchDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
         Me.SearchDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SearchDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.SearchDataGridView.BackgroundColor = System.Drawing.Color.White
         Me.SearchDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.SearchDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SearchDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SearchDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
         Me.SearchDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SearchDataGridView.ColumnHeadersVisible = False
         Me.BunifuTransition1.SetDecoration(Me.SearchDataGridView, BunifuAnimatorNS.DecorationType.None)
@@ -282,61 +166,12 @@ Partial Class Dashboard
         Me.SearchDataGridView.EnableHeadersVisualStyles = False
         Me.SearchDataGridView.HeaderBgColor = System.Drawing.Color.Black
         Me.SearchDataGridView.HeaderForeColor = System.Drawing.Color.White
-        Me.SearchDataGridView.Location = New System.Drawing.Point(0, 526)
+        Me.SearchDataGridView.Location = New System.Drawing.Point(0, 578)
         Me.SearchDataGridView.Name = "SearchDataGridView"
         Me.SearchDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.SearchDataGridView.Size = New System.Drawing.Size(1287, 136)
+        Me.SearchDataGridView.Size = New System.Drawing.Size(1282, 79)
         Me.SearchDataGridView.TabIndex = 28
         Me.SearchDataGridView.Visible = False
-        '
-        'SendEmailCheckBox
-        '
-        Me.SendEmailCheckBox.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.SendEmailCheckBox, BunifuAnimatorNS.DecorationType.None)
-        Me.SendEmailCheckBox.Depth = 0
-        Me.SendEmailCheckBox.Font = New System.Drawing.Font("Roboto", 10.0!)
-        Me.SendEmailCheckBox.Location = New System.Drawing.Point(347, 399)
-        Me.SendEmailCheckBox.Margin = New System.Windows.Forms.Padding(0)
-        Me.SendEmailCheckBox.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.SendEmailCheckBox.MouseState = MaterialSkin.MouseState.HOVER
-        Me.SendEmailCheckBox.Name = "SendEmailCheckBox"
-        Me.SendEmailCheckBox.Ripple = True
-        Me.SendEmailCheckBox.Size = New System.Drawing.Size(328, 30)
-        Me.SendEmailCheckBox.TabIndex = 26
-        Me.SendEmailCheckBox.Text = "Send username and password to the given email"
-        Me.SendEmailCheckBox.UseVisualStyleBackColor = True
-        '
-        'PasswordTextBox
-        '
-        Me.BunifuTransition1.SetDecoration(Me.PasswordTextBox, BunifuAnimatorNS.DecorationType.None)
-        Me.PasswordTextBox.Depth = 0
-        Me.PasswordTextBox.Hint = "Password"
-        Me.PasswordTextBox.Location = New System.Drawing.Point(60, 466)
-        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.PasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER
-        Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.SelectedText = ""
-        Me.PasswordTextBox.SelectionLength = 0
-        Me.PasswordTextBox.SelectionStart = 0
-        Me.PasswordTextBox.Size = New System.Drawing.Size(199, 23)
-        Me.PasswordTextBox.TabIndex = 25
-        Me.PasswordTextBox.UseSystemPasswordChar = False
-        '
-        'MaterialLabel1
-        '
-        Me.MaterialLabel1.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.MaterialLabel1, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialLabel1.Depth = 0
-        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel1.Location = New System.Drawing.Point(76, 356)
-        Me.MaterialLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel1.Name = "MaterialLabel1"
-        Me.MaterialLabel1.Size = New System.Drawing.Size(128, 19)
-        Me.MaterialLabel1.TabIndex = 24
-        Me.MaterialLabel1.Text = "Login Information"
         '
         'UserNameTextBox
         '
@@ -415,6 +250,108 @@ Partial Class Dashboard
         Me.EmailTextBox.TabIndex = 10
         Me.EmailTextBox.UseSystemPasswordChar = False
         '
+        'AllStudentsTab
+        '
+        Me.BunifuTransition1.SetDecoration(Me.AllStudentsTab, BunifuAnimatorNS.DecorationType.None)
+        Me.AllStudentsTab.Location = New System.Drawing.Point(4, 24)
+        Me.AllStudentsTab.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.AllStudentsTab.Name = "AllStudentsTab"
+        Me.AllStudentsTab.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.AllStudentsTab.Size = New System.Drawing.Size(1282, 657)
+        Me.AllStudentsTab.TabIndex = 3
+        Me.AllStudentsTab.Text = "All Students"
+        Me.AllStudentsTab.UseVisualStyleBackColor = True
+        '
+        'SearchTextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.SearchTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.SearchTextBox.Depth = 0
+        Me.SearchTextBox.Hint = "Search for user"
+        Me.SearchTextBox.Location = New System.Drawing.Point(889, 18)
+        Me.SearchTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.SearchTextBox.Name = "SearchTextBox"
+        Me.SearchTextBox.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.SearchTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.SearchTextBox.SelectedText = ""
+        Me.SearchTextBox.SelectionLength = 0
+        Me.SearchTextBox.SelectionStart = 0
+        Me.SearchTextBox.Size = New System.Drawing.Size(311, 23)
+        Me.SearchTextBox.TabIndex = 29
+        Me.SearchTextBox.UseSystemPasswordChar = False
+        '
+        'NoticeTab
+        '
+        Me.NoticeTab.Controls.Add(Me.RichTextBox1)
+        Me.BunifuTransition1.SetDecoration(Me.NoticeTab, BunifuAnimatorNS.DecorationType.None)
+        Me.NoticeTab.Location = New System.Drawing.Point(4, 24)
+        Me.NoticeTab.Name = "NoticeTab"
+        Me.NoticeTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.NoticeTab.Size = New System.Drawing.Size(1282, 657)
+        Me.NoticeTab.TabIndex = 4
+        Me.NoticeTab.Text = "Notice"
+        Me.NoticeTab.UseVisualStyleBackColor = True
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.BunifuTransition1.SetDecoration(Me.RichTextBox1, BunifuAnimatorNS.DecorationType.None)
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.RichTextBox1.Location = New System.Drawing.Point(3, 27)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(0)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(1276, 627)
+        Me.RichTextBox1.TabIndex = 0
+        Me.RichTextBox1.Text = ""
+        '
+        'SendEmailCheckBox
+        '
+        Me.SendEmailCheckBox.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.SendEmailCheckBox, BunifuAnimatorNS.DecorationType.None)
+        Me.SendEmailCheckBox.Depth = 0
+        Me.SendEmailCheckBox.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.SendEmailCheckBox.Location = New System.Drawing.Point(347, 399)
+        Me.SendEmailCheckBox.Margin = New System.Windows.Forms.Padding(0)
+        Me.SendEmailCheckBox.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.SendEmailCheckBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.SendEmailCheckBox.Name = "SendEmailCheckBox"
+        Me.SendEmailCheckBox.Ripple = True
+        Me.SendEmailCheckBox.Size = New System.Drawing.Size(328, 30)
+        Me.SendEmailCheckBox.TabIndex = 26
+        Me.SendEmailCheckBox.Text = "Send username and password to the given email"
+        Me.SendEmailCheckBox.UseVisualStyleBackColor = True
+        '
+        'PasswordTextBox
+        '
+        Me.BunifuTransition1.SetDecoration(Me.PasswordTextBox, BunifuAnimatorNS.DecorationType.None)
+        Me.PasswordTextBox.Depth = 0
+        Me.PasswordTextBox.Hint = "Password"
+        Me.PasswordTextBox.Location = New System.Drawing.Point(60, 466)
+        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.PasswordTextBox.Name = "PasswordTextBox"
+        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordTextBox.SelectedText = ""
+        Me.PasswordTextBox.SelectionLength = 0
+        Me.PasswordTextBox.SelectionStart = 0
+        Me.PasswordTextBox.Size = New System.Drawing.Size(199, 23)
+        Me.PasswordTextBox.TabIndex = 25
+        Me.PasswordTextBox.UseSystemPasswordChar = False
+        '
+        'MaterialLabel1
+        '
+        Me.MaterialLabel1.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.MaterialLabel1, BunifuAnimatorNS.DecorationType.None)
+        Me.MaterialLabel1.Depth = 0
+        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel1.Location = New System.Drawing.Point(76, 356)
+        Me.MaterialLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel1.Name = "MaterialLabel1"
+        Me.MaterialLabel1.Size = New System.Drawing.Size(128, 19)
+        Me.MaterialLabel1.TabIndex = 24
+        Me.MaterialLabel1.Text = "Login Information"
+        '
         'DobDateTimePicker
         '
         Me.BunifuTransition1.SetDecoration(Me.DobDateTimePicker, BunifuAnimatorNS.DecorationType.None)
@@ -424,6 +361,185 @@ Partial Class Dashboard
         Me.DobDateTimePicker.Name = "DobDateTimePicker"
         Me.DobDateTimePicker.Size = New System.Drawing.Size(265, 29)
         Me.DobDateTimePicker.TabIndex = 9
+        '
+        'UserUploadBtn
+        '
+        Me.UserUploadBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.UserUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuTransition1.SetDecoration(Me.UserUploadBtn, BunifuAnimatorNS.DecorationType.None)
+        Me.UserUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
+        Me.UserUploadBtn.ImageActive = Nothing
+        Me.UserUploadBtn.Location = New System.Drawing.Point(60, 303)
+        Me.UserUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.UserUploadBtn.Name = "UserUploadBtn"
+        Me.UserUploadBtn.Size = New System.Drawing.Size(199, 22)
+        Me.UserUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.UserUploadBtn.TabIndex = 16
+        Me.UserUploadBtn.TabStop = False
+        Me.UserUploadBtn.Zoom = 10
+        '
+        'hamburgerPnl
+        '
+        Me.hamburgerPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.hamburgerPnl.Controls.Add(Me.PictureBox5)
+        Me.hamburgerPnl.Controls.Add(Me.hamburgerPb)
+        Me.hamburgerPnl.Controls.Add(Me.PictureBox2)
+        Me.hamburgerPnl.Controls.Add(Me.PictureBox1)
+        Me.BunifuTransition1.SetDecoration(Me.hamburgerPnl, BunifuAnimatorNS.DecorationType.None)
+        Me.hamburgerPnl.Dock = System.Windows.Forms.DockStyle.Left
+        Me.hamburgerPnl.Location = New System.Drawing.Point(0, 0)
+        Me.hamburgerPnl.Margin = New System.Windows.Forms.Padding(0)
+        Me.hamburgerPnl.Name = "hamburgerPnl"
+        Me.hamburgerPnl.Size = New System.Drawing.Size(55, 729)
+        Me.hamburgerPnl.TabIndex = 3
+        '
+        'PictureBox5
+        '
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox5, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox5.Image = Global.College_Management_System.My.Resources.Resources.Trash_32px
+        Me.PictureBox5.Location = New System.Drawing.Point(8, 187)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(35, 35)
+        Me.PictureBox5.TabIndex = 3
+        Me.PictureBox5.TabStop = False
+        '
+        'hamburgerPb
+        '
+        Me.hamburgerPb.BackColor = System.Drawing.Color.Transparent
+        Me.hamburgerPb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.hamburgerPb, BunifuAnimatorNS.DecorationType.None)
+        Me.hamburgerPb.Image = Global.College_Management_System.My.Resources.Resources.Menu_32px
+        Me.hamburgerPb.Location = New System.Drawing.Point(11, 12)
+        Me.hamburgerPb.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.hamburgerPb.Name = "hamburgerPb"
+        Me.hamburgerPb.Size = New System.Drawing.Size(32, 26)
+        Me.hamburgerPb.TabIndex = 1
+        Me.hamburgerPb.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox2.Image = Global.College_Management_System.My.Resources.Resources.Registration_32px
+        Me.PictureBox2.Location = New System.Drawing.Point(11, 68)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(34, 33)
+        Me.PictureBox2.TabIndex = 1
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox1, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox1.Image = Global.College_Management_System.My.Resources.Resources.Admin_Settings_Male_32px
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 126)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 38)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'MainPanel
+        '
+        Me.MainPanel.Controls.Add(Me.editTablePanelAdmin)
+        Me.BunifuTransition1.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainPanel.Location = New System.Drawing.Point(60, 0)
+        Me.MainPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainPanel.Name = "MainPanel"
+        Me.MainPanel.Size = New System.Drawing.Size(1290, 729)
+        Me.MainPanel.TabIndex = 0
+        '
+        'editTablePanelAdmin
+        '
+        Me.editTablePanelAdmin.BackColor = System.Drawing.Color.White
+        Me.editTablePanelAdmin.ColumnCount = 1
+        Me.editTablePanelAdmin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.editTablePanelAdmin.Controls.Add(Me.MaterialTabSelector1, 0, 0)
+        Me.editTablePanelAdmin.Controls.Add(Me.a, 0, 1)
+        Me.BunifuTransition1.SetDecoration(Me.editTablePanelAdmin, BunifuAnimatorNS.DecorationType.None)
+        Me.editTablePanelAdmin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.editTablePanelAdmin.Location = New System.Drawing.Point(0, 0)
+        Me.editTablePanelAdmin.Margin = New System.Windows.Forms.Padding(0)
+        Me.editTablePanelAdmin.Name = "editTablePanelAdmin"
+        Me.editTablePanelAdmin.RowCount = 2
+        Me.editTablePanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.703704!))
+        Me.editTablePanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 96.2963!))
+        Me.editTablePanelAdmin.Size = New System.Drawing.Size(1290, 729)
+        Me.editTablePanelAdmin.TabIndex = 0
+        Me.editTablePanelAdmin.Visible = False
+        '
+        'MaterialTabSelector1
+        '
+        Me.MaterialTabSelector1.BaseTabControl = Me.a
+        Me.BunifuTransition1.SetDecoration(Me.MaterialTabSelector1, BunifuAnimatorNS.DecorationType.None)
+        Me.MaterialTabSelector1.Depth = 0
+        Me.MaterialTabSelector1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MaterialTabSelector1.Location = New System.Drawing.Point(0, 0)
+        Me.MaterialTabSelector1.Margin = New System.Windows.Forms.Padding(0)
+        Me.MaterialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialTabSelector1.Name = "MaterialTabSelector1"
+        Me.MaterialTabSelector1.Size = New System.Drawing.Size(1290, 26)
+        Me.MaterialTabSelector1.TabIndex = 1
+        Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
+        '
+        'a
+        '
+        Me.a.Controls.Add(Me.AddUserTab)
+        Me.a.Controls.Add(Me.AddStudentTab)
+        Me.a.Controls.Add(Me.AllUsersTab)
+        Me.a.Controls.Add(Me.AllStudentsTab)
+        Me.a.Controls.Add(Me.NoticeTab)
+        Me.BunifuTransition1.SetDecoration(Me.a, BunifuAnimatorNS.DecorationType.None)
+        Me.a.Depth = 0
+        Me.a.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.a.Location = New System.Drawing.Point(0, 26)
+        Me.a.Margin = New System.Windows.Forms.Padding(0)
+        Me.a.MouseState = MaterialSkin.MouseState.HOVER
+        Me.a.Name = "a"
+        Me.a.SelectedIndex = 0
+        Me.a.Size = New System.Drawing.Size(1290, 703)
+        Me.a.TabIndex = 0
+        '
+        'AddUserTab
+        '
+        Me.AddUserTab.BackColor = System.Drawing.Color.White
+        Me.AddUserTab.Controls.Add(Me.DeleteBtn)
+        Me.AddUserTab.Controls.Add(Me.UpdateBtn)
+        Me.AddUserTab.Controls.Add(Me.PictureBox4)
+        Me.AddUserTab.Controls.Add(Me.SearchTextBox)
+        Me.AddUserTab.Controls.Add(Me.SearchDataGridView)
+        Me.AddUserTab.Controls.Add(Me.SendEmailCheckBox)
+        Me.AddUserTab.Controls.Add(Me.PasswordTextBox)
+        Me.AddUserTab.Controls.Add(Me.MaterialLabel1)
+        Me.AddUserTab.Controls.Add(Me.UserNameTextBox)
+        Me.AddUserTab.Controls.Add(Me.FinsihBtn)
+        Me.AddUserTab.Controls.Add(Me.UserIdTextBox)
+        Me.AddUserTab.Controls.Add(Me.MaritialStatusComboBox)
+        Me.AddUserTab.Controls.Add(Me.EmailTextBox)
+        Me.AddUserTab.Controls.Add(Me.DobDateTimePicker)
+        Me.AddUserTab.Controls.Add(Me.UserUploadBtn)
+        Me.AddUserTab.Controls.Add(Me.UserTypeLabel)
+        Me.AddUserTab.Controls.Add(Me.MaritialStatusLabel)
+        Me.AddUserTab.Controls.Add(Me.DobLabel)
+        Me.AddUserTab.Controls.Add(Me.GenderLabel)
+        Me.AddUserTab.Controls.Add(Me.UserIdLabel)
+        Me.AddUserTab.Controls.Add(Me.FemaleRadioBtn)
+        Me.AddUserTab.Controls.Add(Me.MaleRadioBtn)
+        Me.AddUserTab.Controls.Add(Me.UserTypeComboBox)
+        Me.AddUserTab.Controls.Add(Me.Address2TextBox)
+        Me.AddUserTab.Controls.Add(Me.Address1TextBox)
+        Me.AddUserTab.Controls.Add(Me.ContactNoTextBox)
+        Me.AddUserTab.Controls.Add(Me.MiddleNameTextBox)
+        Me.AddUserTab.Controls.Add(Me.LastNameTextBox)
+        Me.AddUserTab.Controls.Add(Me.FirstNameTextBox)
+        Me.AddUserTab.Controls.Add(Me.UserImage)
+        Me.BunifuTransition1.SetDecoration(Me.AddUserTab, BunifuAnimatorNS.DecorationType.None)
+        Me.AddUserTab.Location = New System.Drawing.Point(4, 24)
+        Me.AddUserTab.Margin = New System.Windows.Forms.Padding(0)
+        Me.AddUserTab.Name = "AddUserTab"
+        Me.AddUserTab.Size = New System.Drawing.Size(1282, 657)
+        Me.AddUserTab.TabIndex = 0
+        Me.AddUserTab.Text = "Add User"
         '
         'UserTypeLabel
         '
@@ -652,241 +768,6 @@ Partial Class Dashboard
         Me.FirstNameTextBox.TabIndex = 0
         Me.FirstNameTextBox.UseSystemPasswordChar = False
         '
-        'AddStudentTab
-        '
-        Me.AddStudentTab.BackColor = System.Drawing.Color.White
-        Me.AddStudentTab.Controls.Add(Me.StudentUploadBtn)
-        Me.AddStudentTab.Controls.Add(Me.StudentImage)
-        Me.BunifuTransition1.SetDecoration(Me.AddStudentTab, BunifuAnimatorNS.DecorationType.None)
-        Me.AddStudentTab.Location = New System.Drawing.Point(4, 24)
-        Me.AddStudentTab.Margin = New System.Windows.Forms.Padding(0)
-        Me.AddStudentTab.Name = "AddStudentTab"
-        Me.AddStudentTab.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.AddStudentTab.Size = New System.Drawing.Size(1287, 665)
-        Me.AddStudentTab.TabIndex = 1
-        Me.AddStudentTab.Text = "Add Student"
-        '
-        'AllUsersTab
-        '
-        Me.AllUsersTab.Controls.Add(Me.PictureBox3)
-        Me.AllUsersTab.Controls.Add(Me.UserDataGridView)
-        Me.BunifuTransition1.SetDecoration(Me.AllUsersTab, BunifuAnimatorNS.DecorationType.None)
-        Me.AllUsersTab.Location = New System.Drawing.Point(4, 24)
-        Me.AllUsersTab.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.AllUsersTab.Name = "AllUsersTab"
-        Me.AllUsersTab.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.AllUsersTab.Size = New System.Drawing.Size(1287, 665)
-        Me.AllUsersTab.TabIndex = 2
-        Me.AllUsersTab.Text = "All Users"
-        Me.AllUsersTab.UseVisualStyleBackColor = True
-        '
-        'UserDataGridView
-        '
-        Me.UserDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.UserDataGridView.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UserDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.UserDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.UserDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
-        Me.UserDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.UserDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.UserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BunifuTransition1.SetDecoration(Me.UserDataGridView, BunifuAnimatorNS.DecorationType.None)
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle5
-        Me.UserDataGridView.DoubleBuffered = True
-        Me.UserDataGridView.EnableHeadersVisualStyles = False
-        Me.UserDataGridView.HeaderBgColor = System.Drawing.Color.Black
-        Me.UserDataGridView.HeaderForeColor = System.Drawing.Color.White
-        Me.UserDataGridView.Location = New System.Drawing.Point(4, 250)
-        Me.UserDataGridView.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserDataGridView.Name = "UserDataGridView"
-        Me.UserDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.UserDataGridView.Size = New System.Drawing.Size(1280, 412)
-        Me.UserDataGridView.TabIndex = 0
-        '
-        'AllStudentsTab
-        '
-        Me.BunifuTransition1.SetDecoration(Me.AllStudentsTab, BunifuAnimatorNS.DecorationType.None)
-        Me.AllStudentsTab.Location = New System.Drawing.Point(4, 24)
-        Me.AllStudentsTab.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.AllStudentsTab.Name = "AllStudentsTab"
-        Me.AllStudentsTab.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.AllStudentsTab.Size = New System.Drawing.Size(1287, 665)
-        Me.AllStudentsTab.TabIndex = 3
-        Me.AllStudentsTab.Text = "All Students"
-        Me.AllStudentsTab.UseVisualStyleBackColor = True
-        '
-        'NoticeTab
-        '
-        Me.NoticeTab.Controls.Add(Me.RichTextBox1)
-        Me.BunifuTransition1.SetDecoration(Me.NoticeTab, BunifuAnimatorNS.DecorationType.None)
-        Me.NoticeTab.Location = New System.Drawing.Point(4, 24)
-        Me.NoticeTab.Name = "NoticeTab"
-        Me.NoticeTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.NoticeTab.Size = New System.Drawing.Size(1287, 665)
-        Me.NoticeTab.TabIndex = 4
-        Me.NoticeTab.Text = "Notice"
-        Me.NoticeTab.UseVisualStyleBackColor = True
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.BunifuTransition1.SetDecoration(Me.RichTextBox1, BunifuAnimatorNS.DecorationType.None)
-        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.RichTextBox1.Location = New System.Drawing.Point(3, 35)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(0)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(1281, 627)
-        Me.RichTextBox1.TabIndex = 0
-        Me.RichTextBox1.Text = ""
-        '
-        'MaterialTabSelector1
-        '
-        Me.MaterialTabSelector1.BaseTabControl = Me.a
-        Me.BunifuTransition1.SetDecoration(Me.MaterialTabSelector1, BunifuAnimatorNS.DecorationType.None)
-        Me.MaterialTabSelector1.Depth = 0
-        Me.MaterialTabSelector1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MaterialTabSelector1.Location = New System.Drawing.Point(0, 0)
-        Me.MaterialTabSelector1.Margin = New System.Windows.Forms.Padding(0)
-        Me.MaterialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialTabSelector1.Name = "MaterialTabSelector1"
-        Me.MaterialTabSelector1.Size = New System.Drawing.Size(1295, 39)
-        Me.MaterialTabSelector1.TabIndex = 1
-        Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
-        '
-        'BunifuDragControl1
-        '
-        Me.BunifuDragControl1.Fixed = True
-        Me.BunifuDragControl1.Horizontal = True
-        Me.BunifuDragControl1.TargetControl = Me
-        Me.BunifuDragControl1.Vertical = True
-        '
-        'ImageOpenDialog
-        '
-        Me.ImageOpenDialog.FileName = "Image Opener"
-        '
-        'BunifuTransition1
-        '
-        Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide
-        Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0.0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0.0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(0)
-        Animation1.RotateCoeff = 0.0!
-        Animation1.RotateLimit = 0.0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0.0!
-        Animation1.TransparencyCoeff = 0.0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
-        '
-        'DeleteBtn
-        '
-        Me.BunifuTransition1.SetDecoration(Me.DeleteBtn, BunifuAnimatorNS.DecorationType.None)
-        Me.DeleteBtn.Location = New System.Drawing.Point(647, 455)
-        Me.DeleteBtn.Name = "DeleteBtn"
-        Me.DeleteBtn.Size = New System.Drawing.Size(143, 34)
-        Me.DeleteBtn.TabIndex = 32
-        Me.DeleteBtn.Text = "Delete"
-        Me.DeleteBtn.UseCustomBackColor = True
-        Me.DeleteBtn.UseCustomForeColor = True
-        Me.DeleteBtn.UseSelectable = True
-        '
-        'PictureBox5
-        '
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox5, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox5.Image = Global.College_Management_System.My.Resources.Resources.Trash_32px
-        Me.PictureBox5.Location = New System.Drawing.Point(8, 187)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(35, 35)
-        Me.PictureBox5.TabIndex = 3
-        Me.PictureBox5.TabStop = False
-        '
-        'hamburgerPb
-        '
-        Me.hamburgerPb.BackColor = System.Drawing.Color.Transparent
-        Me.hamburgerPb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuTransition1.SetDecoration(Me.hamburgerPb, BunifuAnimatorNS.DecorationType.None)
-        Me.hamburgerPb.Image = Global.College_Management_System.My.Resources.Resources.Menu_32px
-        Me.hamburgerPb.Location = New System.Drawing.Point(11, 12)
-        Me.hamburgerPb.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.hamburgerPb.Name = "hamburgerPb"
-        Me.hamburgerPb.Size = New System.Drawing.Size(32, 26)
-        Me.hamburgerPb.TabIndex = 1
-        Me.hamburgerPb.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox2.Image = Global.College_Management_System.My.Resources.Resources.Registration_32px
-        Me.PictureBox2.Location = New System.Drawing.Point(11, 68)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(34, 33)
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox1, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox1.Image = Global.College_Management_System.My.Resources.Resources.Admin_Settings_Male_32px
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 126)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(36, 38)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox4, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox4.Image = Global.College_Management_System.My.Resources.Resources.Search_25px
-        Me.PictureBox4.Location = New System.Drawing.Point(854, 15)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(25, 23)
-        Me.PictureBox4.TabIndex = 30
-        Me.PictureBox4.TabStop = False
-        '
-        'UserUploadBtn
-        '
-        Me.UserUploadBtn.BackColor = System.Drawing.Color.SeaGreen
-        Me.UserUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
-        Me.BunifuTransition1.SetDecoration(Me.UserUploadBtn, BunifuAnimatorNS.DecorationType.None)
-        Me.UserUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
-        Me.UserUploadBtn.ImageActive = Nothing
-        Me.UserUploadBtn.Location = New System.Drawing.Point(60, 303)
-        Me.UserUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.UserUploadBtn.Name = "UserUploadBtn"
-        Me.UserUploadBtn.Size = New System.Drawing.Size(199, 22)
-        Me.UserUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.UserUploadBtn.TabIndex = 16
-        Me.UserUploadBtn.TabStop = False
-        Me.UserUploadBtn.Zoom = 10
-        '
         'UserImage
         '
         Me.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -899,6 +780,20 @@ Partial Class Dashboard
         Me.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.UserImage.TabIndex = 0
         Me.UserImage.TabStop = False
+        '
+        'AddStudentTab
+        '
+        Me.AddStudentTab.BackColor = System.Drawing.Color.White
+        Me.AddStudentTab.Controls.Add(Me.StudentUploadBtn)
+        Me.AddStudentTab.Controls.Add(Me.StudentImage)
+        Me.BunifuTransition1.SetDecoration(Me.AddStudentTab, BunifuAnimatorNS.DecorationType.None)
+        Me.AddStudentTab.Location = New System.Drawing.Point(4, 24)
+        Me.AddStudentTab.Margin = New System.Windows.Forms.Padding(0)
+        Me.AddStudentTab.Name = "AddStudentTab"
+        Me.AddStudentTab.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.AddStudentTab.Size = New System.Drawing.Size(1282, 657)
+        Me.AddStudentTab.TabIndex = 1
+        Me.AddStudentTab.Text = "Add Student"
         '
         'StudentUploadBtn
         '
@@ -929,6 +824,20 @@ Partial Class Dashboard
         Me.StudentImage.TabIndex = 2
         Me.StudentImage.TabStop = False
         '
+        'AllUsersTab
+        '
+        Me.AllUsersTab.Controls.Add(Me.PictureBox3)
+        Me.AllUsersTab.Controls.Add(Me.UserDataGridView)
+        Me.BunifuTransition1.SetDecoration(Me.AllUsersTab, BunifuAnimatorNS.DecorationType.None)
+        Me.AllUsersTab.Location = New System.Drawing.Point(4, 24)
+        Me.AllUsersTab.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.AllUsersTab.Name = "AllUsersTab"
+        Me.AllUsersTab.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.AllUsersTab.Size = New System.Drawing.Size(1282, 675)
+        Me.AllUsersTab.TabIndex = 2
+        Me.AllUsersTab.Text = "All Users"
+        Me.AllUsersTab.UseVisualStyleBackColor = True
+        '
         'PictureBox3
         '
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -942,12 +851,103 @@ Partial Class Dashboard
         Me.PictureBox3.TabIndex = 1
         Me.PictureBox3.TabStop = False
         '
+        'UserDataGridView
+        '
+        Me.UserDataGridView.AllowUserToAddRows = False
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle23
+        Me.UserDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.UserDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.UserDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
+        Me.UserDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.UserDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle24
+        Me.UserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BunifuTransition1.SetDecoration(Me.UserDataGridView, BunifuAnimatorNS.DecorationType.None)
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle25.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle25
+        Me.UserDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.UserDataGridView.DoubleBuffered = True
+        Me.UserDataGridView.EnableHeadersVisualStyles = False
+        Me.UserDataGridView.HeaderBgColor = System.Drawing.Color.Black
+        Me.UserDataGridView.HeaderForeColor = System.Drawing.Color.White
+        Me.UserDataGridView.Location = New System.Drawing.Point(4, 260)
+        Me.UserDataGridView.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserDataGridView.Name = "UserDataGridView"
+        Me.UserDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.UserDataGridView.Size = New System.Drawing.Size(1274, 412)
+        Me.UserDataGridView.TabIndex = 0
+        '
+        'ImageOpenDialog
+        '
+        Me.ImageOpenDialog.FileName = "Image Opener"
+        '
+        'dashboardTablePnl
+        '
+        Me.dashboardTablePnl.BackColor = System.Drawing.Color.LightSalmon
+        Me.dashboardTablePnl.ColumnCount = 2
+        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60.0!))
+        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.dashboardTablePnl.Controls.Add(Me.MainPanel, 1, 0)
+        Me.BunifuTransition1.SetDecoration(Me.dashboardTablePnl, BunifuAnimatorNS.DecorationType.None)
+        Me.dashboardTablePnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dashboardTablePnl.Location = New System.Drawing.Point(0, 0)
+        Me.dashboardTablePnl.Margin = New System.Windows.Forms.Padding(0)
+        Me.dashboardTablePnl.Name = "dashboardTablePnl"
+        Me.dashboardTablePnl.RowCount = 1
+        Me.dashboardTablePnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.dashboardTablePnl.Size = New System.Drawing.Size(1350, 729)
+        Me.dashboardTablePnl.TabIndex = 4
+        '
+        'BunifuTransition1
+        '
+        Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide
+        Me.BunifuTransition1.Cursor = Nothing
+        Animation5.AnimateOnlyDifferences = True
+        Animation5.BlindCoeff = CType(resources.GetObject("Animation5.BlindCoeff"), System.Drawing.PointF)
+        Animation5.LeafCoeff = 0.0!
+        Animation5.MaxTime = 1.0!
+        Animation5.MinTime = 0.0!
+        Animation5.MosaicCoeff = CType(resources.GetObject("Animation5.MosaicCoeff"), System.Drawing.PointF)
+        Animation5.MosaicShift = CType(resources.GetObject("Animation5.MosaicShift"), System.Drawing.PointF)
+        Animation5.MosaicSize = 0
+        Animation5.Padding = New System.Windows.Forms.Padding(0)
+        Animation5.RotateCoeff = 0.0!
+        Animation5.RotateLimit = 0.0!
+        Animation5.ScaleCoeff = CType(resources.GetObject("Animation5.ScaleCoeff"), System.Drawing.PointF)
+        Animation5.SlideCoeff = CType(resources.GetObject("Animation5.SlideCoeff"), System.Drawing.PointF)
+        Animation5.TimeCoeff = 0.0!
+        Animation5.TransparencyCoeff = 0.0!
+        Me.BunifuTransition1.DefaultAnimation = Animation5
+        '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Nothing
+        Me.BunifuDragControl1.Vertical = True
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
-        Me.Controls.Add(Me.dashboardMainPnl)
+        Me.Controls.Add(Me.hamburgerPnl)
+        Me.Controls.Add(Me.dashboardTablePnl)
         Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
@@ -956,45 +956,67 @@ Partial Class Dashboard
         Me.MinimizeBox = False
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"
-        Me.hamburgerPnl.ResumeLayout(False)
-        Me.dashboardMainPnl.ResumeLayout(False)
-        Me.dashboardTablePnl.ResumeLayout(False)
-        Me.editTablePanelAdmin.ResumeLayout(False)
-        Me.a.ResumeLayout(False)
-        Me.AddUserTab.ResumeLayout(False)
-        Me.AddUserTab.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SearchDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.AddStudentTab.ResumeLayout(False)
-        Me.AllUsersTab.ResumeLayout(False)
-        CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NoticeTab.ResumeLayout(False)
+        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.hamburgerPnl.ResumeLayout(False)
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MainPanel.ResumeLayout(False)
+        Me.editTablePanelAdmin.ResumeLayout(False)
+        Me.a.ResumeLayout(False)
+        Me.AddUserTab.ResumeLayout(False)
+        Me.AddUserTab.PerformLayout()
         CType(Me.UserImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AddStudentTab.ResumeLayout(False)
         CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AllUsersTab.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.dashboardTablePnl.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
-    Friend WithEvents dashboardMainPnl As System.Windows.Forms.Panel
+    Friend WithEvents DeleteBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents BunifuTransition1 As BunifuAnimatorNS.BunifuTransition
+    Friend WithEvents UpdateBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
+    Friend WithEvents SearchDataGridView As Bunifu.Framework.UI.BunifuCustomDataGrid
+    Friend WithEvents UserNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents FinsihBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents UserIdTextBox As WindowsFormsControlLibrary1.BunifuCustomTextbox
+    Friend WithEvents MaritialStatusComboBox As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents EmailTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents AllStudentsTab As System.Windows.Forms.TabPage
+    Friend WithEvents SearchTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents NoticeTab As System.Windows.Forms.TabPage
+    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents SendEmailCheckBox As MaterialSkin.Controls.MaterialCheckBox
+    Friend WithEvents PasswordTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents DobDateTimePicker As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents UserUploadBtn As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents hamburgerPnl As System.Windows.Forms.Panel
+    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
     Friend WithEvents hamburgerPb As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents dashboardTablePnl As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents MainPanel As System.Windows.Forms.Panel
     Friend WithEvents editTablePanelAdmin As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents MaterialTabSelector1 As MaterialSkin.Controls.MaterialTabSelector
     Friend WithEvents a As MaterialSkin.Controls.MaterialTabControl
     Friend WithEvents AddUserTab As System.Windows.Forms.TabPage
-    Friend WithEvents AddStudentTab As System.Windows.Forms.TabPage
-    Friend WithEvents MaterialTabSelector1 As MaterialSkin.Controls.MaterialTabSelector
-    Friend WithEvents UserImage As System.Windows.Forms.PictureBox
-    Friend WithEvents ImageOpenDialog As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents UserTypeLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents MaritialStatusLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents DobLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents GenderLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents UserIdLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents FemaleRadioBtn As MaterialSkin.Controls.MaterialRadioButton
+    Friend WithEvents MaleRadioBtn As MaterialSkin.Controls.MaterialRadioButton
     Friend WithEvents UserTypeComboBox As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Address2TextBox As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents Address1TextBox As MaterialSkin.Controls.MaterialSingleLineTextField
@@ -1002,36 +1024,14 @@ Partial Class Dashboard
     Friend WithEvents MiddleNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents LastNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents FirstNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents FemaleRadioBtn As MaterialSkin.Controls.MaterialRadioButton
-    Friend WithEvents MaleRadioBtn As MaterialSkin.Controls.MaterialRadioButton
-    Friend WithEvents UserIdLabel As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents UserUploadBtn As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents DobLabel As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents UserIdTextBox As WindowsFormsControlLibrary1.BunifuCustomTextbox
-    Friend WithEvents EmailTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents DobDateTimePicker As MetroFramework.Controls.MetroDateTime
-    Friend WithEvents UserTypeLabel As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaritialStatusLabel As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents GenderLabel As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents AllUsersTab As System.Windows.Forms.TabPage
-    Friend WithEvents FinsihBtn As MetroFramework.Controls.MetroButton
-    Friend WithEvents PasswordTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents UserNameTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents UserImage As System.Windows.Forms.PictureBox
+    Friend WithEvents AddStudentTab As System.Windows.Forms.TabPage
     Friend WithEvents StudentUploadBtn As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents StudentImage As System.Windows.Forms.PictureBox
-    Friend WithEvents AllStudentsTab As System.Windows.Forms.TabPage
-    Friend WithEvents SendEmailCheckBox As MaterialSkin.Controls.MaterialCheckBox
-    Friend WithEvents BunifuTransition1 As BunifuAnimatorNS.BunifuTransition
-    Friend WithEvents UserDataGridView As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents NoticeTab As System.Windows.Forms.TabPage
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents AllUsersTab As System.Windows.Forms.TabPage
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents SearchDataGridView As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents MaritialStatusComboBox As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents SearchTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents UpdateBtn As MetroFramework.Controls.MetroButton
-    Friend WithEvents DeleteBtn As MetroFramework.Controls.MetroButton
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
+    Friend WithEvents UserDataGridView As Bunifu.Framework.UI.BunifuCustomDataGrid
+    Friend WithEvents ImageOpenDialog As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents dashboardTablePnl As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
 End Class

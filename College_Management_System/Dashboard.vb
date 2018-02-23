@@ -9,6 +9,7 @@ Imports System.Net.Mail
 Imports BunifuAnimatorNS
 
 Public Class Dashboard
+
     Dim userId As Integer
     Dim state As Integer = 1
     Private Sub hamburgerPb_Click_1(sender As Object, e As EventArgs) Handles hamburgerPb.Click
@@ -17,12 +18,6 @@ Public Class Dashboard
         Else
             Transition.run(hamburgerPnl, "Width", 55, New TransitionType_EaseInEaseOut(150))
         End If
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        BunifuTransition1.ShowSync(dashboardMainPnl, False, Nothing)
-        dashboardTablePnl.Visible = True
-        dashboardTablePnl.Enabled = True
     End Sub
     Sub imageChooser(ByVal a As String)
         ImageOpenDialog.Filter = "Picture Files(*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
@@ -91,7 +86,7 @@ Public Class Dashboard
         UserImage.Image = My.Resources.user_male2_512
         clearAll()
         PasswordTextBox.Text = GeneratePassword()
-        loadUsers()
+        loadUsers("Select * FROM userTbl WHERE state = 1")
     End Sub
 
     Public Sub insertUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal username As String, ByVal password As String)
@@ -153,7 +148,7 @@ Public Class Dashboard
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PasswordTextBox.Text = GeneratePassword()
-        loadUsers()
+        loadUsers("Select * FROM userTbl WHERE state = 1")
         a.TabPages.Remove(NoticeTab)
     End Sub
     Private Sub sendEmail()
@@ -176,16 +171,17 @@ Public Class Dashboard
             MsgBox(ex.ToString)
         End Try
     End Sub
-    Public Sub loadUsers()
+    Public Function loadUsers(ByVal sql As String)
         Dim con As SqlConnection = dbConnect()
-        Dim cmd As New SqlCommand("Select * FROM userTbl WHERE state = 1", con)
+        Dim cmd As New SqlCommand(sql, con)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
         da.Fill(dt)
         UserDataGridView.DataSource = dt
         UserDataGridView.Columns(14).Visible = False
         UserDataGridView.Columns(15).Visible = False
-    End Sub
+        Return dt
+    End Function
 
 
     Private Sub UserDataGridView_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles UserDataGridView.RowHeaderMouseClick
@@ -267,7 +263,7 @@ Public Class Dashboard
         UserImage.Image = My.Resources.user_male2_512
         clearAll()
         PasswordTextBox.Text = GeneratePassword()
-        loadUsers()
+        loadUsers("Select * FROM userTbl WHERE state = 1")
         searchData()
     End Sub
     'Method to update the existing users
@@ -357,15 +353,24 @@ Public Class Dashboard
         clearAll()
         PasswordTextBox.Text = GeneratePassword()
         searchData()
-        loadUsers()
+        loadUsers("Select * FROM userTbl WHERE state = 1")
+        RecycleBin.Refresh()
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-        Dim RecycleBin As New Recyclebin
-        RecycleBin.MdiParent = Me
-        RecycleBin.BringToFront()
-        RecycleBin.TopLevel = False
-        editTablePanelAdmin.Controls.Add(RecycleBin)
-        RecycleBin.Show()
+        Dim bin As RecycleBin = New RecycleBin()
+        bin.MdiParent = Me
+        editTablePanelAdmin.Visible = False
+        MainPanel.Controls.Add(bin)
+        bin.SuspendLayout()
+        bin.Visible = True
+        bin.ResumeLayout()
     End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        editTablePanelAdmin.Visible = True
+        'bin.Hide()
+    End Sub
+
+
 End Class

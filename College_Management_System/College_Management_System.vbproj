@@ -165,10 +165,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Recyclebin.Designer.vb">
-      <DependentUpon>Recyclebin.vb</DependentUpon>
+    <Compile Include="RecycleBin.Designer.vb">
+      <DependentUpon>RecycleBin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Recyclebin.vb">
+    <Compile Include="RecycleBin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Splashscreen.Designer.vb">
@@ -191,8 +191,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recyclebin.resx">
-      <DependentUpon>Recyclebin.vb</DependentUpon>
+    <EmbeddedResource Include="RecycleBin.resx">
+      <DependentUpon>RecycleBin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splashscreen.resx">
       <DependentUpon>Splashscreen.vb</DependentUpon>
