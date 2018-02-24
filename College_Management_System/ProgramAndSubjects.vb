@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ProgramAndSubjects
-   ' Dim su As AddRemoveStudentStaff = New AddRemoveStudentStaff
+  Dim su As AddRemoveStudentStaff = New AddRemoveStudentStaff
     Function loadUsers()
         Dim dt As New DataTable
         dt = su.loadUsers("Select * FROM tblSubjects")
