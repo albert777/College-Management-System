@@ -5,6 +5,7 @@ Imports BunifuAnimatorNS
 Public Class Dashboard
     Dim bin As RecycleBin = New RecycleBin()
     Dim ar As AddRemoveStudentStaff = New AddRemoveStudentStaff()
+    Dim ps As ProgramAndSubjects = New ProgramAndSubjects()
     Private Sub hamburgerPb_Click_1(sender As Object, e As EventArgs) Handles hamburgerPb.Click
         If (hamburgerPnl.Width < 250) Then
             Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(150))
@@ -19,6 +20,7 @@ Public Class Dashboard
         bin.Visible = True
         bin.BringToFront()
         ar.Visible = False
+        ps.Visible = False
     End Sub
     Sub showAddRemoveStudentUserPanel()
         ar.MdiParent = Me
@@ -27,8 +29,18 @@ Public Class Dashboard
         ar.Visible = True
         ar.BringToFront()
         bin.Visible = False
+        ps.Visible = False
     End Sub
+    Sub showCourseAndSubjects()
+        ps.MdiParent = Me
+        MainPanel.Controls.Add(ps)
+        ps.Dock = DockStyle.Fill
+        ps.Visible = True
+        ps.BringToFront()
+        ar.Visible = False
+        bin.Visible = False
 
+    End Sub
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         showRecycleBin()
     End Sub
@@ -39,5 +51,9 @@ Public Class Dashboard
 
     Private Sub CrossPictureBox_Click(sender As Object, e As EventArgs) Handles CrossPictureBox.Click
         Application.Exit()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        showCourseAndSubjects()
     End Sub
 End Class

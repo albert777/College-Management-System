@@ -171,6 +171,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ProgramAndSubjects.Designer.vb">
+      <DependentUpon>ProgramAndSubjects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramAndSubjects.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RecycleBin.Designer.vb">
       <DependentUpon>RecycleBin.vb</DependentUpon>
     </Compile>
@@ -199,6 +205,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramAndSubjects.resx">
+      <DependentUpon>ProgramAndSubjects.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecycleBin.resx">
       <DependentUpon>RecycleBin.vb</DependentUpon>
@@ -268,6 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\Refresh_32px.png" />
     <None Include="Resources\Trash_32px.png" />
     <None Include="Resources\Search_25px.png" />
     <None Include="Resources\user_male2-512.png" />

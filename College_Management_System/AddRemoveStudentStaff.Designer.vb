@@ -22,18 +22,18 @@ Partial Class AddRemoveStudentStaff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.a = New MaterialSkin.Controls.MaterialTabControl()
         Me.AddUserTab = New System.Windows.Forms.TabPage()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DeleteBtn = New MetroFramework.Controls.MetroButton()
         Me.UpdateBtn = New MetroFramework.Controls.MetroButton()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.SearchTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SearchDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.SendEmailCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
@@ -45,7 +45,6 @@ Partial Class AddRemoveStudentStaff
         Me.MaritialStatusComboBox = New MetroFramework.Controls.MetroComboBox()
         Me.EmailTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.DobDateTimePicker = New MetroFramework.Controls.MetroDateTime()
-        Me.UserUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.UserTypeLabel = New MaterialSkin.Controls.MaterialLabel()
         Me.MaritialStatusLabel = New MaterialSkin.Controls.MaterialLabel()
         Me.DobLabel = New MaterialSkin.Controls.MaterialLabel()
@@ -60,31 +59,34 @@ Partial Class AddRemoveStudentStaff
         Me.MiddleNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.LastNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.FirstNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.UserImage = New System.Windows.Forms.PictureBox()
         Me.AddStudentTab = New System.Windows.Forms.TabPage()
-        Me.StudentUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.StudentImage = New System.Windows.Forms.PictureBox()
+        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
         Me.AllUsersTab = New System.Windows.Forms.TabPage()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.UserDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.AllStudentsTab = New System.Windows.Forms.TabPage()
         Me.AddRemoveUserStudentTablePanel = New System.Windows.Forms.TableLayoutPanel()
         Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.UserUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.UserImage = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.StudentUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.StudentImage = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.a.SuspendLayout()
         Me.AddUserTab.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SearchDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AddStudentTab.SuspendLayout()
-        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AllUsersTab.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AddRemoveUserStudentTablePanel.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MaterialTabSelector1
@@ -118,6 +120,7 @@ Partial Class AddRemoveStudentStaff
         '
         'AddUserTab
         '
+        Me.AddUserTab.AutoScroll = True
         Me.AddUserTab.BackColor = System.Drawing.Color.White
         Me.AddUserTab.Controls.Add(Me.Label2)
         Me.AddUserTab.Controls.Add(Me.Label1)
@@ -158,6 +161,14 @@ Partial Class AddRemoveStudentStaff
         Me.AddUserTab.TabIndex = 0
         Me.AddUserTab.Text = "Add User"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(351, 383)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 13)
+        Me.Label2.TabIndex = 34
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -189,15 +200,6 @@ Partial Class AddRemoveStudentStaff
         Me.UpdateBtn.UseCustomForeColor = True
         Me.UpdateBtn.UseSelectable = True
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.College_Management_System.My.Resources.Resources.Search_25px
-        Me.PictureBox4.Location = New System.Drawing.Point(854, 15)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(25, 23)
-        Me.PictureBox4.TabIndex = 30
-        Me.PictureBox4.TabStop = False
-        '
         'SearchTextBox
         '
         Me.SearchTextBox.Depth = 0
@@ -217,21 +219,21 @@ Partial Class AddRemoveStudentStaff
         'SearchDataGridView
         '
         Me.SearchDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.SearchDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.SearchDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.SearchDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SearchDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.SearchDataGridView.BackgroundColor = System.Drawing.Color.White
         Me.SearchDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.SearchDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SearchDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SearchDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.SearchDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SearchDataGridView.ColumnHeadersVisible = False
         Me.SearchDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -288,7 +290,7 @@ Partial Class AddRemoveStudentStaff
         Me.MaterialLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel1.Name = "MaterialLabel1"
-        Me.MaterialLabel1.Size = New System.Drawing.Size(128, 19)
+        Me.MaterialLabel1.Size = New System.Drawing.Size(127, 18)
         Me.MaterialLabel1.TabIndex = 24
         Me.MaterialLabel1.Text = "Login Information"
         '
@@ -373,21 +375,6 @@ Partial Class AddRemoveStudentStaff
         Me.DobDateTimePicker.Size = New System.Drawing.Size(265, 29)
         Me.DobDateTimePicker.TabIndex = 9
         '
-        'UserUploadBtn
-        '
-        Me.UserUploadBtn.BackColor = System.Drawing.Color.SeaGreen
-        Me.UserUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
-        Me.UserUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
-        Me.UserUploadBtn.ImageActive = Nothing
-        Me.UserUploadBtn.Location = New System.Drawing.Point(60, 303)
-        Me.UserUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.UserUploadBtn.Name = "UserUploadBtn"
-        Me.UserUploadBtn.Size = New System.Drawing.Size(199, 22)
-        Me.UserUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.UserUploadBtn.TabIndex = 16
-        Me.UserUploadBtn.TabStop = False
-        Me.UserUploadBtn.Zoom = 10
-        '
         'UserTypeLabel
         '
         Me.UserTypeLabel.AutoSize = True
@@ -398,7 +385,7 @@ Partial Class AddRemoveStudentStaff
         Me.UserTypeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.UserTypeLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.UserTypeLabel.Name = "UserTypeLabel"
-        Me.UserTypeLabel.Size = New System.Drawing.Size(68, 19)
+        Me.UserTypeLabel.Size = New System.Drawing.Size(67, 18)
         Me.UserTypeLabel.TabIndex = 15
         Me.UserTypeLabel.Text = "Usertype"
         '
@@ -412,7 +399,7 @@ Partial Class AddRemoveStudentStaff
         Me.MaritialStatusLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MaritialStatusLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaritialStatusLabel.Name = "MaritialStatusLabel"
-        Me.MaritialStatusLabel.Size = New System.Drawing.Size(107, 19)
+        Me.MaritialStatusLabel.Size = New System.Drawing.Size(106, 18)
         Me.MaritialStatusLabel.TabIndex = 15
         Me.MaritialStatusLabel.Text = "Maritial Status"
         '
@@ -426,7 +413,7 @@ Partial Class AddRemoveStudentStaff
         Me.DobLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.DobLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.DobLabel.Name = "DobLabel"
-        Me.DobLabel.Size = New System.Drawing.Size(38, 19)
+        Me.DobLabel.Size = New System.Drawing.Size(37, 18)
         Me.DobLabel.TabIndex = 15
         Me.DobLabel.Text = "DOB"
         '
@@ -440,7 +427,7 @@ Partial Class AddRemoveStudentStaff
         Me.GenderLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.GenderLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.GenderLabel.Name = "GenderLabel"
-        Me.GenderLabel.Size = New System.Drawing.Size(56, 19)
+        Me.GenderLabel.Size = New System.Drawing.Size(55, 18)
         Me.GenderLabel.TabIndex = 15
         Me.GenderLabel.Text = "Gender"
         '
@@ -454,7 +441,7 @@ Partial Class AddRemoveStudentStaff
         Me.UserIdLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.UserIdLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.UserIdLabel.Name = "UserIdLabel"
-        Me.UserIdLabel.Size = New System.Drawing.Size(52, 19)
+        Me.UserIdLabel.Size = New System.Drawing.Size(51, 18)
         Me.UserIdLabel.TabIndex = 15
         Me.UserIdLabel.Text = "UserId"
         '
@@ -601,21 +588,10 @@ Partial Class AddRemoveStudentStaff
         Me.FirstNameTextBox.TabIndex = 0
         Me.FirstNameTextBox.UseSystemPasswordChar = False
         '
-        'UserImage
-        '
-        Me.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.UserImage.Image = Global.College_Management_System.My.Resources.Resources.user_male2_512
-        Me.UserImage.Location = New System.Drawing.Point(60, 66)
-        Me.UserImage.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserImage.Name = "UserImage"
-        Me.UserImage.Size = New System.Drawing.Size(199, 225)
-        Me.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.UserImage.TabIndex = 0
-        Me.UserImage.TabStop = False
-        '
         'AddStudentTab
         '
         Me.AddStudentTab.BackColor = System.Drawing.Color.White
+        Me.AddStudentTab.Controls.Add(Me.PictureBox1)
         Me.AddStudentTab.Controls.Add(Me.MetroComboBox1)
         Me.AddStudentTab.Controls.Add(Me.StudentUploadBtn)
         Me.AddStudentTab.Controls.Add(Me.StudentImage)
@@ -627,32 +603,16 @@ Partial Class AddRemoveStudentStaff
         Me.AddStudentTab.TabIndex = 1
         Me.AddStudentTab.Text = "Add Student"
         '
-        'StudentUploadBtn
+        'MetroComboBox1
         '
-        Me.StudentUploadBtn.BackColor = System.Drawing.Color.SeaGreen
-        Me.StudentUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
-        Me.StudentUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
-        Me.StudentUploadBtn.ImageActive = Nothing
-        Me.StudentUploadBtn.Location = New System.Drawing.Point(57, 296)
-        Me.StudentUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.StudentUploadBtn.Name = "StudentUploadBtn"
-        Me.StudentUploadBtn.Size = New System.Drawing.Size(199, 22)
-        Me.StudentUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.StudentUploadBtn.TabIndex = 17
-        Me.StudentUploadBtn.TabStop = False
-        Me.StudentUploadBtn.Zoom = 10
-        '
-        'StudentImage
-        '
-        Me.StudentImage.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Splash_image
-        Me.StudentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.StudentImage.Location = New System.Drawing.Point(57, 65)
-        Me.StudentImage.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.StudentImage.Name = "StudentImage"
-        Me.StudentImage.Size = New System.Drawing.Size(199, 225)
-        Me.StudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.StudentImage.TabIndex = 2
-        Me.StudentImage.TabStop = False
+        Me.MetroComboBox1.FormattingEnabled = True
+        Me.MetroComboBox1.ItemHeight = 23
+        Me.MetroComboBox1.Location = New System.Drawing.Point(412, 289)
+        Me.MetroComboBox1.Name = "MetroComboBox1"
+        Me.MetroComboBox1.PromptText = "Select Program"
+        Me.MetroComboBox1.Size = New System.Drawing.Size(234, 29)
+        Me.MetroComboBox1.TabIndex = 18
+        Me.MetroComboBox1.UseSelectable = True
         '
         'AllUsersTab
         '
@@ -667,56 +627,43 @@ Partial Class AddRemoveStudentStaff
         Me.AllUsersTab.Text = "All Users"
         Me.AllUsersTab.UseVisualStyleBackColor = True
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Image = Global.College_Management_System.My.Resources.Resources.user_male2_512
-        Me.PictureBox3.Location = New System.Drawing.Point(525, 8)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(0)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(199, 225)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 1
-        Me.PictureBox3.TabStop = False
-        '
         'UserDataGridView
         '
         Me.UserDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.UserDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.UserDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.UserDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.UserDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.UserDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.UserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle25.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle10.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle10
         Me.UserDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.UserDataGridView.DoubleBuffered = True
         Me.UserDataGridView.EnableHeadersVisualStyles = False
         Me.UserDataGridView.HeaderBgColor = System.Drawing.Color.Black
         Me.UserDataGridView.HeaderForeColor = System.Drawing.Color.White
-        Me.UserDataGridView.Location = New System.Drawing.Point(4, 183)
+        Me.UserDataGridView.Location = New System.Drawing.Point(4, 247)
         Me.UserDataGridView.Margin = New System.Windows.Forms.Padding(0)
         Me.UserDataGridView.Name = "UserDataGridView"
         Me.UserDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.UserDataGridView.Size = New System.Drawing.Size(1365, 412)
+        Me.UserDataGridView.Size = New System.Drawing.Size(1365, 348)
         Me.UserDataGridView.TabIndex = 0
         '
         'AllStudentsTab
@@ -751,24 +698,89 @@ Partial Class AddRemoveStudentStaff
         '
         Me.ImageOpenDialog.FileName = "ImageOpener"
         '
-        'MetroComboBox1
+        'PictureBox4
         '
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(412, 289)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.PromptText = "Select Program"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(234, 29)
-        Me.MetroComboBox1.TabIndex = 18
-        Me.MetroComboBox1.UseSelectable = True
+        Me.PictureBox4.Image = Global.College_Management_System.My.Resources.Resources.Search_25px
+        Me.PictureBox4.Location = New System.Drawing.Point(854, 15)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(25, 23)
+        Me.PictureBox4.TabIndex = 30
+        Me.PictureBox4.TabStop = False
         '
-        'Label2
+        'UserUploadBtn
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(351, 383)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 13)
-        Me.Label2.TabIndex = 34
+        Me.UserUploadBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.UserUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
+        Me.UserUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
+        Me.UserUploadBtn.ImageActive = Nothing
+        Me.UserUploadBtn.Location = New System.Drawing.Point(60, 303)
+        Me.UserUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.UserUploadBtn.Name = "UserUploadBtn"
+        Me.UserUploadBtn.Size = New System.Drawing.Size(199, 22)
+        Me.UserUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.UserUploadBtn.TabIndex = 16
+        Me.UserUploadBtn.TabStop = False
+        Me.UserUploadBtn.Zoom = 10
+        '
+        'UserImage
+        '
+        Me.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.UserImage.Image = Global.College_Management_System.My.Resources.Resources.user_male2_512
+        Me.UserImage.Location = New System.Drawing.Point(60, 66)
+        Me.UserImage.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserImage.Name = "UserImage"
+        Me.UserImage.Size = New System.Drawing.Size(199, 225)
+        Me.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.UserImage.TabIndex = 0
+        Me.UserImage.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.College_Management_System.My.Resources.Resources.Refresh_32px
+        Me.PictureBox1.Location = New System.Drawing.Point(665, 285)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(32, 33)
+        Me.PictureBox1.TabIndex = 19
+        Me.PictureBox1.TabStop = False
+        '
+        'StudentUploadBtn
+        '
+        Me.StudentUploadBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.StudentUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
+        Me.StudentUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
+        Me.StudentUploadBtn.ImageActive = Nothing
+        Me.StudentUploadBtn.Location = New System.Drawing.Point(57, 296)
+        Me.StudentUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.StudentUploadBtn.Name = "StudentUploadBtn"
+        Me.StudentUploadBtn.Size = New System.Drawing.Size(199, 22)
+        Me.StudentUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.StudentUploadBtn.TabIndex = 17
+        Me.StudentUploadBtn.TabStop = False
+        Me.StudentUploadBtn.Zoom = 10
+        '
+        'StudentImage
+        '
+        Me.StudentImage.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Splash_image
+        Me.StudentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.StudentImage.Location = New System.Drawing.Point(57, 65)
+        Me.StudentImage.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.StudentImage.Name = "StudentImage"
+        Me.StudentImage.Size = New System.Drawing.Size(199, 225)
+        Me.StudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.StudentImage.TabIndex = 2
+        Me.StudentImage.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Image = Global.College_Management_System.My.Resources.Resources.user_male2_512
+        Me.PictureBox3.Location = New System.Drawing.Point(525, 8)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(199, 225)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 1
+        Me.PictureBox3.TabStop = False
         '
         'AddRemoveStudentStaff
         '
@@ -782,17 +794,18 @@ Partial Class AddRemoveStudentStaff
         Me.a.ResumeLayout(False)
         Me.AddUserTab.ResumeLayout(False)
         Me.AddUserTab.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SearchDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AddStudentTab.ResumeLayout(False)
-        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AllUsersTab.ResumeLayout(False)
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AddRemoveUserStudentTablePanel.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -841,4 +854,5 @@ Partial Class AddRemoveStudentStaff
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

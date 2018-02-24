@@ -138,6 +138,9 @@ Public Class AddRemoveStudentStaff
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PasswordTextBox.Text = GeneratePassword()
         loadUsers("Select * FROM userTbl WHERE state = 1")
+        UserDataGridView.Columns(14).Visible = False
+        UserDataGridView.Columns(15).Visible = False
+        loadSubject()
     End Sub
     Private Sub sendEmail()
         Try
@@ -166,8 +169,7 @@ Public Class AddRemoveStudentStaff
         Dim dt As New DataTable()
         da.Fill(dt)
         UserDataGridView.DataSource = dt
-        UserDataGridView.Columns(14).Visible = False
-        UserDataGridView.Columns(15).Visible = False
+  
         Return dt
     End Function
 
@@ -384,4 +386,16 @@ Public Class AddRemoveStudentStaff
     Private Sub EmailTextBox_TextChanged(sender As Object, e As EventArgs) Handles EmailTextBox.TextChanged
         checkEmailFormat()
     End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        loadSubject()
+    End Sub
+    Sub loadSubject()
+        Dim su As ProgramAndSubjects = New ProgramAndSubjects
+        Dim dt As DataTable = su.loadUsers()
+        MetroComboBox1.DataSource = dt
+        MetroComboBox1.DisplayMember = "subject_name"
+        MetroComboBox1.ValueMember = "Id"
+    End Sub
+
 End Class
