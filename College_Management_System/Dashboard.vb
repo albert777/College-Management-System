@@ -56,4 +56,14 @@ Public Class Dashboard
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         showCourseAndSubjects()
     End Sub
+    Sub fullScreen()
+        Me.Top = 0
+        Me.Left = 0
+        Me.Height = Screen.PrimaryScreen.WorkingArea.Height
+        Me.Width = Screen.PrimaryScreen.WorkingArea.Width
+    End Sub
+
+    Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        fullScreen()
+    End Sub
 End Class

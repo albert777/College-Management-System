@@ -23,9 +23,14 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.hamburgerPnl = New System.Windows.Forms.Panel()
+        Me.CrossPictureBox = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.hamburgerPb = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MainPanel = New System.Windows.Forms.Panel()
         Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
         Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
@@ -33,18 +38,13 @@ Partial Class Dashboard
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuDragControl3 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.CrossPictureBox = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.hamburgerPb = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.hamburgerPnl.SuspendLayout()
-        Me.dashboardTablePnl.SuspendLayout()
         CType(Me.CrossPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dashboardTablePnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'hamburgerPnl
@@ -63,87 +63,16 @@ Partial Class Dashboard
         Me.hamburgerPnl.Size = New System.Drawing.Size(55, 729)
         Me.hamburgerPnl.TabIndex = 3
         '
-        'MainPanel
-        '
-        Me.BunifuTransition1.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
-        Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainPanel.Location = New System.Drawing.Point(60, 0)
-        Me.MainPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(1290, 729)
-        Me.MainPanel.TabIndex = 0
-        '
-        'ImageOpenDialog
-        '
-        Me.ImageOpenDialog.FileName = "Image Opener"
-        '
-        'dashboardTablePnl
-        '
-        Me.dashboardTablePnl.BackColor = System.Drawing.Color.LightSalmon
-        Me.dashboardTablePnl.ColumnCount = 2
-        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60.0!))
-        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.dashboardTablePnl.Controls.Add(Me.MainPanel, 1, 0)
-        Me.BunifuTransition1.SetDecoration(Me.dashboardTablePnl, BunifuAnimatorNS.DecorationType.None)
-        Me.dashboardTablePnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dashboardTablePnl.Location = New System.Drawing.Point(0, 0)
-        Me.dashboardTablePnl.Margin = New System.Windows.Forms.Padding(0)
-        Me.dashboardTablePnl.Name = "dashboardTablePnl"
-        Me.dashboardTablePnl.RowCount = 1
-        Me.dashboardTablePnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.dashboardTablePnl.Size = New System.Drawing.Size(1350, 729)
-        Me.dashboardTablePnl.TabIndex = 4
-        '
-        'BunifuTransition1
-        '
-        Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide
-        Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0.0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0.0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(0)
-        Animation1.RotateCoeff = 0.0!
-        Animation1.RotateLimit = 0.0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0.0!
-        Animation1.TransparencyCoeff = 0.0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
-        '
-        'BunifuDragControl1
-        '
-        Me.BunifuDragControl1.Fixed = True
-        Me.BunifuDragControl1.Horizontal = True
-        Me.BunifuDragControl1.TargetControl = Me.MainPanel
-        Me.BunifuDragControl1.Vertical = True
-        '
-        'BunifuDragControl2
-        '
-        Me.BunifuDragControl2.Fixed = True
-        Me.BunifuDragControl2.Horizontal = True
-        Me.BunifuDragControl2.TargetControl = Me.hamburgerPnl
-        Me.BunifuDragControl2.Vertical = True
-        '
-        'BunifuDragControl3
-        '
-        Me.BunifuDragControl3.Fixed = True
-        Me.BunifuDragControl3.Horizontal = True
-        Me.BunifuDragControl3.TargetControl = Nothing
-        Me.BunifuDragControl3.Vertical = True
-        '
         'CrossPictureBox
         '
         Me.CrossPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BunifuTransition1.SetDecoration(Me.CrossPictureBox, BunifuAnimatorNS.DecorationType.None)
+        Me.CrossPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.CrossPictureBox.Image = Global.College_Management_System.My.Resources.Resources.Delete_32px2
-        Me.CrossPictureBox.Location = New System.Drawing.Point(11, 685)
+        Me.CrossPictureBox.Location = New System.Drawing.Point(0, 697)
         Me.CrossPictureBox.Name = "CrossPictureBox"
-        Me.CrossPictureBox.Size = New System.Drawing.Size(31, 32)
+        Me.CrossPictureBox.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.CrossPictureBox.Size = New System.Drawing.Size(55, 32)
         Me.CrossPictureBox.TabIndex = 5
         Me.CrossPictureBox.TabStop = False
         '
@@ -192,6 +121,79 @@ Partial Class Dashboard
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'MainPanel
+        '
+        Me.BunifuTransition1.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainPanel.Location = New System.Drawing.Point(60, 0)
+        Me.MainPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainPanel.Name = "MainPanel"
+        Me.MainPanel.Size = New System.Drawing.Size(1290, 729)
+        Me.MainPanel.TabIndex = 0
+        '
+        'ImageOpenDialog
+        '
+        Me.ImageOpenDialog.FileName = "Image Opener"
+        '
+        'dashboardTablePnl
+        '
+        Me.dashboardTablePnl.BackColor = System.Drawing.Color.LightSalmon
+        Me.dashboardTablePnl.ColumnCount = 2
+        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60.0!))
+        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.dashboardTablePnl.Controls.Add(Me.MainPanel, 1, 0)
+        Me.BunifuTransition1.SetDecoration(Me.dashboardTablePnl, BunifuAnimatorNS.DecorationType.None)
+        Me.dashboardTablePnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dashboardTablePnl.Location = New System.Drawing.Point(0, 0)
+        Me.dashboardTablePnl.Margin = New System.Windows.Forms.Padding(0)
+        Me.dashboardTablePnl.Name = "dashboardTablePnl"
+        Me.dashboardTablePnl.RowCount = 1
+        Me.dashboardTablePnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.dashboardTablePnl.Size = New System.Drawing.Size(1350, 729)
+        Me.dashboardTablePnl.TabIndex = 4
+        '
+        'BunifuTransition1
+        '
+        Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide
+        Me.BunifuTransition1.Cursor = Nothing
+        Animation3.AnimateOnlyDifferences = True
+        Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
+        Animation3.LeafCoeff = 0.0!
+        Animation3.MaxTime = 1.0!
+        Animation3.MinTime = 0.0!
+        Animation3.MosaicCoeff = CType(resources.GetObject("Animation3.MosaicCoeff"), System.Drawing.PointF)
+        Animation3.MosaicShift = CType(resources.GetObject("Animation3.MosaicShift"), System.Drawing.PointF)
+        Animation3.MosaicSize = 0
+        Animation3.Padding = New System.Windows.Forms.Padding(0)
+        Animation3.RotateCoeff = 0.0!
+        Animation3.RotateLimit = 0.0!
+        Animation3.ScaleCoeff = CType(resources.GetObject("Animation3.ScaleCoeff"), System.Drawing.PointF)
+        Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
+        Animation3.TimeCoeff = 0.0!
+        Animation3.TransparencyCoeff = 0.0!
+        Me.BunifuTransition1.DefaultAnimation = Animation3
+        '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me.MainPanel
+        Me.BunifuDragControl1.Vertical = True
+        '
+        'BunifuDragControl2
+        '
+        Me.BunifuDragControl2.Fixed = True
+        Me.BunifuDragControl2.Horizontal = True
+        Me.BunifuDragControl2.TargetControl = Me.hamburgerPnl
+        Me.BunifuDragControl2.Vertical = True
+        '
+        'BunifuDragControl3
+        '
+        Me.BunifuDragControl3.Fixed = True
+        Me.BunifuDragControl3.Horizontal = True
+        Me.BunifuDragControl3.TargetControl = Nothing
+        Me.BunifuDragControl3.Vertical = True
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -202,6 +204,7 @@ Partial Class Dashboard
         Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MaximizeBox = False
@@ -209,12 +212,12 @@ Partial Class Dashboard
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"
         Me.hamburgerPnl.ResumeLayout(False)
-        Me.dashboardTablePnl.ResumeLayout(False)
         CType(Me.CrossPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.hamburgerPb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.dashboardTablePnl.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

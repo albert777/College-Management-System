@@ -23,7 +23,10 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.loginAreaPanel = New System.Windows.Forms.Panel()
+        Me.ErrorMessagePanel = New System.Windows.Forms.Panel()
+        Me.ErrorMessageLabel = New System.Windows.Forms.Label()
         Me.LoginLabel = New System.Windows.Forms.Label()
         Me.PasswordTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.UserNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -39,7 +42,9 @@ Partial Class Login
         Me.LoginTablePanel = New System.Windows.Forms.TableLayoutPanel()
         Me.loginErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.ErrorTimer = New System.Windows.Forms.Timer(Me.components)
         Me.loginAreaPanel.SuspendLayout()
+        Me.ErrorMessagePanel.SuspendLayout()
         CType(Me.CrossPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PasswordIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsernameIcon, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +57,7 @@ Partial Class Login
         'loginAreaPanel
         '
         Me.loginAreaPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.loginAreaPanel.Controls.Add(Me.ErrorMessagePanel)
         Me.loginAreaPanel.Controls.Add(Me.LoginLabel)
         Me.loginAreaPanel.Controls.Add(Me.PasswordTextBox)
         Me.loginAreaPanel.Controls.Add(Me.UserNameTextBox)
@@ -67,6 +73,29 @@ Partial Class Login
         Me.loginAreaPanel.Size = New System.Drawing.Size(428, 477)
         Me.loginAreaPanel.TabIndex = 3
         Me.loginAreaPanel.TabStop = True
+        '
+        'ErrorMessagePanel
+        '
+        Me.ErrorMessagePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.ErrorMessagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ErrorMessagePanel.Controls.Add(Me.ErrorMessageLabel)
+        Me.ErrorMessagePanel.ForeColor = System.Drawing.Color.White
+        Me.ErrorMessagePanel.Location = New System.Drawing.Point(34, 15)
+        Me.ErrorMessagePanel.Name = "ErrorMessagePanel"
+        Me.ErrorMessagePanel.Size = New System.Drawing.Size(305, 32)
+        Me.ErrorMessagePanel.TabIndex = 8
+        Me.ErrorMessagePanel.Visible = False
+        '
+        'ErrorMessageLabel
+        '
+        Me.ErrorMessageLabel.AutoEllipsis = True
+        Me.ErrorMessageLabel.AutoSize = True
+        Me.ErrorMessageLabel.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ErrorMessageLabel.Location = New System.Drawing.Point(43, 8)
+        Me.ErrorMessageLabel.Name = "ErrorMessageLabel"
+        Me.ErrorMessageLabel.Size = New System.Drawing.Size(210, 15)
+        Me.ErrorMessageLabel.TabIndex = 0
+        Me.ErrorMessageLabel.Text = "Username or Password is not correct"
         '
         'LoginLabel
         '
@@ -245,6 +274,10 @@ Partial Class Login
         Me.BunifuDragControl1.TargetControl = Me.loginAreaPanel
         Me.BunifuDragControl1.Vertical = True
         '
+        'ErrorTimer
+        '
+        Me.ErrorTimer.Enabled = True
+        '
         'Login
         '
         Me.AcceptButton = Me.SignInBtn
@@ -255,6 +288,7 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(802, 477)
         Me.Controls.Add(Me.LoginTablePanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Login"
@@ -263,6 +297,8 @@ Partial Class Login
         Me.Text = "Login"
         Me.loginAreaPanel.ResumeLayout(False)
         Me.loginAreaPanel.PerformLayout()
+        Me.ErrorMessagePanel.ResumeLayout(False)
+        Me.ErrorMessagePanel.PerformLayout()
         CType(Me.CrossPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PasswordIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsernameIcon, System.ComponentModel.ISupportInitialize).EndInit()
@@ -290,4 +326,7 @@ Partial Class Login
     Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
     Friend WithEvents LoginLabel As Label
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents ErrorMessagePanel As System.Windows.Forms.Panel
+    Friend WithEvents ErrorMessageLabel As System.Windows.Forms.Label
+    Friend WithEvents ErrorTimer As System.Windows.Forms.Timer
 End Class

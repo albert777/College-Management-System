@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Login
+    Dim countError As Integer = 1
     Dim su As AddRemoveStudentStaff = New AddRemoveStudentStaff
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         transparentPanel.BackColor = Color.FromArgb(200, Color.Black)
@@ -29,13 +30,24 @@ Public Class Login
         da.Fill(dt)
         If (dt.Rows.Count > 0) Then
             Dashboard.Show()
-
         Else
-            MsgBox("Incorrect!!")
+            ErrorTimer.Start()
+            ErrorMessagePanel.Visible = True
         End If
     End Sub
     Private Sub loginDateAndTime()
         Dim date_Time As String
         date_Time = DateTime.Now.ToString()
     End Sub
+
+    Private Sub ErrorTimer_Tick(sender As Object, e As EventArgs) Handles ErrorTimer.Tick
+        countError = countError + 1
+        If (countError > 50) Then
+            ErrorMessagePanel.Visible = False
+            ErrorTimer.Dispose()
+            countError = 1
+        End If
+    End Sub
+
+
 End Class
