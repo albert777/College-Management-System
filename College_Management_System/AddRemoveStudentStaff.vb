@@ -385,4 +385,6 @@ Public Class AddRemoveStudentStaff
     Private Sub EmailTextBox_TextChanged(sender As Object, e As EventArgs) Handles EmailTextBox.TextChanged
         checkEmailFormat()
     End Sub
+
+
 End Class
