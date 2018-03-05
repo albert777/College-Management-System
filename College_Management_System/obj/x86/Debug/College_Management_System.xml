@@ -43,6 +43,10 @@ College_Management_System
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:College_Management_System.My.Resources.Resources.List_32px1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:College_Management_System.My.Resources.Resources.Login">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

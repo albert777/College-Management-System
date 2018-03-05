@@ -6,13 +6,30 @@ Public Class Dashboard
     Dim bin As RecycleBin = New RecycleBin()
     Dim ar As AddRemoveStudentStaff = New AddRemoveStudentStaff()
     Dim ps As ProgramAndSubjects = New ProgramAndSubjects()
-    Private Sub hamburgerPb_Click_1(sender As Object, e As EventArgs) Handles hamburgerPb.Click
+    Dim a As Attendance = New Attendance()
+
+    Private Sub HamburgerButton_Click(sender As Object, e As EventArgs) Handles HamburgerButton.Click
         If (hamburgerPnl.Width < 250) Then
-            Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(150))
+            Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(100))
+            Dim i As Integer = 0
+            Dim buttonArray() As Button = New Button() {HamburgerButton, CloseButton, AddRemoveButton, RecycleBinButton, AttendanceButton, AdminSettingButton}
+            Dim textName As String() = {"MENU", "EXIT", "CRUD", "RECYCLEBIN", "ATTENDANCE", "SETTING"}
+            For Each values As Button In buttonArray
+                values.Width = 250
+                values.Text = textName(i)
+                i = i + 1
+            Next
+            HamburgerButton.Width = 250
         Else
-            Transition.run(hamburgerPnl, "Width", 55, New TransitionType_EaseInEaseOut(150))
+            Transition.run(hamburgerPnl, "Width", 45, New TransitionType_EaseInEaseOut(100))
+            Dim buttonArray() As Button = New Button() {HamburgerButton, CloseButton, AddRemoveButton, RecycleBinButton, AttendanceButton, AdminSettingButton}
+            For Each values As Button In buttonArray
+                values.Width = 45
+                values.Text = ""
+            Next
         End If
     End Sub
+
     Sub showRecycleBin()
         bin.MdiParent = Me
         MainPanel.Controls.Add(bin)
@@ -21,7 +38,9 @@ Public Class Dashboard
         bin.BringToFront()
         ar.Visible = False
         ps.Visible = False
+        a.Visible = False
     End Sub
+
     Sub showAddRemoveStudentUserPanel()
         ar.MdiParent = Me
         MainPanel.Controls.Add(ar)
@@ -30,7 +49,9 @@ Public Class Dashboard
         ar.BringToFront()
         bin.Visible = False
         ps.Visible = False
+        a.Visible = False
     End Sub
+
     Sub showCourseAndSubjects()
         ps.MdiParent = Me
         MainPanel.Controls.Add(ps)
@@ -39,23 +60,20 @@ Public Class Dashboard
         ps.BringToFront()
         ar.Visible = False
         bin.Visible = False
-
-    End Sub
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-        showRecycleBin()
-    End Sub
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        showAddRemoveStudentUserPanel()
+        a.Visible = False
     End Sub
 
-
-    Private Sub CrossPictureBox_Click(sender As Object, e As EventArgs) Handles CrossPictureBox.Click
-        Application.Exit()
+    Sub showAttendance()
+        a.MdiParent = Me
+        MainPanel.Controls.Add(a)
+        a.Dock = DockStyle.Fill
+        a.Visible = True
+        a.BringToFront()
+        ar.Visible = False
+        bin.Visible = False
+        ps.Visible = False
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        showCourseAndSubjects()
-    End Sub
     Sub fullScreen()
         Me.Top = 0
         Me.Left = 0
@@ -65,5 +83,25 @@ Public Class Dashboard
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fullScreen()
+    End Sub
+
+    Private Sub AddRemoveButton_Click(sender As Object, e As EventArgs) Handles AddRemoveButton.Click
+        showAddRemoveStudentUserPanel()
+    End Sub
+
+    Private Sub AdminSettingButton_Click(sender As Object, e As EventArgs) Handles AdminSettingButton.Click
+        showCourseAndSubjects()
+    End Sub
+
+    Private Sub RecycleBinButton_Click(sender As Object, e As EventArgs) Handles RecycleBinButton.Click
+        showRecycleBin()
+    End Sub
+
+    Private Sub AttendanceButton_Click(sender As Object, e As EventArgs) Handles AttendanceButton.Click
+        showAttendance()
+    End Sub
+ 
+    Private Sub CloseButton_Click(sender As Object, e As EventArgs) Handles CloseButton.Click
+        Application.Exit()
     End Sub
 End Class

@@ -38,3 +38,4 @@ C:\Users\mnzit\Downloads\College-Management-System-master\College-Management-Sys
 E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.RecycleBin.resources
 E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.AddRemoveStudentStaff.resources
 E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.ProgramAndSubjects.resources
+E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.Attendance.resources

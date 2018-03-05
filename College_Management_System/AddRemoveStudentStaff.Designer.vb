@@ -34,7 +34,6 @@ Partial Class AddRemoveStudentStaff
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DeleteBtn = New MetroFramework.Controls.MetroButton()
         Me.UpdateBtn = New MetroFramework.Controls.MetroButton()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.SearchTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SearchDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.SendEmailCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
@@ -46,7 +45,6 @@ Partial Class AddRemoveStudentStaff
         Me.MaritialStatusComboBox = New MetroFramework.Controls.MetroComboBox()
         Me.EmailTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.DobDateTimePicker = New MetroFramework.Controls.MetroDateTime()
-        Me.UserUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.UserTypeLabel = New MaterialSkin.Controls.MaterialLabel()
         Me.MaritialStatusLabel = New MaterialSkin.Controls.MaterialLabel()
         Me.DobLabel = New MaterialSkin.Controls.MaterialLabel()
@@ -61,34 +59,33 @@ Partial Class AddRemoveStudentStaff
         Me.MiddleNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.LastNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.FirstNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.UserImage = New System.Windows.Forms.PictureBox()
         Me.AddStudentTab = New System.Windows.Forms.TabPage()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.StudentUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.StudentImage = New System.Windows.Forms.PictureBox()
         Me.AllUsersTab = New System.Windows.Forms.TabPage()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.UserDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.AllStudentsTab = New System.Windows.Forms.TabPage()
         Me.AddRemoveUserStudentTablePanel = New System.Windows.Forms.TableLayoutPanel()
         Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.UserDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.UserUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.UserImage = New System.Windows.Forms.PictureBox()
+        Me.StudentUploadBtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.StudentImage = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.a.SuspendLayout()
         Me.AddUserTab.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SearchDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AddStudentTab.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AllUsersTab.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.AddRemoveUserStudentTablePanel.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AddRemoveUserStudentTablePanel.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MaterialTabSelector1
@@ -201,15 +198,6 @@ Partial Class AddRemoveStudentStaff
         Me.UpdateBtn.UseCustomBackColor = True
         Me.UpdateBtn.UseCustomForeColor = True
         Me.UpdateBtn.UseSelectable = True
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.College_Management_System.My.Resources.Resources.Search_25px
-        Me.PictureBox4.Location = New System.Drawing.Point(854, 15)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(25, 23)
-        Me.PictureBox4.TabIndex = 30
-        Me.PictureBox4.TabStop = False
         '
         'SearchTextBox
         '
@@ -381,25 +369,10 @@ Partial Class AddRemoveStudentStaff
         '
         Me.DobDateTimePicker.Location = New System.Drawing.Point(935, 290)
         Me.DobDateTimePicker.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.DobDateTimePicker.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.DobDateTimePicker.MinimumSize = New System.Drawing.Size(4, 29)
         Me.DobDateTimePicker.Name = "DobDateTimePicker"
         Me.DobDateTimePicker.Size = New System.Drawing.Size(265, 29)
         Me.DobDateTimePicker.TabIndex = 9
-        '
-        'UserUploadBtn
-        '
-        Me.UserUploadBtn.BackColor = System.Drawing.Color.SeaGreen
-        Me.UserUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
-        Me.UserUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
-        Me.UserUploadBtn.ImageActive = Nothing
-        Me.UserUploadBtn.Location = New System.Drawing.Point(60, 303)
-        Me.UserUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.UserUploadBtn.Name = "UserUploadBtn"
-        Me.UserUploadBtn.Size = New System.Drawing.Size(199, 22)
-        Me.UserUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.UserUploadBtn.TabIndex = 16
-        Me.UserUploadBtn.TabStop = False
-        Me.UserUploadBtn.Zoom = 10
         '
         'UserTypeLabel
         '
@@ -614,23 +587,9 @@ Partial Class AddRemoveStudentStaff
         Me.FirstNameTextBox.TabIndex = 0
         Me.FirstNameTextBox.UseSystemPasswordChar = False
         '
-        'UserImage
-        '
-        Me.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.UserImage.Image = Global.College_Management_System.My.Resources.Resources.user_male2_512
-        Me.UserImage.Location = New System.Drawing.Point(60, 66)
-        Me.UserImage.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserImage.Name = "UserImage"
-        Me.UserImage.Size = New System.Drawing.Size(199, 225)
-        Me.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.UserImage.TabIndex = 0
-        Me.UserImage.TabStop = False
-        '
         'AddStudentTab
         '
         Me.AddStudentTab.BackColor = System.Drawing.Color.White
-        Me.AddStudentTab.Controls.Add(Me.PictureBox1)
-        Me.AddStudentTab.Controls.Add(Me.MetroComboBox1)
         Me.AddStudentTab.Controls.Add(Me.StudentUploadBtn)
         Me.AddStudentTab.Controls.Add(Me.StudentImage)
         Me.AddStudentTab.Location = New System.Drawing.Point(4, 22)
@@ -640,53 +599,6 @@ Partial Class AddRemoveStudentStaff
         Me.AddStudentTab.Size = New System.Drawing.Size(1373, 598)
         Me.AddStudentTab.TabIndex = 1
         Me.AddStudentTab.Text = "Add Student"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.College_Management_System.My.Resources.Resources.Refresh_32px
-        Me.PictureBox1.Location = New System.Drawing.Point(665, 285)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(32, 33)
-        Me.PictureBox1.TabIndex = 19
-        Me.PictureBox1.TabStop = False
-        '
-        'MetroComboBox1
-        '
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(412, 289)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.PromptText = "Select Program"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(234, 29)
-        Me.MetroComboBox1.TabIndex = 18
-        Me.MetroComboBox1.UseSelectable = True
-        '
-        'StudentUploadBtn
-        '
-        Me.StudentUploadBtn.BackColor = System.Drawing.Color.SeaGreen
-        Me.StudentUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
-        Me.StudentUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
-        Me.StudentUploadBtn.ImageActive = Nothing
-        Me.StudentUploadBtn.Location = New System.Drawing.Point(57, 296)
-        Me.StudentUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.StudentUploadBtn.Name = "StudentUploadBtn"
-        Me.StudentUploadBtn.Size = New System.Drawing.Size(199, 22)
-        Me.StudentUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.StudentUploadBtn.TabIndex = 17
-        Me.StudentUploadBtn.TabStop = False
-        Me.StudentUploadBtn.Zoom = 10
-        '
-        'StudentImage
-        '
-        Me.StudentImage.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Splash_image
-        Me.StudentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.StudentImage.Location = New System.Drawing.Point(57, 65)
-        Me.StudentImage.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.StudentImage.Name = "StudentImage"
-        Me.StudentImage.Size = New System.Drawing.Size(199, 225)
-        Me.StudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.StudentImage.TabIndex = 2
-        Me.StudentImage.TabStop = False
         '
         'AllUsersTab
         '
@@ -700,51 +612,6 @@ Partial Class AddRemoveStudentStaff
         Me.AllUsersTab.TabIndex = 2
         Me.AllUsersTab.Text = "All Users"
         Me.AllUsersTab.UseVisualStyleBackColor = True
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox3.Image = Global.College_Management_System.My.Resources.Resources.user_male2_512
-        Me.PictureBox3.Location = New System.Drawing.Point(546, 0)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(0)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(273, 253)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 1
-        Me.PictureBox3.TabStop = False
-        '
-        'AllStudentsTab
-        '
-        Me.AllStudentsTab.Location = New System.Drawing.Point(4, 22)
-        Me.AllStudentsTab.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.AllStudentsTab.Name = "AllStudentsTab"
-        Me.AllStudentsTab.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.AllStudentsTab.Size = New System.Drawing.Size(1373, 598)
-        Me.AllStudentsTab.TabIndex = 3
-        Me.AllStudentsTab.Text = "All Students"
-        Me.AllStudentsTab.UseVisualStyleBackColor = True
-        '
-        'AddRemoveUserStudentTablePanel
-        '
-        Me.AddRemoveUserStudentTablePanel.BackColor = System.Drawing.Color.Transparent
-        Me.AddRemoveUserStudentTablePanel.ColumnCount = 1
-        Me.AddRemoveUserStudentTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.AddRemoveUserStudentTablePanel.Controls.Add(Me.MaterialTabSelector1, 0, 0)
-        Me.AddRemoveUserStudentTablePanel.Controls.Add(Me.a, 0, 1)
-        Me.AddRemoveUserStudentTablePanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AddRemoveUserStudentTablePanel.Location = New System.Drawing.Point(0, 0)
-        Me.AddRemoveUserStudentTablePanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.AddRemoveUserStudentTablePanel.Name = "AddRemoveUserStudentTablePanel"
-        Me.AddRemoveUserStudentTablePanel.RowCount = 2
-        Me.AddRemoveUserStudentTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
-        Me.AddRemoveUserStudentTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.0!))
-        Me.AddRemoveUserStudentTablePanel.Size = New System.Drawing.Size(1381, 656)
-        Me.AddRemoveUserStudentTablePanel.TabIndex = 2
-        '
-        'ImageOpenDialog
-        '
-        Me.ImageOpenDialog.FileName = "ImageOpener"
         '
         'TableLayoutPanel1
         '
@@ -801,6 +668,114 @@ Partial Class AddRemoveStudentStaff
         Me.UserDataGridView.Size = New System.Drawing.Size(1365, 339)
         Me.UserDataGridView.TabIndex = 0
         '
+        'AllStudentsTab
+        '
+        Me.AllStudentsTab.Location = New System.Drawing.Point(4, 22)
+        Me.AllStudentsTab.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.AllStudentsTab.Name = "AllStudentsTab"
+        Me.AllStudentsTab.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.AllStudentsTab.Size = New System.Drawing.Size(1373, 598)
+        Me.AllStudentsTab.TabIndex = 3
+        Me.AllStudentsTab.Text = "All Students"
+        Me.AllStudentsTab.UseVisualStyleBackColor = True
+        '
+        'AddRemoveUserStudentTablePanel
+        '
+        Me.AddRemoveUserStudentTablePanel.BackColor = System.Drawing.Color.Transparent
+        Me.AddRemoveUserStudentTablePanel.ColumnCount = 1
+        Me.AddRemoveUserStudentTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.AddRemoveUserStudentTablePanel.Controls.Add(Me.MaterialTabSelector1, 0, 0)
+        Me.AddRemoveUserStudentTablePanel.Controls.Add(Me.a, 0, 1)
+        Me.AddRemoveUserStudentTablePanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AddRemoveUserStudentTablePanel.Location = New System.Drawing.Point(0, 0)
+        Me.AddRemoveUserStudentTablePanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.AddRemoveUserStudentTablePanel.Name = "AddRemoveUserStudentTablePanel"
+        Me.AddRemoveUserStudentTablePanel.RowCount = 2
+        Me.AddRemoveUserStudentTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
+        Me.AddRemoveUserStudentTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.0!))
+        Me.AddRemoveUserStudentTablePanel.Size = New System.Drawing.Size(1381, 656)
+        Me.AddRemoveUserStudentTablePanel.TabIndex = 2
+        '
+        'ImageOpenDialog
+        '
+        Me.ImageOpenDialog.FileName = "ImageOpener"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.College_Management_System.My.Resources.Resources.Search_25px
+        Me.PictureBox4.Location = New System.Drawing.Point(854, 15)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(25, 23)
+        Me.PictureBox4.TabIndex = 30
+        Me.PictureBox4.TabStop = False
+        '
+        'UserUploadBtn
+        '
+        Me.UserUploadBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.UserUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
+        Me.UserUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
+        Me.UserUploadBtn.ImageActive = Nothing
+        Me.UserUploadBtn.Location = New System.Drawing.Point(60, 303)
+        Me.UserUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.UserUploadBtn.Name = "UserUploadBtn"
+        Me.UserUploadBtn.Size = New System.Drawing.Size(199, 22)
+        Me.UserUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.UserUploadBtn.TabIndex = 16
+        Me.UserUploadBtn.TabStop = False
+        Me.UserUploadBtn.Zoom = 10
+        '
+        'UserImage
+        '
+        Me.UserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.UserImage.Image = Global.College_Management_System.My.Resources.Resources.user_male2_512
+        Me.UserImage.Location = New System.Drawing.Point(60, 66)
+        Me.UserImage.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserImage.Name = "UserImage"
+        Me.UserImage.Size = New System.Drawing.Size(199, 225)
+        Me.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.UserImage.TabIndex = 0
+        Me.UserImage.TabStop = False
+        '
+        'StudentUploadBtn
+        '
+        Me.StudentUploadBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.StudentUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
+        Me.StudentUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
+        Me.StudentUploadBtn.ImageActive = Nothing
+        Me.StudentUploadBtn.Location = New System.Drawing.Point(57, 296)
+        Me.StudentUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.StudentUploadBtn.Name = "StudentUploadBtn"
+        Me.StudentUploadBtn.Size = New System.Drawing.Size(199, 22)
+        Me.StudentUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.StudentUploadBtn.TabIndex = 17
+        Me.StudentUploadBtn.TabStop = False
+        Me.StudentUploadBtn.Zoom = 10
+        '
+        'StudentImage
+        '
+        Me.StudentImage.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Splash_image
+        Me.StudentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.StudentImage.Location = New System.Drawing.Point(57, 65)
+        Me.StudentImage.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.StudentImage.Name = "StudentImage"
+        Me.StudentImage.Size = New System.Drawing.Size(199, 225)
+        Me.StudentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.StudentImage.TabIndex = 2
+        Me.StudentImage.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox3.Image = Global.College_Management_System.My.Resources.Resources.user_male2_512
+        Me.PictureBox3.Location = New System.Drawing.Point(546, 0)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(273, 253)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 1
+        Me.PictureBox3.TabStop = False
+        '
         'AddRemoveStudentStaff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -813,19 +788,18 @@ Partial Class AddRemoveStudentStaff
         Me.a.ResumeLayout(False)
         Me.AddUserTab.ResumeLayout(False)
         Me.AddUserTab.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SearchDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AddStudentTab.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AllUsersTab.ResumeLayout(False)
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.AddRemoveUserStudentTablePanel.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AddRemoveUserStudentTablePanel.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserImage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StudentUploadBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StudentImage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -871,9 +845,7 @@ Partial Class AddRemoveStudentStaff
     Friend WithEvents AddRemoveUserStudentTablePanel As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents ImageOpenDialog As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents UserDataGridView As Bunifu.Framework.UI.BunifuCustomDataGrid
 End Class

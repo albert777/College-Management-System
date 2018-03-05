@@ -155,7 +155,7 @@ Partial Class Login
         Me.SignInBtn.Location = New System.Drawing.Point(54, 331)
         Me.SignInBtn.Name = "SignInBtn"
         Me.SignInBtn.Size = New System.Drawing.Size(285, 49)
-        Me.SignInBtn.TabIndex = 3
+        Me.SignInBtn.TabIndex = 2
         Me.SignInBtn.Text = "SIGN IN"
         Me.SignInBtn.UseVisualStyleBackColor = False
         '
@@ -176,7 +176,7 @@ Partial Class Login
         Me.ForgotPasswordLabel.Location = New System.Drawing.Point(50, 404)
         Me.ForgotPasswordLabel.Name = "ForgotPasswordLabel"
         Me.ForgotPasswordLabel.Size = New System.Drawing.Size(289, 19)
-        Me.ForgotPasswordLabel.TabIndex = 2
+        Me.ForgotPasswordLabel.TabIndex = 3
         Me.ForgotPasswordLabel.Text = " Forgot password"
         Me.ForgotPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '

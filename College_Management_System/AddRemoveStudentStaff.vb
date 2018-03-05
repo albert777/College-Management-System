@@ -38,11 +38,12 @@ Public Class AddRemoveStudentStaff
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles StudentUploadBtn.Click
         imageChooser("StudentUploadBtn")
     End Sub
-
+    'Connect the database
     Function dbConnect()
         Dim db As New SqlConnection("Data Source=(LocalDB)\v11.0;Integrated Security=true;Database=CMS")
         Return db
     End Function
+    'Clear all the textbox
     Sub clearAll()
         Dim textboxArray() As MaterialSingleLineTextField = New MaterialSingleLineTextField() {FirstNameTextBox, LastNameTextBox, MiddleNameTextBox, ContactNoTextBox, EmailTextBox, Address1TextBox, Address2TextBox, UserNameTextBox, PasswordTextBox}
         For Each values As MaterialSingleLineTextField In textboxArray
@@ -76,7 +77,7 @@ Public Class AddRemoveStudentStaff
         PasswordTextBox.Text = GeneratePassword()
         loadUsers("Select * FROM userTbl WHERE state = 1")
     End Sub
-
+    'Insert users to the database
     Public Sub insertUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal username As String, ByVal password As String)
         Dim con As SqlConnection = dbConnect()
         Dim img As Image = Image.FromFile(ImageOpenDialog.FileName)
@@ -115,6 +116,7 @@ Public Class AddRemoveStudentStaff
         End Try
 
     End Sub
+    'If password is not set generate random text and convert to MD5 version
     Function GeneratePassword()
         Dim Bytes() As Byte
         Dim s As String = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0!1@2#3$4%5^6&7*89"
@@ -140,8 +142,8 @@ Public Class AddRemoveStudentStaff
         loadUsers("Select * FROM userTbl WHERE state = 1")
         UserDataGridView.Columns(14).Visible = False
         UserDataGridView.Columns(15).Visible = False
-        loadSubject()
     End Sub
+    'Send email to the set area
     Private Sub sendEmail()
         Try
             Dim SmtpServer As New SmtpClient()
@@ -169,7 +171,7 @@ Public Class AddRemoveStudentStaff
         Dim dt As New DataTable()
         da.Fill(dt)
         UserDataGridView.DataSource = dt
-  
+
         Return dt
     End Function
 
@@ -210,6 +212,7 @@ Public Class AddRemoveStudentStaff
             End If
         End If
     End Sub
+    'Searching method and set it to the textbox
     Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
         searchData()
     End Sub
@@ -349,7 +352,7 @@ Public Class AddRemoveStudentStaff
         searchData()
         loadUsers("Select * FROM userTbl WHERE state = 1")
     End Sub
-
+    'Çheck contact format
     Sub contactNoChecker()
         Dim chars() As Char = ContactNoTextBox.Text
         If (ContactNoTextBox.TextLength > 10) Then
@@ -363,7 +366,6 @@ Public Class AddRemoveStudentStaff
             End If
         Next
     End Sub
-
     Private Sub ContactNoTextBox_TextChanged(sender As Object, e As EventArgs) Handles ContactNoTextBox.TextChanged
         contactNoChecker()
     End Sub
@@ -374,28 +376,13 @@ Public Class AddRemoveStudentStaff
         If IsMatch Then
             Label2.Text = ""
         Else
-            
             Label2.Text = "Invalid format"
             If (EmailTextBox.Text = "") Then
                 Label2.Text = ""
             End If
         End If
     End Sub
-
-
     Private Sub EmailTextBox_TextChanged(sender As Object, e As EventArgs) Handles EmailTextBox.TextChanged
         checkEmailFormat()
     End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        loadSubject()
-    End Sub
-    Sub loadSubject()
-        Dim su As ProgramAndSubjects = New ProgramAndSubjects
-        Dim dt As DataTable = su.loadUsers()
-        MetroComboBox1.DataSource = dt
-        MetroComboBox1.DisplayMember = "subject_name"
-        MetroComboBox1.ValueMember = "Id"
-    End Sub
-
 End Class
