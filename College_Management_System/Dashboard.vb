@@ -13,18 +13,20 @@ Public Class Dashboard
             Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(100))
             Dim i As Integer = 0
             Dim buttonArray() As Button = New Button() {HamburgerButton, CloseButton, AddRemoveButton, RecycleBinButton, AttendanceButton, AdminSettingButton}
-            Dim textName As String() = {"MENU", "EXIT", "CRUD", "RECYCLEBIN", "ATTENDANCE", "SETTING"}
+            Dim textName As String() = {"MENU", "EXIT", "CRUD", "RECYCLER", "ATTENDANCE", "SETTING"}
             For Each values As Button In buttonArray
-                values.Width = 250
+                'values.Width = 250
+                Transition.run(values, "Width", 250, New TransitionType_EaseInEaseOut(125))
                 values.Text = textName(i)
                 i = i + 1
             Next
             HamburgerButton.Width = 250
         Else
-            Transition.run(hamburgerPnl, "Width", 45, New TransitionType_EaseInEaseOut(100))
+            Transition.run(hamburgerPnl, "Width", 45, New TransitionType_EaseInEaseOut(125))
             Dim buttonArray() As Button = New Button() {HamburgerButton, CloseButton, AddRemoveButton, RecycleBinButton, AttendanceButton, AdminSettingButton}
             For Each values As Button In buttonArray
-                values.Width = 45
+                'values.Width = 45
+                Transition.run(values, "Width", 45, New TransitionType_EaseInEaseOut(100))
                 values.Text = ""
             Next
         End If
