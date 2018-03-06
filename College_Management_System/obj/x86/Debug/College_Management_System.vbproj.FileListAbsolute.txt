@@ -2,7 +2,6 @@ E:\VBNET\College_Management_System\College_Management_System\bin\x86\Debug\Colle
 E:\VBNET\College_Management_System\College_Management_System\bin\x86\Debug\College_Management_System.exe
 E:\VBNET\College_Management_System\College_Management_System\bin\x86\Debug\College_Management_System.pdb
 E:\VBNET\College_Management_System\College_Management_System\bin\x86\Debug\College_Management_System.xml
-E:\VBNET\College_Management_System\College_Management_System\bin\x86\Debug\Bunifu_UI_v1.5.3.dll
 E:\VBNET\College_Management_System\College_Management_System\bin\x86\Debug\MaterialSkin.dll
 E:\VBNET\College_Management_System\College_Management_System\bin\x86\Debug\Transitions.dll
 E:\VBNET\College_Management_System\College_Management_System\bin\x86\Debug\Transitions.pdb
