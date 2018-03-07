@@ -341,6 +341,8 @@ Public Class AddRemoveStudentStaff
             con.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
+            Dim r As RecycleBin = New RecycleBin
+            r.loadUsers()
         End Try
     End Sub
     'Delete method caller
