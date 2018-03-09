@@ -3,12 +3,14 @@ Imports MaterialSkin.Controls
 Imports BunifuAnimatorNS
 
 Public Class Dashboard
-    Dim bin As New RecycleBin
+
     Dim ar As New AddRemoveStudentStaff
     Dim ps As New ProgramAndSubjects
     Dim a As New Attendance
+    Dim bin As New RecycleBin
 
     Private Sub HamburgerButton_Click(sender As Object, e As EventArgs) Handles HamburgerButton.Click
+        userDetail()
         If (hamburgerPnl.Width < 250) Then
             Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(20))
             Dim i As Integer = 0
@@ -34,62 +36,74 @@ Public Class Dashboard
 
     Sub showRecycleBin()
         bin.MdiParent = Me
+        MainPanel.Controls.Clear()
         MainPanel.Controls.Add(bin)
         bin.Dock = DockStyle.Fill
         bin.Show()
         'bin.Visible = True
         bin.BringToFront()
+        MainPanel.Controls.Add(Panel1)
+        Panel1.BringToFront()
         'ar.Visible = False
         'ps.Visible = False
         'a.Visible = False
-        ar.Hide()
-        ps.Hide()
-        ps.Hide()
+        'ar.Hide()
+        'ps.Hide()
+        'ps.Hide()
     End Sub
 
     Sub showAddRemoveStudentUserPanel()
+        MainPanel.Controls.Clear()
         ar.MdiParent = Me
         MainPanel.Controls.Add(ar)
         ar.Dock = DockStyle.Fill
         'ar.Visible = True
         ar.Show()
         ar.BringToFront()
+        MainPanel.Controls.Add(Panel1)
+        Panel1.BringToFront()
         'bin.Visible = False
         'ps.Visible = False
         'a.Visible = False
-        bin.Hide()
+        ''bin.Hide()
         ps.Hide()
         a.Hide()
     End Sub
 
     Sub showCourseAndSubjects()
+        MainPanel.Controls.Clear()
         ps.MdiParent = Me
         MainPanel.Controls.Add(ps)
         ps.Dock = DockStyle.Fill
         'ps.Visible = True
         ps.Show()
         ps.BringToFront()
+        MainPanel.Controls.Add(Panel1)
+        Panel1.BringToFront()
         'ar.Visible = False
         'bin.Visible = False
-        'a.Visible = False
-        ar.Hide()
-        bin.Hide()
-        a.Hide()
+        ''a.Visible = False
+        'ar.Hide()
+        ' '' bin.Hide()
+        'a.Hide()
     End Sub
 
     Sub showAttendance()
+        MainPanel.Controls.Clear()
         a.MdiParent = Me
         MainPanel.Controls.Add(a)
         a.Dock = DockStyle.Fill
         'a.Visible = True
         a.Show()
         a.BringToFront()
+        MainPanel.Controls.Add(Panel1)
+        Panel1.BringToFront()
         'ar.Visible = False
         'bin.Visible = False
         'ps.Visible = False
-        ar.Hide()
-        bin.Hide()
-        ps.Hide()
+        'ar.Hide()
+        '' bin.Hide()
+    '    ps.Hide()
     End Sub
 
     Sub fullScreen()
@@ -101,25 +115,49 @@ Public Class Dashboard
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fullScreen()
+        userDetail()
+    End Sub
+    Sub userDetail()
+        Panel1.BackColor = Color.FromArgb(125, Color.Black)
+        Button1.BackColor = Color.FromArgb(125, Color.Black)
     End Sub
 
     Private Sub AddRemoveButton_Click(sender As Object, e As EventArgs) Handles AddRemoveButton.Click
         showAddRemoveStudentUserPanel()
+        userDetail()
     End Sub
 
     Private Sub AdminSettingButton_Click(sender As Object, e As EventArgs) Handles AdminSettingButton.Click
         showCourseAndSubjects()
+        userDetail()
     End Sub
 
     Private Sub RecycleBinButton_Click(sender As Object, e As EventArgs) Handles RecycleBinButton.Click
         showRecycleBin()
+        userDetail()
     End Sub
 
     Private Sub AttendanceButton_Click(sender As Object, e As EventArgs) Handles AttendanceButton.Click
         showAttendance()
+        userDetail()
     End Sub
- 
+
     Private Sub CloseButton_Click(sender As Object, e As EventArgs) Handles CloseButton.Click
         Application.Exit()
+        userDetail()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        If (Panel1.Height < 19) Then
+            Transition.run(Panel1, "Height", 600, New TransitionType_EaseInEaseOut(100))
+            Button1.Image = My.Resources.Collapse_Arrow_24px1
+            userDetail()
+        Else
+            Transition.run(Panel1, "Height", 18, New TransitionType_EaseInEaseOut(100))
+            Button1.Image = My.Resources.Expand_Arrow_24px
+            userDetail()
+        End If
     End Sub
 End Class

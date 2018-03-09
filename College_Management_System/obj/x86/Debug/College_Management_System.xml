@@ -23,11 +23,19 @@ College_Management_System
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:College_Management_System.My.Resources.Resources.Collapse_Arrow_24px1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:College_Management_System.My.Resources.Resources.Dashboard_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:College_Management_System.My.Resources.Resources.Delete_32px2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:College_Management_System.My.Resources.Resources.Expand_Arrow_24px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

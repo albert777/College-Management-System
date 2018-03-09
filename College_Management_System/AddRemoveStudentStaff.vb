@@ -389,4 +389,7 @@ Public Class AddRemoveStudentStaff
     End Sub
 
 
+    Private Sub AddUserTab_Click(sender As Object, e As EventArgs) Handles AddUserTab.Click
+
+    End Sub
 End Class

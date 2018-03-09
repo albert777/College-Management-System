@@ -290,6 +290,8 @@
   <ItemGroup>
     <Content Include="cms_icon_NGp_icon.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\Collapse Arrow_24px1.png" />
+    <None Include="Resources\Expand Arrow_24px.png" />
     <None Include="Resources\List_32px1.png" />
     <None Include="Resources\Refresh_32px.png" />
     <None Include="Resources\Trash_32px.png" />

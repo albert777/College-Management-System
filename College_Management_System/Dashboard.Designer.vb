@@ -32,11 +32,15 @@ Partial Class Dashboard
         Me.AddRemoveButton = New System.Windows.Forms.Button()
         Me.HamburgerButton = New System.Windows.Forms.Button()
         Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.hamburgerPnl.SuspendLayout()
+        Me.MainPanel.SuspendLayout()
         Me.dashboardTablePnl.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'hamburgerPnl
@@ -165,12 +169,29 @@ Partial Class Dashboard
         '
         'MainPanel
         '
+        Me.MainPanel.Controls.Add(Me.Panel1)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainPanel.Location = New System.Drawing.Point(48, 0)
         Me.MainPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.MainPanel.Name = "MainPanel"
         Me.MainPanel.Size = New System.Drawing.Size(1302, 729)
         Me.MainPanel.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Black
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = Global.College_Management_System.My.Resources.Resources.Expand_Arrow_24px
+        Me.Button1.Location = New System.Drawing.Point(0, -12)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(399, 30)
+        Me.Button1.TabIndex = 1
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'dashboardTablePnl
         '
@@ -202,6 +223,17 @@ Partial Class Dashboard
         Me.BunifuDragControl2.TargetControl = Me.hamburgerPnl
         Me.BunifuDragControl2.Vertical = True
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Location = New System.Drawing.Point(903, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(399, 18)
+        Me.Panel1.TabIndex = 2
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -219,7 +251,9 @@ Partial Class Dashboard
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"
         Me.hamburgerPnl.ResumeLayout(False)
+        Me.MainPanel.ResumeLayout(False)
         Me.dashboardTablePnl.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -234,4 +268,6 @@ Partial Class Dashboard
     Friend WithEvents RecycleBinButton As System.Windows.Forms.Button
     Friend WithEvents AttendanceButton As System.Windows.Forms.Button
     Friend WithEvents CloseButton As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class
