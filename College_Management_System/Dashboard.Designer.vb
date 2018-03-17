@@ -27,6 +27,7 @@ Partial Class Dashboard
         Me.hamburgerPnl = New System.Windows.Forms.Panel()
         Me.MainPanel = New System.Windows.Forms.Panel()
         Me.UserDetailPanel = New System.Windows.Forms.Panel()
+        Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.UserTypeLabel = New System.Windows.Forms.Label()
         Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
@@ -41,7 +42,6 @@ Partial Class Dashboard
         Me.HamburgerButton = New System.Windows.Forms.Button()
         Me.ProfilePictureBox = New System.Windows.Forms.PictureBox()
         Me.SlideDownButton = New System.Windows.Forms.Button()
-        Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.hamburgerPnl.SuspendLayout()
         Me.MainPanel.SuspendLayout()
         Me.UserDetailPanel.SuspendLayout()
@@ -90,6 +90,17 @@ Partial Class Dashboard
         Me.UserDetailPanel.Name = "UserDetailPanel"
         Me.UserDetailPanel.Size = New System.Drawing.Size(399, 18)
         Me.UserDetailPanel.TabIndex = 2
+        '
+        'UsernameLabel
+        '
+        Me.UsernameLabel.AutoSize = True
+        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.UsernameLabel.Font = New System.Drawing.Font("Calibri Light", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.UsernameLabel.ForeColor = System.Drawing.Color.White
+        Me.UsernameLabel.Location = New System.Drawing.Point(120, 332)
+        Me.UsernameLabel.Name = "UsernameLabel"
+        Me.UsernameLabel.Size = New System.Drawing.Size(0, 19)
+        Me.UsernameLabel.TabIndex = 4
         '
         'UserTypeLabel
         '
@@ -282,7 +293,7 @@ Partial Class Dashboard
         '
         'ProfilePictureBox
         '
-        Me.ProfilePictureBox.Image = Global.College_Management_System.My.Resources.Resources.MV5BOTNiYmM1ZGQtMGQwNi00ODA3LThhN2EtZmExYzBhZTY1NTUwXkEyXkFqcGdeQXVyMzgxODM4NjM___V1_SX1777_CR0_0_1777_999_AL_
+        Me.ProfilePictureBox.Image = Global.College_Management_System.My.Resources.Resources._75205
         Me.ProfilePictureBox.Location = New System.Drawing.Point(96, 59)
         Me.ProfilePictureBox.Name = "ProfilePictureBox"
         Me.ProfilePictureBox.Size = New System.Drawing.Size(198, 191)
@@ -305,17 +316,6 @@ Partial Class Dashboard
         Me.SlideDownButton.Size = New System.Drawing.Size(399, 30)
         Me.SlideDownButton.TabIndex = 1
         Me.SlideDownButton.UseVisualStyleBackColor = False
-        '
-        'UsernameLabel
-        '
-        Me.UsernameLabel.AutoSize = True
-        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
-        Me.UsernameLabel.Font = New System.Drawing.Font("Calibri Light", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.UsernameLabel.ForeColor = System.Drawing.Color.White
-        Me.UsernameLabel.Location = New System.Drawing.Point(120, 332)
-        Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(0, 19)
-        Me.UsernameLabel.TabIndex = 4
         '
         'Dashboard
         '

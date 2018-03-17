@@ -291,6 +291,7 @@
   <ItemGroup>
     <Content Include="cms_icon_NGp_icon.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\75205.png" />
     <None Include="Resources\Home_32px.png" />
     <None Include="Resources\Exit_32px.png" />
     <None Include="Resources\Logout Rounded Left_32px.png" />

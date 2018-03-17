@@ -22,9 +22,9 @@ Partial Class AddRemoveStudentStaff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.a = New MaterialSkin.Controls.MaterialTabControl()
         Me.AddUserTab = New System.Windows.Forms.TabPage()
@@ -56,7 +56,6 @@ Partial Class AddRemoveStudentStaff
         Me.GenderLabel = New MaterialSkin.Controls.MaterialLabel()
         Me.MaleRadioBtn = New MaterialSkin.Controls.MaterialRadioButton()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.SearchTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Address1TextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -71,6 +70,7 @@ Partial Class AddRemoveStudentStaff
         Me.EmailValidateLabel = New System.Windows.Forms.Label()
         Me.Address2TextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.ClearAllBtn = New MetroFramework.Controls.MetroButton()
         Me.SendEmailCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
         Me.FinsihBtn = New MetroFramework.Controls.MetroButton()
         Me.UpdateBtn = New MetroFramework.Controls.MetroButton()
@@ -87,6 +87,7 @@ Partial Class AddRemoveStudentStaff
         Me.AllStudentsTab = New System.Windows.Forms.TabPage()
         Me.AddRemoveUserStudentTablePanel = New System.Windows.Forms.TableLayoutPanel()
         Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.SearchTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.a.SuspendLayout()
         Me.AddUserTab.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -171,8 +172,9 @@ Partial Class AddRemoveStudentStaff
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.37897!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.62103!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.3012!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.6988!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(1466, 664)
         Me.TableLayoutPanel2.TabIndex = 35
         '
@@ -185,14 +187,14 @@ Partial Class AddRemoveStudentStaff
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1466, 414)
+        Me.Panel1.Size = New System.Drawing.Size(1466, 333)
         Me.Panel1.TabIndex = 29
         '
         'TableLayoutPanel3
         '
         Me.TableLayoutPanel3.ColumnCount = 2
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.18427!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.81573!))
         Me.TableLayoutPanel3.Controls.Add(Me.Panel2, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel5, 1, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
@@ -200,7 +202,8 @@ Partial Class AddRemoveStudentStaff
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1466, 414)
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1449, 353)
         Me.TableLayoutPanel3.TabIndex = 67
         '
         'Panel2
@@ -214,7 +217,7 @@ Partial Class AddRemoveStudentStaff
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(293, 414)
+        Me.Panel2.Size = New System.Drawing.Size(249, 353)
         Me.Panel2.TabIndex = 0
         '
         'UserImage
@@ -226,7 +229,7 @@ Partial Class AddRemoveStudentStaff
         Me.UserImage.Margin = New System.Windows.Forms.Padding(0)
         Me.UserImage.Name = "UserImage"
         Me.UserImage.Padding = New System.Windows.Forms.Padding(20)
-        Me.UserImage.Size = New System.Drawing.Size(293, 257)
+        Me.UserImage.Size = New System.Drawing.Size(249, 218)
         Me.UserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.UserImage.TabIndex = 35
         Me.UserImage.TabStop = False
@@ -238,10 +241,10 @@ Partial Class AddRemoveStudentStaff
         Me.UserUploadBtn.Cursor = System.Windows.Forms.Cursors.Default
         Me.UserUploadBtn.Image = Global.College_Management_System.My.Resources.Resources.Upload_32px
         Me.UserUploadBtn.ImageActive = Nothing
-        Me.UserUploadBtn.Location = New System.Drawing.Point(35, 269)
+        Me.UserUploadBtn.Location = New System.Drawing.Point(35, 224)
         Me.UserUploadBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.UserUploadBtn.Name = "UserUploadBtn"
-        Me.UserUploadBtn.Size = New System.Drawing.Size(225, 28)
+        Me.UserUploadBtn.Size = New System.Drawing.Size(181, 28)
         Me.UserUploadBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.UserUploadBtn.TabIndex = 53
         Me.UserUploadBtn.TabStop = False
@@ -254,7 +257,7 @@ Partial Class AddRemoveStudentStaff
         Me.MaterialLabel1.Depth = 0
         Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel1.Location = New System.Drawing.Point(81, 306)
+        Me.MaterialLabel1.Location = New System.Drawing.Point(64, 254)
         Me.MaterialLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel1.Name = "MaterialLabel1"
@@ -267,7 +270,7 @@ Partial Class AddRemoveStudentStaff
         Me.UserNameTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UserNameTextBox.Depth = 0
         Me.UserNameTextBox.Hint = "Username"
-        Me.UserNameTextBox.Location = New System.Drawing.Point(35, 334)
+        Me.UserNameTextBox.Location = New System.Drawing.Point(35, 277)
         Me.UserNameTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.UserNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.UserNameTextBox.Name = "UserNameTextBox"
@@ -275,7 +278,7 @@ Partial Class AddRemoveStudentStaff
         Me.UserNameTextBox.SelectedText = ""
         Me.UserNameTextBox.SelectionLength = 0
         Me.UserNameTextBox.SelectionStart = 0
-        Me.UserNameTextBox.Size = New System.Drawing.Size(225, 23)
+        Me.UserNameTextBox.Size = New System.Drawing.Size(181, 23)
         Me.UserNameTextBox.TabIndex = 56
         Me.UserNameTextBox.UseSystemPasswordChar = False
         '
@@ -284,7 +287,7 @@ Partial Class AddRemoveStudentStaff
         Me.PasswordTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PasswordTextBox.Depth = 0
         Me.PasswordTextBox.Hint = "Password"
-        Me.PasswordTextBox.Location = New System.Drawing.Point(35, 371)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(35, 301)
         Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.PasswordTextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.PasswordTextBox.Name = "PasswordTextBox"
@@ -292,7 +295,7 @@ Partial Class AddRemoveStudentStaff
         Me.PasswordTextBox.SelectedText = ""
         Me.PasswordTextBox.SelectionLength = 0
         Me.PasswordTextBox.SelectionStart = 0
-        Me.PasswordTextBox.Size = New System.Drawing.Size(225, 23)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(181, 23)
         Me.PasswordTextBox.TabIndex = 58
         Me.PasswordTextBox.UseSystemPasswordChar = False
         '
@@ -302,13 +305,13 @@ Partial Class AddRemoveStudentStaff
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel4, 0, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.Panel11, 0, 1)
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(293, 0)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(249, 0)
         Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.2317!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.76829!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(1033, 414)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(1033, 353)
         Me.TableLayoutPanel5.TabIndex = 1
         '
         'TableLayoutPanel4
@@ -316,7 +319,7 @@ Partial Class AddRemoveStudentStaff
         Me.TableLayoutPanel4.ColumnCount = 3
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.46336!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.53664!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 450.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 453.0!))
         Me.TableLayoutPanel4.Controls.Add(Me.FirstNameTextBox, 0, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.MiddleNameTextBox, 1, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.LastNameTextBox, 2, 1)
@@ -335,12 +338,12 @@ Partial Class AddRemoveStudentStaff
         Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 5
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.61856!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.49484!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.02062!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.87029!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1033, 344)
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.54696!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.09945!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.83425!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.92308!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 111.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1033, 293)
         Me.TableLayoutPanel4.TabIndex = 1
         '
         'FirstNameTextBox
@@ -348,7 +351,7 @@ Partial Class AddRemoveStudentStaff
         Me.FirstNameTextBox.Depth = 0
         Me.FirstNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FirstNameTextBox.Hint = "Firstname"
-        Me.FirstNameTextBox.Location = New System.Drawing.Point(4, 54)
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(4, 42)
         Me.FirstNameTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.FirstNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
@@ -356,7 +359,7 @@ Partial Class AddRemoveStudentStaff
         Me.FirstNameTextBox.SelectedText = ""
         Me.FirstNameTextBox.SelectionLength = 0
         Me.FirstNameTextBox.SelectionStart = 0
-        Me.FirstNameTextBox.Size = New System.Drawing.Size(268, 23)
+        Me.FirstNameTextBox.Size = New System.Drawing.Size(267, 23)
         Me.FirstNameTextBox.TabIndex = 36
         Me.FirstNameTextBox.UseSystemPasswordChar = False
         '
@@ -365,7 +368,7 @@ Partial Class AddRemoveStudentStaff
         Me.MiddleNameTextBox.Depth = 0
         Me.MiddleNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MiddleNameTextBox.Hint = "Middlename"
-        Me.MiddleNameTextBox.Location = New System.Drawing.Point(280, 54)
+        Me.MiddleNameTextBox.Location = New System.Drawing.Point(279, 42)
         Me.MiddleNameTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MiddleNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
@@ -373,7 +376,7 @@ Partial Class AddRemoveStudentStaff
         Me.MiddleNameTextBox.SelectedText = ""
         Me.MiddleNameTextBox.SelectionLength = 0
         Me.MiddleNameTextBox.SelectionStart = 0
-        Me.MiddleNameTextBox.Size = New System.Drawing.Size(298, 23)
+        Me.MiddleNameTextBox.Size = New System.Drawing.Size(296, 23)
         Me.MiddleNameTextBox.TabIndex = 37
         Me.MiddleNameTextBox.UseSystemPasswordChar = False
         '
@@ -381,7 +384,7 @@ Partial Class AddRemoveStudentStaff
         '
         Me.LastNameTextBox.Depth = 0
         Me.LastNameTextBox.Hint = "Lastname"
-        Me.LastNameTextBox.Location = New System.Drawing.Point(586, 54)
+        Me.LastNameTextBox.Location = New System.Drawing.Point(583, 42)
         Me.LastNameTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.LastNameTextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.LastNameTextBox.Name = "LastNameTextBox"
@@ -398,9 +401,9 @@ Partial Class AddRemoveStudentStaff
         Me.Panel3.Controls.Add(Me.ContactNoTextBox)
         Me.Panel3.Controls.Add(Me.PhoneNoValidateLabel)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(279, 95)
+        Me.Panel3.Location = New System.Drawing.Point(278, 82)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(300, 79)
+        Me.Panel3.Size = New System.Drawing.Size(298, 48)
         Me.Panel3.TabIndex = 46
         '
         'ContactNoTextBox
@@ -416,7 +419,7 @@ Partial Class AddRemoveStudentStaff
         Me.ContactNoTextBox.SelectedText = ""
         Me.ContactNoTextBox.SelectionLength = 0
         Me.ContactNoTextBox.SelectionStart = 0
-        Me.ContactNoTextBox.Size = New System.Drawing.Size(300, 23)
+        Me.ContactNoTextBox.Size = New System.Drawing.Size(298, 23)
         Me.ContactNoTextBox.TabIndex = 41
         Me.ContactNoTextBox.UseSystemPasswordChar = False
         '
@@ -434,9 +437,9 @@ Partial Class AddRemoveStudentStaff
         Me.Panel4.Controls.Add(Me.UserTypeLabel)
         Me.Panel4.Controls.Add(Me.UserTypeComboBox)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(585, 180)
+        Me.Panel4.Location = New System.Drawing.Point(582, 136)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(445, 66)
+        Me.Panel4.Size = New System.Drawing.Size(448, 42)
         Me.Panel4.TabIndex = 47
         '
         'UserTypeLabel
@@ -471,9 +474,9 @@ Partial Class AddRemoveStudentStaff
         Me.Panel5.Controls.Add(Me.DobLabel)
         Me.Panel5.Controls.Add(Me.DobDateTimePicker)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(585, 95)
+        Me.Panel5.Location = New System.Drawing.Point(582, 82)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(445, 79)
+        Me.Panel5.Size = New System.Drawing.Size(448, 48)
         Me.Panel5.TabIndex = 48
         '
         'DobLabel
@@ -482,7 +485,7 @@ Partial Class AddRemoveStudentStaff
         Me.DobLabel.Depth = 0
         Me.DobLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.DobLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.DobLabel.Location = New System.Drawing.Point(20, 5)
+        Me.DobLabel.Location = New System.Drawing.Point(20, 4)
         Me.DobLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.DobLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.DobLabel.Name = "DobLabel"
@@ -505,9 +508,9 @@ Partial Class AddRemoveStudentStaff
         Me.Panel6.Controls.Add(Me.GenderLabel)
         Me.Panel6.Controls.Add(Me.MaleRadioBtn)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(3, 95)
+        Me.Panel6.Location = New System.Drawing.Point(3, 82)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(270, 79)
+        Me.Panel6.Size = New System.Drawing.Size(269, 48)
         Me.Panel6.TabIndex = 49
         '
         'FemaleRadioBtn
@@ -515,7 +518,7 @@ Partial Class AddRemoveStudentStaff
         Me.FemaleRadioBtn.AutoSize = True
         Me.FemaleRadioBtn.Depth = 0
         Me.FemaleRadioBtn.Font = New System.Drawing.Font("Roboto", 10.0!)
-        Me.FemaleRadioBtn.Location = New System.Drawing.Point(143, 5)
+        Me.FemaleRadioBtn.Location = New System.Drawing.Point(143, -1)
         Me.FemaleRadioBtn.Margin = New System.Windows.Forms.Padding(0)
         Me.FemaleRadioBtn.MouseLocation = New System.Drawing.Point(-1, -1)
         Me.FemaleRadioBtn.MouseState = MaterialSkin.MouseState.HOVER
@@ -533,7 +536,7 @@ Partial Class AddRemoveStudentStaff
         Me.GenderLabel.Depth = 0
         Me.GenderLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.GenderLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.GenderLabel.Location = New System.Drawing.Point(4, 10)
+        Me.GenderLabel.Location = New System.Drawing.Point(4, 4)
         Me.GenderLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.GenderLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.GenderLabel.Name = "GenderLabel"
@@ -546,7 +549,7 @@ Partial Class AddRemoveStudentStaff
         Me.MaleRadioBtn.AutoSize = True
         Me.MaleRadioBtn.Depth = 0
         Me.MaleRadioBtn.Font = New System.Drawing.Font("Roboto", 10.0!)
-        Me.MaleRadioBtn.Location = New System.Drawing.Point(64, 5)
+        Me.MaleRadioBtn.Location = New System.Drawing.Point(64, -1)
         Me.MaleRadioBtn.Margin = New System.Windows.Forms.Padding(0)
         Me.MaleRadioBtn.MouseLocation = New System.Drawing.Point(-1, -1)
         Me.MaleRadioBtn.MouseState = MaterialSkin.MouseState.HOVER
@@ -563,32 +566,15 @@ Partial Class AddRemoveStudentStaff
         Me.Panel7.Controls.Add(Me.SearchTextBox)
         Me.Panel7.Controls.Add(Me.PictureBox4)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(585, 3)
+        Me.Panel7.Location = New System.Drawing.Point(582, 3)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(445, 45)
+        Me.Panel7.Size = New System.Drawing.Size(448, 33)
         Me.Panel7.TabIndex = 50
-        '
-        'SearchTextBox
-        '
-        Me.SearchTextBox.Depth = 0
-        Me.SearchTextBox.Dock = System.Windows.Forms.DockStyle.Right
-        Me.SearchTextBox.Hint = "Search for user"
-        Me.SearchTextBox.Location = New System.Drawing.Point(164, 0)
-        Me.SearchTextBox.MouseState = MaterialSkin.MouseState.HOVER
-        Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.SearchTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.SearchTextBox.SelectedText = ""
-        Me.SearchTextBox.SelectionLength = 0
-        Me.SearchTextBox.SelectionStart = 0
-        Me.SearchTextBox.Size = New System.Drawing.Size(281, 23)
-        Me.SearchTextBox.TabIndex = 60
-        Me.SearchTextBox.UseSystemPasswordChar = False
         '
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.College_Management_System.My.Resources.Resources.Search_25px
-        Me.PictureBox4.Location = New System.Drawing.Point(29, 2)
+        Me.PictureBox4.Location = New System.Drawing.Point(5, 4)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(29, 23)
         Me.PictureBox4.TabIndex = 61
@@ -598,7 +584,7 @@ Partial Class AddRemoveStudentStaff
         '
         Me.Address1TextBox.Depth = 0
         Me.Address1TextBox.Hint = "Address 1"
-        Me.Address1TextBox.Location = New System.Drawing.Point(4, 180)
+        Me.Address1TextBox.Location = New System.Drawing.Point(4, 136)
         Me.Address1TextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Address1TextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.Address1TextBox.Name = "Address1TextBox"
@@ -617,7 +603,7 @@ Partial Class AddRemoveStudentStaff
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(276, 51)
+        Me.Panel8.Size = New System.Drawing.Size(275, 39)
         Me.Panel8.TabIndex = 51
         '
         'TableLayoutPanel6
@@ -632,7 +618,7 @@ Partial Class AddRemoveStudentStaff
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(276, 51)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(275, 39)
         Me.TableLayoutPanel6.TabIndex = 55
         '
         'UserIdLabel
@@ -646,7 +632,7 @@ Partial Class AddRemoveStudentStaff
         Me.UserIdLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.UserIdLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.UserIdLabel.Name = "UserIdLabel"
-        Me.UserIdLabel.Size = New System.Drawing.Size(149, 51)
+        Me.UserIdLabel.Size = New System.Drawing.Size(148, 39)
         Me.UserIdLabel.TabIndex = 49
         Me.UserIdLabel.Text = "UserId"
         Me.UserIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -657,12 +643,12 @@ Partial Class AddRemoveStudentStaff
         Me.UserIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.UserIdTextBox.Cursor = System.Windows.Forms.Cursors.No
         Me.UserIdTextBox.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UserIdTextBox.Location = New System.Drawing.Point(161, 3)
+        Me.UserIdTextBox.Location = New System.Drawing.Point(160, 3)
         Me.UserIdTextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.UserIdTextBox.Multiline = True
         Me.UserIdTextBox.Name = "UserIdTextBox"
         Me.UserIdTextBox.ReadOnly = True
-        Me.UserIdTextBox.Size = New System.Drawing.Size(111, 45)
+        Me.UserIdTextBox.Size = New System.Drawing.Size(111, 33)
         Me.UserIdTextBox.TabIndex = 54
         '
         'Panel9
@@ -670,9 +656,9 @@ Partial Class AddRemoveStudentStaff
         Me.Panel9.Controls.Add(Me.MaritialStatusComboBox)
         Me.Panel9.Controls.Add(Me.MaritialStatusLabel)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel9.Location = New System.Drawing.Point(279, 252)
+        Me.Panel9.Location = New System.Drawing.Point(278, 184)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(300, 89)
+        Me.Panel9.Size = New System.Drawing.Size(298, 106)
         Me.Panel9.TabIndex = 52
         '
         'MaritialStatusComboBox
@@ -707,9 +693,9 @@ Partial Class AddRemoveStudentStaff
         Me.Panel10.Controls.Add(Me.EmailTextBox)
         Me.Panel10.Controls.Add(Me.EmailValidateLabel)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel10.Location = New System.Drawing.Point(3, 252)
+        Me.Panel10.Location = New System.Drawing.Point(3, 184)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(270, 89)
+        Me.Panel10.Size = New System.Drawing.Size(269, 106)
         Me.Panel10.TabIndex = 53
         '
         'EmailTextBox
@@ -740,7 +726,7 @@ Partial Class AddRemoveStudentStaff
         '
         Me.Address2TextBox.Depth = 0
         Me.Address2TextBox.Hint = "Address 2"
-        Me.Address2TextBox.Location = New System.Drawing.Point(280, 180)
+        Me.Address2TextBox.Location = New System.Drawing.Point(279, 136)
         Me.Address2TextBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Address2TextBox.MouseState = MaterialSkin.MouseState.HOVER
         Me.Address2TextBox.Name = "Address2TextBox"
@@ -754,16 +740,28 @@ Partial Class AddRemoveStudentStaff
         '
         'Panel11
         '
+        Me.Panel11.Controls.Add(Me.ClearAllBtn)
         Me.Panel11.Controls.Add(Me.SendEmailCheckBox)
         Me.Panel11.Controls.Add(Me.FinsihBtn)
         Me.Panel11.Controls.Add(Me.UpdateBtn)
         Me.Panel11.Controls.Add(Me.DeleteBtn)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel11.Location = New System.Drawing.Point(0, 344)
+        Me.Panel11.Location = New System.Drawing.Point(0, 293)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1033, 70)
+        Me.Panel11.Size = New System.Drawing.Size(1033, 60)
         Me.Panel11.TabIndex = 2
+        '
+        'ClearAllBtn
+        '
+        Me.ClearAllBtn.Location = New System.Drawing.Point(473, 5)
+        Me.ClearAllBtn.Name = "ClearAllBtn"
+        Me.ClearAllBtn.Size = New System.Drawing.Size(143, 32)
+        Me.ClearAllBtn.TabIndex = 64
+        Me.ClearAllBtn.Text = "Clear All"
+        Me.ClearAllBtn.UseCustomBackColor = True
+        Me.ClearAllBtn.UseCustomForeColor = True
+        Me.ClearAllBtn.UseSelectable = True
         '
         'SendEmailCheckBox
         '
@@ -783,7 +781,7 @@ Partial Class AddRemoveStudentStaff
         '
         'FinsihBtn
         '
-        Me.FinsihBtn.Location = New System.Drawing.Point(45, 5)
+        Me.FinsihBtn.Location = New System.Drawing.Point(10, 5)
         Me.FinsihBtn.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.FinsihBtn.Name = "FinsihBtn"
         Me.FinsihBtn.Size = New System.Drawing.Size(143, 32)
@@ -797,7 +795,7 @@ Partial Class AddRemoveStudentStaff
         '
         'UpdateBtn
         '
-        Me.UpdateBtn.Location = New System.Drawing.Point(204, 5)
+        Me.UpdateBtn.Location = New System.Drawing.Point(169, 5)
         Me.UpdateBtn.Name = "UpdateBtn"
         Me.UpdateBtn.Size = New System.Drawing.Size(144, 32)
         Me.UpdateBtn.TabIndex = 62
@@ -808,7 +806,7 @@ Partial Class AddRemoveStudentStaff
         '
         'DeleteBtn
         '
-        Me.DeleteBtn.Location = New System.Drawing.Point(359, 5)
+        Me.DeleteBtn.Location = New System.Drawing.Point(324, 5)
         Me.DeleteBtn.Name = "DeleteBtn"
         Me.DeleteBtn.Size = New System.Drawing.Size(143, 32)
         Me.DeleteBtn.TabIndex = 63
@@ -833,10 +831,10 @@ Partial Class AddRemoveStudentStaff
         Me.AdminUserDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.AdminUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.AdminUserDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AdminUserDataGridView.Location = New System.Drawing.Point(0, 414)
+        Me.AdminUserDataGridView.Location = New System.Drawing.Point(0, 333)
         Me.AdminUserDataGridView.Margin = New System.Windows.Forms.Padding(0)
         Me.AdminUserDataGridView.Name = "AdminUserDataGridView"
-        Me.AdminUserDataGridView.Size = New System.Drawing.Size(1466, 250)
+        Me.AdminUserDataGridView.Size = New System.Drawing.Size(1466, 331)
         Me.AdminUserDataGridView.TabIndex = 30
         '
         'AddStudentTab
@@ -923,30 +921,30 @@ Partial Class AddRemoveStudentStaff
         'UserDataGridView
         '
         Me.UserDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.UserDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.UserDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.UserDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.UserDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.UserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle9
         Me.UserDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.UserDataGridView.DoubleBuffered = True
         Me.UserDataGridView.EnableHeadersVisualStyles = False
@@ -991,6 +989,22 @@ Partial Class AddRemoveStudentStaff
         'ImageOpenDialog
         '
         Me.ImageOpenDialog.FileName = "ImageOpener"
+        '
+        'SearchTextBox
+        '
+        Me.SearchTextBox.Depth = 0
+        Me.SearchTextBox.Hint = "Search for user"
+        Me.SearchTextBox.Location = New System.Drawing.Point(30, 6)
+        Me.SearchTextBox.MouseState = MaterialSkin.MouseState.HOVER
+        Me.SearchTextBox.Name = "SearchTextBox"
+        Me.SearchTextBox.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.SearchTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.SearchTextBox.SelectedText = ""
+        Me.SearchTextBox.SelectionLength = 0
+        Me.SearchTextBox.SelectionStart = 0
+        Me.SearchTextBox.Size = New System.Drawing.Size(249, 23)
+        Me.SearchTextBox.TabIndex = 60
+        Me.SearchTextBox.UseSystemPasswordChar = False
         '
         'AddRemoveStudentStaff
         '
@@ -1063,7 +1077,6 @@ Partial Class AddRemoveStudentStaff
     Friend WithEvents DeleteBtn As MetroFramework.Controls.MetroButton
     Friend WithEvents UpdateBtn As MetroFramework.Controls.MetroButton
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents SearchTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents SendEmailCheckBox As MaterialSkin.Controls.MaterialCheckBox
     Friend WithEvents PasswordTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
@@ -1105,4 +1118,6 @@ Partial Class AddRemoveStudentStaff
     Friend WithEvents Panel10 As System.Windows.Forms.Panel
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
     Friend WithEvents TableLayoutPanel6 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents ClearAllBtn As MetroFramework.Controls.MetroButton
+    Friend WithEvents SearchTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
 End Class

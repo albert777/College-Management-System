@@ -115,8 +115,14 @@ Public Class Dashboard
         UsernameLabel.Text = Login.username
         Dim img() As Byte
         img = Login.img
-        Dim ms As New MemoryStream(img)
-        ProfilePictureBox.Image = Image.FromStream(ms)
+
+        If (img IsNot Nothing) Then
+            Dim ms As New MemoryStream(img)
+            ProfilePictureBox.Image = Image.FromStream(ms)
+        Else
+
+        End If
+
     End Sub
 
     Sub userDetail()

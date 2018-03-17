@@ -14,6 +14,8 @@ Imports System.Text.RegularExpressions
 Public Class AddRemoveStudentStaff
     Dim userId As Integer
     Dim state As Integer = 1
+
+    'Browse images
     Sub imageChooser(ByVal a As String)
         ImageOpenDialog.Filter = "Picture Files(*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
         ImageOpenDialog.FilterIndex = 2
@@ -33,6 +35,7 @@ Public Class AddRemoveStudentStaff
         End If
     End Sub
 
+    'dashboard load method
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PasswordTextBox.Text = GeneratePassword()
         loadUsers("Select * FROM userTbl WHERE state = 1")
@@ -41,6 +44,7 @@ Public Class AddRemoveStudentStaff
         AdminUserDataGridView.Columns(14).Visible = False
         AdminUserDataGridView.Columns(15).Visible = False
     End Sub
+
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles UserUploadBtn.Click
         imageChooser("UserUploadBtn")
     End Sub
@@ -48,11 +52,13 @@ Public Class AddRemoveStudentStaff
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles StudentUploadBtn.Click
         imageChooser("StudentUploadBtn")
     End Sub
+
     'Connect the database
     Function dbConnect()
         Dim db As New SqlConnection("Data Source=(LocalDB)\v11.0;Integrated Security=true;Database=CMS")
         Return db
     End Function
+
     'Clear all the textbox
     Sub clearAll()
         Dim textboxArray() As MaterialSingleLineTextField = New MaterialSingleLineTextField() {FirstNameTextBox, LastNameTextBox, MiddleNameTextBox, ContactNoTextBox, EmailTextBox, Address1TextBox, Address2TextBox, UserNameTextBox, PasswordTextBox}
@@ -72,6 +78,8 @@ Public Class AddRemoveStudentStaff
         UserImage.Image = My.Resources.user_male2_512
         PasswordTextBox.Text = GeneratePassword()
     End Sub
+
+    'Add to database => user
     Private Sub finishBtn_Click(sender As Object, e As EventArgs) Handles FinsihBtn.Click
         Dim gender As String
 
@@ -89,6 +97,7 @@ Public Class AddRemoveStudentStaff
         PasswordTextBox.Text = GeneratePassword()
         loadUsers("Select * FROM userTbl WHERE state = 1")
     End Sub
+
     'Insert users to the database
     Public Sub insertUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal username As String, ByVal password As String)
         Dim con As SqlConnection = dbConnect()
@@ -146,10 +155,10 @@ Public Class AddRemoveStudentStaff
         'Next
         Return sb.ToString()
     End Function
+
     Protected Overrides Sub Finalize()
         MyBase.Finalize()
     End Sub
-
 
     'Send email to the set area
     Private Sub sendEmail()
@@ -172,6 +181,8 @@ Public Class AddRemoveStudentStaff
             MsgBox(ex.ToString)
         End Try
     End Sub
+
+    'load users in database
     Public Function loadUsers(ByVal sql As String)
         Dim con As SqlConnection = dbConnect()
         Dim cmd As New SqlCommand(sql, con)
@@ -180,18 +191,18 @@ Public Class AddRemoveStudentStaff
         da.Fill(dt)
         UserDataGridView.DataSource = dt
         AdminUserDataGridView.DataSource = dt
-
         Return dt
     End Function
 
-
-
+    'load users
     Private Sub UserDataGridView_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles UserDataGridView.RowHeaderMouseClick
         Dim img() As Byte
         img = UserDataGridView.CurrentRow.Cells(14).Value
         Dim ms As New MemoryStream(img)
         PictureBox3.Image = Image.FromStream(ms)
     End Sub
+
+    'Search for users
     Private Sub searchData()
         Dim con As SqlConnection = dbConnect()
         Dim cmd As New SqlCommand("Select * FROM userTbl WHERE username LIKE @a AND state = 1 ", con)
@@ -206,11 +217,13 @@ Public Class AddRemoveStudentStaff
             PasswordTextBox.Text = GeneratePassword()
         End If
     End Sub
+
     'Searching method and set it to the textbox
     Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
         searchData()
     End Sub
 
+    'show table data to view
     Private Sub AdminUserDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles AdminUserDataGridView.CellMouseClick
         userId = AdminUserDataGridView.CurrentRow.Cells(0).Value.ToString()
         UserIdTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(0).Value.ToString()
@@ -238,6 +251,7 @@ Public Class AddRemoveStudentStaff
         Dim ms As New MemoryStream(img)
         UserImage.Image = Image.FromStream(ms)
     End Sub
+
     'update method caller
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
         Dim gender As String
@@ -256,6 +270,7 @@ Public Class AddRemoveStudentStaff
         loadUsers("Select * FROM userTbl WHERE state = 1")
         searchData()
     End Sub
+
     'Method to update the existing users
     Public Sub updateUsers(ByVal fn As String, ByVal mn As String, ByVal ln As String, ByVal gender As String, ByVal contactNo As String, ByVal addressOne As String, ByVal addressTwo As String, ByVal userType As String, ByVal dob As String, ByVal email As String, ByVal maritialStatus As String, ByVal username As String, ByVal password As String)
         Dim con As SqlConnection = dbConnect()
@@ -296,33 +311,7 @@ Public Class AddRemoveStudentStaff
         End Try
     End Sub
 
-    'Sub deleteUsers()
-    '    Dim con As SqlConnection = dbConnect()
-    '    Try
-    '        Dim cmd As New SqlCommand("Delete FROM userTbl WHERE Id=@userId", con)
-    '        cmd.Parameters.AddWithValue("@userId", userId)
-    '        con.Open()
-    '        cmd.ExecuteNonQuery()
-    '        con.Close()
-    '        If (UserTypeComboBox.Text = "Cashier") Then
-    '            Dim fn As String = FirstNameTextBox.Text
-    '            Dim ut As String = UserTypeComboBox.Text
-    '            Dim cn As String = ContactNoTextBox.Text
-    '            Dim user_Data_Table As String
-    '            user_Data_Table = "DROP TABLE " & fn & "_user_" & ut & "_" & cn
-    '            MsgBox(user_Data_Table)
-    '            Dim cmd1 As New SqlCommand(user_Data_Table, con)
-    '            con.Open()
-    '            cmd1.ExecuteNonQuery()
-    '            con.Close()
-    '        End If
-    '    Catch ex As Exception
-    '        MessageBox.Show(ex.Message)
-    '    End Try
-    'End Sub
-
     'Sub method to delete the selected user
-
     Sub deleteUsers()
         Try
             Dim con As SqlConnection = dbConnect()
@@ -339,6 +328,7 @@ Public Class AddRemoveStudentStaff
             r.loadUsers()
         End Try
     End Sub
+
     'Delete method caller
     Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
         deleteUsers()
@@ -348,6 +338,7 @@ Public Class AddRemoveStudentStaff
         searchData()
         loadUsers("Select * FROM userTbl WHERE state = 1")
     End Sub
+
     'Çheck contact format
     Sub contactNoChecker()
         Dim chars() As Char = ContactNoTextBox.Text
@@ -362,9 +353,12 @@ Public Class AddRemoveStudentStaff
             End If
         Next
     End Sub
+
     Private Sub ContactNoTextBox_TextChanged(sender As Object, e As EventArgs) Handles ContactNoTextBox.TextChanged
         contactNoChecker()
     End Sub
+
+    'Check email format
     Sub checkEmailFormat()
         Dim strMessage As String = ""
         Dim regex As Regex = New Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")
@@ -378,17 +372,18 @@ Public Class AddRemoveStudentStaff
             End If
         End If
     End Sub
+
     Private Sub EmailTextBox_TextChanged(sender As Object, e As EventArgs) Handles EmailTextBox.TextChanged
         checkEmailFormat()
     End Sub
-
 
     Private Sub AddUserTab_Click(sender As Object, e As EventArgs) Handles AddUserTab.Click
 
     End Sub
 
-
-    Private Sub ClearButton_Click(sender As Object, e As EventArgs)
+    Private Sub ClearAllBtn_Click(sender As Object, e As EventArgs) Handles ClearAllBtn.Click
         clearAll()
+        PasswordTextBox.Text = GeneratePassword()
     End Sub
+
 End Class

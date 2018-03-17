@@ -29,14 +29,14 @@ Partial Class Splashscreen
         Me.splashProgressBar = New MetroFramework.Controls.MetroProgressBar()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.developedBy = New System.Windows.Forms.Label()
-        Me.logoPb = New System.Windows.Forms.PictureBox()
         Me.copyrightLbl = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.logoPb = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.logoPb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.logoPb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LoadingTimer
@@ -102,17 +102,6 @@ Partial Class Splashscreen
     "at Maharjan"
         Me.developedBy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'logoPb
-        '
-        Me.logoPb.BackgroundImage = Global.College_Management_System.My.Resources.Resources.CMS
-        Me.logoPb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.logoPb.Location = New System.Drawing.Point(38, 47)
-        Me.logoPb.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.logoPb.Name = "logoPb"
-        Me.logoPb.Size = New System.Drawing.Size(178, 124)
-        Me.logoPb.TabIndex = 0
-        Me.logoPb.TabStop = False
-        '
         'copyrightLbl
         '
         Me.copyrightLbl.AutoSize = True
@@ -141,6 +130,17 @@ Partial Class Splashscreen
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(647, 384)
         Me.TableLayoutPanel2.TabIndex = 3
+        '
+        'logoPb
+        '
+        Me.logoPb.BackgroundImage = Global.College_Management_System.My.Resources.Resources.CMS
+        Me.logoPb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.logoPb.Location = New System.Drawing.Point(38, 47)
+        Me.logoPb.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.logoPb.Name = "logoPb"
+        Me.logoPb.Size = New System.Drawing.Size(178, 124)
+        Me.logoPb.TabIndex = 0
+        Me.logoPb.TabStop = False
         '
         'Panel1
         '
@@ -173,8 +173,8 @@ Partial Class Splashscreen
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.logoPb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
+        CType(Me.logoPb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
