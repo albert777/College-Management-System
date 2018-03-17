@@ -98,7 +98,8 @@ Partial Class Splashscreen
         Me.developedBy.Name = "developedBy"
         Me.developedBy.Size = New System.Drawing.Size(209, 59)
         Me.developedBy.TabIndex = 3
-        Me.developedBy.Text = "Manjit Shakya, Sandesh Maharjan, Rahil Shakya, Asmin Khadka, Nirjar Maharjan"
+        Me.developedBy.Text = "Manjit Shakya, Sandesh Maharjan, Rahil Shakya, Asmin Khadka, Nirjar Maharjan, Raj" & _
+    "at Maharjan"
         Me.developedBy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'logoPb

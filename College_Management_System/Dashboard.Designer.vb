@@ -25,27 +25,35 @@ Partial Class Dashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.hamburgerPnl = New System.Windows.Forms.Panel()
+        Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.UserDetailPanel = New System.Windows.Forms.Panel()
+        Me.UserTypeLabel = New System.Windows.Forms.Label()
+        Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.HomeButton = New System.Windows.Forms.Button()
+        Me.LogOutButton = New System.Windows.Forms.Button()
         Me.CloseButton = New System.Windows.Forms.Button()
         Me.AttendanceButton = New System.Windows.Forms.Button()
         Me.RecycleBinButton = New System.Windows.Forms.Button()
         Me.AdminSettingButton = New System.Windows.Forms.Button()
         Me.AddRemoveButton = New System.Windows.Forms.Button()
         Me.HamburgerButton = New System.Windows.Forms.Button()
-        Me.MainPanel = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
-        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ProfilePictureBox = New System.Windows.Forms.PictureBox()
+        Me.SlideDownButton = New System.Windows.Forms.Button()
+        Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.hamburgerPnl.SuspendLayout()
         Me.MainPanel.SuspendLayout()
+        Me.UserDetailPanel.SuspendLayout()
         Me.dashboardTablePnl.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        CType(Me.ProfilePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'hamburgerPnl
         '
         Me.hamburgerPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.hamburgerPnl.Controls.Add(Me.HomeButton)
+        Me.hamburgerPnl.Controls.Add(Me.LogOutButton)
         Me.hamburgerPnl.Controls.Add(Me.CloseButton)
         Me.hamburgerPnl.Controls.Add(Me.AttendanceButton)
         Me.hamburgerPnl.Controls.Add(Me.RecycleBinButton)
@@ -59,16 +67,121 @@ Partial Class Dashboard
         Me.hamburgerPnl.Size = New System.Drawing.Size(45, 729)
         Me.hamburgerPnl.TabIndex = 3
         '
+        'MainPanel
+        '
+        Me.MainPanel.Controls.Add(Me.UserDetailPanel)
+        Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainPanel.Location = New System.Drawing.Point(48, 0)
+        Me.MainPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainPanel.Name = "MainPanel"
+        Me.MainPanel.Size = New System.Drawing.Size(1302, 729)
+        Me.MainPanel.TabIndex = 0
+        '
+        'UserDetailPanel
+        '
+        Me.UserDetailPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UserDetailPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.UserDetailPanel.Controls.Add(Me.UsernameLabel)
+        Me.UserDetailPanel.Controls.Add(Me.UserTypeLabel)
+        Me.UserDetailPanel.Controls.Add(Me.ProfilePictureBox)
+        Me.UserDetailPanel.Controls.Add(Me.SlideDownButton)
+        Me.UserDetailPanel.Location = New System.Drawing.Point(903, 0)
+        Me.UserDetailPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserDetailPanel.Name = "UserDetailPanel"
+        Me.UserDetailPanel.Size = New System.Drawing.Size(399, 18)
+        Me.UserDetailPanel.TabIndex = 2
+        '
+        'UserTypeLabel
+        '
+        Me.UserTypeLabel.AutoSize = True
+        Me.UserTypeLabel.BackColor = System.Drawing.Color.Transparent
+        Me.UserTypeLabel.Font = New System.Drawing.Font("Calibri Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UserTypeLabel.ForeColor = System.Drawing.Color.White
+        Me.UserTypeLabel.Location = New System.Drawing.Point(128, 292)
+        Me.UserTypeLabel.Name = "UserTypeLabel"
+        Me.UserTypeLabel.Size = New System.Drawing.Size(0, 19)
+        Me.UserTypeLabel.TabIndex = 3
+        Me.UserTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'dashboardTablePnl
+        '
+        Me.dashboardTablePnl.BackColor = System.Drawing.Color.LightSalmon
+        Me.dashboardTablePnl.ColumnCount = 2
+        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48.0!))
+        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.dashboardTablePnl.Controls.Add(Me.MainPanel, 1, 0)
+        Me.dashboardTablePnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dashboardTablePnl.Location = New System.Drawing.Point(0, 0)
+        Me.dashboardTablePnl.Margin = New System.Windows.Forms.Padding(0)
+        Me.dashboardTablePnl.Name = "dashboardTablePnl"
+        Me.dashboardTablePnl.RowCount = 1
+        Me.dashboardTablePnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.dashboardTablePnl.Size = New System.Drawing.Size(1350, 729)
+        Me.dashboardTablePnl.TabIndex = 4
+        '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me.MainPanel
+        Me.BunifuDragControl1.Vertical = True
+        '
+        'BunifuDragControl2
+        '
+        Me.BunifuDragControl2.Fixed = True
+        Me.BunifuDragControl2.Horizontal = True
+        Me.BunifuDragControl2.TargetControl = Me.hamburgerPnl
+        Me.BunifuDragControl2.Vertical = True
+        '
+        'HomeButton
+        '
+        Me.HomeButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.HomeButton.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.HomeButton.FlatAppearance.BorderSize = 0
+        Me.HomeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.HomeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer))
+        Me.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HomeButton.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HomeButton.ForeColor = System.Drawing.Color.White
+        Me.HomeButton.Image = Global.College_Management_System.My.Resources.Resources.Home_32px
+        Me.HomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.HomeButton.Location = New System.Drawing.Point(0, 579)
+        Me.HomeButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.HomeButton.Name = "HomeButton"
+        Me.HomeButton.Size = New System.Drawing.Size(45, 50)
+        Me.HomeButton.TabIndex = 13
+        Me.HomeButton.UseVisualStyleBackColor = False
+        '
+        'LogOutButton
+        '
+        Me.LogOutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.LogOutButton.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LogOutButton.FlatAppearance.BorderSize = 0
+        Me.LogOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.LogOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer))
+        Me.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LogOutButton.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOutButton.ForeColor = System.Drawing.Color.White
+        Me.LogOutButton.Image = Global.College_Management_System.My.Resources.Resources.Logout_Rounded_Left_32px
+        Me.LogOutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LogOutButton.Location = New System.Drawing.Point(0, 629)
+        Me.LogOutButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.LogOutButton.Name = "LogOutButton"
+        Me.LogOutButton.Size = New System.Drawing.Size(45, 50)
+        Me.LogOutButton.TabIndex = 12
+        Me.LogOutButton.UseVisualStyleBackColor = False
+        '
         'CloseButton
         '
         Me.CloseButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.CloseButton.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.CloseButton.FlatAppearance.BorderSize = 0
         Me.CloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
         Me.CloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer))
         Me.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CloseButton.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CloseButton.ForeColor = System.Drawing.Color.White
-        Me.CloseButton.Image = Global.College_Management_System.My.Resources.Resources.Delete_32px2
+        Me.CloseButton.Image = Global.College_Management_System.My.Resources.Resources.Exit_32px
         Me.CloseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CloseButton.Location = New System.Drawing.Point(0, 679)
         Me.CloseButton.Margin = New System.Windows.Forms.Padding(0)
@@ -167,72 +280,42 @@ Partial Class Dashboard
         Me.HamburgerButton.TabIndex = 7
         Me.HamburgerButton.UseVisualStyleBackColor = False
         '
-        'MainPanel
+        'ProfilePictureBox
         '
-        Me.MainPanel.Controls.Add(Me.Panel1)
-        Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainPanel.Location = New System.Drawing.Point(48, 0)
-        Me.MainPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(1302, 729)
-        Me.MainPanel.TabIndex = 0
+        Me.ProfilePictureBox.Image = Global.College_Management_System.My.Resources.Resources.MV5BOTNiYmM1ZGQtMGQwNi00ODA3LThhN2EtZmExYzBhZTY1NTUwXkEyXkFqcGdeQXVyMzgxODM4NjM___V1_SX1777_CR0_0_1777_999_AL_
+        Me.ProfilePictureBox.Location = New System.Drawing.Point(96, 59)
+        Me.ProfilePictureBox.Name = "ProfilePictureBox"
+        Me.ProfilePictureBox.Size = New System.Drawing.Size(198, 191)
+        Me.ProfilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProfilePictureBox.TabIndex = 2
+        Me.ProfilePictureBox.TabStop = False
         '
-        'Button1
+        'SlideDownButton
         '
-        Me.Button1.BackColor = System.Drawing.Color.Black
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.College_Management_System.My.Resources.Resources.Expand_Arrow_24px
-        Me.Button1.Location = New System.Drawing.Point(0, -12)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(399, 30)
-        Me.Button1.TabIndex = 1
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.SlideDownButton.BackColor = System.Drawing.Color.Black
+        Me.SlideDownButton.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.SlideDownButton.FlatAppearance.BorderSize = 0
+        Me.SlideDownButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(9, Byte), Integer))
+        Me.SlideDownButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer))
+        Me.SlideDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SlideDownButton.Image = Global.College_Management_System.My.Resources.Resources.Expand_Arrow_24px
+        Me.SlideDownButton.Location = New System.Drawing.Point(0, -12)
+        Me.SlideDownButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.SlideDownButton.Name = "SlideDownButton"
+        Me.SlideDownButton.Size = New System.Drawing.Size(399, 30)
+        Me.SlideDownButton.TabIndex = 1
+        Me.SlideDownButton.UseVisualStyleBackColor = False
         '
-        'dashboardTablePnl
+        'UsernameLabel
         '
-        Me.dashboardTablePnl.BackColor = System.Drawing.Color.LightSalmon
-        Me.dashboardTablePnl.ColumnCount = 2
-        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48.0!))
-        Me.dashboardTablePnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.dashboardTablePnl.Controls.Add(Me.MainPanel, 1, 0)
-        Me.dashboardTablePnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dashboardTablePnl.Location = New System.Drawing.Point(0, 0)
-        Me.dashboardTablePnl.Margin = New System.Windows.Forms.Padding(0)
-        Me.dashboardTablePnl.Name = "dashboardTablePnl"
-        Me.dashboardTablePnl.RowCount = 1
-        Me.dashboardTablePnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.dashboardTablePnl.Size = New System.Drawing.Size(1350, 729)
-        Me.dashboardTablePnl.TabIndex = 4
-        '
-        'BunifuDragControl1
-        '
-        Me.BunifuDragControl1.Fixed = True
-        Me.BunifuDragControl1.Horizontal = True
-        Me.BunifuDragControl1.TargetControl = Me.MainPanel
-        Me.BunifuDragControl1.Vertical = True
-        '
-        'BunifuDragControl2
-        '
-        Me.BunifuDragControl2.Fixed = True
-        Me.BunifuDragControl2.Horizontal = True
-        Me.BunifuDragControl2.TargetControl = Me.hamburgerPnl
-        Me.BunifuDragControl2.Vertical = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(903, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(399, 18)
-        Me.Panel1.TabIndex = 2
+        Me.UsernameLabel.AutoSize = True
+        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.UsernameLabel.Font = New System.Drawing.Font("Calibri Light", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.UsernameLabel.ForeColor = System.Drawing.Color.White
+        Me.UsernameLabel.Location = New System.Drawing.Point(120, 332)
+        Me.UsernameLabel.Name = "UsernameLabel"
+        Me.UsernameLabel.Size = New System.Drawing.Size(0, 19)
+        Me.UsernameLabel.TabIndex = 4
         '
         'Dashboard
         '
@@ -246,14 +329,14 @@ Partial Class Dashboard
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"
         Me.hamburgerPnl.ResumeLayout(False)
         Me.MainPanel.ResumeLayout(False)
+        Me.UserDetailPanel.ResumeLayout(False)
+        Me.UserDetailPanel.PerformLayout()
         Me.dashboardTablePnl.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
+        CType(Me.ProfilePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -268,6 +351,11 @@ Partial Class Dashboard
     Friend WithEvents RecycleBinButton As System.Windows.Forms.Button
     Friend WithEvents AttendanceButton As System.Windows.Forms.Button
     Friend WithEvents CloseButton As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents SlideDownButton As System.Windows.Forms.Button
+    Friend WithEvents UserDetailPanel As System.Windows.Forms.Panel
+    Friend WithEvents ProfilePictureBox As System.Windows.Forms.PictureBox
+    Friend WithEvents UserTypeLabel As System.Windows.Forms.Label
+    Friend WithEvents LogOutButton As System.Windows.Forms.Button
+    Friend WithEvents HomeButton As System.Windows.Forms.Button
+    Friend WithEvents UsernameLabel As System.Windows.Forms.Label
 End Class

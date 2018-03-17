@@ -9,6 +9,7 @@ Public Class Splashscreen
             Threading.Thread.Sleep(3000)
             Login.Show()
             Me.Hide()
+            LoadingTimer.Dispose()
         End If
     End Sub
 End Class

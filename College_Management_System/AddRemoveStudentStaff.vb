@@ -9,6 +9,8 @@ Imports System.Net.Mail
 Imports BunifuAnimatorNS
 Imports System.Text.RegularExpressions
 
+
+
 Public Class AddRemoveStudentStaff
     Dim userId As Integer
     Dim state As Integer = 1
@@ -31,6 +33,14 @@ Public Class AddRemoveStudentStaff
         End If
     End Sub
 
+    Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PasswordTextBox.Text = GeneratePassword()
+        loadUsers("Select * FROM userTbl WHERE state = 1")
+        UserDataGridView.Columns(14).Visible = False
+        UserDataGridView.Columns(15).Visible = False
+        AdminUserDataGridView.Columns(14).Visible = False
+        AdminUserDataGridView.Columns(15).Visible = False
+    End Sub
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles UserUploadBtn.Click
         imageChooser("UserUploadBtn")
     End Sub
@@ -59,6 +69,8 @@ Public Class AddRemoveStudentStaff
             values.SelectedIndex = -1
         Next
         DobDateTimePicker.Value = DateTime.Today.ToString
+        UserImage.Image = My.Resources.user_male2_512
+        PasswordTextBox.Text = GeneratePassword()
     End Sub
     Private Sub finishBtn_Click(sender As Object, e As EventArgs) Handles FinsihBtn.Click
         Dim gender As String
@@ -118,31 +130,27 @@ Public Class AddRemoveStudentStaff
     End Sub
     'If password is not set generate random text and convert to MD5 version
     Function GeneratePassword()
-        Dim Bytes() As Byte
-        Dim s As String = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0!1@2#3$4%5^6&7*89"
+        'Dim Bytes() As Byte
+        'Dim s As String = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0!1@2#3$4%5^6&7*89"
+        Dim s As String = "ABCDEFGHIJKLMNOPQRSUVWXYZ"
         Dim r As New Random
         Dim sb As New StringBuilder
-        For i As Integer = 1 To 8
-            Dim idx As Integer = r.Next(0, 70)
+        For i As Integer = 1 To 5
+            Dim idx As Integer = r.Next(0, 25)
             sb.Append(s.Substring(idx, 1))
         Next
-        Bytes = Encoding.Default.GetBytes(sb.ToString)
-        Bytes = MD5.Create().ComputeHash(Bytes)
-        For x As Integer = 0 To Bytes.Length - 1
-            sb.Append(Bytes(x).ToString("x2"))
-        Next
+        'Bytes = Encoding.Default.GetBytes(sb.ToString)
+        'Bytes = MD5.Create().ComputeHash(Bytes)
+        'For x As Integer = 0 To Bytes.Length - 1
+        '    sb.Append(Bytes(x).ToString("x2"))
+        'Next
         Return sb.ToString()
     End Function
     Protected Overrides Sub Finalize()
         MyBase.Finalize()
     End Sub
 
-    Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PasswordTextBox.Text = GeneratePassword()
-        loadUsers("Select * FROM userTbl WHERE state = 1")
-        UserDataGridView.Columns(14).Visible = False
-        UserDataGridView.Columns(15).Visible = False
-    End Sub
+
     'Send email to the set area
     Private Sub sendEmail()
         Try
@@ -171,9 +179,11 @@ Public Class AddRemoveStudentStaff
         Dim dt As New DataTable()
         da.Fill(dt)
         UserDataGridView.DataSource = dt
+        AdminUserDataGridView.DataSource = dt
 
         Return dt
     End Function
+
 
 
     Private Sub UserDataGridView_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles UserDataGridView.RowHeaderMouseClick
@@ -189,61 +199,45 @@ Public Class AddRemoveStudentStaff
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
         da.Fill(dt)
-        SearchDataGridView.DataSource = dt
+        AdminUserDataGridView.DataSource = dt
         If (SearchTextBox.Text = "") Then
-            SearchDataGridView.Visible = False
             UserImage.Image = My.Resources.user_male2_512
             clearAll()
             PasswordTextBox.Text = GeneratePassword()
-        Else
-            SearchDataGridView.Visible = True
-        End If
-        If (SearchTextBox.Text = "All" Or SearchTextBox.Text = "all") Then
-            Dim cmd2 As New SqlCommand("Select * FROM userTbl WHERE state = 1", con)
-            Dim da2 As New SqlDataAdapter(cmd2)
-            Dim dt2 As New DataTable()
-            da2.Fill(dt2)
-            SearchDataGridView.DataSource = dt2
-            SearchDataGridView.Columns(14).Visible = False
-            SearchDataGridView.Columns(15).Visible = False
-            SearchDataGridView.Visible = True
-            If (dt2.Rows.Count = 0) Then
-                MsgBox("No Users registered yet!!")
-            End If
         End If
     End Sub
     'Searching method and set it to the textbox
     Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
         searchData()
     End Sub
-    Private Sub SearchDataGridView_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles SearchDataGridView.RowHeaderMouseClick
-        userId = SearchDataGridView.CurrentRow.Cells(0).Value.ToString()
-        UserIdTextBox.Text = SearchDataGridView.CurrentRow.Cells(0).Value.ToString()
-        FirstNameTextBox.Text = SearchDataGridView.CurrentRow.Cells(1).Value.ToString()
-        MiddleNameTextBox.Text = SearchDataGridView.CurrentRow.Cells(2).Value.ToString()
-        LastNameTextBox.Text = SearchDataGridView.CurrentRow.Cells(3).Value.ToString()
-        Dim gender As String = SearchDataGridView.CurrentRow.Cells(4).Value.ToString()
+
+    Private Sub AdminUserDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles AdminUserDataGridView.CellMouseClick
+        userId = AdminUserDataGridView.CurrentRow.Cells(0).Value.ToString()
+        UserIdTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(0).Value.ToString()
+        FirstNameTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(1).Value.ToString()
+        MiddleNameTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(2).Value.ToString()
+        LastNameTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(3).Value.ToString()
+        Dim gender As String = AdminUserDataGridView.CurrentRow.Cells(4).Value.ToString()
         If (gender = "Male") Then
             MaleRadioBtn.Checked = True
         Else
             FemaleRadioBtn.Checked = True
         End If
-        ContactNoTextBox.Text = SearchDataGridView.CurrentRow.Cells(5).Value.ToString()
-        Address1TextBox.Text = SearchDataGridView.CurrentRow.Cells(6).Value.ToString()
-        Address2TextBox.Text = SearchDataGridView.CurrentRow.Cells(7).Value.ToString()
-        UserTypeComboBox.Text = SearchDataGridView.CurrentRow.Cells(8).Value.ToString()
-        DobDateTimePicker.Text = SearchDataGridView.CurrentRow.Cells(9).Value.ToString()
-        EmailTextBox.Text = SearchDataGridView.CurrentRow.Cells(10).Value.ToString()
-        MaritialStatusComboBox.Text = SearchDataGridView.CurrentRow.Cells(11).Value.ToString()
-        UserNameTextBox.Text = SearchDataGridView.CurrentRow.Cells(12).Value.ToString()
-        PasswordTextBox.Text = SearchDataGridView.CurrentRow.Cells(13).Value.ToString()
+        ContactNoTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(5).Value.ToString()
+        Address1TextBox.Text = AdminUserDataGridView.CurrentRow.Cells(6).Value.ToString()
+        Address2TextBox.Text = AdminUserDataGridView.CurrentRow.Cells(7).Value.ToString()
+        UserTypeComboBox.Text = AdminUserDataGridView.CurrentRow.Cells(8).Value.ToString()
+        DobDateTimePicker.Text = AdminUserDataGridView.CurrentRow.Cells(9).Value.ToString()
+        EmailTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(10).Value.ToString()
+        MaritialStatusComboBox.Text = AdminUserDataGridView.CurrentRow.Cells(11).Value.ToString()
+        UserNameTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(12).Value.ToString()
+        PasswordTextBox.Text = AdminUserDataGridView.CurrentRow.Cells(13).Value.ToString()
 
         Dim img() As Byte
-        img = SearchDataGridView.CurrentRow.Cells(14).Value
+        img = AdminUserDataGridView.CurrentRow.Cells(14).Value
         Dim ms As New MemoryStream(img)
         UserImage.Image = Image.FromStream(ms)
     End Sub
-
     'update method caller
     Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
         Dim gender As String
@@ -358,13 +352,13 @@ Public Class AddRemoveStudentStaff
     Sub contactNoChecker()
         Dim chars() As Char = ContactNoTextBox.Text
         If (ContactNoTextBox.TextLength > 10) Then
-            Label1.Text = "Only 10 Digit phone number" + vbNewLine + "Eg: 9808546858"
+            PhoneNoValidateLabel.Text = "Only 10 Digit phone number" + vbNewLine + "Eg: 9808546858"
         Else
-            Label1.Text = ""
+            PhoneNoValidateLabel.Text = ""
         End If
         For Each c As Char In chars
             If Not IsNumeric(c) Then
-                Label1.Text = "Numbers only allowed"
+                PhoneNoValidateLabel.Text = "Numbers only allowed"
             End If
         Next
     End Sub
@@ -376,11 +370,11 @@ Public Class AddRemoveStudentStaff
         Dim regex As Regex = New Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")
         Dim IsMatch As Boolean = regex.IsMatch(EmailTextBox.Text)
         If IsMatch Then
-            Label2.Text = ""
+            EmailValidateLabel.Text = ""
         Else
-            Label2.Text = "Invalid format"
+            EmailValidateLabel.Text = "Invalid format"
             If (EmailTextBox.Text = "") Then
-                Label2.Text = ""
+                EmailValidateLabel.Text = ""
             End If
         End If
     End Sub
@@ -391,5 +385,10 @@ Public Class AddRemoveStudentStaff
 
     Private Sub AddUserTab_Click(sender As Object, e As EventArgs) Handles AddUserTab.Click
 
+    End Sub
+
+
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs)
+        clearAll()
     End Sub
 End Class

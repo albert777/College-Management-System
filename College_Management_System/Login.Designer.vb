@@ -56,7 +56,7 @@ Partial Class Login
         '
         'loginAreaPanel
         '
-        Me.loginAreaPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.loginAreaPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.loginAreaPanel.Controls.Add(Me.ErrorMessagePanel)
         Me.loginAreaPanel.Controls.Add(Me.LoginLabel)
         Me.loginAreaPanel.Controls.Add(Me.PasswordTextBox)
@@ -112,6 +112,7 @@ Partial Class Login
         '
         Me.PasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.PasswordTextBox.Depth = 0
+        Me.PasswordTextBox.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordTextBox.ForeColor = System.Drawing.Color.White
         Me.PasswordTextBox.Hint = "Password"
         Me.PasswordTextBox.Location = New System.Drawing.Point(117, 211)
@@ -130,6 +131,7 @@ Partial Class Login
         '
         Me.UserNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.UserNameTextBox.Depth = 0
+        Me.UserNameTextBox.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UserNameTextBox.ForeColor = System.Drawing.Color.White
         Me.UserNameTextBox.Hint = "Username"
         Me.UserNameTextBox.Location = New System.Drawing.Point(117, 149)

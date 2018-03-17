@@ -1,21 +1,20 @@
 ﻿Imports Transitions
 Imports MaterialSkin.Controls
 Imports BunifuAnimatorNS
+Imports System.IO
 
 Public Class Dashboard
-
     Dim ar As New AddRemoveStudentStaff
     Dim ps As New ProgramAndSubjects
     Dim a As New Attendance
     Dim bin As New RecycleBin
-
     Private Sub HamburgerButton_Click(sender As Object, e As EventArgs) Handles HamburgerButton.Click
         userDetail()
         If (hamburgerPnl.Width < 250) Then
             Transition.run(hamburgerPnl, "Width", 250, New TransitionType_EaseInEaseOut(20))
             Dim i As Integer = 0
-            Dim buttonArray() As Button = New Button() {HamburgerButton, CloseButton, AddRemoveButton, RecycleBinButton, AttendanceButton, AdminSettingButton}
-            Dim textName As String() = {"MENU", "EXIT", "CRUD", "RECYCLER", "ATTENDANCE", "SETTINGS"}
+            Dim buttonArray() As Button = New Button() {HamburgerButton, CloseButton, AddRemoveButton, RecycleBinButton, AttendanceButton, AdminSettingButton, HomeButton, LogOutButton}
+            Dim textName As String() = {"MENU", "EXIT", "CRUD", "RECYCLER", "ATTENDANCE", "SETTINGS", "HOME", "LOG OUT"}
             For Each values As Button In buttonArray
                 'values.Width = 250
                 Transition.run(values, "Width", 250, New TransitionType_EaseInEaseOut(30))
@@ -25,7 +24,7 @@ Public Class Dashboard
             HamburgerButton.Width = 250
         Else
             Transition.run(hamburgerPnl, "Width", 45, New TransitionType_EaseInEaseOut(20))
-            Dim buttonArray() As Button = New Button() {HamburgerButton, CloseButton, AddRemoveButton, RecycleBinButton, AttendanceButton, AdminSettingButton}
+            Dim buttonArray() As Button = New Button() {HamburgerButton, CloseButton, AddRemoveButton, RecycleBinButton, AttendanceButton, AdminSettingButton, HomeButton, LogOutButton}
             For Each values As Button In buttonArray
                 'values.Width = 45
                 Transition.run(values, "Width", 45, New TransitionType_EaseInEaseOut(30))
@@ -34,22 +33,26 @@ Public Class Dashboard
         End If
     End Sub
 
+    'Transform picturebox into circular format
+    Sub circularImage(ByVal pb As PictureBox)
+        Dim gp As Drawing2D.GraphicsPath
+        Dim rg As Region
+        gp = New Drawing2D.GraphicsPath
+        gp.AddEllipse(0, 0, pb.Width - 4, pb.Height - 4)
+        rg = New Region(gp)
+        pb.Region = rg
+    End Sub
+
     Sub showRecycleBin()
         bin.MdiParent = Me
         MainPanel.Controls.Clear()
         MainPanel.Controls.Add(bin)
         bin.Dock = DockStyle.Fill
         bin.Show()
-        'bin.Visible = True
         bin.BringToFront()
-        MainPanel.Controls.Add(Panel1)
-        Panel1.BringToFront()
-        'ar.Visible = False
-        'ps.Visible = False
-        'a.Visible = False
-        'ar.Hide()
-        'ps.Hide()
-        'ps.Hide()
+        MainPanel.Controls.Add(UserDetailPanel)
+        UserDetailPanel.BringToFront()
+
     End Sub
 
     Sub showAddRemoveStudentUserPanel()
@@ -57,15 +60,10 @@ Public Class Dashboard
         ar.MdiParent = Me
         MainPanel.Controls.Add(ar)
         ar.Dock = DockStyle.Fill
-        'ar.Visible = True
         ar.Show()
         ar.BringToFront()
-        MainPanel.Controls.Add(Panel1)
-        Panel1.BringToFront()
-        'bin.Visible = False
-        'ps.Visible = False
-        'a.Visible = False
-        ''bin.Hide()
+        MainPanel.Controls.Add(UserDetailPanel)
+        UserDetailPanel.BringToFront()
         ps.Hide()
         a.Hide()
     End Sub
@@ -75,17 +73,10 @@ Public Class Dashboard
         ps.MdiParent = Me
         MainPanel.Controls.Add(ps)
         ps.Dock = DockStyle.Fill
-        'ps.Visible = True
         ps.Show()
         ps.BringToFront()
-        MainPanel.Controls.Add(Panel1)
-        Panel1.BringToFront()
-        'ar.Visible = False
-        'bin.Visible = False
-        ''a.Visible = False
-        'ar.Hide()
-        ' '' bin.Hide()
-        'a.Hide()
+        MainPanel.Controls.Add(UserDetailPanel)
+        UserDetailPanel.BringToFront()
     End Sub
 
     Sub showAttendance()
@@ -93,17 +84,10 @@ Public Class Dashboard
         a.MdiParent = Me
         MainPanel.Controls.Add(a)
         a.Dock = DockStyle.Fill
-        'a.Visible = True
         a.Show()
         a.BringToFront()
-        MainPanel.Controls.Add(Panel1)
-        Panel1.BringToFront()
-        'ar.Visible = False
-        'bin.Visible = False
-        'ps.Visible = False
-        'ar.Hide()
-        '' bin.Hide()
-    '    ps.Hide()
+        MainPanel.Controls.Add(UserDetailPanel)
+        UserDetailPanel.BringToFront()
     End Sub
 
     Sub fullScreen()
@@ -116,10 +100,28 @@ Public Class Dashboard
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fullScreen()
         userDetail()
+        profileDrop()
+        labelCenterer(UserTypeLabel)
+        labelCenterer(UsernameLabel)
     End Sub
+    'Centers label to its parent
+    Sub labelCenterer(ByVal a As Label)
+        a.Left = (a.Parent.Width \ 2) - (a.Width \ 2)
+    End Sub
+
+    Sub profileDrop()
+        circularImage(ProfilePictureBox)
+        UserTypeLabel.Text = Login.usertype
+        UsernameLabel.Text = Login.username
+        Dim img() As Byte
+        img = Login.img
+        Dim ms As New MemoryStream(img)
+        ProfilePictureBox.Image = Image.FromStream(ms)
+    End Sub
+
     Sub userDetail()
-        Panel1.BackColor = Color.FromArgb(125, Color.Black)
-        Button1.BackColor = Color.FromArgb(125, Color.Black)
+        UserDetailPanel.BackColor = Color.FromArgb(125, Color.Black)
+        SlideDownButton.BackColor = Color.FromArgb(125, Color.Black)
     End Sub
 
     Private Sub AddRemoveButton_Click(sender As Object, e As EventArgs) Handles AddRemoveButton.Click
@@ -144,20 +146,29 @@ Public Class Dashboard
 
     Private Sub CloseButton_Click(sender As Object, e As EventArgs) Handles CloseButton.Click
         Application.Exit()
-        userDetail()
-
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles SlideDownButton.Click
 
-        If (Panel1.Height < 19) Then
-            Transition.run(Panel1, "Height", 600, New TransitionType_EaseInEaseOut(100))
-            Button1.Image = My.Resources.Collapse_Arrow_24px1
+        If (UserDetailPanel.Height < 19) Then
+            Transition.run(UserDetailPanel, "Height", 600, New TransitionType_EaseInEaseOut(100))
+            SlideDownButton.Image = My.Resources.Collapse_Arrow_24px1
             userDetail()
         Else
-            Transition.run(Panel1, "Height", 18, New TransitionType_EaseInEaseOut(100))
-            Button1.Image = My.Resources.Expand_Arrow_24px
+            Transition.run(UserDetailPanel, "Height", 18, New TransitionType_EaseInEaseOut(100))
+            SlideDownButton.Image = My.Resources.Expand_Arrow_24px
             userDetail()
         End If
+    End Sub
+
+    Private Sub LogOutButton_Click(sender As Object, e As EventArgs) Handles LogOutButton.Click
+        Login.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub HomeButton_Click(sender As Object, e As EventArgs) Handles HomeButton.Click
+        MainPanel.Controls.Clear()
+        MainPanel.Controls.Add(UserDetailPanel)
+        UserDetailPanel.BringToFront()
     End Sub
 End Class

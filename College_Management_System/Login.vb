@@ -1,10 +1,16 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class Login
+    Public usertype As String
+    Public username As String
     Dim countError As Integer = 1
-    Dim su As AddRemoveStudentStaff = New AddRemoveStudentStaff
+    Public img() As Byte
+    Dim su As New AddRemoveStudentStaff
+    Dim d As New Dashboard
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         transparentPanel.BackColor = Color.FromArgb(200, Color.Black)
+        UserNameTextBox.ForeColor = Color.White
     End Sub
     Private Sub crossPb_Click(sender As Object, e As EventArgs) Handles CrossPictureBox.Click
         Application.Exit()
@@ -22,14 +28,19 @@ Public Class Login
             loginErrorProvider.SetError(PasswordTextBox, String.Empty)
         End If
         Dim con As SqlConnection = su.dbConnect()
-        Dim cmd As New SqlCommand("SELECT * FROM userTbl where username= @a AND password =@b", con)
+        Dim cmd As New SqlCommand("SELECT * FROM userTbl WHERE username= @a AND password =@b AND state = 1", con)
         cmd.Parameters.AddWithValue("@a", UserNameTextBox.Text)
         cmd.Parameters.AddWithValue("@b", PasswordTextBox.Text)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
         da.Fill(dt)
+       
         If (dt.Rows.Count > 0) Then
-            Dashboard.Show()
+            usertype = dt.Rows(0).Item("usertype")
+            img = dt.Rows(0).Item("image")
+            username = dt.Rows(0).Item("username")
+            d.Show()
+            Me.Hide()
         Else
             ErrorTimer.Start()
             ErrorMessagePanel.Visible = True
@@ -48,6 +59,4 @@ Public Class Login
             countError = 1
         End If
     End Sub
-
-
 End Class
