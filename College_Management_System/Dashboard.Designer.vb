@@ -27,11 +27,12 @@ Partial Class Dashboard
         Me.hamburgerPnl = New System.Windows.Forms.Panel()
         Me.MainPanel = New System.Windows.Forms.Panel()
         Me.UserDetailPanel = New System.Windows.Forms.Panel()
-        Me.UsernameLabel = New System.Windows.Forms.Label()
-        Me.UserTypeLabel = New System.Windows.Forms.Label()
         Me.dashboardTablePnl = New System.Windows.Forms.TableLayoutPanel()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.NameLabel = New System.Windows.Forms.Label()
+        Me.PhoneNoLabel = New System.Windows.Forms.Label()
+        Me.EmailLabel = New System.Windows.Forms.Label()
         Me.HomeButton = New System.Windows.Forms.Button()
         Me.LogOutButton = New System.Windows.Forms.Button()
         Me.CloseButton = New System.Windows.Forms.Button()
@@ -81,38 +82,18 @@ Partial Class Dashboard
         '
         Me.UserDetailPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UserDetailPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.UserDetailPanel.Controls.Add(Me.UsernameLabel)
-        Me.UserDetailPanel.Controls.Add(Me.UserTypeLabel)
+        Me.UserDetailPanel.Controls.Add(Me.EmailLabel)
+        Me.UserDetailPanel.Controls.Add(Me.PhoneNoLabel)
+        Me.UserDetailPanel.Controls.Add(Me.NameLabel)
         Me.UserDetailPanel.Controls.Add(Me.ProfilePictureBox)
         Me.UserDetailPanel.Controls.Add(Me.SlideDownButton)
+        Me.UserDetailPanel.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UserDetailPanel.ForeColor = System.Drawing.Color.White
         Me.UserDetailPanel.Location = New System.Drawing.Point(903, 0)
         Me.UserDetailPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.UserDetailPanel.Name = "UserDetailPanel"
-        Me.UserDetailPanel.Size = New System.Drawing.Size(399, 18)
+        Me.UserDetailPanel.Size = New System.Drawing.Size(399, 24)
         Me.UserDetailPanel.TabIndex = 2
-        '
-        'UsernameLabel
-        '
-        Me.UsernameLabel.AutoSize = True
-        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
-        Me.UsernameLabel.Font = New System.Drawing.Font("Calibri Light", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.UsernameLabel.ForeColor = System.Drawing.Color.White
-        Me.UsernameLabel.Location = New System.Drawing.Point(120, 332)
-        Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(0, 19)
-        Me.UsernameLabel.TabIndex = 4
-        '
-        'UserTypeLabel
-        '
-        Me.UserTypeLabel.AutoSize = True
-        Me.UserTypeLabel.BackColor = System.Drawing.Color.Transparent
-        Me.UserTypeLabel.Font = New System.Drawing.Font("Calibri Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UserTypeLabel.ForeColor = System.Drawing.Color.White
-        Me.UserTypeLabel.Location = New System.Drawing.Point(128, 292)
-        Me.UserTypeLabel.Name = "UserTypeLabel"
-        Me.UserTypeLabel.Size = New System.Drawing.Size(0, 19)
-        Me.UserTypeLabel.TabIndex = 3
-        Me.UserTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'dashboardTablePnl
         '
@@ -143,6 +124,36 @@ Partial Class Dashboard
         Me.BunifuDragControl2.Horizontal = True
         Me.BunifuDragControl2.TargetControl = Me.hamburgerPnl
         Me.BunifuDragControl2.Vertical = True
+        '
+        'NameLabel
+        '
+        Me.NameLabel.AutoSize = True
+        Me.NameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.NameLabel.Location = New System.Drawing.Point(165, 296)
+        Me.NameLabel.Name = "NameLabel"
+        Me.NameLabel.Size = New System.Drawing.Size(75, 24)
+        Me.NameLabel.TabIndex = 6
+        Me.NameLabel.Text = "Name"
+        '
+        'PhoneNoLabel
+        '
+        Me.PhoneNoLabel.AutoSize = True
+        Me.PhoneNoLabel.BackColor = System.Drawing.Color.Transparent
+        Me.PhoneNoLabel.Location = New System.Drawing.Point(151, 347)
+        Me.PhoneNoLabel.Name = "PhoneNoLabel"
+        Me.PhoneNoLabel.Size = New System.Drawing.Size(109, 24)
+        Me.PhoneNoLabel.TabIndex = 7
+        Me.PhoneNoLabel.Text = "Phone no"
+        '
+        'EmailLabel
+        '
+        Me.EmailLabel.AutoSize = True
+        Me.EmailLabel.BackColor = System.Drawing.Color.Transparent
+        Me.EmailLabel.Location = New System.Drawing.Point(176, 403)
+        Me.EmailLabel.Name = "EmailLabel"
+        Me.EmailLabel.Size = New System.Drawing.Size(64, 24)
+        Me.EmailLabel.TabIndex = 8
+        Me.EmailLabel.Text = "Email"
         '
         'HomeButton
         '
@@ -310,7 +321,7 @@ Partial Class Dashboard
         Me.SlideDownButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(53, Byte), Integer))
         Me.SlideDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SlideDownButton.Image = Global.College_Management_System.My.Resources.Resources.Expand_Arrow_24px
-        Me.SlideDownButton.Location = New System.Drawing.Point(0, -12)
+        Me.SlideDownButton.Location = New System.Drawing.Point(0, -6)
         Me.SlideDownButton.Margin = New System.Windows.Forms.Padding(0)
         Me.SlideDownButton.Name = "SlideDownButton"
         Me.SlideDownButton.Size = New System.Drawing.Size(399, 30)
@@ -354,8 +365,9 @@ Partial Class Dashboard
     Friend WithEvents SlideDownButton As System.Windows.Forms.Button
     Friend WithEvents UserDetailPanel As System.Windows.Forms.Panel
     Friend WithEvents ProfilePictureBox As System.Windows.Forms.PictureBox
-    Friend WithEvents UserTypeLabel As System.Windows.Forms.Label
     Friend WithEvents LogOutButton As System.Windows.Forms.Button
     Friend WithEvents HomeButton As System.Windows.Forms.Button
-    Friend WithEvents UsernameLabel As System.Windows.Forms.Label
+    Friend WithEvents EmailLabel As System.Windows.Forms.Label
+    Friend WithEvents PhoneNoLabel As System.Windows.Forms.Label
+    Friend WithEvents NameLabel As System.Windows.Forms.Label
 End Class

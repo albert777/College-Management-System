@@ -49,7 +49,7 @@ Public Class AddRemoveStudentStaff
         imageChooser("UserUploadBtn")
     End Sub
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles StudentUploadBtn.Click
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles StudentUploadButton.Click
         imageChooser("StudentUploadBtn")
     End Sub
 
@@ -199,7 +199,7 @@ Public Class AddRemoveStudentStaff
         Dim img() As Byte
         img = UserDataGridView.CurrentRow.Cells(14).Value
         Dim ms As New MemoryStream(img)
-        PictureBox3.Image = Image.FromStream(ms)
+        OnlyViewUserPictureBox.Image = Image.FromStream(ms)
     End Sub
 
     'Search for users
@@ -384,6 +384,12 @@ Public Class AddRemoveStudentStaff
     Private Sub ClearAllBtn_Click(sender As Object, e As EventArgs) Handles ClearAllBtn.Click
         clearAll()
         PasswordTextBox.Text = GeneratePassword()
+        center(OnlyViewUserPictureBox)
+    End Sub
+
+
+    Sub center(ByVal a As PictureBox)
+        a.Left = (a.Parent.Width \ 2) - (a.Width \ 2)
     End Sub
 
 End Class

@@ -2,6 +2,28 @@
 Public Class Attendance
     Dim Id As Integer
     Dim su As AddRemoveStudentStaff = New AddRemoveStudentStaff
+
+    Sub loadall()
+        Dim con As SqlConnection = su.dbConnect()
+        Dim cmd As New SqlCommand("SELECT * FROM attendanceTbl where Id = @a AND PA = @b", con)
+        cmd.Parameters.AddWithValue("@a", Id)
+        cmd.Parameters.AddWithValue("@b", "Present")
+        Dim da As New SqlDataAdapter(cmd)
+        Dim dts As New DataTable()
+        da.Fill(dts)
+        If (dts.Rows.Count > 0) Then
+            PresentDaysLabel.Text = dts.Rows.Count & " days present"
+        End If
+        Dim cmd2 As New SqlCommand("SELECT * FROM attendanceTbl where Id = @a AND PA = @b", con)
+        cmd2.Parameters.AddWithValue("@a", Id)
+        cmd2.Parameters.AddWithValue("@b", "Absent")
+        Dim da2 As New SqlDataAdapter(cmd2)
+        Dim dts2 As New DataTable()
+        da2.Fill(dts2)
+        If (dts2.Rows.Count > 0) Then
+            AbsentDaysLabel.Text = dts2.Rows.Count & " days absent"
+        End If
+    End Sub
     Sub loadUsers()
         Dim con As SqlConnection = su.dbConnect()
         Dim cmd As New SqlCommand("SELECT * FROM attendanceTbl WHERE Date = @a", con)
@@ -81,10 +103,6 @@ Public Class Attendance
         updated()
     End Sub
 
-    Private Sub AttendanceDataGridView_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles AttendanceDataGridView.RowHeaderMouseClick
-        Id = Convert.ToInt32(AttendanceDataGridView.CurrentRow.Cells(1).Value.ToString())
-    End Sub
-
     Sub updates()
         Dim con As SqlConnection = su.dbConnect()
         Dim cmd As New SqlCommand("UPDATE attendanceTbl SET PA = @a WHERE Id = @b AND Date = @c", con)
@@ -114,5 +132,10 @@ Public Class Attendance
 
     Private Sub MaterialRaisedButton1_Click(sender As Object, e As EventArgs) Handles MaterialRaisedButton1.Click
         checkedAttendance()
+    End Sub
+
+    Private Sub AttendanceDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles AttendanceDataGridView.CellClick
+        Id = Convert.ToInt32(AttendanceDataGridView.CurrentRow.Cells(1).Value.ToString())
+        loadall()
     End Sub
 End Class

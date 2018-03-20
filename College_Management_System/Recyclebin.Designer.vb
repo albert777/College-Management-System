@@ -43,9 +43,9 @@ Partial Class RecycleBin
         Me.UserDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.UserDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
@@ -63,6 +63,7 @@ Partial Class RecycleBin
         Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle4
         Me.UserDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.UserDataGridView.DoubleBuffered = True
+        Me.UserDataGridView.EnableHeadersVisualStyles = False
         Me.UserDataGridView.GridColor = System.Drawing.Color.White
         Me.UserDataGridView.HeaderBgColor = System.Drawing.Color.Black
         Me.UserDataGridView.HeaderForeColor = System.Drawing.Color.White

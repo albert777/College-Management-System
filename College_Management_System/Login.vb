@@ -2,15 +2,14 @@
 Imports System.IO
 
 Public Class Login
-    Public usertype As String
-    Public username As String
+    Public usertype, username, fname, lname, phone, email As String
+
     Dim countError As Integer = 1
     Public img() As Byte
     Dim su As New AddRemoveStudentStaff
     Dim d As New Dashboard
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         transparentPanel.BackColor = Color.FromArgb(200, Color.Black)
-        UserNameTextBox.ForeColor = Color.White
     End Sub
     Private Sub crossPb_Click(sender As Object, e As EventArgs) Handles CrossPictureBox.Click
         Application.Exit()
@@ -39,6 +38,10 @@ Public Class Login
             usertype = dt.Rows(0).Item("usertype")
             img = dt.Rows(0).Item("image")
             username = dt.Rows(0).Item("username")
+            fname = dt.Rows(0).Item("firstname")
+            lname = dt.Rows(0).Item("lastname")
+            phone = dt.Rows(0).Item("contact_no")
+            email = dt.Rows(0).Item("email")
             d.Show()
             Me.Hide()
         Else

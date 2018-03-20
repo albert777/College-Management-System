@@ -38,3 +38,6 @@ E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\Colle
 E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.RecycleBin.resources
 E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.Splashscreen.resources
 E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.vbproj.GenerateResource.Cache
+E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.Notice.resources
+E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.Notification.resources
+E:\VBNET\College_Management_System\College_Management_System\obj\x86\Debug\College_Management_System.Result.resources

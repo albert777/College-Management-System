@@ -101,8 +101,9 @@ Public Class Dashboard
         fullScreen()
         userDetail()
         profileDrop()
-        labelCenterer(UserTypeLabel)
-        labelCenterer(UsernameLabel)
+        labelCenterer(NameLabel)
+        labelCenterer(PhoneNoLabel)
+        labelCenterer(EmailLabel)
     End Sub
     'Centers label to its parent
     Sub labelCenterer(ByVal a As Label)
@@ -111,8 +112,9 @@ Public Class Dashboard
 
     Sub profileDrop()
         circularImage(ProfilePictureBox)
-        UserTypeLabel.Text = Login.usertype
-        UsernameLabel.Text = Login.username
+        NameLabel.Text = Login.fname & " " & Login.lname
+        PhoneNoLabel.Text = Login.phone
+        EmailLabel.Text = Login.email
         Dim img() As Byte
         img = Login.img
 

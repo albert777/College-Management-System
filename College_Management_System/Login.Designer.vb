@@ -56,7 +56,7 @@ Partial Class Login
         '
         'loginAreaPanel
         '
-        Me.loginAreaPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.loginAreaPanel.BackColor = System.Drawing.Color.White
         Me.loginAreaPanel.Controls.Add(Me.ErrorMessagePanel)
         Me.loginAreaPanel.Controls.Add(Me.LoginLabel)
         Me.loginAreaPanel.Controls.Add(Me.PasswordTextBox)
@@ -67,6 +67,7 @@ Partial Class Login
         Me.loginAreaPanel.Controls.Add(Me.PasswordIcon)
         Me.loginAreaPanel.Controls.Add(Me.UsernameIcon)
         Me.loginAreaPanel.Controls.Add(Me.ShapeContainer1)
+        Me.loginAreaPanel.ForeColor = System.Drawing.Color.Black
         Me.loginAreaPanel.Location = New System.Drawing.Point(374, 0)
         Me.loginAreaPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.loginAreaPanel.Name = "loginAreaPanel"
@@ -76,7 +77,7 @@ Partial Class Login
         '
         'ErrorMessagePanel
         '
-        Me.ErrorMessagePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.ErrorMessagePanel.BackColor = System.Drawing.Color.Black
         Me.ErrorMessagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ErrorMessagePanel.Controls.Add(Me.ErrorMessageLabel)
         Me.ErrorMessagePanel.ForeColor = System.Drawing.Color.White
@@ -101,7 +102,7 @@ Partial Class Login
         '
         Me.LoginLabel.AutoSize = True
         Me.LoginLabel.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LoginLabel.ForeColor = System.Drawing.Color.White
+        Me.LoginLabel.ForeColor = System.Drawing.Color.Black
         Me.LoginLabel.Location = New System.Drawing.Point(48, 67)
         Me.LoginLabel.Name = "LoginLabel"
         Me.LoginLabel.Size = New System.Drawing.Size(91, 36)
@@ -147,7 +148,7 @@ Partial Class Login
         '
         'SignInBtn
         '
-        Me.SignInBtn.BackColor = System.Drawing.Color.Transparent
+        Me.SignInBtn.BackColor = System.Drawing.Color.Black
         Me.SignInBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.SignInBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.SignInBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -164,7 +165,7 @@ Partial Class Login
         'CrossPictureBox
         '
         Me.CrossPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.CrossPictureBox.Image = Global.College_Management_System.My.Resources.Resources.Delete_32px2
+        Me.CrossPictureBox.Image = Global.College_Management_System.My.Resources.Resources.Delete_32px
         Me.CrossPictureBox.Location = New System.Drawing.Point(386, 15)
         Me.CrossPictureBox.Name = "CrossPictureBox"
         Me.CrossPictureBox.Size = New System.Drawing.Size(31, 32)
@@ -173,8 +174,9 @@ Partial Class Login
         '
         'ForgotPasswordLabel
         '
+        Me.ForgotPasswordLabel.BackColor = System.Drawing.Color.Transparent
         Me.ForgotPasswordLabel.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ForgotPasswordLabel.ForeColor = System.Drawing.Color.White
+        Me.ForgotPasswordLabel.ForeColor = System.Drawing.Color.Black
         Me.ForgotPasswordLabel.Location = New System.Drawing.Point(50, 404)
         Me.ForgotPasswordLabel.Name = "ForgotPasswordLabel"
         Me.ForgotPasswordLabel.Size = New System.Drawing.Size(289, 19)
@@ -187,19 +189,20 @@ Partial Class Login
         Me.PasswordIcon.BackColor = System.Drawing.Color.Transparent
         Me.PasswordIcon.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Password
         Me.PasswordIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PasswordIcon.Location = New System.Drawing.Point(54, 202)
+        Me.PasswordIcon.Image = Global.College_Management_System.My.Resources.Resources.Password_32px
+        Me.PasswordIcon.Location = New System.Drawing.Point(68, 202)
         Me.PasswordIcon.Name = "PasswordIcon"
-        Me.PasswordIcon.Size = New System.Drawing.Size(43, 42)
+        Me.PasswordIcon.Size = New System.Drawing.Size(29, 32)
         Me.PasswordIcon.TabIndex = 2
         Me.PasswordIcon.TabStop = False
         '
         'UsernameIcon
         '
-        Me.UsernameIcon.BackgroundImage = Global.College_Management_System.My.Resources.Resources.User
         Me.UsernameIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.UsernameIcon.Location = New System.Drawing.Point(54, 139)
+        Me.UsernameIcon.Image = Global.College_Management_System.My.Resources.Resources.Male_User_32px1
+        Me.UsernameIcon.Location = New System.Drawing.Point(68, 139)
         Me.UsernameIcon.Name = "UsernameIcon"
-        Me.UsernameIcon.Size = New System.Drawing.Size(41, 42)
+        Me.UsernameIcon.Size = New System.Drawing.Size(29, 33)
         Me.UsernameIcon.TabIndex = 2
         Me.UsernameIcon.TabStop = False
         '
@@ -289,6 +292,7 @@ Partial Class Login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(802, 477)
         Me.Controls.Add(Me.LoginTablePanel)
+        Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False

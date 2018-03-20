@@ -31,6 +31,8 @@ Partial Class Attendance
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.UpdateButton = New System.Windows.Forms.Button()
         Me.MaterialRaisedButton1 = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.PresentDaysLabel = New MaterialSkin.Controls.MaterialLabel()
+        Me.AbsentDaysLabel = New MaterialSkin.Controls.MaterialLabel()
         CType(Me.AttendanceDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -50,10 +52,11 @@ Partial Class Attendance
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.AttendanceDataGridView.DefaultCellStyle = DataGridViewCellStyle1
+        Me.AttendanceDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.AttendanceDataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight
-        Me.AttendanceDataGridView.Location = New System.Drawing.Point(123, 212)
+        Me.AttendanceDataGridView.Location = New System.Drawing.Point(0, 283)
         Me.AttendanceDataGridView.Name = "AttendanceDataGridView"
-        Me.AttendanceDataGridView.Size = New System.Drawing.Size(901, 505)
+        Me.AttendanceDataGridView.Size = New System.Drawing.Size(1221, 505)
         Me.AttendanceDataGridView.TabIndex = 0
         '
         'PACheckBoxColumn
@@ -66,7 +69,7 @@ Partial Class Attendance
         'AddButton
         '
         Me.AddButton.ForeColor = System.Drawing.Color.Black
-        Me.AddButton.Location = New System.Drawing.Point(868, 177)
+        Me.AddButton.Location = New System.Drawing.Point(904, 242)
         Me.AddButton.Name = "AddButton"
         Me.AddButton.Size = New System.Drawing.Size(75, 29)
         Me.AddButton.TabIndex = 2
@@ -77,7 +80,7 @@ Partial Class Attendance
         '
         Me.MetroDateTime1.FontWeight = MetroFramework.MetroDateTimeWeight.Bold
         Me.MetroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.MetroDateTime1.Location = New System.Drawing.Point(123, 177)
+        Me.MetroDateTime1.Location = New System.Drawing.Point(159, 242)
         Me.MetroDateTime1.MinimumSize = New System.Drawing.Size(0, 29)
         Me.MetroDateTime1.Name = "MetroDateTime1"
         Me.MetroDateTime1.Size = New System.Drawing.Size(200, 29)
@@ -108,7 +111,7 @@ Partial Class Attendance
         'UpdateButton
         '
         Me.UpdateButton.ForeColor = System.Drawing.Color.Black
-        Me.UpdateButton.Location = New System.Drawing.Point(949, 177)
+        Me.UpdateButton.Location = New System.Drawing.Point(985, 242)
         Me.UpdateButton.Name = "UpdateButton"
         Me.UpdateButton.Size = New System.Drawing.Size(75, 29)
         Me.UpdateButton.TabIndex = 6
@@ -119,7 +122,7 @@ Partial Class Attendance
         '
         Me.MaterialRaisedButton1.BackColor = System.Drawing.Color.MidnightBlue
         Me.MaterialRaisedButton1.Depth = 0
-        Me.MaterialRaisedButton1.Location = New System.Drawing.Point(329, 176)
+        Me.MaterialRaisedButton1.Location = New System.Drawing.Point(365, 241)
         Me.MaterialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialRaisedButton1.Name = "MaterialRaisedButton1"
         Me.MaterialRaisedButton1.Primary = True
@@ -128,11 +131,37 @@ Partial Class Attendance
         Me.MaterialRaisedButton1.Text = "Present All"
         Me.MaterialRaisedButton1.UseVisualStyleBackColor = False
         '
+        'PresentDaysLabel
+        '
+        Me.PresentDaysLabel.AutoSize = True
+        Me.PresentDaysLabel.Depth = 0
+        Me.PresentDaysLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.PresentDaysLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PresentDaysLabel.Location = New System.Drawing.Point(1024, 102)
+        Me.PresentDaysLabel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.PresentDaysLabel.Name = "PresentDaysLabel"
+        Me.PresentDaysLabel.Size = New System.Drawing.Size(0, 19)
+        Me.PresentDaysLabel.TabIndex = 9
+        '
+        'AbsentDaysLabel
+        '
+        Me.AbsentDaysLabel.AutoSize = True
+        Me.AbsentDaysLabel.Depth = 0
+        Me.AbsentDaysLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.AbsentDaysLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.AbsentDaysLabel.Location = New System.Drawing.Point(1024, 142)
+        Me.AbsentDaysLabel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.AbsentDaysLabel.Name = "AbsentDaysLabel"
+        Me.AbsentDaysLabel.Size = New System.Drawing.Size(0, 19)
+        Me.AbsentDaysLabel.TabIndex = 11
+        '
         'Attendance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1221, 788)
+        Me.Controls.Add(Me.AbsentDaysLabel)
+        Me.Controls.Add(Me.PresentDaysLabel)
         Me.Controls.Add(Me.MaterialRaisedButton1)
         Me.Controls.Add(Me.UpdateButton)
         Me.Controls.Add(Me.Panel1)
@@ -147,6 +176,7 @@ Partial Class Attendance
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents AttendanceDataGridView As System.Windows.Forms.DataGridView
@@ -157,4 +187,6 @@ Partial Class Attendance
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents UpdateButton As System.Windows.Forms.Button
     Friend WithEvents MaterialRaisedButton1 As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents PresentDaysLabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents AbsentDaysLabel As MaterialSkin.Controls.MaterialLabel
 End Class
