@@ -23,6 +23,7 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.loginAreaPanel = New System.Windows.Forms.Panel()
         Me.ErrorMessagePanel = New System.Windows.Forms.Panel()
@@ -43,6 +44,8 @@ Partial Class Login
         Me.loginErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.ErrorTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.BunifuFormFadeTransition1 = New Bunifu.Framework.UI.BunifuFormFadeTransition(Me.components)
+        Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.loginAreaPanel.SuspendLayout()
         Me.ErrorMessagePanel.SuspendLayout()
         CType(Me.CrossPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,6 +70,7 @@ Partial Class Login
         Me.loginAreaPanel.Controls.Add(Me.PasswordIcon)
         Me.loginAreaPanel.Controls.Add(Me.UsernameIcon)
         Me.loginAreaPanel.Controls.Add(Me.ShapeContainer1)
+        Me.BunifuTransition1.SetDecoration(Me.loginAreaPanel, BunifuAnimatorNS.DecorationType.None)
         Me.loginAreaPanel.ForeColor = System.Drawing.Color.Black
         Me.loginAreaPanel.Location = New System.Drawing.Point(374, 0)
         Me.loginAreaPanel.Margin = New System.Windows.Forms.Padding(0)
@@ -80,6 +84,7 @@ Partial Class Login
         Me.ErrorMessagePanel.BackColor = System.Drawing.Color.Black
         Me.ErrorMessagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ErrorMessagePanel.Controls.Add(Me.ErrorMessageLabel)
+        Me.BunifuTransition1.SetDecoration(Me.ErrorMessagePanel, BunifuAnimatorNS.DecorationType.None)
         Me.ErrorMessagePanel.ForeColor = System.Drawing.Color.White
         Me.ErrorMessagePanel.Location = New System.Drawing.Point(34, 15)
         Me.ErrorMessagePanel.Name = "ErrorMessagePanel"
@@ -91,6 +96,7 @@ Partial Class Login
         '
         Me.ErrorMessageLabel.AutoEllipsis = True
         Me.ErrorMessageLabel.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.ErrorMessageLabel, BunifuAnimatorNS.DecorationType.None)
         Me.ErrorMessageLabel.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ErrorMessageLabel.Location = New System.Drawing.Point(43, 8)
         Me.ErrorMessageLabel.Name = "ErrorMessageLabel"
@@ -101,6 +107,7 @@ Partial Class Login
         'LoginLabel
         '
         Me.LoginLabel.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.LoginLabel, BunifuAnimatorNS.DecorationType.None)
         Me.LoginLabel.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LoginLabel.ForeColor = System.Drawing.Color.Black
         Me.LoginLabel.Location = New System.Drawing.Point(48, 67)
@@ -112,6 +119,7 @@ Partial Class Login
         'PasswordTextBox
         '
         Me.PasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuTransition1.SetDecoration(Me.PasswordTextBox, BunifuAnimatorNS.DecorationType.None)
         Me.PasswordTextBox.Depth = 0
         Me.PasswordTextBox.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordTextBox.ForeColor = System.Drawing.Color.White
@@ -131,6 +139,7 @@ Partial Class Login
         'UserNameTextBox
         '
         Me.UserNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuTransition1.SetDecoration(Me.UserNameTextBox, BunifuAnimatorNS.DecorationType.None)
         Me.UserNameTextBox.Depth = 0
         Me.UserNameTextBox.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UserNameTextBox.ForeColor = System.Drawing.Color.White
@@ -149,6 +158,7 @@ Partial Class Login
         'SignInBtn
         '
         Me.SignInBtn.BackColor = System.Drawing.Color.Black
+        Me.BunifuTransition1.SetDecoration(Me.SignInBtn, BunifuAnimatorNS.DecorationType.None)
         Me.SignInBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.SignInBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.SignInBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -165,6 +175,7 @@ Partial Class Login
         'CrossPictureBox
         '
         Me.CrossPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.CrossPictureBox, BunifuAnimatorNS.DecorationType.None)
         Me.CrossPictureBox.Image = Global.College_Management_System.My.Resources.Resources.Delete_32px
         Me.CrossPictureBox.Location = New System.Drawing.Point(386, 15)
         Me.CrossPictureBox.Name = "CrossPictureBox"
@@ -175,6 +186,8 @@ Partial Class Login
         'ForgotPasswordLabel
         '
         Me.ForgotPasswordLabel.BackColor = System.Drawing.Color.Transparent
+        Me.ForgotPasswordLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.ForgotPasswordLabel, BunifuAnimatorNS.DecorationType.None)
         Me.ForgotPasswordLabel.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForgotPasswordLabel.ForeColor = System.Drawing.Color.Black
         Me.ForgotPasswordLabel.Location = New System.Drawing.Point(50, 404)
@@ -189,6 +202,7 @@ Partial Class Login
         Me.PasswordIcon.BackColor = System.Drawing.Color.Transparent
         Me.PasswordIcon.BackgroundImage = Global.College_Management_System.My.Resources.Resources.Password
         Me.PasswordIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.PasswordIcon, BunifuAnimatorNS.DecorationType.None)
         Me.PasswordIcon.Image = Global.College_Management_System.My.Resources.Resources.Password_32px
         Me.PasswordIcon.Location = New System.Drawing.Point(68, 202)
         Me.PasswordIcon.Name = "PasswordIcon"
@@ -199,6 +213,7 @@ Partial Class Login
         'UsernameIcon
         '
         Me.UsernameIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.UsernameIcon, BunifuAnimatorNS.DecorationType.None)
         Me.UsernameIcon.Image = Global.College_Management_System.My.Resources.Resources.Male_User_32px1
         Me.UsernameIcon.Location = New System.Drawing.Point(68, 139)
         Me.UsernameIcon.Name = "UsernameIcon"
@@ -208,6 +223,7 @@ Partial Class Login
         '
         'ShapeContainer1
         '
+        Me.BunifuTransition1.SetDecoration(Me.ShapeContainer1, BunifuAnimatorNS.DecorationType.None)
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
@@ -225,14 +241,15 @@ Partial Class Login
         Me.RectangleShape1.FillGradientColor = System.Drawing.Color.White
         Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Vertical
         Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(-1, 2)
+        Me.RectangleShape1.Location = New System.Drawing.Point(-1, 0)
         Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(11, 475)
+        Me.RectangleShape1.Size = New System.Drawing.Size(11, 477)
         '
         'transparentPanel
         '
         Me.transparentPanel.BackColor = System.Drawing.Color.Transparent
         Me.transparentPanel.Controls.Add(Me.MainLogoPictureBox)
+        Me.BunifuTransition1.SetDecoration(Me.transparentPanel, BunifuAnimatorNS.DecorationType.None)
         Me.transparentPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.transparentPanel.ForeColor = System.Drawing.Color.White
         Me.transparentPanel.Location = New System.Drawing.Point(0, 0)
@@ -246,6 +263,7 @@ Partial Class Login
         Me.MainLogoPictureBox.BackColor = System.Drawing.Color.Transparent
         Me.MainLogoPictureBox.BackgroundImage = Global.College_Management_System.My.Resources.Resources.CMS
         Me.MainLogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.MainLogoPictureBox, BunifuAnimatorNS.DecorationType.None)
         Me.MainLogoPictureBox.Location = New System.Drawing.Point(12, 97)
         Me.MainLogoPictureBox.Name = "MainLogoPictureBox"
         Me.MainLogoPictureBox.Size = New System.Drawing.Size(327, 201)
@@ -260,6 +278,7 @@ Partial Class Login
         Me.LoginTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.36658!))
         Me.LoginTablePanel.Controls.Add(Me.transparentPanel, 0, 0)
         Me.LoginTablePanel.Controls.Add(Me.loginAreaPanel, 1, 0)
+        Me.BunifuTransition1.SetDecoration(Me.LoginTablePanel, BunifuAnimatorNS.DecorationType.None)
         Me.LoginTablePanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LoginTablePanel.Location = New System.Drawing.Point(0, 0)
         Me.LoginTablePanel.Name = "LoginTablePanel"
@@ -283,6 +302,31 @@ Partial Class Login
         '
         Me.ErrorTimer.Enabled = True
         '
+        'BunifuFormFadeTransition1
+        '
+        Me.BunifuFormFadeTransition1.Delay = 1
+        '
+        'BunifuTransition1
+        '
+        Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide
+        Me.BunifuTransition1.Cursor = Nothing
+        Animation1.AnimateOnlyDifferences = True
+        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
+        Animation1.LeafCoeff = 0.0!
+        Animation1.MaxTime = 1.0!
+        Animation1.MinTime = 0.0!
+        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
+        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
+        Animation1.MosaicSize = 0
+        Animation1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Animation1.RotateCoeff = 0.0!
+        Animation1.RotateLimit = 0.0!
+        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
+        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
+        Animation1.TimeCoeff = 0.0!
+        Animation1.TransparencyCoeff = 0.0!
+        Me.BunifuTransition1.DefaultAnimation = Animation1
+        '
         'Login
         '
         Me.AcceptButton = Me.SignInBtn
@@ -292,6 +336,7 @@ Partial Class Login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(802, 477)
         Me.Controls.Add(Me.LoginTablePanel)
+        Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -335,4 +380,6 @@ Partial Class Login
     Friend WithEvents ErrorMessagePanel As System.Windows.Forms.Panel
     Friend WithEvents ErrorMessageLabel As System.Windows.Forms.Label
     Friend WithEvents ErrorTimer As System.Windows.Forms.Timer
+    Friend WithEvents BunifuFormFadeTransition1 As Bunifu.Framework.UI.BunifuFormFadeTransition
+    Friend WithEvents BunifuTransition1 As BunifuAnimatorNS.BunifuTransition
 End Class

@@ -22,8 +22,8 @@ Partial Class ProgramAndSubjects
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProgramAndSubjects))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -42,7 +42,6 @@ Partial Class ProgramAndSubjects
         Me.ProgramNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SubjectIdTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SubjectNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.ProgramDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,7 +72,6 @@ Partial Class ProgramAndSubjects
         'Panel2
         '
         Me.Panel2.AutoScroll = True
-        Me.Panel2.Controls.Add(Me.BunifuThinButton21)
         Me.Panel2.Controls.Add(Me.ProgramDataGridView)
         Me.Panel2.Controls.Add(Me.ProgramComboBox)
         Me.Panel2.Controls.Add(Me.SubjectDataGridView)
@@ -118,20 +116,20 @@ Partial Class ProgramAndSubjects
         '
         'SubjectDataGridView
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.SubjectDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.SubjectDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.SubjectDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SubjectDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.SubjectDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.SubjectDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.SubjectDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.SubjectDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.SubjectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SubjectDataGridView.DoubleBuffered = True
         Me.SubjectDataGridView.EnableHeadersVisualStyles = False
@@ -354,31 +352,6 @@ Partial Class ProgramAndSubjects
         Me.SubjectNameTextBox.TabIndex = 2
         Me.SubjectNameTextBox.UseSystemPasswordChar = False
         '
-        'BunifuThinButton21
-        '
-        Me.BunifuThinButton21.ActiveBorderThickness = 1
-        Me.BunifuThinButton21.ActiveCornerRadius = 20
-        Me.BunifuThinButton21.ActiveFillColor = System.Drawing.Color.MidnightBlue
-        Me.BunifuThinButton21.ActiveForecolor = System.Drawing.Color.White
-        Me.BunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.BackColor = System.Drawing.SystemColors.Control
-        Me.BunifuThinButton21.BackgroundImage = CType(resources.GetObject("BunifuThinButton21.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuThinButton21.ButtonText = "Add"
-        Me.BunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuThinButton21.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.IdleBorderThickness = 1
-        Me.BunifuThinButton21.IdleCornerRadius = 20
-        Me.BunifuThinButton21.IdleFillColor = System.Drawing.Color.White
-        Me.BunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.IdleLineColor = System.Drawing.Color.MidnightBlue
-        Me.BunifuThinButton21.Location = New System.Drawing.Point(766, 391)
-        Me.BunifuThinButton21.Margin = New System.Windows.Forms.Padding(6)
-        Me.BunifuThinButton21.Name = "BunifuThinButton21"
-        Me.BunifuThinButton21.Size = New System.Drawing.Size(124, 47)
-        Me.BunifuThinButton21.TabIndex = 8
-        Me.BunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ProgramAndSubjects
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -416,5 +389,4 @@ Partial Class ProgramAndSubjects
     Friend WithEvents ProgramComboBox As MetroFramework.Controls.MetroComboBox
     Friend WithEvents ProgramDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents SubjectIdTextBox As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents BunifuThinButton21 As Bunifu.Framework.UI.BunifuThinButton2
 End Class

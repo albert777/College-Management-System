@@ -11,7 +11,7 @@
     <AssemblyName>College_Management_System</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -28,6 +28,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -160,6 +161,30 @@
     <Compile Include="Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FeeManager.designer.vb">
+      <DependentUpon>FeeManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FeeManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeePaymentBox.designer.vb">
+      <DependentUpon>FeePaymentBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FeePaymentBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgetPass.Designer.vb">
+      <DependentUpon>forgetPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forgetPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBill.designer.vb">
+      <DependentUpon>frmBill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBill.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -211,6 +236,12 @@
     <Compile Include="Result.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Setting.Designer.vb">
+      <DependentUpon>Setting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Splashscreen.Designer.vb">
       <DependentUpon>Splashscreen.vb</DependentUpon>
     </Compile>
@@ -227,6 +258,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeeManager.resx">
+      <DependentUpon>FeeManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeePaymentBox.resx">
+      <DependentUpon>FeePaymentBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgetPass.resx">
+      <DependentUpon>forgetPass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBill.resx">
+      <DependentUpon>frmBill.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -252,11 +295,16 @@
     <EmbeddedResource Include="Result.resx">
       <DependentUpon>Result.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splashscreen.resx">
       <DependentUpon>Splashscreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -318,6 +366,16 @@
   <ItemGroup>
     <Content Include="cms_icon_NGp_icon.ico" />
     <Content Include="MetroFramework.txt" />
+    <Content Include="Resources\gandhi.png" />
+    <None Include="Resources\upload-1118929_960_720.png" />
+    <None Include="Resources\gandhi1.png" />
+    <Content Include="Resources\Plus_24px.png" />
+    <None Include="Resources\Plus_24px1.png" />
+    <Content Include="Resources\refresh.png" />
+    <None Include="Resources\Megaphone_32px.png" />
+    <None Include="Resources\Bill_32px.png" />
+    <None Include="Resources\Report Card_32px.png" />
+    <None Include="Resources\Settings_32px1.png" />
     <None Include="Resources\Delete_32px.png" />
     <None Include="Resources\Password_32px.png" />
     <None Include="Resources\Male User_32px1.png" />

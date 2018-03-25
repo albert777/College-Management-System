@@ -3,6 +3,27 @@ Public Class Attendance
     Dim Id As Integer
     Dim su As AddRemoveStudentStaff = New AddRemoveStudentStaff
 
+    Sub searchID()
+        Dim sql As String = "SELECT * FROM attendanceTbl WHERE Id LIKE @a"
+        Dim con As SqlConnection = su.dbConnect()
+        Dim cmd As New SqlCommand(sql, con)
+        cmd.Parameters.AddWithValue("@a", AttSearchTextBox.Text)
+        Dim da As New SqlDataAdapter(cmd)
+        Dim dts As New DataTable()
+        da.Fill(dts)
+        AttendanceDataGridView.DataSource = dts
+        If (AttSearchTextBox.Text = "") Then
+            loadUsers()
+        End If
+    End Sub
+
+    Sub loadPrograms()
+        Dim programData As DataTable = su.loadUsers("SELECT * FROM tblPrograms")
+        AttenProgramComboBox.DataSource = programData
+        AttenProgramComboBox.DisplayMember = "program_name"
+        AttenProgramComboBox.ValueMember = "Id"
+    End Sub
+
     Sub loadall()
         Dim con As SqlConnection = su.dbConnect()
         Dim cmd As New SqlCommand("SELECT * FROM attendanceTbl where Id = @a AND PA = @b", con)
@@ -26,22 +47,22 @@ Public Class Attendance
     End Sub
     Sub loadUsers()
         Dim con As SqlConnection = su.dbConnect()
-        Dim cmd As New SqlCommand("SELECT * FROM attendanceTbl WHERE Date = @a", con)
+        Dim cmd As New SqlCommand("SELECT * FROM attendanceTbl WHERE Date = @a AND program = @b", con)
         cmd.Parameters.AddWithValue("@a", MetroDateTime1.Text)
+        cmd.Parameters.AddWithValue("@b", AttenProgramComboBox.Text)
         Dim da As New SqlDataAdapter(cmd)
         Dim dts As New DataTable()
         da.Fill(dts)
         If (dts.Rows.Count > 0) Then
-            AddButton.Enabled = False
             AttendanceDataGridView.DataSource = dts
             updated()
-            UpdateButton.Enabled = True
         Else
-            Dim dt As New DataTable
-            AddButton.Enabled = True
-            UpdateButton.Enabled = False
-            dt = su.loadUsers("Select Id,firstname FROM userTbl WHERE state = 1")
-            AttendanceDataGridView.DataSource = dt
+            Dim cmd2 As New SqlCommand("Select Id,fname FROM stuTbl WHERE state = 1 AND course = @a", con)
+            cmd2.Parameters.AddWithValue("@a", AttenProgramComboBox.Text)
+            Dim da2 As New SqlDataAdapter(cmd2)
+            Dim dts2 As New DataTable()
+            da2.Fill(dts2)
+            AttendanceDataGridView.DataSource = dts2
         End If
 
 
@@ -63,7 +84,9 @@ Public Class Attendance
     End Sub
 
     Private Sub Attendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadPrograms()
         loadUsers()
+
     End Sub
     Sub sendValue()
 
@@ -71,21 +94,23 @@ Public Class Attendance
             Dim isSelected As Boolean = Convert.ToBoolean(row.Cells("PACheckBoxColumn").Value)
             If isSelected Then
                 Dim con As SqlConnection = su.dbConnect()
-                Dim cmd As New SqlCommand("INSERT INTO attendanceTbl VALUES(@a,@b,@c,@d)", con)
+                Dim cmd As New SqlCommand("INSERT INTO attendanceTbl VALUES(@a,@b,@c,@d,@e)", con)
                 cmd.Parameters.AddWithValue("@a", row.Cells("Id").Value)
-                cmd.Parameters.AddWithValue("@b", row.Cells("firstname").Value)
+                cmd.Parameters.AddWithValue("@b", row.Cells("fname").Value)
                 cmd.Parameters.AddWithValue("@c", "Present")
                 cmd.Parameters.AddWithValue("@d", MetroDateTime1.Text)
+                cmd.Parameters.AddWithValue("@e", AttenProgramComboBox.Text)
                 con.Open()
                 cmd.ExecuteNonQuery()
                 con.Close()
             Else
                 Dim con As SqlConnection = su.dbConnect()
-                Dim cmd As New SqlCommand("INSERT INTO attendanceTbl VALUES(@a,@b,@c,@d)", con)
+                Dim cmd As New SqlCommand("INSERT INTO attendanceTbl VALUES(@a,@b,@c,@d,@e)", con)
                 cmd.Parameters.AddWithValue("@a", row.Cells("Id").Value)
-                cmd.Parameters.AddWithValue("@b", row.Cells("firstname").Value)
+                cmd.Parameters.AddWithValue("@b", row.Cells("fname").Value)
                 cmd.Parameters.AddWithValue("@c", "Absent")
                 cmd.Parameters.AddWithValue("@d", MetroDateTime1.Text)
+                cmd.Parameters.AddWithValue("@e", AttenProgramComboBox.Text)
                 con.Open()
                 cmd.ExecuteNonQuery()
                 con.Close()
@@ -137,5 +162,17 @@ Public Class Attendance
     Private Sub AttendanceDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles AttendanceDataGridView.CellClick
         Id = Convert.ToInt32(AttendanceDataGridView.CurrentRow.Cells(1).Value.ToString())
         loadall()
+    End Sub
+
+    Private Sub AttenProgramComboBox_MouseClick(sender As Object, e As MouseEventArgs) Handles AttenProgramComboBox.MouseClick
+        loadPrograms()
+    End Sub
+
+    Private Sub AttenProgramComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AttenProgramComboBox.SelectedIndexChanged
+        loadUsers()
+    End Sub
+
+    Private Sub AttSearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles AttSearchTextBox.TextChanged
+        searchID()
     End Sub
 End Class

@@ -23,87 +23,135 @@ Partial Class RecycleBin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.UserDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.UserDataGridView = New System.Windows.Forms.DataGridView()
         Me.RestoreDataGridViewButtonColumn = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.StudentDataGridView = New System.Windows.Forms.DataGridView()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.SRestoreDataGridViewButtonColumn = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StudentDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'UserDataGridView
         '
         Me.UserDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.UserDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.UserDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.UserDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
-        Me.UserDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.UserDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
-        Me.UserDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.UserDataGridView.BackgroundColor = System.Drawing.Color.Silver
         Me.UserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UserDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RestoreDataGridViewButtonColumn})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle4
-        Me.UserDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.UserDataGridView.DoubleBuffered = True
-        Me.UserDataGridView.EnableHeadersVisualStyles = False
-        Me.UserDataGridView.GridColor = System.Drawing.Color.White
-        Me.UserDataGridView.HeaderBgColor = System.Drawing.Color.Black
-        Me.UserDataGridView.HeaderForeColor = System.Drawing.Color.White
-        Me.UserDataGridView.Location = New System.Drawing.Point(0, 491)
-        Me.UserDataGridView.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UserDataGridView.GridColor = System.Drawing.Color.Black
+        Me.UserDataGridView.Location = New System.Drawing.Point(3, 3)
         Me.UserDataGridView.Name = "UserDataGridView"
-        Me.UserDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.UserDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.UserDataGridView.Size = New System.Drawing.Size(1200, 277)
-        Me.UserDataGridView.TabIndex = 2
+        Me.UserDataGridView.RowHeadersVisible = False
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.UserDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.UserDataGridView.Size = New System.Drawing.Size(1194, 378)
+        Me.UserDataGridView.TabIndex = 3
         '
         'RestoreDataGridViewButtonColumn
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.RestoreDataGridViewButtonColumn.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.RestoreDataGridViewButtonColumn.DefaultCellStyle = DataGridViewCellStyle2
         Me.RestoreDataGridViewButtonColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RestoreDataGridViewButtonColumn.HeaderText = "Restore"
         Me.RestoreDataGridViewButtonColumn.Name = "RestoreDataGridViewButtonColumn"
+        Me.RestoreDataGridViewButtonColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.RestoreDataGridViewButtonColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.RestoreDataGridViewButtonColumn.Text = "Restore"
-        Me.RestoreDataGridViewButtonColumn.ToolTipText = "Restore the user"
+        Me.RestoreDataGridViewButtonColumn.ToolTipText = "Restore"
         Me.RestoreDataGridViewButtonColumn.UseColumnTextForButtonValue = True
+        '
+        'StudentDataGridView
+        '
+        Me.StudentDataGridView.AllowUserToAddRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.StudentDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.StudentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.StudentDataGridView.BackgroundColor = System.Drawing.Color.Silver
+        Me.StudentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.StudentDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SRestoreDataGridViewButtonColumn})
+        Me.StudentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.StudentDataGridView.GridColor = System.Drawing.Color.Black
+        Me.StudentDataGridView.Location = New System.Drawing.Point(3, 387)
+        Me.StudentDataGridView.Name = "StudentDataGridView"
+        Me.StudentDataGridView.RowHeadersVisible = False
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        Me.StudentDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.StudentDataGridView.Size = New System.Drawing.Size(1194, 378)
+        Me.StudentDataGridView.TabIndex = 3
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.UserDataGridView, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.StudentDataGridView, 0, 1)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1200, 768)
+        Me.TableLayoutPanel1.TabIndex = 4
+        '
+        'SRestoreDataGridViewButtonColumn
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.SRestoreDataGridViewButtonColumn.DefaultCellStyle = DataGridViewCellStyle5
+        Me.SRestoreDataGridViewButtonColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SRestoreDataGridViewButtonColumn.HeaderText = "Restore"
+        Me.SRestoreDataGridViewButtonColumn.Name = "SRestoreDataGridViewButtonColumn"
+        Me.SRestoreDataGridViewButtonColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.SRestoreDataGridViewButtonColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.SRestoreDataGridViewButtonColumn.Text = "Restore"
+        Me.SRestoreDataGridViewButtonColumn.ToolTipText = "Restore"
+        Me.SRestoreDataGridViewButtonColumn.UseColumnTextForButtonValue = True
         '
         'RecycleBin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1200, 768)
-        Me.Controls.Add(Me.UserDataGridView)
+        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "RecycleBin"
         Me.Text = "RecycleBin"
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StudentDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents UserDataGridView As Bunifu.Framework.UI.BunifuCustomDataGrid
+    Friend WithEvents UserDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents RestoreDataGridViewButtonColumn As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents StudentDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents SRestoreDataGridViewButtonColumn As System.Windows.Forms.DataGridViewButtonColumn
 End Class

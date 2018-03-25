@@ -39,7 +39,6 @@ Public Class ProgramAndSubjects
     Private Sub AddProgramBtn_Click(sender As Object, e As EventArgs) Handles AddProgramBtn.Click
         AddPrograms()
         loadPrograms()
-
     End Sub
     Private Sub ProgramAndSubjects_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadPrograms()
@@ -50,7 +49,7 @@ Public Class ProgramAndSubjects
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable
         da.Fill(dt)
-            SubjectDataGridView.DataSource = dt
+        SubjectDataGridView.DataSource = dt
     End Sub
     Sub addSubjects()
         Dim cmd As New SqlCommand("INSERT INTO tbl" & ProgramComboBox.Text & " VALUES(@a,@b,@c)", con)
@@ -68,11 +67,11 @@ Public Class ProgramAndSubjects
         loadSubjects()
     End Sub
 
-    Private Sub ProgramComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ProgramComboBox.SelectedIndexChanged
-        'loadSubjects()
-    End Sub
-
-    Private Sub BunifuThinButton21_Click(sender As Object, e As EventArgs) Handles BunifuThinButton21.Click
+    Private Sub ProgramComboBox_Click(sender As Object, e As EventArgs) Handles ProgramComboBox.Click
         loadSubjects()
     End Sub
+
+    'Private Sub ProgramComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ProgramComboBox.SelectedIndexChanged
+    '    loadSubjects()
+    'End Sub
 End Class
