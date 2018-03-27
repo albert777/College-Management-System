@@ -4,68 +4,68 @@ Imports BunifuAnimatorNS
 Imports System.IO
 
 Public Class Dashboard
-    Dim ar As New AddRemoveStudentStaff
-    Dim ps As New ProgramAndSubjects
-    Dim a As New Attendance
-    Dim feeManager As New frmFeeManager
-    Dim setting As New Setting
-    Dim result As New Result
-    Dim notice As New Notice
-    Dim bin As New RecycleBin
+    'Dim ar As New AddRemoveStudentStaff
+    'Dim ps As New ProgramAndSubjects
+    'Dim a As New Attendance
+    'Dim feeManager As New frmFeeManager
+    'Dim setting As New Setting
+    'Dim result As New Result
+    'Dim notice As New Notice
+    'Dim bin As New RecycleBin
     Public userType As String
 
-    Sub unVisibleAll()
-        PcMgmtButton.Visible = False
-        RecycleBinButton.Visible = False
-        NoticeButton.Visible = False
-        BillButton.Visible = False
-        SettingButton.Visible = False
-        AddRemoveButton.Visible = False
-        AttendanceButton.Visible = False
-        ResultButton.Visible = False
-    End Sub
-    Sub userChecker()
-        userType = Login.usertype
-        If (userType = "") Then
-            PcMgmtButton.Visible = True
-            RecycleBinButton.Visible = True
-            NoticeButton.Visible = True
-            BillButton.Visible = True
-            SettingButton.Visible = True
-            AddRemoveButton.Visible = True
-            AttendanceButton.Visible = True
-            ResultButton.Visible = True
-        Else
-            If (userType.Equals("Student")) Then
-                unVisibleAll()
-                AttendanceButton.Visible = True
-                ResultButton.Visible = True
-                HamburgerButton.Dock = DockStyle.Top
-                HomeButton.Dock = DockStyle.Top
-                AttendanceButton.Dock = DockStyle.Top
-                ResultButton.Dock = DockStyle.Top
-            ElseIf (userType.Equals("Receptionist")) Then
-                unVisibleAll()
-                AddRemoveButton.Visible = True
-                SettingButton.Visible = True
-                HamburgerButton.Dock = DockStyle.Top
-                HomeButton.Dock = DockStyle.Top
-                AddRemoveButton.Dock = DockStyle.Top
-                SettingButton.Dock = DockStyle.Bottom
-            End If
-        End If
-      
-    End Sub
-    Sub closeAll()
-        ar.Close()
-        ps.Close()
-        a.Close()
-        feeManager.Close()
-        setting.Close()
-        result.Close()
-        notice.Close()
-        bin.Close()
-    End Sub
+    'Sub unVisibleAll()
+    '    PcMgmtButton.Visible = False
+    '    RecycleBinButton.Visible = False
+    '    NoticeButton.Visible = False
+    '    BillButton.Visible = False
+    '    SettingButton.Visible = False
+    '    AddRemoveButton.Visible = False
+    '    AttendanceButton.Visible = False
+    '    ResultButton.Visible = False
+    'End Sub
+    'Sub userChecker()
+    '    userType = Login.usertype
+    '    If (userType = "") Then
+    '        PcMgmtButton.Visible = True
+    '        RecycleBinButton.Visible = True
+    '        NoticeButton.Visible = True
+    '        BillButton.Visible = True
+    '        SettingButton.Visible = True
+    '        AddRemoveButton.Visible = True
+    '        AttendanceButton.Visible = True
+    '        ResultButton.Visible = True
+    '    Else
+    '        If (userType.Equals("Student")) Then
+    '            unVisibleAll()
+    '            AttendanceButton.Visible = True
+    '            ResultButton.Visible = True
+    '            HamburgerButton.Dock = DockStyle.Top
+    '            HomeButton.Dock = DockStyle.Top
+    '            AttendanceButton.Dock = DockStyle.Top
+    '            ResultButton.Dock = DockStyle.Top
+    '        ElseIf (userType.Equals("Receptionist")) Then
+    '            unVisibleAll()
+    '            AddRemoveButton.Visible = True
+    '            SettingButton.Visible = True
+    '            HamburgerButton.Dock = DockStyle.Top
+    '            HomeButton.Dock = DockStyle.Top
+    '            AddRemoveButton.Dock = DockStyle.Top
+    '            SettingButton.Dock = DockStyle.Bottom
+    '        End If
+    '    End If
+
+    'End Sub
+    'Sub closeAll()
+    '    ar.Close()
+    '    ps.Close()
+    '    a.Close()
+    '    feeManager.Close()
+    '    setting.Close()
+    '    result.Close()
+    '    notice.Close()
+    '    bin.Close()
+    'End Sub
     Private Sub HamburgerButton_Click(sender As Object, e As EventArgs) Handles HamburgerButton.Click
         userDetail()
         If (hamburgerPnl.Width < 250) Then
@@ -102,6 +102,7 @@ Public Class Dashboard
     End Sub
 
     Sub showRecycleBin()
+        Dim bin As New RecycleBin
         'closeAll()
         Cursor = Cursors.WaitCursor
         bin.MdiParent = Me
@@ -116,6 +117,7 @@ Public Class Dashboard
     End Sub
 
     Sub showAddRemoveStudentUserPanel()
+        Dim ar As New AddRemoveStudentStaff
         'closeAll()
         MainPanel.Controls.Clear()
         ar.MdiParent = Me
@@ -125,11 +127,10 @@ Public Class Dashboard
         ar.BringToFront()
         MainPanel.Controls.Add(UserDetailPanel)
         UserDetailPanel.BringToFront()
-        ps.Hide()
-        a.Hide()
     End Sub
 
     Sub showCourseAndSubjects()
+        Dim ps As New ProgramAndSubjects
         'closeAll()
         MainPanel.Controls.Clear()
         ps.MdiParent = Me
@@ -142,6 +143,7 @@ Public Class Dashboard
     End Sub
 
     Sub showAttendance()
+        Dim a As New Attendance
         'closeAll()
         MainPanel.Controls.Clear()
         a.MdiParent = Me
@@ -154,6 +156,7 @@ Public Class Dashboard
     End Sub
 
     Sub showSetting()
+        Dim setting As New Setting
         'closeAll()
         MainPanel.Controls.Clear()
         setting.MdiParent = Me
@@ -166,6 +169,7 @@ Public Class Dashboard
     End Sub
 
     Sub showResult()
+        Dim result As New Result
         'closeAll()
         MainPanel.Controls.Clear()
         result.MdiParent = Me
@@ -178,6 +182,7 @@ Public Class Dashboard
     End Sub
 
     Sub showFeeMgmt()
+        Dim feeManager As New frmFeeManager
         'closeAll()
         MainPanel.Controls.Clear()
         feeManager.MdiParent = Me
@@ -190,6 +195,7 @@ Public Class Dashboard
     End Sub
 
     Sub showNotice()
+        Dim notice As New Notice
         'closeAll()
         MainPanel.Controls.Clear()
         notice.MdiParent = Me
@@ -210,7 +216,6 @@ Public Class Dashboard
     'Dim b As String
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fullScreen()
-        userChecker()
         userDetail()
         profileDrop()
         labelCenterer(NameLabel)

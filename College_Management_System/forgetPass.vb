@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports Transitions
+Imports System.Text
 
 Public Class forgetPass
     Dim amm As New AddRemoveStudentStaff
@@ -37,6 +38,7 @@ Public Class forgetPass
             End If
         End If
     End Sub
+
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs)
         Me.Close()

@@ -59,9 +59,9 @@ Partial Class Attendance
         Me.AttendanceDataGridView.DefaultCellStyle = DataGridViewCellStyle1
         Me.AttendanceDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.AttendanceDataGridView.GridColor = System.Drawing.SystemColors.ControlLightLight
-        Me.AttendanceDataGridView.Location = New System.Drawing.Point(0, 149)
+        Me.AttendanceDataGridView.Location = New System.Drawing.Point(0, 165)
         Me.AttendanceDataGridView.Name = "AttendanceDataGridView"
-        Me.AttendanceDataGridView.Size = New System.Drawing.Size(1221, 700)
+        Me.AttendanceDataGridView.Size = New System.Drawing.Size(1221, 584)
         Me.AttendanceDataGridView.TabIndex = 0
         '
         'PACheckBoxColumn
@@ -151,7 +151,7 @@ Partial Class Attendance
         Me.PresentDaysLabel.BackColor = System.Drawing.Color.Transparent
         Me.PresentDaysLabel.Depth = 0
         Me.PresentDaysLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.PresentDaysLabel.ForeColor = System.Drawing.Color.White
+        Me.PresentDaysLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.PresentDaysLabel.Location = New System.Drawing.Point(1043, 57)
         Me.PresentDaysLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.PresentDaysLabel.Name = "PresentDaysLabel"
@@ -164,7 +164,7 @@ Partial Class Attendance
         Me.AbsentDaysLabel.BackColor = System.Drawing.Color.Transparent
         Me.AbsentDaysLabel.Depth = 0
         Me.AbsentDaysLabel.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.AbsentDaysLabel.ForeColor = System.Drawing.Color.White
+        Me.AbsentDaysLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.AbsentDaysLabel.Location = New System.Drawing.Point(1043, 88)
         Me.AbsentDaysLabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.AbsentDaysLabel.Name = "AbsentDaysLabel"
@@ -223,7 +223,7 @@ Partial Class Attendance
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1221, 849)
+        Me.ClientSize = New System.Drawing.Size(1221, 749)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.AbsentDaysLabel)
         Me.Controls.Add(Me.Label2)

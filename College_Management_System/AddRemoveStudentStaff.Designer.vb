@@ -22,12 +22,15 @@ Partial Class AddRemoveStudentStaff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.AddRemoveUserStudentTablePanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.UserStudentTabController = New MaterialSkin.Controls.MaterialTabControl()
         Me.AddUserTab = New System.Windows.Forms.TabPage()
@@ -62,6 +65,13 @@ Partial Class AddRemoveStudentStaff
         Me.Address2TextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SearchTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.FemaleRadioBtn = New MaterialSkin.Controls.MaterialRadioButton()
+        Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.GenderLabel = New MaterialSkin.Controls.MaterialLabel()
         Me.FirstNameTextBox = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.MaleRadioBtn = New MaterialSkin.Controls.MaterialRadioButton()
@@ -133,15 +143,9 @@ Partial Class AddRemoveStudentStaff
         Me.StudentDataGridView = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.OnlyViewStudentPictureBox = New System.Windows.Forms.PictureBox()
-        Me.AddRemoveUserStudentTablePanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.ImageOpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MetroContextMenu1 = New MetroFramework.Controls.MetroContextMenu(Me.components)
+        Me.MetroContextMenu2 = New MetroFramework.Controls.MetroContextMenu(Me.components)
+        Me.AddRemoveUserStudentTablePanel.SuspendLayout()
         Me.UserStudentTabController.SuspendLayout()
         Me.AddUserTab.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -169,8 +173,28 @@ Partial Class AddRemoveStudentStaff
         CType(Me.StudentDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.OnlyViewStudentPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.AddRemoveUserStudentTablePanel.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'AddRemoveUserStudentTablePanel
+        '
+        Me.AddRemoveUserStudentTablePanel.BackColor = System.Drawing.Color.Transparent
+        Me.AddRemoveUserStudentTablePanel.ColumnCount = 1
+        Me.AddRemoveUserStudentTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.AddRemoveUserStudentTablePanel.Controls.Add(Me.MaterialTabSelector1, 0, 0)
+        Me.AddRemoveUserStudentTablePanel.Controls.Add(Me.UserStudentTabController, 0, 1)
+        Me.AddRemoveUserStudentTablePanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AddRemoveUserStudentTablePanel.Location = New System.Drawing.Point(0, 0)
+        Me.AddRemoveUserStudentTablePanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.AddRemoveUserStudentTablePanel.Name = "AddRemoveUserStudentTablePanel"
+        Me.AddRemoveUserStudentTablePanel.RowCount = 2
+        Me.AddRemoveUserStudentTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.820874!))
+        Me.AddRemoveUserStudentTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 97.17912!))
+        Me.AddRemoveUserStudentTablePanel.Size = New System.Drawing.Size(1414, 819)
+        Me.AddRemoveUserStudentTablePanel.TabIndex = 2
+        '
+        'ImageOpenDialog
+        '
+        Me.ImageOpenDialog.FileName = "ImageOpener"
         '
         'MaterialTabSelector1
         '
@@ -253,7 +277,7 @@ Partial Class AddRemoveStudentStaff
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 292.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 293.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1406, 293)
         Me.TableLayoutPanel3.TabIndex = 67
         '
@@ -674,6 +698,104 @@ Partial Class AddRemoveStudentStaff
         Me.FemaleRadioBtn.Text = "Female"
         Me.FemaleRadioBtn.UseVisualStyleBackColor = True
         '
+        'MaterialLabel3
+        '
+        Me.MaterialLabel3.AutoSize = True
+        Me.MaterialLabel3.Depth = 0
+        Me.MaterialLabel3.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel3.Location = New System.Drawing.Point(18, 187)
+        Me.MaterialLabel3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel3.Name = "MaterialLabel3"
+        Me.MaterialLabel3.Size = New System.Drawing.Size(47, 19)
+        Me.MaterialLabel3.TabIndex = 50
+        Me.MaterialLabel3.Text = "Email"
+        '
+        'MaterialLabel5
+        '
+        Me.MaterialLabel5.AutoSize = True
+        Me.MaterialLabel5.Depth = 0
+        Me.MaterialLabel5.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel5.Location = New System.Drawing.Point(374, 109)
+        Me.MaterialLabel5.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel5.Name = "MaterialLabel5"
+        Me.MaterialLabel5.Size = New System.Drawing.Size(138, 19)
+        Me.MaterialLabel5.TabIndex = 50
+        Me.MaterialLabel5.Text = "Temporary address"
+        '
+        'MaterialLabel2
+        '
+        Me.MaterialLabel2.AutoSize = True
+        Me.MaterialLabel2.Depth = 0
+        Me.MaterialLabel2.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel2.Location = New System.Drawing.Point(16, 109)
+        Me.MaterialLabel2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.MaterialLabel2.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel2.Name = "MaterialLabel2"
+        Me.MaterialLabel2.Size = New System.Drawing.Size(138, 19)
+        Me.MaterialLabel2.TabIndex = 50
+        Me.MaterialLabel2.Text = "Permanent address"
+        '
+        'MaterialLabel6
+        '
+        Me.MaterialLabel6.AutoSize = True
+        Me.MaterialLabel6.Depth = 0
+        Me.MaterialLabel6.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel6.Location = New System.Drawing.Point(374, 74)
+        Me.MaterialLabel6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.MaterialLabel6.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel6.Name = "MaterialLabel6"
+        Me.MaterialLabel6.Size = New System.Drawing.Size(91, 19)
+        Me.MaterialLabel6.TabIndex = 50
+        Me.MaterialLabel6.Text = "Middlename"
+        '
+        'MaterialLabel7
+        '
+        Me.MaterialLabel7.AutoSize = True
+        Me.MaterialLabel7.Depth = 0
+        Me.MaterialLabel7.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel7.Location = New System.Drawing.Point(740, 109)
+        Me.MaterialLabel7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.MaterialLabel7.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel7.Name = "MaterialLabel7"
+        Me.MaterialLabel7.Size = New System.Drawing.Size(87, 19)
+        Me.MaterialLabel7.TabIndex = 50
+        Me.MaterialLabel7.Text = "Contact no."
+        '
+        'MaterialLabel4
+        '
+        Me.MaterialLabel4.AutoSize = True
+        Me.MaterialLabel4.Depth = 0
+        Me.MaterialLabel4.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel4.Location = New System.Drawing.Point(739, 78)
+        Me.MaterialLabel4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel4.Name = "MaterialLabel4"
+        Me.MaterialLabel4.Size = New System.Drawing.Size(75, 19)
+        Me.MaterialLabel4.TabIndex = 50
+        Me.MaterialLabel4.Text = "Lastname"
+        '
+        'MaterialLabel1
+        '
+        Me.MaterialLabel1.AutoSize = True
+        Me.MaterialLabel1.Depth = 0
+        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel1.Location = New System.Drawing.Point(16, 74)
+        Me.MaterialLabel1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel1.Name = "MaterialLabel1"
+        Me.MaterialLabel1.Size = New System.Drawing.Size(76, 19)
+        Me.MaterialLabel1.TabIndex = 50
+        Me.MaterialLabel1.Text = "Firstname"
+        '
         'GenderLabel
         '
         Me.GenderLabel.AutoSize = True
@@ -778,11 +900,11 @@ Partial Class AddRemoveStudentStaff
         Me.AddStudentTab.BackColor = System.Drawing.Color.White
         Me.AddStudentTab.Controls.Add(Me.Panel13)
         Me.AddStudentTab.Controls.Add(Me.AddStudentPanel)
-        Me.AddStudentTab.Location = New System.Drawing.Point(4, 23)
+        Me.AddStudentTab.Location = New System.Drawing.Point(4, 24)
         Me.AddStudentTab.Margin = New System.Windows.Forms.Padding(0)
         Me.AddStudentTab.Name = "AddStudentTab"
         Me.AddStudentTab.Padding = New System.Windows.Forms.Padding(5, 3, 5, 3)
-        Me.AddStudentTab.Size = New System.Drawing.Size(1406, 769)
+        Me.AddStudentTab.Size = New System.Drawing.Size(1406, 768)
         Me.AddStudentTab.TabIndex = 1
         Me.AddStudentTab.Text = "Add Student"
         '
@@ -792,7 +914,7 @@ Partial Class AddRemoveStudentStaff
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel13.Location = New System.Drawing.Point(5, 487)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1396, 279)
+        Me.Panel13.Size = New System.Drawing.Size(1396, 278)
         Me.Panel13.TabIndex = 19
         '
         'AdminStudentDataGridView
@@ -805,7 +927,7 @@ Partial Class AddRemoveStudentStaff
         Me.AdminStudentDataGridView.Name = "AdminStudentDataGridView"
         Me.AdminStudentDataGridView.RowHeadersVisible = False
         Me.AdminStudentDataGridView.RowTemplate.Height = 24
-        Me.AdminStudentDataGridView.Size = New System.Drawing.Size(1396, 279)
+        Me.AdminStudentDataGridView.Size = New System.Drawing.Size(1396, 278)
         Me.AdminStudentDataGridView.TabIndex = 9
         '
         'AddStudentPanel
@@ -912,7 +1034,7 @@ Partial Class AddRemoveStudentStaff
         Me.StudentIdTextBoxs.Location = New System.Drawing.Point(384, 39)
         Me.StudentIdTextBoxs.Name = "StudentIdTextBoxs"
         Me.StudentIdTextBoxs.ReadOnly = True
-        Me.StudentIdTextBoxs.Size = New System.Drawing.Size(58, 22)
+        Me.StudentIdTextBoxs.Size = New System.Drawing.Size(58, 21)
         Me.StudentIdTextBoxs.TabIndex = 80
         '
         'SClearAllButton
@@ -1096,7 +1218,7 @@ Partial Class AddRemoveStudentStaff
         '
         Me.Dobs.Location = New System.Drawing.Point(1139, 185)
         Me.Dobs.Margin = New System.Windows.Forms.Padding(2)
-        Me.Dobs.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.Dobs.MinimumSize = New System.Drawing.Size(0, 29)
         Me.Dobs.Name = "Dobs"
         Me.Dobs.Size = New System.Drawing.Size(217, 29)
         Me.Dobs.TabIndex = 51
@@ -1606,31 +1728,31 @@ Partial Class AddRemoveStudentStaff
         'UserDataGridView
         '
         Me.UserDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.UserDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.UserDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.UserDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.UserDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.UserDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UserDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.UserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.UserDataGridView.DefaultCellStyle = DataGridViewCellStyle3
         Me.UserDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UserDataGridView.DoubleBuffered = True
         Me.UserDataGridView.EnableHeadersVisualStyles = False
@@ -1696,31 +1818,31 @@ Partial Class AddRemoveStudentStaff
         'StudentDataGridView
         '
         Me.StudentDataGridView.AllowUserToAddRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        Me.StudentDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.StudentDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.StudentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.StudentDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.StudentDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.StudentDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.StudentDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.StudentDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.StudentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.StudentDataGridView.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.StudentDataGridView.DefaultCellStyle = DataGridViewCellStyle6
         Me.StudentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.StudentDataGridView.DoubleBuffered = True
         Me.StudentDataGridView.EnableHeadersVisualStyles = False
@@ -1756,124 +1878,15 @@ Partial Class AddRemoveStudentStaff
         Me.OnlyViewStudentPictureBox.TabIndex = 2
         Me.OnlyViewStudentPictureBox.TabStop = False
         '
-        'AddRemoveUserStudentTablePanel
+        'MetroContextMenu1
         '
-        Me.AddRemoveUserStudentTablePanel.BackColor = System.Drawing.Color.Transparent
-        Me.AddRemoveUserStudentTablePanel.ColumnCount = 1
-        Me.AddRemoveUserStudentTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.AddRemoveUserStudentTablePanel.Controls.Add(Me.MaterialTabSelector1, 0, 0)
-        Me.AddRemoveUserStudentTablePanel.Controls.Add(Me.UserStudentTabController, 0, 1)
-        Me.AddRemoveUserStudentTablePanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AddRemoveUserStudentTablePanel.Location = New System.Drawing.Point(0, 0)
-        Me.AddRemoveUserStudentTablePanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.AddRemoveUserStudentTablePanel.Name = "AddRemoveUserStudentTablePanel"
-        Me.AddRemoveUserStudentTablePanel.RowCount = 2
-        Me.AddRemoveUserStudentTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.820874!))
-        Me.AddRemoveUserStudentTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 97.17912!))
-        Me.AddRemoveUserStudentTablePanel.Size = New System.Drawing.Size(1414, 819)
-        Me.AddRemoveUserStudentTablePanel.TabIndex = 2
+        Me.MetroContextMenu1.Name = "MetroContextMenu1"
+        Me.MetroContextMenu1.Size = New System.Drawing.Size(61, 4)
         '
-        'ImageOpenDialog
+        'MetroContextMenu2
         '
-        Me.ImageOpenDialog.FileName = "ImageOpener"
-        '
-        'MaterialLabel1
-        '
-        Me.MaterialLabel1.AutoSize = True
-        Me.MaterialLabel1.Depth = 0
-        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel1.Location = New System.Drawing.Point(16, 74)
-        Me.MaterialLabel1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel1.Name = "MaterialLabel1"
-        Me.MaterialLabel1.Size = New System.Drawing.Size(76, 19)
-        Me.MaterialLabel1.TabIndex = 50
-        Me.MaterialLabel1.Text = "Firstname"
-        '
-        'MaterialLabel2
-        '
-        Me.MaterialLabel2.AutoSize = True
-        Me.MaterialLabel2.Depth = 0
-        Me.MaterialLabel2.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel2.Location = New System.Drawing.Point(16, 109)
-        Me.MaterialLabel2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.MaterialLabel2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel2.Name = "MaterialLabel2"
-        Me.MaterialLabel2.Size = New System.Drawing.Size(138, 19)
-        Me.MaterialLabel2.TabIndex = 50
-        Me.MaterialLabel2.Text = "Permanent address"
-        '
-        'MaterialLabel3
-        '
-        Me.MaterialLabel3.AutoSize = True
-        Me.MaterialLabel3.Depth = 0
-        Me.MaterialLabel3.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel3.Location = New System.Drawing.Point(18, 187)
-        Me.MaterialLabel3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel3.Name = "MaterialLabel3"
-        Me.MaterialLabel3.Size = New System.Drawing.Size(47, 19)
-        Me.MaterialLabel3.TabIndex = 50
-        Me.MaterialLabel3.Text = "Email"
-        '
-        'MaterialLabel4
-        '
-        Me.MaterialLabel4.AutoSize = True
-        Me.MaterialLabel4.Depth = 0
-        Me.MaterialLabel4.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel4.Location = New System.Drawing.Point(739, 78)
-        Me.MaterialLabel4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel4.Name = "MaterialLabel4"
-        Me.MaterialLabel4.Size = New System.Drawing.Size(75, 19)
-        Me.MaterialLabel4.TabIndex = 50
-        Me.MaterialLabel4.Text = "Lastname"
-        '
-        'MaterialLabel5
-        '
-        Me.MaterialLabel5.AutoSize = True
-        Me.MaterialLabel5.Depth = 0
-        Me.MaterialLabel5.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel5.Location = New System.Drawing.Point(374, 109)
-        Me.MaterialLabel5.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel5.Name = "MaterialLabel5"
-        Me.MaterialLabel5.Size = New System.Drawing.Size(138, 19)
-        Me.MaterialLabel5.TabIndex = 50
-        Me.MaterialLabel5.Text = "Temporary address"
-        '
-        'MaterialLabel6
-        '
-        Me.MaterialLabel6.AutoSize = True
-        Me.MaterialLabel6.Depth = 0
-        Me.MaterialLabel6.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel6.Location = New System.Drawing.Point(374, 74)
-        Me.MaterialLabel6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.MaterialLabel6.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel6.Name = "MaterialLabel6"
-        Me.MaterialLabel6.Size = New System.Drawing.Size(91, 19)
-        Me.MaterialLabel6.TabIndex = 50
-        Me.MaterialLabel6.Text = "Middlename"
-        '
-        'MaterialLabel7
-        '
-        Me.MaterialLabel7.AutoSize = True
-        Me.MaterialLabel7.Depth = 0
-        Me.MaterialLabel7.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel7.Location = New System.Drawing.Point(740, 109)
-        Me.MaterialLabel7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.MaterialLabel7.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel7.Name = "MaterialLabel7"
-        Me.MaterialLabel7.Size = New System.Drawing.Size(87, 19)
-        Me.MaterialLabel7.TabIndex = 50
-        Me.MaterialLabel7.Text = "Contact no."
+        Me.MetroContextMenu2.Name = "MetroContextMenu2"
+        Me.MetroContextMenu2.Size = New System.Drawing.Size(61, 4)
         '
         'AddRemoveStudentStaff
         '
@@ -1881,10 +1894,11 @@ Partial Class AddRemoveStudentStaff
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1414, 819)
         Me.Controls.Add(Me.AddRemoveUserStudentTablePanel)
-        Me.Font = New System.Drawing.Font("Roboto", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AddRemoveStudentStaff"
         Me.Text = "AddRemoveStudentStaff"
+        Me.AddRemoveUserStudentTablePanel.ResumeLayout(False)
         Me.UserStudentTabController.ResumeLayout(False)
         Me.AddUserTab.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
@@ -1914,7 +1928,6 @@ Partial Class AddRemoveStudentStaff
         CType(Me.StudentDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         CType(Me.OnlyViewStudentPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.AddRemoveUserStudentTablePanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2032,4 +2045,6 @@ Partial Class AddRemoveStudentStaff
     Friend WithEvents MaterialLabel7 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel4 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents MetroContextMenu1 As MetroFramework.Controls.MetroContextMenu
+    Friend WithEvents MetroContextMenu2 As MetroFramework.Controls.MetroContextMenu
 End Class

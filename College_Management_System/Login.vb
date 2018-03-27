@@ -88,7 +88,7 @@ Public Class Login
     End Sub
 
     Private Sub ForgotPasswordLabel_Click(sender As Object, e As EventArgs) Handles ForgotPasswordLabel.Click
-        Dim forget As New forgetPass()
+        Dim forget As New EmailVerification()
         forget.ShowDialog()
     End Sub
 

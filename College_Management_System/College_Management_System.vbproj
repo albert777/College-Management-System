@@ -161,6 +161,12 @@
     <Compile Include="Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmailVerification.Designer.vb">
+      <DependentUpon>EmailVerification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmailVerification.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FeeManager.designer.vb">
       <DependentUpon>FeeManager.vb</DependentUpon>
     </Compile>
@@ -259,6 +265,9 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmailVerification.resx">
+      <DependentUpon>EmailVerification.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FeeManager.resx">
       <DependentUpon>FeeManager.vb</DependentUpon>
     </EmbeddedResource>
@@ -303,8 +312,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
