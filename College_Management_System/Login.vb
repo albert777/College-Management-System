@@ -6,8 +6,7 @@ Public Class Login
     Dim countError As Integer = 1
     Public img() As Byte
     Dim su As New AddRemoveStudentStaff
-    'Dim pass As String = "head"
-    Dim dash As New Dashboard()
+
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cursor = Cursors.WaitCursor
@@ -38,6 +37,9 @@ Public Class Login
         cmd.Parameters.AddWithValue("@b", PasswordTextBox.Text)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
+        Dim a As String = " "
+
+
         da.Fill(dt)
         'Check if the given user exist
         If (dt.Rows.Count > 0) Then
@@ -48,6 +50,7 @@ Public Class Login
             lname = dt.Rows(0).Item("lastname")
             phone = dt.Rows(0).Item("contact_no")
             email = dt.Rows(0).Item("email")
+            Dim dash As New Dashboard(usertype, img, username, fname, lname, phone, email)
             dash.Show()
             Me.Hide()
         Else
@@ -67,6 +70,7 @@ Public Class Login
                 lname = dt2.Rows(0).Item("lname")
                 phone = dt2.Rows(0).Item("phoneno")
                 email = dt2.Rows(0).Item("email")
+                Dim dash As New Dashboard(usertype, img, username, fname, lname, phone, email)
                 dash.Show()
                 Me.Hide()
             Else

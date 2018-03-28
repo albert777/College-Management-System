@@ -12,60 +12,53 @@ Public Class Dashboard
     'Dim result As New Result
     'Dim notice As New Notice
     'Dim bin As New RecycleBin
+    Public utypes, fnames, lnames, phones, emails, unames As String
+    Public imgs() As Byte
+
     Public userType As String
 
-    'Sub unVisibleAll()
-    '    PcMgmtButton.Visible = False
-    '    RecycleBinButton.Visible = False
-    '    NoticeButton.Visible = False
-    '    BillButton.Visible = False
-    '    SettingButton.Visible = False
-    '    AddRemoveButton.Visible = False
-    '    AttendanceButton.Visible = False
-    '    ResultButton.Visible = False
-    'End Sub
-    'Sub userChecker()
-    '    userType = Login.usertype
-    '    If (userType = "") Then
-    '        PcMgmtButton.Visible = True
-    '        RecycleBinButton.Visible = True
-    '        NoticeButton.Visible = True
-    '        BillButton.Visible = True
-    '        SettingButton.Visible = True
-    '        AddRemoveButton.Visible = True
-    '        AttendanceButton.Visible = True
-    '        ResultButton.Visible = True
-    '    Else
-    '        If (userType.Equals("Student")) Then
-    '            unVisibleAll()
-    '            AttendanceButton.Visible = True
-    '            ResultButton.Visible = True
-    '            HamburgerButton.Dock = DockStyle.Top
-    '            HomeButton.Dock = DockStyle.Top
-    '            AttendanceButton.Dock = DockStyle.Top
-    '            ResultButton.Dock = DockStyle.Top
-    '        ElseIf (userType.Equals("Receptionist")) Then
-    '            unVisibleAll()
-    '            AddRemoveButton.Visible = True
-    '            SettingButton.Visible = True
-    '            HamburgerButton.Dock = DockStyle.Top
-    '            HomeButton.Dock = DockStyle.Top
-    '            AddRemoveButton.Dock = DockStyle.Top
-    '            SettingButton.Dock = DockStyle.Bottom
-    '        End If
-    '    End If
+    Sub unVisibleAll()
+        PcMgmtButton.Visible = False
+        RecycleBinButton.Visible = False
+        NoticeButton.Visible = False
+        BillButton.Visible = False
+        SettingButton.Visible = False
+        AddRemoveButton.Visible = False
+        AttendanceButton.Visible = False
+        ResultButton.Visible = False
+    End Sub
+    Sub userChecker()
+        userType = utypes
+        If (userType = "") Then
+            PcMgmtButton.Visible = True
+            RecycleBinButton.Visible = True
+            NoticeButton.Visible = True
+            BillButton.Visible = True
+            SettingButton.Visible = True
+            AddRemoveButton.Visible = True
+            AttendanceButton.Visible = True
+            ResultButton.Visible = True
+        Else
+            If (userType.Equals("Student")) Then
+                unVisibleAll()
+                AttendanceButton.Visible = True
+                ResultButton.Visible = True
+                HamburgerButton.Dock = DockStyle.Top
+                HomeButton.Dock = DockStyle.Top
+                AttendanceButton.Dock = DockStyle.Top
+                ResultButton.Dock = DockStyle.Top
+            ElseIf (userType.Equals("Receptionist")) Then
+                unVisibleAll()
+                AddRemoveButton.Visible = True
+                SettingButton.Visible = True
+                HamburgerButton.Dock = DockStyle.Top
+                HomeButton.Dock = DockStyle.Top
+                AddRemoveButton.Dock = DockStyle.Top
+                SettingButton.Dock = DockStyle.Bottom
+            End If
+        End If
 
-    'End Sub
-    'Sub closeAll()
-    '    ar.Close()
-    '    ps.Close()
-    '    a.Close()
-    '    feeManager.Close()
-    '    setting.Close()
-    '    result.Close()
-    '    notice.Close()
-    '    bin.Close()
-    'End Sub
+    End Sub
     Private Sub HamburgerButton_Click(sender As Object, e As EventArgs) Handles HamburgerButton.Click
         userDetail()
         If (hamburgerPnl.Width < 250) Then
@@ -118,6 +111,10 @@ Public Class Dashboard
 
     Sub showAddRemoveStudentUserPanel()
         Dim ar As New AddRemoveStudentStaff
+        If (utypes = "Receptionist") Then
+            ar.UserStudentTabController.TabPages(0).Enabled = False
+            ar.UserStudentTabController.TabPages(1).Enabled = False
+        End If
         'closeAll()
         MainPanel.Controls.Clear()
         ar.MdiParent = Me
@@ -127,6 +124,7 @@ Public Class Dashboard
         ar.BringToFront()
         MainPanel.Controls.Add(UserDetailPanel)
         UserDetailPanel.BringToFront()
+
     End Sub
 
     Sub showCourseAndSubjects()
@@ -221,26 +219,33 @@ Public Class Dashboard
         labelCenterer(NameLabel)
         labelCenterer(PhoneNoLabel)
         labelCenterer(EmailLabel)
-
+        userChecker()
     End Sub
 
-    'Public Sub New(ByVal empid As String)
-    '    InitializeComponent()
-    '    b = empid
-    'End Sub
-    'Centers label to its parent
+
     Sub labelCenterer(ByVal a As Label)
         a.Left = (a.Parent.Width \ 2) - (a.Width \ 2)
     End Sub
 
+
+    Public Sub New(utype As String, img() As Byte, uname As String, fname As String, lname As String, phone As String, email As String)
+        InitializeComponent()
+        utypes = utype
+        fnames = fname
+        lnames = lname
+        emails = email
+        phones = phone
+        unames = uname
+        imgs = img
+    End Sub
+
     Sub profileDrop()
         circularImage(ProfilePictureBox)
-
-        NameLabel.Text = Login.fname & " " & Login.lname
-        PhoneNoLabel.Text = Login.phone
-        EmailLabel.Text = Login.email
+        NameLabel.Text = fnames & " " & lnames
+        PhoneNoLabel.Text = phones
+        EmailLabel.Text = emails
         Dim img() As Byte
-        img = Login.img
+        img = imgs
 
         If (img IsNot Nothing) Then
             Dim ms As New MemoryStream(img)
@@ -295,6 +300,8 @@ Public Class Dashboard
 
     Private Sub LogOutButton_Click(sender As Object, e As EventArgs) Handles LogOutButton.Click
         Me.Close()
+        Dim login As New Login
+        login.Show()
     End Sub
 
     Private Sub HomeButton_Click(sender As Object, e As EventArgs) Handles HomeButton.Click
